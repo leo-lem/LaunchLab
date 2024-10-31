@@ -1,4 +1,4 @@
-# Project Title
+# Transferagentur: EntrepreneurChat
 
 <details>
 <summary>Important Notes About this README</summary>
@@ -21,12 +21,16 @@
 <details>
 <summary>To-Dos</summary>
 
-- [ ] Edit the Project Title.
-- [ ] Optionally, you can add useful customized [badges](https://shields.io).
+- [x] Edit the Project Title.
+- [x] Optionally, you can add useful customized [badges](https://shields.io).
 
 </details>
 
 ## Introduction
+
+AI consultant for aspiring entrepreneurs. [...]
+
+This application was created during the M-Lab course 2024 at the University of Hamburg for the client Transferagentur. [...]
 
 <details>
 <summary>To-Dos</summary>
@@ -47,35 +51,45 @@
 
 ### Prerequisites
 
+1. A [Mac](https://www.apple.com/mac/).
+2. [Xcode](https://developer.apple.com/xcode/) installed.
+
 <details>
 <summary>To-Dos</summary>
 
-- [ ] List minimal system requirements (e.g., macOS version xyz) and required skills (e.g., knowledge to run the command-line interface) to install and run your application(s) here.
+- [x] List minimal system requirements (e.g., macOS version xyz) and required skills (e.g., knowledge to run the command-line interface) to install and run your application(s) here.
 
 </details>
 
 ### Installation
 
+1. Clone this repository.
+2. Open Xcode and select `Open Existing Project`.
+3. Select this project's [EntrepreneurChat.xcodeproj](App/EntrepreneurChat.xcodeproj).
+
 <details>
 <summary>To-Dos</summary>
 
-- [ ] Add a list of all necessary steps to install your application, e.g., how to install required libraries like Flutter.
+- [x] Add a list of all necessary steps to install your application, e.g., how to install required libraries like Flutter.
   If a library's installation process is very complex and might change significantly within the upcoming months, you can add a link to the library's official installation manual.
-- [ ] Test the correctness and completeness of the installation steps on a clean machine, e.g., on a computer in the Informatikum's computer pool.
+- [x] Test the correctness and completeness of the installation steps on a clean machine, e.g., on a computer in the Informatikum's computer pool.
   You should also ask fellow students not participating in M-Lab for problems in understanding and executing the steps.
   __Consider this as the most critical section of your README. We do not accept "But it runs on my machine" excuses.__
-- [ ] If you provide multiple software components with this repository, e.g., a frontend and a backend application, consider adding a minimal and a full version of your installation description here.
+- [x] If you provide multiple software components with this repository, e.g., a frontend and a backend application, consider adding a minimal and a full version of your installation description here.
   The minimal version describes how to run all components on a local computer; the full version describes (roughly) how to deploy your components, e.g., when a backend should run on a server.
-- [ ] Consider using virtualization tools, like [Docker](https://www.docker.com) or [Kubernetes](https://kubernetes.io), to minimize the installation effort for your users.
+- [x] Consider using virtualization tools, like [Docker](https://www.docker.com) or [Kubernetes](https://kubernetes.io), to minimize the installation effort for your users.
 
 </details>
 
 ### How To Run
 
+1. Select an appropriate simulator or physical device to run the app on.
+2. Select `Product > Run` in the menu bar.
+
 <details>
 <summary>To-Dos</summary>
 
-- [ ] Add a list of all necessary steps to run your application after completing the installation.
+- [x] Add a list of all necessary steps to run your application after completing the installation.
 
 </details>
 
@@ -91,35 +105,19 @@ This section is optional. You can remove it if you cannot provide a demo of your
 
 </details>
 
-## Known Issues
-
-<details>
-<summary>To-Dos</summary>
-
-This section is optional. You should remove it if it is not necessary for your project.
-
-- [ ] Add known issues or limitations regarding using your app, e.g., a bug that only appears on a specific operating system.
-
-</details>
-
 ## Project Team
 
+- Hanna Lagerbauer [**Design Lead**]
+- Henrik Magnussen
+- Jai Kamboj
+- Eric Liebrecht [**Stakeholder Manager**]
+- Maximilian Stabe [**iOS Lead**]
+- Leopold Lemmermann [**Team Lead**]
+
 <details>
 <summary>To-Dos</summary>
 
-- [ ] Minimal: List the names of all team members.
+- [x] Minimal: List the names of all team members.
 - [ ] Optional: Add further information, e.g., a photo of yourself or a link to your personal website.
-
-</details>
-
-## Further Information
-
-<details>
-<summary>To-Dos</summary>
-
-This section is optional. You should remove it if you cannot think of any further info.
-
-- [ ] Add any additional information related to your project that does not fit the sections above but is relevant to the users of your application.
-  If possible, use hyperlinks to other websites to keep this section concise.
 
 </details>
