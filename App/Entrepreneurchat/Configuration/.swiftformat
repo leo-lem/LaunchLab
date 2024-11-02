@@ -1,0 +1,16 @@
+--swiftversion 5.3
+--exclude Configuration,Styleguide,PFCoreData,PFExtensions,UIComponents
+
+--commas inline
+
+--indent 2
+
+--decimalgrouping 3,0
+
+--disable enumNamespaces, wrapMultilineStatementBraces
+
+--disable unusedArguments
+
+--disable redundantSelf
+
+--disable preferForLoop
