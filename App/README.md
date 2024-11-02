@@ -49,10 +49,13 @@ This application was created during the M-Lab course 2024 at the University of H
 
 ## Getting Started
 
+The steps marked [Real Device] will be required if you want to run the app on a real device. A simulator should work without them.
+
 ### Prerequisites
 
 1. A [Mac](https://www.apple.com/mac/).
 2. [Xcode](https://developer.apple.com/xcode/) installed.
+3. [Real Device] An [AppleID](https://account.apple.com).
 
 <details>
 <summary>To-Dos</summary>
@@ -83,8 +86,11 @@ This application was created during the M-Lab course 2024 at the University of H
 
 ### How To Run
 
-1. Select an appropriate simulator or physical device to run the app on.
-2. Select `Product > Run` in the menu bar.
+1. [Real Device] In `EntrepreneurChat > Signing & Capabilities`
+  - change the `Team` to AppleID-linked personal team.
+  - change the `Bundle Identifier` to something unique (`de.<your-name>.entrepreneurchat` should work).
+2. Select an appropriate simulator or physical device to run the app on.
+3. Select `Product > Run` in the menu bar.
 
 <details>
 <summary>To-Dos</summary>
@@ -107,17 +113,17 @@ This section is optional. You can remove it if you cannot provide a demo of your
 
 ## Project Team
 
-- Hanna Lagerbauer [**Design Lead**]
+- Hanna Lagerbauer
 - Henrik Magnussen
 - Jai Kamboj
-- Eric Liebrecht [**Stakeholder Manager**]
-- Maximilian Stabe [**iOS Lead**]
-- Leopold Lemmermann [**Team Lead**]
+- Eric Liebrecht
+- Maximilian Stabe
+- Leopold Lemmermann
 
 <details>
 <summary>To-Dos</summary>
 
 - [x] Minimal: List the names of all team members.
-- [ ] Optional: Add further information, e.g., a photo of yourself or a link to your personal website.
+- [x] Optional: Add further information, e.g., a photo of yourself or a link to your personal website.
 
 </details>
