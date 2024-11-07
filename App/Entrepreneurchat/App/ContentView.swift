@@ -18,6 +18,7 @@ struct ContentView: View {
       HelloWorld()
     }
     .padding()
+    var number = 1
   }
 }
 
