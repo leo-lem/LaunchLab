@@ -22,7 +22,7 @@
 <summary>To-Dos</summary>
 
 - [x] Edit the Project Title.
-- [x] Optionally, you can add useful customized [badges](https://shields.io).
+- [ ] Optionally, you can add useful customized [badges](https://shields.io).
 
 </details>
 
@@ -114,7 +114,7 @@ This section is optional. You can remove it if you cannot provide a demo of your
 ## Project Team
 
 - Hanna Lagerbauer
-- Henrik Magnussen
+- Henrik Marcussen
 - Jai Kamboj
 - Eric Liebrecht
 - Maximilian Stabe
