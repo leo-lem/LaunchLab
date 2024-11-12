@@ -12,10 +12,13 @@ struct ContentView: View {
       Image(systemName: "globe")
         .imageScale(.large)
         .foregroundStyle(.tint)
-
+        
       Text(L10n.testString)
 
       HelloWorld()
+    
+      Text("Hallo Team")
+        Text("Wassssup")
     }
     .padding()
     var number = 1
