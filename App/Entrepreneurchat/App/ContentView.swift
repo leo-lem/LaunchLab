@@ -12,16 +12,16 @@ struct ContentView: View {
       Image(systemName: "globe")
         .imageScale(.large)
         .foregroundStyle(.tint)
-        
+
       Text(L10n.testString)
 
       HelloWorld()
-    
+
       Text("Hallo Team")
-        Text("Wassssup")
+      Text("Wassssup")
+
+      Text(L10n.maxiCommitProof)
     }
     .padding()
-    var number = 1
   }
 }
-
