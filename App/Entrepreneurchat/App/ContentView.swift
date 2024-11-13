@@ -12,7 +12,7 @@ struct ContentView: View {
       Image(systemName: "globe")
         .imageScale(.large)
         .foregroundStyle(.tint)
-
+        
       Text(L10n.testString)
 
       HelloWorld()
@@ -21,6 +21,7 @@ struct ContentView: View {
       Text("Wassssup")
 
       Text(L10n.maxiCommitProof)
+        Text("Wassssup")
     }
     .padding()
   }
