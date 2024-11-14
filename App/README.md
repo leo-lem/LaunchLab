@@ -22,7 +22,7 @@
 <summary>To-Dos</summary>
 
 - [x] Edit the Project Title.
-- [ ] Optionally, you can add useful customized [badges](https://shields.io).
+- [x] Optionally, you can add useful customized [badges](https://shields.io).
 
 </details>
 
@@ -101,13 +101,17 @@ The steps marked [Real Device] will be required if you want to run the app on a 
 
 ### Demo
 
+Our dynamic prototype is available in [Figma](https://www.figma.com/proto/bFe6jqSDZ2OXyaKYpr3xej/Prototyping?node-id=206-4249&t=OR6ztRCPCX8z2gOR-1&starting-point-node-id=206%3A4249). You can also find a copy [here](https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202425/transferagentur/-/blob/7-complete-requirements-analysis-document/Deliverables/M1%20-%20Requirements%20Engineering/ClickDummy.fig?ref_type=heads).
+
+The demo is used intended as a proof of concept, not a complete working app. While the transitions and flow of the app are there, not all features reflect the app's final level of detail.
+
 <details>
 <summary>To-Dos</summary>
 
 This section is optional. You can remove it if you cannot provide a demo of your application.
 
-- [ ] If you use a prototyping tool like Figma for your clickdummy, we recommend adding a public link to your clickdummy demo here.
-- [ ] Please indicate if the demo has limitations and until when it will be available.
+- [x] If you use a prototyping tool like Figma for your clickdummy, we recommend adding a public link to your clickdummy demo here.
+- [x] Please indicate if the demo has limitations and until when it will be available.
 
 </details>
 
