@@ -1,2 +1,32 @@
-"test_string" = "Test String";
-"maxi_commit_proof" = "maxi commit proof";
+"common_continue" = "Weiter";
+"common_placeholder" = "Platzhalter";
+"common_start" = "Starten";
+
+"launch_screen_title" = "Willkommen bei Launchlab 🚀";
+"launch_screen_subtitle" = "Bevor du deine Idee in die Tat umsetzen kannst, möchten wir dich kurz kennenlernen.";
+
+"motivation_question" = "Was motiviert dich, ein Startup zu gründen?";
+"motivation_subtitle" = "Wähle aus, was dich am meisten antreibt.";
+"motivation_answer_freedom" = "Die Freiheit, mein eigener Chef zu sein";
+"motivation_answer_innovation" = "Innovative Ideen in die Welt bringen";
+"motivation_answer_problem" = "Ein Problem lösen, das mir wichtig ist";
+"motivation_answer_financial" = "Finanziellen Erfolg erzielen";
+
+"targetGroup_question" = "Für wen ist dein Startup gedacht? Wer ist deine Zielgruppe?";
+"targetGroup_subtitle" = "Überlege dir, wen du erreichen möchtest.";
+"targetGroup_answer_students" = "Schüler und Studenten";
+"targetGroup_answer_professionals" = "Berufstätige oder Unternehmen";
+"targetGroup_answer_techies" = "Technikbegeisterte";
+"targetGroup_answer_unknown" = "Weiß ich noch nicht";
+
+"currentState_question" = "Wo stehst du gerade bei deinem Startup?";
+"currentState_subtitle" = "Markiere den Punkt, an dem du dich gerade befindest.";
+"currentState_answer_noIdea" = "Ich habe noch keine Idee";
+"currentState_answer_idea" = "Ich habe eine Idee und möchte sie umsetzen";
+"currentState_answer_working" = "Ich arbeite bereits an meinem Startup";
+"currentState_answer_running" = "Ich habe schon ein laufendes Startup";
+
+"goals_question" = "Was sind deine Ziele mit dem Startup?";
+"goals_subtitle" = "Wähle, was dir am wichtigsten ist.";
+
+"question_value_of %@ %@" = "Frage %@ von %@";

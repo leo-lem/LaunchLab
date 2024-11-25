@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E62CD4E2B400DBABD9 /* Styleguide */; };
 		7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E82CD4E2B400DBABD9 /* UIComponents */; };
+		7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A750C942CE93DF3005EA71B /* SwiftfulRouting */; };
+		7A750C9C2CE93F5F005EA71B /* OnboardingPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750C9B2CE93F5F005EA71B /* OnboardingPages.swift */; };
+		7A750C9E2CE940D1005EA71B /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750C9D2CE940D1005EA71B /* OnboardingPageView.swift */; };
+		7A750CA32CEA00D0005EA71B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750CA22CEA00D0005EA71B /* View+Extension.swift */; };
+		7A750CA52CEB9589005EA71B /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750CA42CEB9589005EA71B /* OnboardingWelcomeView.swift */; };
+		7A750CAA2CEBA9D1005EA71B /* OnboardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750CA92CEBA9D1005EA71B /* OnboardingPageModel.swift */; };
 		7AC514212CD3F6E800F4E6AA /* EntrepreneurchatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514182CD3F6E800F4E6AA /* EntrepreneurchatApp.swift */; };
-		7AC514222CD3F6E800F4E6AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514172CD3F6E800F4E6AA /* ContentView.swift */; };
+		7AC514222CD3F6E800F4E6AA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */; };
 		7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */; };
 		7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */; };
 		7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141C2CD3F6E800F4E6AA /* .swiftformat */; };
@@ -19,8 +25,13 @@
 
 /* Begin PBXFileReference section */
 		7A7306E52CD4E25100DBABD9 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
+		7A750C9B2CE93F5F005EA71B /* OnboardingPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPages.swift; sourceTree = "<group>"; };
+		7A750C9D2CE940D1005EA71B /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		7A750CA22CEA00D0005EA71B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		7A750CA42CEB9589005EA71B /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
+		7A750CA92CEBA9D1005EA71B /* OnboardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageModel.swift; sourceTree = "<group>"; };
 		7AAC1F6D2CD28E84002C6042 /* Entrepreneurchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Entrepreneurchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AC514172CD3F6E800F4E6AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7AC514182CD3F6E800F4E6AA /* EntrepreneurchatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrepreneurchatApp.swift; sourceTree = "<group>"; };
 		7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AC5141C2CD3F6E800F4E6AA /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
@@ -36,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */,
+				7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */,
 				7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +55,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A750C922CE93DA1005EA71B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7A750CA92CEBA9D1005EA71B /* OnboardingPageModel.swift */,
+				7A750C9B2CE93F5F005EA71B /* OnboardingPages.swift */,
+				7A750C9D2CE940D1005EA71B /* OnboardingPageView.swift */,
+				7A750CA42CEB9589005EA71B /* OnboardingWelcomeView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		7A750CA12CEA00C8005EA71B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A750CA22CEA00D0005EA71B /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7AAC1F642CD28E84002C6042 = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +104,9 @@
 		7AC514192CD3F6E800F4E6AA /* App */ = {
 			isa = PBXGroup;
 			children = (
-				7AC514172CD3F6E800F4E6AA /* ContentView.swift */,
+				7A750CA12CEA00C8005EA71B /* Extensions */,
+				7A750C922CE93DA1005EA71B /* Onboarding */,
+				7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */,
 				7AC514182CD3F6E800F4E6AA /* EntrepreneurchatApp.swift */,
 			);
 			path = App;
@@ -120,6 +153,7 @@
 			packageProductDependencies = (
 				7A7306E62CD4E2B400DBABD9 /* Styleguide */,
 				7A7306E82CD4E2B400DBABD9 /* UIComponents */,
+				7A750C942CE93DF3005EA71B /* SwiftfulRouting */,
 			);
 			productName = Entrepreneurchat;
 			productReference = 7AAC1F6D2CD28E84002C6042 /* Entrepreneurchat.app */;
@@ -149,6 +183,9 @@
 			);
 			mainGroup = 7AAC1F642CD28E84002C6042;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7AAC1F6E2CD28E84002C6042 /* Products */;
 			projectDirPath = "";
@@ -219,8 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A750C9E2CE940D1005EA71B /* OnboardingPageView.swift in Sources */,
+				7A750CA52CEB9589005EA71B /* OnboardingWelcomeView.swift in Sources */,
+				7A750C9C2CE93F5F005EA71B /* OnboardingPages.swift in Sources */,
 				7AC514212CD3F6E800F4E6AA /* EntrepreneurchatApp.swift in Sources */,
-				7AC514222CD3F6E800F4E6AA /* ContentView.swift in Sources */,
+				7A750CA32CEA00D0005EA71B /* View+Extension.swift in Sources */,
+				7A750CAA2CEBA9D1005EA71B /* OnboardingPageModel.swift in Sources */,
+				7AC514222CD3F6E800F4E6AA /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9RY44N87S7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -396,7 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9RY44N87S7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -454,6 +496,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		7A7306E62CD4E2B400DBABD9 /* Styleguide */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -462,6 +515,11 @@
 		7A7306E82CD4E2B400DBABD9 /* UIComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIComponents;
+		};
+		7A750C942CE93DF3005EA71B /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

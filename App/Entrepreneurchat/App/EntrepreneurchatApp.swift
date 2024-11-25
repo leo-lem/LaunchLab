@@ -8,7 +8,8 @@ import SwiftUI
 struct EntrepreneurchatApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      HomeScreen()
+        .preferredColorScheme(.dark)
     }
   }
 }

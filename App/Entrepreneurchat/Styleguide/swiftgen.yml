@@ -9,12 +9,3 @@ strings:
         output: L10n-Constants.swift
         params:
             publicAccess: true
-
-#xcassets:
-#    inputs:
-#        - Assets/Images.xcassets
-#    outputs:
-#        templateName: swift5
-#        output: ColorImageAsset.swift
-#        params:
-#            publicAccess: true
