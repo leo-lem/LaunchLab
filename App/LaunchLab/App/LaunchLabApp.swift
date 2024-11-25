@@ -5,7 +5,7 @@
 import SwiftUI
 
 @main
-struct EntrepreneurchatApp: App {
+struct LaunchLabApp: App {
   var body: some Scene {
     WindowGroup {
       HomeScreen()

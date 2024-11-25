@@ -15,7 +15,7 @@
 		7A750CA32CEA00D0005EA71B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750CA22CEA00D0005EA71B /* View+Extension.swift */; };
 		7A750CA52CEB9589005EA71B /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750CA42CEB9589005EA71B /* OnboardingWelcomeView.swift */; };
 		7A750CAA2CEBA9D1005EA71B /* OnboardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A750CA92CEBA9D1005EA71B /* OnboardingPageModel.swift */; };
-		7AC514212CD3F6E800F4E6AA /* EntrepreneurchatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514182CD3F6E800F4E6AA /* EntrepreneurchatApp.swift */; };
+		7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */; };
 		7AC514222CD3F6E800F4E6AA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */; };
 		7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */; };
 		7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */; };
@@ -30,14 +30,14 @@
 		7A750CA22CEA00D0005EA71B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		7A750CA42CEB9589005EA71B /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		7A750CA92CEBA9D1005EA71B /* OnboardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageModel.swift; sourceTree = "<group>"; };
-		7AAC1F6D2CD28E84002C6042 /* Entrepreneurchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Entrepreneurchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		7AC514182CD3F6E800F4E6AA /* EntrepreneurchatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrepreneurchatApp.swift; sourceTree = "<group>"; };
+		7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLabApp.swift; sourceTree = "<group>"; };
 		7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AC5141C2CD3F6E800F4E6AA /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7AC5141F2CD3F6E800F4E6AA /* Entrepreneurchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entrepreneurchat.entitlements; sourceTree = "<group>"; };
+		7AC5141F2CD3F6E800F4E6AA /* LaunchLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchLab.entitlements; sourceTree = "<group>"; };
 		7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Styleguide; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 		7AAC1F6E2CD28E84002C6042 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7AAC1F6D2CD28E84002C6042 /* Entrepreneurchat.app */,
+				7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 				7A750CA12CEA00C8005EA71B /* Extensions */,
 				7A750C922CE93DA1005EA71B /* Onboarding */,
 				7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */,
-				7AC514182CD3F6E800F4E6AA /* EntrepreneurchatApp.swift */,
+				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -127,7 +127,7 @@
 				7AC5141C2CD3F6E800F4E6AA /* .swiftformat */,
 				7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */,
 				7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */,
-				7AC5141F2CD3F6E800F4E6AA /* Entrepreneurchat.entitlements */,
+				7AC5141F2CD3F6E800F4E6AA /* LaunchLab.entitlements */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7AAC1F6C2CD28E84002C6042 /* Entrepreneurchat */ = {
+		7AAC1F6C2CD28E84002C6042 /* LaunchLab */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AAC1F7C2CD28E86002C6042 /* Build configuration list for PBXNativeTarget "Entrepreneurchat" */;
+			buildConfigurationList = 7AAC1F7C2CD28E86002C6042 /* Build configuration list for PBXNativeTarget "LaunchLab" */;
 			buildPhases = (
 				7AAC1FB12CD296E6002C6042 /* SwiftLint */,
 				7AAC1FAA2CD2958A002C6042 /* SwiftGen Generate */,
@@ -149,14 +149,14 @@
 			);
 			dependencies = (
 			);
-			name = Entrepreneurchat;
+			name = LaunchLab;
 			packageProductDependencies = (
 				7A7306E62CD4E2B400DBABD9 /* Styleguide */,
 				7A7306E82CD4E2B400DBABD9 /* UIComponents */,
 				7A750C942CE93DF3005EA71B /* SwiftfulRouting */,
 			);
-			productName = Entrepreneurchat;
-			productReference = 7AAC1F6D2CD28E84002C6042 /* Entrepreneurchat.app */;
+			productName = LaunchLab;
+			productReference = 7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "Entrepreneurchat" */;
+			buildConfigurationList = 7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "Launchlab" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -191,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7AAC1F6C2CD28E84002C6042 /* Entrepreneurchat */,
+				7AAC1F6C2CD28E84002C6042 /* LaunchLab */,
 			);
 		};
 /* End PBXProject section */
@@ -259,7 +259,7 @@
 				7A750C9E2CE940D1005EA71B /* OnboardingPageView.swift in Sources */,
 				7A750CA52CEB9589005EA71B /* OnboardingWelcomeView.swift in Sources */,
 				7A750C9C2CE93F5F005EA71B /* OnboardingPages.swift in Sources */,
-				7AC514212CD3F6E800F4E6AA /* EntrepreneurchatApp.swift in Sources */,
+				7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */,
 				7A750CA32CEA00D0005EA71B /* View+Extension.swift in Sources */,
 				7A750CAA2CEBA9D1005EA71B /* OnboardingPageModel.swift in Sources */,
 				7AC514222CD3F6E800F4E6AA /* HomeScreen.swift in Sources */,
@@ -388,7 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Configuration/Entrepreneurchat.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Configuration/LaunchLab.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -398,7 +398,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Entrepreneurchat;
+				INFOPLIST_KEY_CFBundleDisplayName = LaunchLab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -415,7 +415,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.entrepreneurchat;
+				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -433,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Configuration/Entrepreneurchat.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Configuration/LaunchLab.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -443,7 +443,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Entrepreneurchat;
+				INFOPLIST_KEY_CFBundleDisplayName = LaunchLab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -460,7 +460,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.entrepreneurchat;
+				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -476,7 +476,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "Entrepreneurchat" */ = {
+		7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "Launchlab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AAC1F7A2CD28E86002C6042 /* Debug */,
@@ -485,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AAC1F7C2CD28E86002C6042 /* Build configuration list for PBXNativeTarget "Entrepreneurchat" */ = {
+		7AAC1F7C2CD28E86002C6042 /* Build configuration list for PBXNativeTarget "LaunchLab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AAC1F7D2CD28E86002C6042 /* Debug */,
