@@ -13,9 +13,17 @@ let package = Package(
       targets: ["UIComponents"]
     )
   ],
+  dependencies: [
+    .package(path: "Styleguide"),
+    .package(path: "LLExtensions")
+  ],
   targets: [
     .target(
-      name: "UIComponents"
+      name: "UIComponents",
+      dependencies: [
+        "Styleguide",
+        "LLExtensions"
+      ]
     )
   ]
 )

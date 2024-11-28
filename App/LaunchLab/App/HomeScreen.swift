@@ -16,6 +16,8 @@ struct HomeScreen: View {
         Image(systemName: "globe")
           .imageScale(.large)
           .foregroundStyle(.tint)
+
+        ChatView()
       }
       .preferredColorScheme(.dark)
       .fullScreenCover(isPresented: $showOnboarding) {
