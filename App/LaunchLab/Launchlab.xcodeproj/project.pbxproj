@@ -23,6 +23,7 @@
 		7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141C2CD3F6E800F4E6AA /* .swiftformat */; };
 		7AC514262CD3F6E800F4E6AA /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */; };
 		AF225E942CF4B9780067FA4B /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF225E932CF4B9780067FA4B /* ChatView.swift */; };
+		AF5666462CFDE46200E9A517 /* ChatGptRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5666452CFDE46200E9A517 /* ChatGptRequester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		7AC5141F2CD3F6E800F4E6AA /* LaunchLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchLab.entitlements; sourceTree = "<group>"; };
 		7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Styleguide; sourceTree = "<group>"; };
 		AF225E932CF4B9780067FA4B /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		AF5666452CFDE46200E9A517 /* ChatGptRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGptRequester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		7AC514192CD3F6E800F4E6AA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				AF5666442CFDE44B00E9A517 /* GptIntegration */,
 				AF225E8E2CF4B94B0067FA4B /* ChatOverlay */,
 				7A750CA12CEA00C8005EA71B /* Extensions */,
 				7A750C922CE93DA1005EA71B /* Onboarding */,
@@ -145,6 +148,14 @@
 				AF225E932CF4B9780067FA4B /* ChatView.swift */,
 			);
 			path = ChatOverlay;
+			sourceTree = "<group>";
+		};
+		AF5666442CFDE44B00E9A517 /* GptIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				AF5666452CFDE46200E9A517 /* ChatGptRequester.swift */,
+			);
+			path = GptIntegration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				AF225E942CF4B9780067FA4B /* ChatView.swift in Sources */,
 				7A750C9C2CE93F5F005EA71B /* OnboardingPages.swift in Sources */,
 				7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */,
+				AF5666462CFDE46200E9A517 /* ChatGptRequester.swift in Sources */,
 				7A750CA32CEA00D0005EA71B /* View+Extension.swift in Sources */,
 				7A750CAA2CEBA9D1005EA71B /* OnboardingPageModel.swift in Sources */,
 				7AC514222CD3F6E800F4E6AA /* HomeScreen.swift in Sources */,

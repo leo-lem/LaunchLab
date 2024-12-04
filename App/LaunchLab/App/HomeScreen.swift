@@ -23,6 +23,11 @@ struct HomeScreen: View {
       .fullScreenCover(isPresented: $showOnboarding) {
         OnboardingWelcomeView(showOnboarding: $showOnboarding)
       }
+      .task {
+              let requester = ChatGPTRequester()
+              print(await requester.sendMessage("What's up?") ?? "failed")
+            }
+
     }
   }
 }
