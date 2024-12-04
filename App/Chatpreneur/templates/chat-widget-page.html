@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChatWidget</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/chat-widget/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-widget">
+        <div class="chat-float-icon">
+            <svg fill="#fff" height="26px" width="26px" viewBox="0 0 60 60" xml:space="preserve">
+                <g>
+                    <path
+                        d="M57.348,0.793H12.652C11.189,0.793,10,1.983,10,3.446v7.347h34.348c2.565,0,4.652,2.087,4.652,4.653v25.347h1.586L60,50.207V3.446C60,1.983,58.811,0.793,57.348,0.793z" />
+                    <path d="M44.348,12.793H2.652C1.189,12.793,0,13.983,0,15.446v43.761l9.414-9.414h34.934c1.463,0,2.652-1.19,2.652-2.653V15.446
+		C47,13.983,45.811,12.793,44.348,12.793z M11,22.793h12c0.553,0,1,0.448,1,1s-0.447,1-1,1H11c-0.553,0-1-0.448-1-1
+		S10.447,22.793,11,22.793z M36,38.793H11c-0.553,0-1-0.448-1-1s0.447-1,1-1h25c0.553,0,1,0.448,1,1S36.553,38.793,36,38.793z
+		 M36,31.793H11c-0.553,0-1-0.448-1-1s0.447-1,1-1h25c0.553,0,1,0.448,1,1S36.553,31.793,36,31.793z" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-header"></div>
+            <div class="chat-messages">
+            </div>
+            <button id="chat-go-to-bottom">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    class="icon-md text-token-text-primary">
+                    <path
+                        d="M12 21C11.7348 21 11.4804 20.8946 11.2929 20.7071L4.29289 13.7071C3.90237 13.3166 3.90237 12.6834 4.29289 12.2929C4.68342 11.9024 5.31658 11.9024 5.70711 12.2929L11 17.5858V4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4V17.5858L18.2929 12.2929C18.6834 11.9024 19.3166 11.9024 19.7071 12.2929C20.0976 12.6834 20.0976 13.3166 19.7071 13.7071L12.7071 20.7071C12.5196 20.8946 12.2652 21 12 21Z"
+                        fill="rgb(28, 24, 25)"></path>
+                </svg>
+            </button>
+            <div class="chat-bottom"></div>
+            <div class="chat-input-wrapper">
+                <textarea rows="1" placeholder="Nachricht senden..." id="chat-input"></textarea>
+                <div class="chat-actions">
+                    <button aria-label="Senden Sie eine Nachricht…" id="chat-send" aria-disabled="false" tabindex="0">
+                        <svg width="16" height="16">
+                            <path fill="#fff"
+                                d="M7.4 1.899a.85.85 0 0 1 1.201 0l4.5 4.5A.85.85 0 1 1 11.9 7.6L8.85 4.552V13.5a.85.85 0 0 1-1.7 0V4.552L4.101 7.601A.85.85 0 1 1 2.9 6.399z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', path='/chat-widget/chat-widget.js') }}"></script>
+</body>
+
+</html>

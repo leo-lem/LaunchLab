@@ -6,3 +6,8 @@
 
 # Xcode
 *.xcuserdatad
+
+# python
+.idea/
+.venv/
+__pycache__/
