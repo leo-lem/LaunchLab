@@ -1,8 +1,66 @@
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>LaunchLab</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/output.css" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>LaunchLab Marketing Website</h1>
+
+    <nav class="w-full px-10 py-6 flex justify-between bg-blue-600 text-white fixed top-0 left-0 right-0 shadow-md">
+        <a href="/" class="text-3xl font-bold">LaunchLab</a>
+        <ul class="flex gap-4 items-center">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#trailer">Trailer</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#team">Our Team</a></li>
+        </ul>
+    </nav>
+
+    <section class="w-full px-10 py-6 h-screen grid grid-cols-2 items-center justify-center">
+        <div class="text-black">
+            <h1>Welcome to LaunchLab</h1>
+            <p>Your one-stop solution for all your space travel needs</p>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-8">
+            <img src="../static/images/rocket.png" alt="Rocket" class="w-1/4">
+        </div>
+    </section>
+
+    <footer class="w-full px-10 py-6 grid grid-cols-3 justify-center bg-slate-800 text-white gap-16">
+        <div class="flex flex-col">
+            <div class="text-lg font-bold pb-2">About this Project</div>
+            <div class="text-md">This is a university project for a FAKE application. We make no claims of copyright on
+                the names or images.</div>
+        </div>
+        <div class="flex flex-col">
+            <div class="text-lg font-bold pb-2">Important Links</div>
+            <ul>
+                <li><a href="https://mast.informatik.uni-hamburg.de/mlab/">M-Lab Home Page</a></li>
+                <li><a
+                        href="https://www.uni-hamburg.de/exzellenz/fuenf-zentrale-themen/transfer/transferagentur.html">Transferagentur</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex items-center h-full">
+            <img src="../static/images/transferagentur.png" alt="LaunchLab Logo" class="w-72">
+        </div>
+    </footer>
+
 </body>
+
 </html>
