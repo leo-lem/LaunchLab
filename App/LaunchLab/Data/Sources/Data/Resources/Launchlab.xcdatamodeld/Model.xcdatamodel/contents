@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24B5035e" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Module" representedClassName="Module" syncable="YES">
+        <attribute name="collectableImageString" optional="YES" attributeType="String"/>
+        <attribute name="currentPageIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="moduleDescription" optional="YES" attributeType="String"/>
+        <attribute name="moduleName" optional="YES" attributeType="String"/>
+        <attribute name="pathIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planetImageString" optional="YES" attributeType="String"/>
+        <relationship name="pageContent" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModulePageContent" inverseName="module" inverseEntity="ModulePageContent"/>
+    </entity>
+    <entity name="ModulePageContent" representedClassName="ModulePageContent" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="infoText" optional="YES" attributeType="String"/>
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="userAnswer" optional="YES" attributeType="String"/>
+        <relationship name="module" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Module" inverseName="pageContent" inverseEntity="Module"/>
+    </entity>
+</model>

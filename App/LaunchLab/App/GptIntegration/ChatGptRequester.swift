@@ -1,7 +1,7 @@
 //
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
-// swiftlint:disable force_unwrapping
+// swiftlint:disable force_unwrapping opening_brace
 
 import Foundation
 import Styleguide

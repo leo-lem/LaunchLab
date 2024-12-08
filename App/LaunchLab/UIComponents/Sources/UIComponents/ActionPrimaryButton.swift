@@ -5,6 +5,8 @@
 import SwiftUI
 
 public struct ActionPrimaryButton: View {
+  @Environment(\.colorScheme) var colorScheme
+
   private let isClickable: Bool
   private let title: String
   private let action: () -> Void
@@ -26,7 +28,10 @@ public struct ActionPrimaryButton: View {
           .frame(width: max(geometry.size.width - 40, 200))
           .background(
             RoundedRectangle(cornerRadius: 40)
-              .fill(isClickable ? Color(uiColor: .secondarySystemGroupedBackground) : .gray)
+              .fill(
+                isClickable ? Color(uiColor: colorScheme == .dark ? .secondarySystemGroupedBackground : .blue)
+                  : .gray
+              )
           )
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)

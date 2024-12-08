@@ -1,33 +1,86 @@
 //
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
+// swiftlint: disable let_var_whitespace
 
+import Data
 import Styleguide
 import SwiftfulRouting
 import SwiftUI
-import UIComponents
 
 struct HomeScreen: View {
-  @State private var showOnboarding = true
+  @AppStorage("showOnboarding") private var showOnboarding = true
+
+  @FetchRequest(
+    entity: Module.entity(),
+    sortDescriptors: [NSSortDescriptor(keyPath: \Module.pathIndex, ascending: true)]
+  ) var modules: FetchedResults<Module>
 
   var body: some View {
-    RouterView { _ in
-      VStack {
-        Image(systemName: "globe")
-          .imageScale(.large)
-          .foregroundStyle(.tint)
-
-        ChatView()
+    RouterView { router in
+      ZStack {
+        LearningPath(modules: modules, router: router)
+        topButton(router)
       }
       .preferredColorScheme(.dark)
       .fullScreenCover(isPresented: $showOnboarding) {
         OnboardingWelcomeView(showOnboarding: $showOnboarding)
       }
       .task {
-              let requester = ChatGPTRequester()
-              print(await requester.sendMessage("What's up?") ?? "failed")
-            }
-
+        let requester = ChatGPTRequester()
+        print(await requester.sendMessage("What's up?") ?? "failed")
+      }
     }
   }
+
+  private func topButton(_ router: AnyRouter) -> some View {
+    VStack(alignment: .leading) {
+      Text(getModuleCompletedText())
+        .foregroundStyle(.gray)
+        .font(.subheadline)
+
+      Text("Modules")
+        .foregroundStyle(.black)
+        .font(.headline)
+        .bold()
+    }
+    .padding(.horizontal, 40)
+    .frame(maxWidth: .infinity, alignment: .leading)
+    .background(topTextBackground)
+    .padding(.top, 20)
+    .frame(maxHeight: .infinity, alignment: .top)
+    .onTapGesture {
+      router.showScreen(.sheet) { _ in
+        Text("")
+      }
+    }
+  }
+
+  private var topTextBackground: some View {
+    RoundedRectangle(cornerRadius: 16)
+      .padding(.horizontal, 10)
+      .foregroundStyle(
+        LinearGradient(
+          gradient: Gradient(colors: [
+            Color(red: 248 / 255, green: 227 / 255, blue: 206 / 255),
+            Color(red: 228 / 255, green: 183 / 255, blue: 181 / 255)
+          ]),
+          startPoint: .top,
+          endPoint: .bottom
+        )
+      )
+      .frame(width: 400, height: 75)
+      .shadow(radius: 3, x: 3, y: 5)
+  }
+
+  private func getModuleCompletedText() -> String {
+    let totalModules = modules.count
+    let completedModules = modules.filter { $0.isCompleted }.count
+
+    return "\(completedModules)/\(totalModules) completed"
+  }
+}
+
+#Preview {
+  HomeScreen()
 }

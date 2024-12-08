@@ -4,20 +4,26 @@
 import PackageDescription
 
 let package = Package(
-  name: "LLExtensions",
+  name: "Data",
   defaultLocalization: "en",
   platforms: [.iOS(.v17)],
   products: [
     .library(
-      name: "LLExtensions",
-      targets: ["LLExtensions"]
+      name: "Data",
+      targets: ["Data"]
     )
   ],
-  dependencies: [],
+  dependencies: [
+    .package(path: "LLExtensions"),
+    .package(path: "Styleguide")
+  ],
   targets: [
     .target(
-      name: "LLExtensions",
-      dependencies: []
+      name: "Data",
+      dependencies: [
+        "LLExtensions",
+        "Styleguide"
+      ]
     )
   ]
 )
