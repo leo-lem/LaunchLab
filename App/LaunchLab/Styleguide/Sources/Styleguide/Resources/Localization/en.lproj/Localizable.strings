@@ -31,3 +31,21 @@
 "goals_subtitle" = "Wähle, was dir am wichtigsten ist.";
 
 "question_value_of %@ %@" = "Frage %@ von %@";
+
+"error_occured" = "Es ist ein Fehler aufgetreten";
+"configure_mail_app" = "Bitte richte die Mail-App auf deinem Gerät ein.";
+"hello %@" = "Hello, %@";
+"launching_good_way" = "Du bist auf einem guten Weg, dein Startup zu starten!";
+"your_state" = "Dein Status";
+"modules_status" = "Modul Status";
+"your_answers" = "Deine Antworten";
+"edit_your_answers" = "Bearbeite deine Antworten";
+"pitch_deck" = "Pitch Deck";
+"generate_pitch_deck" = "Generiere dein Pitch Deck, wenn du alle Module abgeschlossen hast.";
+"generate" = "Generieren";
+"general" = "Allgemein";
+"privacy_policy" = "Datenschutzerklärung";
+"support_and_feedback" = "Support & Feedback";
+"support" = "Support";
+"Feedback" = "Feedback";
+"modules_completed %@ %@" = "%@/%@ abgeschlossen";

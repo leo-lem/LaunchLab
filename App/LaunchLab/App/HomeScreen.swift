@@ -50,9 +50,14 @@ struct HomeScreen: View {
     .padding(.top, 20)
     .frame(maxHeight: .infinity, alignment: .top)
     .onTapGesture {
-      router.showScreen(.sheet) { _ in
-        Text("")
-      }
+      router
+        .showResizableSheet(
+          sheetDetents: [.large, .medium],
+          selection: .constant(.large),
+          showDragIndicator: true
+        ) { _ in
+          MenuScreen(modules: Array(modules))
+        }
     }
   }
 
@@ -79,8 +84,4 @@ struct HomeScreen: View {
 
     return "\(completedModules)/\(totalModules) completed"
   }
-}
-
-#Preview {
-  HomeScreen()
 }

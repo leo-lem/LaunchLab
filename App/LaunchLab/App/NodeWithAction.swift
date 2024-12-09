@@ -106,7 +106,7 @@ struct NodeWithAction: View {
   }
 
   private func getColorForModule(_ module: Module) -> (Color, Color) {
-    return switch module.pathIndex {
+    switch module.pathIndex {
     case 0:
       (.blue, .purple)
     case 1:
