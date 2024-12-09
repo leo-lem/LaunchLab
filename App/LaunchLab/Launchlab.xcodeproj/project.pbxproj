@@ -286,8 +286,7 @@
 				7A184FB82D02D37700F87E97 /* MenuScreen */,
 				7AC3A5D22CF997FF00DDC03A /* Helper */,
 				7AC3A5CF2CF997F500DDC03A /* Data */,
-				AF5666442CFDE44B00E9A517 /* GptIntegration */,
-				AF225E8E2CF4B94B0067FA4B /* ChatOverlay */,
+				AF225E8E2CF4B94B0067FA4B /* Chat */,
 				7A750CA12CEA00C8005EA71B /* Extensions */,
 				7A750C922CE93DA1005EA71B /* Onboarding */,
 				7AC514172CD3F6E800F4E6AA /* HomeScreen.swift */,
@@ -320,20 +319,13 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		AF225E8E2CF4B94B0067FA4B /* ChatOverlay */ = {
-			isa = PBXGroup;
-			children = (
-				AF225E932CF4B9780067FA4B /* ChatView.swift */,
-			);
-			path = ChatOverlay;
-			sourceTree = "<group>";
-		};
-		AF5666442CFDE44B00E9A517 /* GptIntegration */ = {
+		AF225E8E2CF4B94B0067FA4B /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				AF5666452CFDE46200E9A517 /* ChatGptRequester.swift */,
+				AF225E932CF4B9780067FA4B /* ChatView.swift */,
 			);
-			path = GptIntegration;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

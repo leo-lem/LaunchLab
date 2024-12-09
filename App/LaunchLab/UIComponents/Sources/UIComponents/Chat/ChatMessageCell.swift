@@ -6,9 +6,11 @@ import LLExtensions
 import SwiftUI
 
 public struct ChatMessageCell: View {
+  private let message: String
   private let isFromCurrentUser: Bool
 
-  public init(isFromCurrentUser: Bool) {
+  public init(_ message: String, isFromCurrentUser: Bool) {
+    self.message = message
     self.isFromCurrentUser = isFromCurrentUser
   }
 
@@ -17,7 +19,7 @@ public struct ChatMessageCell: View {
       if isFromCurrentUser {
         Spacer()
 
-        Text("This is a test message for now")
+        Text(message)
           .font(.subheadline)
           .padding(15)
           .background(Color(hex: "#B8C9CF"))
@@ -30,13 +32,19 @@ public struct ChatMessageCell: View {
             .fill(Color.gray)
             .frame(width: 30, height: 30)
 
-          Text("This is a test message for now")
-            .font(.subheadline)
-            .padding(15)
-            .background(Color(hex: "#D9D9D9"))
-            .foregroundColor(.black)
-            .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
-            .frame(maxWidth: UIScreen.main.bounds.width / 1.75, alignment: .leading)
+          Group {
+            if message.isEmpty {
+              LoadingDotsView()
+            } else {
+              Text(message)
+            }
+          }
+          .font(.subheadline)
+          .padding(15)
+          .background(Color(hex: "#D9D9D9"))
+          .foregroundColor(.black)
+          .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
+          .frame(maxWidth: UIScreen.main.bounds.width / 1.75, alignment: .leading)
 
           Spacer()
         }
