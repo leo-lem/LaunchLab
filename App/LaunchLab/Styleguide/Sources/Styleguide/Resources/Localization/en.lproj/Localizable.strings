@@ -1,6 +1,7 @@
-"common_continue" = "Weiter";
-"common_placeholder" = "Platzhalter";
-"common_start" = "Starten";
+"common_continue" = "Continue";
+"common_placeholder" = "Placeholder";
+"common_start" = "Begin";
+"common_complete" = "Complete";
 
 "api_key" = "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";
 "launch_screen_title" = "Willkommen bei Launchlab 🚀";

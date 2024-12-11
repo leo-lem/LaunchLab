@@ -1,37 +1,29 @@
 //
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
-// swiftlint: disable let_var_whitespace
 
 import Data
 import Styleguide
-import SwiftfulRouting
 import SwiftUI
 
 struct HomeScreen: View {
-  @AppStorage("showOnboarding") private var showOnboarding = true
+  var body: some View {
+    ZStack {
+      LearningPath(modules: modules.sorted { $0.index < $1.index })
+      topButton
+    }
+    .preferredColorScheme(.dark)
+  }
 
   @FetchRequest(
     entity: Module.entity(),
-    sortDescriptors: [NSSortDescriptor(keyPath: \Module.pathIndex, ascending: true)]
-  ) var modules: FetchedResults<Module>
+    sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: true)]
+  ) private var modules: FetchedResults<Module>
+  @Environment(\.router) private var router
 
-  var body: some View {
-    RouterView { router in
-      ZStack {
-        LearningPath(modules: modules, router: router)
-        topButton(router)
-      }
-      .preferredColorScheme(.dark)
-      .fullScreenCover(isPresented: $showOnboarding) {
-        OnboardingWelcomeView(showOnboarding: $showOnboarding)
-      }
-    }
-  }
-
-  private func topButton(_ router: AnyRouter) -> some View {
+  private var topButton: some View {
     VStack(alignment: .leading) {
-      Text(getModuleCompletedText())
+      Text("\(modules.filter(\.isCompleted).count)/\(modules.count) completed")
         .foregroundStyle(.gray)
         .font(.subheadline)
 
@@ -73,11 +65,8 @@ struct HomeScreen: View {
       .frame(width: 400, height: 75)
       .shadow(radius: 3, x: 3, y: 5)
   }
+}
 
-  private func getModuleCompletedText() -> String {
-    let totalModules = modules.count
-    let completedModules = modules.filter { $0.isCompleted }.count
-
-    return "\(completedModules)/\(totalModules) completed"
-  }
+#Preview {
+  HomeScreen()
 }

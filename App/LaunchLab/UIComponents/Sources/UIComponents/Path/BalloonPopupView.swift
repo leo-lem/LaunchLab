@@ -6,21 +6,24 @@ import Styleguide
 import SwiftUI
 
 public struct BalloonPopupView: View {
-  private let title: String
-  private let progress: String
-  private let isTriangleOnTop: Bool
-  private let isButtonDisabled: Bool
-  private let buttonAction: () -> Void
+  let title: String
+  let progress: String
+  let gradient: LinearGradient
+  let isTriangleOnTop: Bool
+  let isButtonDisabled: Bool
+  let buttonAction: () -> Void
 
   public init(
     title: String,
     progress: String,
+    gradient: LinearGradient,
     isTriangleOnTop: Bool,
     isButtonDisabled: Bool,
     buttonAction: @escaping () -> Void
   ) {
     self.title = title
     self.progress = progress
+    self.gradient = gradient
     self.isTriangleOnTop = isTriangleOnTop
     self.isButtonDisabled = isButtonDisabled
     self.buttonAction = buttonAction
@@ -35,7 +38,8 @@ public struct BalloonPopupView: View {
     .padding()
     .background(
       BalloonBackground(isTriangleOnTop: isTriangleOnTop)
-        .fill(Color.pink)
+        .fill(gradient)
+        .padding(.horizontal, 5)
         .shadow(radius: 4)
     )
     .frame(maxWidth: 200)

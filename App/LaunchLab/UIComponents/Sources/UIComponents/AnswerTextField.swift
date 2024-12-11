@@ -8,9 +8,15 @@ import SwiftUI
 public struct AnswerTextField: View {
   @Binding var text: String
   @State private var textFieldHeight: CGFloat = 40
-  private var placeholder: String
+  private var placeholder: AttributedString
 
   public init(text: Binding<String>, textFieldHeight: CGFloat = 40, placeholder: String) {
+    self._text = text
+    self.textFieldHeight = textFieldHeight
+    self.placeholder = AttributedString(stringLiteral: placeholder)
+  }
+
+  public init(text: Binding<String>, textFieldHeight: CGFloat = 40, placeholder: AttributedString) {
     self._text = text
     self.textFieldHeight = textFieldHeight
     self.placeholder = placeholder
@@ -19,7 +25,6 @@ public struct AnswerTextField: View {
   public var body: some View {
     VStack {
       Text(placeholder)
-        .foregroundStyle(.black)
         .font(.headline)
         .foregroundStyle(.secondary)
         .frame(maxWidth: .infinity, alignment: .leading)

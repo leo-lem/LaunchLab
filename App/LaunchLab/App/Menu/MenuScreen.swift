@@ -8,7 +8,6 @@ import SwiftUI
 import UIComponents
 
 struct MenuScreen: View {
-  @StateObject private var viewModel = MenuScreenViewModel()
   let modules: [Module]
 
   var body: some View {
@@ -33,6 +32,8 @@ struct MenuScreen: View {
       )
     }
   }
+
+  @StateObject private var viewModel = MenuScreenViewModel()
 
   private var userTopText: some View {
     VStack {

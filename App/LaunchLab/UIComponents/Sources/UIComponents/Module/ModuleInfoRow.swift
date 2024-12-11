@@ -6,12 +6,12 @@ import SwiftUI
 
 public struct ModuleInfoRow: View {
   private let title: String
-  private let subtitle: String
+  private let content: String
   private let image: Image
 
-  public init(title: String, subtitle: String, image: Image) {
+  public init(title: String, content: String, image: Image) {
     self.title = title
-    self.subtitle = subtitle
+    self.content = content
     self.image = image
   }
 
@@ -27,9 +27,16 @@ public struct ModuleInfoRow: View {
           .font(.headline)
           .bold()
 
-        Text(subtitle)
-          .font(.subheadline)
-          .foregroundStyle(.secondary)
+        Group {
+          if let markdown = try? AttributedString(markdown: content) {
+            Text(markdown)
+          } else {
+            Text(content)
+          }
+        }
+        .lineLimit(1)
+        .font(.subheadline)
+        .foregroundStyle(.secondary)
       }
     }
     .frame(maxWidth: .infinity, alignment: .leading)

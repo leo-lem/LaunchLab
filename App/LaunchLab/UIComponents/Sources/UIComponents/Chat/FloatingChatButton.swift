@@ -2,17 +2,17 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import SwiftUI
 import SwiftfulRouting
+import SwiftUI
 
 public struct FloatingChatButton: View {
     private let action: () -> Void
     private let size: CGFloat = 60
-    
+
     public init(action: @escaping () -> Void) {
         self.action = action
     }
-    
+
     public var body: some View {
         Button(action: action) {
             Image(systemName: "ellipsis.message")

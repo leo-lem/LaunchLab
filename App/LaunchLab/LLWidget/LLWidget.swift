@@ -45,8 +45,8 @@ struct LLWidgetEntryView: View {
     let moduleCount = entry.configuration.moduleCount
 
     self.entry = entry
-    self.completedCount = completedCount
-    self.moduleCount = moduleCount
+    self.completedCount = completedCount ?? 0
+    self.moduleCount = moduleCount ?? 0
 
     self.modulePercentage = 28
   }

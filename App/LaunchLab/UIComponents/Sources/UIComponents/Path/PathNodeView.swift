@@ -5,14 +5,12 @@
 import SwiftUI
 
 public struct PathNodeView: View {
-  private let gradientStartColor: Color
-  private let gradientEndColor: Color
-  private let planetImageString: String
-  private let onClick: () -> Void
+  let gradient: LinearGradient
+  let planetImageString: String
+  let onClick: () -> Void
 
-  public init(gradientStartColor: Color, gradientEndColor: Color, planetImageString: String, onClick: @escaping () -> Void) {
-    self.gradientStartColor = gradientStartColor
-    self.gradientEndColor = gradientEndColor
+  public init(gradient: LinearGradient, planetImageString: String, onClick: @escaping () -> Void) {
+    self.gradient = gradient
     self.planetImageString = planetImageString
     self.onClick = onClick
   }
@@ -20,18 +18,7 @@ public struct PathNodeView: View {
   public var body: some View {
     Button(action: onClick) {
       RoundedRectangle(cornerRadius: 24)
-        .fill(
-          LinearGradient(
-            gradient: Gradient(
-              colors: [
-                gradientStartColor,
-                gradientEndColor
-              ]
-            ),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-          )
-        )
+        .fill(gradient)
         .frame(width: 100, height: 100)
         .overlay {
           Image(planetImageString)

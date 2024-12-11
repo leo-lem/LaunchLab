@@ -12,10 +12,10 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
   static var description: IntentDescription { "This is an example widget." }
 
   @Parameter(title: "CompletedModules")
-  var completedModules: Int
+  var completedModules: Int?
 
   @Parameter(title: "ModuleCount")
-  var moduleCount: Int
+  var moduleCount: Int?
 
   init(completedModules: Int, moduleCount: Int) {
     let fetchResult = try! CoreDataStack.shared.mainContext.fetch(Module.fetchRequest())

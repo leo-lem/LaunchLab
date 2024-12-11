@@ -75,7 +75,10 @@ extension CoreDataStack {
       return
     }
 
-    guard let url = Bundle.main.url(forResource: "Modules", withExtension: "json"),
+    guard let url = Bundle.main.url(
+      forResource: "Modules-\(Bundle.main.preferredLocalizations.first ?? "en")",
+      withExtension: "json"
+    ),
           let data = try? Data(contentsOf: url)
     else {
       print("Failed to load Modules.json")
@@ -84,9 +87,10 @@ extension CoreDataStack {
 
     let decoder = JSONDecoder()
     do {
-      let moduleDTOs = try decoder.decode([ModuleDTO].self, from: data)
-      for moduleDTO in moduleDTOs.sorted(by: { $0.pathIndex < $1.pathIndex }) {
-        createModule(from: moduleDTO)
+      let dtos = try decoder.decode([Module.DTO].self, from: data)
+      for dto in dtos.sorted(by: { $0.index < $1.index }) {
+        _ = Module(dto)
+        try? CoreDataStack.shared.mainContext.save()
       }
 
       CoreDataStack.shared.save()
@@ -94,15 +98,5 @@ extension CoreDataStack {
     } catch {
       print("Failed to decode Modules.json: \(error.localizedDescription)")
     }
-  }
-
-  private func createModule(from dto: ModuleDTO) {
-    let module = Module.createModule(from: dto)
-
-    for codableContent in dto.pageContent {
-      ModulePageContent.createModulePageContent(from: codableContent, module: module)
-    }
-
-    try? CoreDataStack.shared.mainContext.save()
   }
 }

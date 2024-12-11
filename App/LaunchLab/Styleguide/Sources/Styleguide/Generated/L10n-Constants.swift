@@ -12,12 +12,14 @@ import Foundation
 public enum L10n {
   /// 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
   public static let apiKey = L10n.tr("Localizable", "api_key", fallback: "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")
-  /// Weiter
-  public static let commonContinue = L10n.tr("Localizable", "common_continue", fallback: "Weiter")
-  /// Platzhalter
-  public static let commonPlaceholder = L10n.tr("Localizable", "common_placeholder", fallback: "Platzhalter")
-  /// Starten
-  public static let commonStart = L10n.tr("Localizable", "common_start", fallback: "Starten")
+  /// Complete
+  public static let commonComplete = L10n.tr("Localizable", "common_complete", fallback: "Complete")
+  /// Continue
+  public static let commonContinue = L10n.tr("Localizable", "common_continue", fallback: "Continue")
+  /// Placeholder
+  public static let commonPlaceholder = L10n.tr("Localizable", "common_placeholder", fallback: "Placeholder")
+  /// Begin
+  public static let commonStart = L10n.tr("Localizable", "common_start", fallback: "Begin")
   /// Bitte richte die Mail-App auf deinem Gerät ein.
   public static let configureMailApp = L10n.tr("Localizable", "configure_mail_app", fallback: "Bitte richte die Mail-App auf deinem Gerät ein.")
   /// Ich habe eine Idee und möchte sie umsetzen

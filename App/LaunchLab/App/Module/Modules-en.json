@@ -1,0 +1,216 @@
+[
+  {
+    "index": 0,
+    "title": "Idea Development",
+    "desc": "Learn to transform raw ideas into actionable business concepts.",
+    "image": "planet1",
+    "collectable": "collectable1",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Brainstorming Techniques",
+        "content": "Explore methods to generate and refine innovative ideas.\nThe best ideas emerge when you think freely and creatively. Use brainstorming techniques such as:\n\n- **Mind Mapping**: Write your central theme in the middle and expand it with associations.\n- **Thinking Hats**: View your problem from different perspectives (e.g., positive, critical, emotional).\n- **Reverse Thinking**: Consider how you would worsen the problem, then find solutions to achieve the opposite. ",
+        "image": "lightbulb.circle.fill",
+        "type": "info"
+      },
+      {
+        "title": "Brainstorming Practice",
+        "content": "Create a mind map for a problem you observe. Write down at least five possible ideas to solve it.",
+        "image": "lightbulb.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Problem Solving",
+        "content": "Identify real-world problems and develop solutions that add value. A problem is the starting point for every great business idea. Use the 5-Why method to find the root cause:\n\n1. Why does the problem occur?\n2. Why is it relevant?\n3. Find the core cause and consider: How could your solution look?",
+        "image": "wand.and.rays",
+        "type": "info"
+      },
+      {
+        "title": "Problem Solving Practice",
+        "content": "Formulate the problem you want to solve in one sentence. Describe your solution idea in two sentences.",
+        "image": "questionmark.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Vision and Goals",
+        "content": "Define a clear vision and achievable goals for your startup. Your vision gives your startup direction, and your goals make it actionable. Consider:\n\n- **Vision**: What do you want to achieve with your startup?\n- **Goals**: What concrete steps will lead you there?",
+        "image": "target",
+        "type": "info"
+      },
+      {
+        "title": "Vision and Goals Practice",
+        "content": "Formulate your startup's vision in one sentence. Write down three specific goals you aim to achieve within the next six months.",
+        "image": "target",
+        "type": "textfield"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "title": "Market Analysis",
+    "desc": "Understand your audience, competitors, and market trends.",
+    "image": "planet2",
+    "collectable": "collectable2",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Target Audience",
+        "content": "Identify who your customers are and their buying behaviors.",
+        "image": "person.crop.circle.badge.typemark",
+        "type": "info"
+      },
+      {
+        "title": "Competitor Landscape",
+        "content": "Analyze competitors’ strengths and weaknesses.",
+        "image": "chart.bar.fill",
+        "type": "info"
+      },
+      {
+        "title": "Market Trends",
+        "content": "Spot trends to align your offerings with emerging demands.",
+        "image": "waveform.path.ecg",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "title": "Funding Strategies",
+    "desc": "Explore funding options to secure financial resources.",
+    "image": "planet3",
+    "collectable": "collectable3",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Investor Pitching",
+        "content": "## Learn how to craft a compelling pitch for potential investors.\nWhat makes your pitch stand out?",
+        "image": "person.wave.2.fill",
+        "type": "info"
+      },
+      {
+        "title": "Bootstrapping",
+        "content": "Explore how to self-fund your startup effectively.",
+        "image": "dollarsign.circle.fill",
+        "type": "info"
+      },
+      {
+        "title": "Crowdfunding",
+        "content": "Leverage platforms to raise funds from the public.",
+        "image": "person.3.sequence.fill",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "title": "Product Development",
+    "desc": "Build and refine your product to meet customer needs.",
+    "image": "planet4",
+    "collectable": "collectable1",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Prototype Design",
+        "content": "Create a prototype to test your product concept.\nWhat features will you test in the prototype?",
+        "image": "cube.box.fill",
+        "type": "info"
+      },
+      {
+        "title": "Customer Feedback",
+        "content": "Gather feedback from users to improve your product.\nWhat feedback did you receive from your target group?",
+        "image": "bubble.left.and.bubble.right.fill",
+        "type": "info"
+      },
+      {
+        "title": "Iterative Improvements",
+        "content": "Continuously refine your product based on customer needs.",
+        "image": "arrow.triangle.2.circlepath",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "title": "Marketing and Outreach",
+    "desc": "Learn to build a brand and engage with your audience.",
+    "image": "planet5",
+    "collectable": "collectable2",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Building a Brand",
+        "content": "Create a unique brand identity for your startup.\nWhat makes your brand unique?",
+        "image": "paintbrush.pointed.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Social Media Strategy",
+        "content": "Plan your social media campaigns to engage your audience.\nWhich social media platform will you focus on?",
+        "image": "network",
+        "type": "textfield"
+      },
+      {
+        "title": "Email Campaigns",
+        "content": "Use targeted email campaigns to convert leads.",
+        "image": "envelope.fill",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "title": "Team Building",
+    "desc": "Create a strong team with clear roles and a shared culture.",
+    "progress": 0,
+    "index": 5,
+    "collectable": "collectable3",
+    "image": "planet6",
+    "content": [
+      {
+        "title": "Hiring the Right People",
+        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
+        "image": "person.fill.checkmark",
+        "type": "info"
+      },
+      {
+        "title": "Defining Roles",
+        "content": "Assign clear roles and responsibilities to your team.",
+        "image": "rectangle.stack.person.crop.fill",
+        "type": "info"
+      },
+      {
+        "title": "Building Culture",
+        "content": "Create a positive and productive team culture.",
+        "image": "hands.sparkles.fill",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "title": "Scaling Your Business",
+    "desc": "Plan and execute strategies for business growth.",
+    "image": "planet7",
+    "collectable": "collectable1",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Expanding Operations",
+        "content": "Plan for scaling your operations as demand grows.",
+        "image": "gearshape.2.fill",
+        "type": "info"
+      },
+      {
+        "title": "Building Partnerships",
+        "content": "Collaborate with other businesses to expand reach.",
+        "image": "person.2.fill",
+        "type": "info"
+      },
+      {
+        "title": "Entering New Markets",
+        "content": "Identify opportunities to expand into new regions.",
+        "image": "globe",
+        "type": "info"
+      }
+    ]
+  }
+]
