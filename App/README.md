@@ -28,22 +28,27 @@
 
 ## Introduction
 
-AI consultant for aspiring entrepreneurs. [...]
+LaunchLab is your startup companion. From zero to your own startup. We guide you along your journey.
 
-This application was created during the M-Lab course 2024 at the University of Hamburg for the client Transferagentur. [...]
+It's main features are:
+- Your individual learning path journey to guide you through all the steps from refining your idea to founding your company.
+- Engaging, interactive modules to give you insights and keep you on track.
+- Integrated AI Chatpreneur for any question you might have.
+
+This application was created during the M-Lab course 2024 at the University of Hamburg for the client Transferagentur. Our client wanted to facilitate the startup founding consultation process. So we built LaunchLab and Chatpreneur. While Chatpreneur is designed for lightweight startup questions, LaunchLab guides you through the journey from nothing to founding.
 
 <details>
 <summary>To-Dos</summary>
 
-- [ ] Describe __what__ application you created and explain its main features (= implemented functional requirements) and qualities (= implemented non-functional requirements).
+- [x] Describe __what__ application you created and explain its main features (= implemented functional requirements) and qualities (= implemented non-functional requirements).
   Example:
   We present a communication app for iOS that enables visitors of a fair to network and exchange contact information with each other.
   The app's main features are: [...] The app's main qualities are: [...]
-- [ ] Describe __why__ you created this application.
+- [x] Describe __why__ you created this application.
   Example: This application was created during the M-Lab course 2020 at Universität Hamburg for the client Hamburg Messe.
   The client required an initial prototype to facilitate the communication and exchange of fair visitors. [...]
 - [ ] Include (a link to) your trailer here.
-- [ ] Optionally, you can place copies of your RAD and SDD artifacts in the __media__ folder and add links to them in your description.
+- [x] Optionally, you can place copies of your RAD and SDD artifacts in the __media__ folder and add links to them in your description.
 
 </details>
 
@@ -86,9 +91,9 @@ The steps marked [Real Device] will be required if you want to run the app on a 
 
 ### How To Run
 
-1. [Real Device] In `EntrepreneurChat > Signing & Capabilities`
+1. [Real Device] In `LaunchLab > Signing & Capabilities`
   - change the `Team` to AppleID-linked personal team.
-  - change the `Bundle Identifier` to something unique (`de.<your-name>.entrepreneurchat` should work).
+  - change the `Bundle Identifier` to something unique (`de.<your-name>.launchlab` should work).
 2. Select an appropriate simulator or physical device to run the app on.
 3. Select `Product > Run` in the menu bar.
 
