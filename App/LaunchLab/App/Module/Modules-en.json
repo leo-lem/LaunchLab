@@ -1,6 +1,6 @@
 [
   {
-    "index": 0,
+    "index": 6,
     "title": "Idea Development",
     "desc": "Learn to transform raw ideas into actionable business concepts.",
     "image": "planet1",
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "index": 1,
+    "index": 5,
     "title": "Market Analysis",
     "desc": "Understand your audience, competitors, and market trends.",
     "image": "planet2",
@@ -74,7 +74,7 @@
     ]
   },
   {
-    "index": 2,
+    "index": 4,
     "title": "Funding Strategies",
     "desc": "Explore funding options to secure financial resources.",
     "image": "planet3",
@@ -130,7 +130,7 @@
     ]
   },
   {
-    "index": 4,
+    "index": 2,
     "title": "Marketing and Outreach",
     "desc": "Learn to build a brand and engage with your audience.",
     "image": "planet5",
@@ -161,7 +161,7 @@
     "title": "Team Building",
     "desc": "Create a strong team with clear roles and a shared culture.",
     "progress": 0,
-    "index": 5,
+    "index": 1,
     "collectable": "collectable3",
     "image": "planet6",
     "content": [
@@ -186,7 +186,7 @@
     ]
   },
   {
-    "index": 6,
+    "index": 0,
     "title": "Scaling Your Business",
     "desc": "Plan and execute strategies for business growth.",
     "image": "planet7",

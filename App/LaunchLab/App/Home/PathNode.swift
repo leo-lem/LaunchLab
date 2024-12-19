@@ -9,6 +9,10 @@ import SwiftUI
 import UIComponents
 
 struct PathNode: View {
+  @Environment(\.router) private var router
+  @FetchRequest(entity: Module.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: true)])
+  private var modules: FetchedResults<Module>
+
   @Binding var infoModalIndex: Int
   let module: Module
 
@@ -19,12 +23,6 @@ struct PathNode: View {
       trailingRocketCollectable
     }
   }
-
-  @FetchRequest(
-    entity: Module.entity(),
-    sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: true)]
-  ) private var modules: FetchedResults<Module>
-  @Environment(\.router) private var router
 
   private var nodeAndPath: some View {
     PathNodeView(gradient: module.gradient, planetImageString: module.image) {
@@ -77,8 +75,8 @@ struct PathNode: View {
   }
 
   private func isButtonEnabled() -> Bool {
-    module.index == 0 || modules
-      .first { $0.index == module.index - 1 }?.isCompleted ?? false
+    module.index == 6 || modules
+      .first { $0.index == module.index + 1 }?.isCompleted ?? false
   }
 
   enum PositionHelper {
