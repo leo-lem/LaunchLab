@@ -7,19 +7,18 @@ import Styleguide
 import SwiftUI
 
 struct HomeScreen: View {
+  @Environment(\.router) private var router
+
+  @FetchRequest(entity: Module.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: false)])
+  private var modules: FetchedResults<Module>
+
   var body: some View {
     ZStack {
-      LearningPath(modules: modules.sorted { $0.index < $1.index })
+      LearningPath(modules: modules.sorted { $0.index > $1.index })
       topButton
     }
     .preferredColorScheme(.dark)
   }
-
-  @FetchRequest(
-    entity: Module.entity(),
-    sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: true)]
-  ) private var modules: FetchedResults<Module>
-  @Environment(\.router) private var router
 
   private var topButton: some View {
     VStack(alignment: .leading) {
