@@ -19,12 +19,12 @@ struct PathConnector: View {
 
         let controlPoint1 = CGPoint(
           x: (current.x + next.x) / 2 + 100,
-          y: current.y + 50
+          y: current.y + 100
         )
 
         let controlPoint2 = CGPoint(
           x: (current.x + next.x) / 2 - 100,
-          y: next.y - 50
+          y: next.y - 70
         )
 
         path.move(to: current)
@@ -33,7 +33,7 @@ struct PathConnector: View {
         context.stroke(
           path,
           with: .color(Color(hex: "#A0E2EA").opacity(module.isCompleted ? 1 : 0.2)),
-          style: StrokeStyle(lineWidth: 15, lineCap: .round, dash: [15, 40])
+          style: StrokeStyle(lineWidth: 10, lineCap: .round, dash: [15, 40])
         )
       }
     }

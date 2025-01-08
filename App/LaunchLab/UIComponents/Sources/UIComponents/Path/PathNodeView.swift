@@ -17,15 +17,10 @@ public struct PathNodeView: View {
 
   public var body: some View {
     Button(action: onClick) {
-      RoundedRectangle(cornerRadius: 24)
-        .fill(gradient)
-        .frame(width: 100, height: 100)
-        .overlay {
-          Image(planetImageString)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 100)
-        }
+      Image(planetImageString)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 100)
     }
   }
 }
