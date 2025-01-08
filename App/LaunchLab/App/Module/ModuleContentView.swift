@@ -33,8 +33,8 @@ struct ModuleContentView: View {
       markdown: content.content,
       options: .init(allowsExtendedAttributes: true, interpretedSyntax: .inlineOnlyPreservingWhitespace)
     )) ?? AttributedString(
-        stringLiteral: content.content
-      )
+      stringLiteral: content.content
+    )
   }
 }
 
