@@ -19,41 +19,17 @@ struct PathNode: View {
   var body: some View {
     ZStack {
       nodeAndPath
-      balloonPopup
       trailingRocketCollectable
     }
   }
 
   private var nodeAndPath: some View {
     PathNodeView(gradient: module.gradient, planetImageString: module.image) {
-      withAnimation {
-        infoModalIndex = infoModalIndex == module.index ? -1 : Int(module.index)
+      router.showScreen(.sheet) { _ in
+        ModuleInfo(module: module)
       }
     }
     .position(PositionHelper.position(for: Int(module.index)))
-  }
-
-  private var balloonPopup: some View {
-    Group {
-      if infoModalIndex == module.index {
-        BalloonPopupView(
-          title: module.title,
-          progress: isButtonEnabled() ? module.desc : "Locked.",
-          gradient: module.gradient,
-          isTriangleOnTop: module.index == 0,
-          isButtonDisabled: !isButtonEnabled()
-        ) {
-          router.showScreen(.sheet) { _ in
-            ModuleInfo(module: module)
-          }
-
-          infoModalIndex = -1
-        }
-        .position(PositionHelper.position(for: Int(module.index)))
-        .offset(y: module.index == 0 ? 100 : -100)
-        .padding(.bottom, module.index == 0 ? 100 : -100)
-      }
-    }
   }
 
   private var trailingRocketCollectable: some View {
@@ -62,16 +38,16 @@ struct PathNode: View {
         Image(module.collectable)
           .resizable()
           .scaledToFit()
-          .frame(width: 40)
+          .frame(maxWidth: 40, maxHeight: 100)
       } else {
         Text("?")
           .font(.largeTitle)
           .bold()
           .shadow(radius: 5, y: 3)
+          .frame(maxWidth: 40, maxHeight: 100)
       }
     }
     .position(PositionHelper.position(for: Int(module.index), reverseX: true))
-    .padding(.top, 40)
   }
 
   private func isButtonEnabled() -> Bool {

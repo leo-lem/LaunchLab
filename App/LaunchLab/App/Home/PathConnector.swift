@@ -7,6 +7,7 @@ import SwiftUI
 
 struct PathConnector: View {
   @ObservedObject var module: Module
+  let modules: [Module]
   let total: Int
 
   var body: some View {
@@ -32,7 +33,7 @@ struct PathConnector: View {
 
         context.stroke(
           path,
-          with: .color(Color(hex: "#A0E2EA").opacity(module.isCompleted ? 1 : 0.2)),
+          with: .color(Color(hex: "#A0E2EA").opacity(modules[safe: Int(module.index - 1)]?.isCompleted ?? false ? 1 : 0.2)),
           style: StrokeStyle(lineWidth: 10, lineCap: .round, dash: [15, 40])
         )
       }

@@ -7,6 +7,12 @@ import LLExtensions
 import SwiftfulRouting
 import SwiftUI
 
+public extension Collection {
+  subscript(safe index: Index) -> Element? {
+    indices.contains(index) ? self[index] : nil
+  }
+}
+
 struct LearningPath: View {
   @State private var infoModalIndex = -1
   let modules: [Module]
@@ -21,21 +27,21 @@ struct LearningPath: View {
           .padding(.top, 150)
 
         ZStack {
-          ForEach(Array(modules.enumerated()), id: \.offset) { index, module in
-            PathNode(infoModalIndex: $infoModalIndex, module: module)
+          ForEach(Array(self.modules.enumerated()), id: \.offset) { index, module in
+            PathNode(infoModalIndex: self.$infoModalIndex, module: module)
 
-            if index < modules.count - 1 {
-              PathConnector(module: modules[index + 1], total: modules.count)
-                .onTapGesture { infoModalIndex = -1 }
+            if let module = modules[safe: index + 1] {
+              PathConnector(module: module, modules: modules, total: self.modules.count)
+                .onTapGesture { self.infoModalIndex = -1 }
                 .zIndex(-1)
             }
           }
         }
-        .frame(maxWidth: .infinity, minHeight: CGFloat(modules.count * 150 + 100))
+        .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150 + 100))
         .padding(.top, 50)
       }
     }
-    .background(content: backgroundGradient)
+    .background(content: self.backgroundGradient)
     .defaultScrollAnchor(.bottom)
   }
 
