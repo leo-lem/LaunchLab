@@ -20,7 +20,7 @@ public struct PathNodeView: View {
       Image(planetImageString)
         .resizable()
         .scaledToFit()
-        .frame(width: 100)
+        .frame(maxHeight: 120)
     }
   }
 }
