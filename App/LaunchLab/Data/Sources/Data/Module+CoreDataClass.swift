@@ -14,10 +14,11 @@ public class Module: NSManagedObject {
   @NSManaged public var index: Int16
   @NSManaged public var title: String
   @NSManaged public var desc: String
+  @NSManaged public var type: String
   @NSManaged public var image: String
-  @NSManaged public var collectable: String
+  @NSManaged public var collectable: String?
   @NSManaged public var progress: Int16
-  @NSManaged public var content: [ModuleContent]
+  @NSManaged public var content: Set<ModuleContent>
 
   public var length: Int { content.count }
   public var isCompleted: Bool { progress >= length }

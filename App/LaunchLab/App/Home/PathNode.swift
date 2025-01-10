@@ -24,30 +24,32 @@ struct PathNode: View {
   }
 
   private var nodeAndPath: some View {
-    PathNodeView(gradient: module.gradient, planetImageString: module.image) {
+    PathNodeView(gradient: module.gradient, isRocketImage: module.type == "module", imageString: module.image) {
       router.showScreen(.sheet) { _ in
         ModuleInfo(module: module)
       }
     }
-    .position(PositionHelper.position(for: Int(module.index)))
+    .position(PositionHelper.position(for: Int(module.index), moduleCount: modules.count))
   }
 
   private var trailingRocketCollectable: some View {
     Group {
-      if module.isCompleted {
-        Image(module.collectable)
-          .resizable()
-          .scaledToFit()
-          .frame(maxWidth: 40, maxHeight: 100)
-      } else {
-        Text("?")
-          .font(.largeTitle)
-          .bold()
-          .shadow(radius: 5, y: 3)
-          .frame(maxWidth: 40, maxHeight: 100)
+      if let collectable = module.collectable {
+        if module.isCompleted {
+          Image(collectable)
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: 40, maxHeight: 100)
+        } else {
+          Text("?")
+            .font(.largeTitle)
+            .bold()
+            .shadow(radius: 5, y: 3)
+            .frame(maxWidth: 40, maxHeight: 100)
+        }
       }
     }
-    .position(PositionHelper.position(for: Int(module.index), reverseX: true))
+    .position(PositionHelper.position(for: Int(module.index), reverseX: true, moduleCount: modules.count))
   }
 
   private func isButtonEnabled() -> Bool {
@@ -56,7 +58,7 @@ struct PathNode: View {
   }
 
   enum PositionHelper {
-    static func position(for index: Int, reverseX: Bool = false) -> CGPoint {
+    static func position(for index: Int, reverseX: Bool = false, moduleCount: Int) -> CGPoint {
       let xOffset: CGFloat
       if reverseX {
         xOffset = index.isMultiple(of: 2) ? UIScreen.main.bounds.width - 100.0 : 100.0
@@ -64,7 +66,7 @@ struct PathNode: View {
         xOffset = index.isMultiple(of: 2) ? 100.0 : UIScreen.main.bounds.width - 100.0
       }
 
-      let yOffset = CGFloat(index * 150 + 100)
+      let yOffset = CGFloat(index * -150 + moduleCount * 150)
       return CGPoint(x: xOffset, y: yOffset)
     }
   }

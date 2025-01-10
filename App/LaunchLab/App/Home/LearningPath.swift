@@ -19,26 +19,32 @@ struct LearningPath: View {
 
   var body: some View {
     ScrollView(showsIndicators: false) {
-      VStack {
+      VStack(spacing: 100) {
         Image(.finalRocket)
           .resizable()
           .scaledToFit()
           .frame(width: 150)
           .padding(.top, 150)
+          .padding(.bottom, -200)
 
         ZStack {
           ForEach(Array(self.modules.enumerated()), id: \.offset) { index, module in
             PathNode(infoModalIndex: self.$infoModalIndex, module: module)
 
             if let module = modules[safe: index + 1] {
-              PathConnector(module: module, modules: modules, total: self.modules.count)
+              PathConnector(module: module, total: self.modules.count)
                 .onTapGesture { self.infoModalIndex = -1 }
                 .zIndex(-1)
             }
           }
         }
-        .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150 + 100))
+        .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150))
         .padding(.top, 50)
+
+        Image("earth")
+          .resizable()
+          .scaledToFit()
+          .padding(.vertical, -50)
       }
     }
     .background(content: self.backgroundGradient)

@@ -35,9 +35,3 @@ struct ModuleContentView: View {
     }
   }
 }
-
-#Preview {
-  ModuleContentView(content: Module.example(0).content[0])
-  Divider()
-  ModuleContentView(content: Module.example(0).content[1])
-}
