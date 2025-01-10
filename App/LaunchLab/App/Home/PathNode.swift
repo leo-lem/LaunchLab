@@ -34,10 +34,15 @@ struct PathNode: View {
 
               CoreDataStack.shared.save()
             } bookConsultationAction: {
-              if let url = URL(string: "https://www.uni-hamburg.de/transfer/kontakt.html") {
-                UIApplication.shared.open(url)
-              } else {
-                subrouter.showAlert(.alert, title: L10n.errorOccured, alert: {})
+              router.showScreen(.sheet) { _ in
+                MailView(supportEmail: .createConsultationMail()) { result in
+                  switch result {
+                    case .success:
+                      print("Email sent")
+                    case .failure(let error):
+                      print(error.localizedDescription)
+                  }
+                }
               }
             }
           }
