@@ -10,6 +10,7 @@ import UIComponents
 
 struct ModuleInfo: View {
   let module: Module
+  let isAvailable: Bool
 
   public var body: some View {
     VStack {
@@ -42,13 +43,15 @@ struct ModuleInfo: View {
 
       ActionPrimaryButton(
         isClickable: true,
-        title: module.isCompleted ? "Review" :
+        title: isAvailable ? module.isCompleted ? "Review" :
           module.progress == 0 ? L10n.commonStart : L10n.commonContinue
+          : "Locked 🔒"
       ) {
         router.showScreen(.fullScreenCover) { _ in
           LearningView(module)
         }
       }
+      .disabled(!isAvailable)
     }
     .padding(30)
     .toolbar {
@@ -66,5 +69,5 @@ struct ModuleInfo: View {
 }
 
 #Preview {
-  ModuleInfo(module: .example(1))
+  ModuleInfo(module: .example(1), isAvailable: true)
 }

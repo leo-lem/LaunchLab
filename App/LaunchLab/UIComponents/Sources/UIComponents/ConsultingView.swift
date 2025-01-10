@@ -2,13 +2,17 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import SwiftfulRouting
 import SwiftUI
 
 public struct ConsultingView: View {
+  @Environment(\.router) var router
+  private let isAvailable: Bool
   private let dismissAction: () -> Void
   private let bookConsultationAction: () -> Void
 
-  public init(dismissAction: @escaping () -> Void, bookConsultationAction: @escaping () -> Void) {
+  public init(isAvailable: Bool, dismissAction: @escaping () -> Void, bookConsultationAction: @escaping () -> Void) {
+    self.isAvailable = isAvailable
     self.dismissAction = dismissAction
     self.bookConsultationAction = bookConsultationAction
   }
@@ -20,7 +24,7 @@ public struct ConsultingView: View {
         .scaledToFit()
 
       Text("You can now book a free consultation with Transferagentur!")
-        .font(.title)
+        .font(.title2)
         .bold()
         .multilineTextAlignment(.center)
 
@@ -31,16 +35,19 @@ public struct ConsultingView: View {
 
       Spacer()
 
-      ActionPrimaryButton(isClickable: true, title: "Start Consultation", action: bookConsultationAction)
+      ActionPrimaryButton(isClickable: true, title: isAvailable ? "Start Consultation" : "Locked 🔒", action: bookConsultationAction)
+        .disabled(!isAvailable)
 
-      Button("Mark as completed") { dismissAction() }
-        .padding(.top, -10)
+      if isAvailable {
+        Button("Mark as completed") { dismissAction() }
+          .padding(.top, -10)
+      }
     }
     .padding(.vertical, 20)
     .padding(.horizontal, 30)
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
-        Button(action: dismissAction) {
+        Button(action: router.dismissScreen) {
           Image(systemName: "xmark.circle")
             .frame(width: 20, height: 20)
         }
