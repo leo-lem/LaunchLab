@@ -31,11 +31,9 @@ struct LearningPath: View {
           ForEach(Array(self.modules.enumerated()), id: \.offset) { index, module in
             PathNode(infoModalIndex: self.$infoModalIndex, module: module)
 
-            if let module = modules[safe: index + 1] {
-              PathConnector(module: module, total: self.modules.count)
-                .onTapGesture { self.infoModalIndex = -1 }
-                .zIndex(-1)
-            }
+            PathConnector(module: module, nextModulePosition: modules[safe: index - 1]?.pathPosition ?? "left", total: self.modules.count)
+              .onTapGesture { self.infoModalIndex = -1 }
+              .zIndex(-1)
           }
         }
         .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150))

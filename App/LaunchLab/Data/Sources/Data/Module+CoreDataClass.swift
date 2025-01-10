@@ -17,6 +17,7 @@ public class Module: NSManagedObject {
   @NSManaged public var type: String
   @NSManaged public var image: String
   @NSManaged public var collectable: String?
+  @NSManaged public var pathPosition: String
   @NSManaged public var progress: Int16
   @NSManaged public var content: Set<ModuleContent>
 
