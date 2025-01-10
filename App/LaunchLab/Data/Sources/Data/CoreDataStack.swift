@@ -33,7 +33,7 @@ public class CoreDataStack: @unchecked Sendable {
     storeDescription?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
     storeDescription?.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
     storeDescription?.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
-    storeDescription?.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.mlab.LaunchLab")
+    storeDescription?.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.m-lab.LaunchLab")
 
     mainContext = persistentContainer.viewContext
     mainContext.automaticallyMergesChangesFromParent = true
