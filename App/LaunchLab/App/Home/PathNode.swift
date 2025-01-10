@@ -28,7 +28,7 @@ struct PathNode: View {
       switch module.type {
         case "consultation":
           router.showScreen(.sheet) { subrouter in
-            ConsultingView {
+            ConsultingView(isAvailable: modules[safe: Int(module.index - 1)]?.isCompleted ?? false) {
               module.progress = 10
               subrouter.dismissScreen()
 
@@ -43,7 +43,7 @@ struct PathNode: View {
           }
         default:
           router.showScreen(.sheet) { _ in
-            ModuleInfo(module: module)
+            ModuleInfo(module: module, isAvailable: module.index == 0 || modules[safe: Int(module.index - 1)]?.isCompleted ?? false)
           }
       }
     }
