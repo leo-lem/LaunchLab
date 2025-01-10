@@ -27,7 +27,7 @@ struct ModuleInfo: View {
         .padding(.bottom, 50)
 
       VStack(spacing: 20) {
-        ForEach(module.content.prefix(5), id: \.self) { content in
+        ForEach(Array(module.content).prefix(5), id: \.title) { content in
           ModuleInfoRow(
             title: content.title,
             content: content.content,

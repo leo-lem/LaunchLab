@@ -13,6 +13,7 @@ extension Module {
         index: index,
         title: "Example Module \(index)",
         desc: "This is an example module for previewing purposes.",
+        type: "module",
         image: "planet\(index)",
         collectable: "collectable\(index)",
         progress: 0,

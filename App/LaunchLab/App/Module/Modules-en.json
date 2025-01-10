@@ -1,9 +1,38 @@
 [
   {
-    "index": 6,
+    "title": "Elevator Pitch",
+    "desc": "Create an Elevator Pitch.",
+    "progress": 0,
+    "index": 0,
+    "type": "document",
+    "image": "businessplan",
+    "content": [
+      {
+        "title": "Hiring the Right People",
+        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
+        "image": "person.fill.checkmark",
+        "type": "info"
+      },
+      {
+        "title": "Defining Roles",
+        "content": "Assign clear roles and responsibilities to your team.",
+        "image": "rectangle.stack.person.crop.fill",
+        "type": "info"
+      },
+      {
+        "title": "Building Culture",
+        "content": "Create a positive and productive team culture.",
+        "image": "hands.sparkles.fill",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 1,
     "title": "Idea Development",
     "desc": "Learn to transform raw ideas into actionable business concepts.",
     "image": "planet1",
+    "type": "module",
     "collectable": "collectable1",
     "progress": 0,
     "content": [
@@ -46,11 +75,40 @@
     ]
   },
   {
-    "index": 5,
+    "index": 2,
     "title": "Market Analysis",
     "desc": "Understand your audience, competitors, and market trends.",
     "image": "planet2",
+    "type": "module",
     "collectable": "collectable2",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Target Audience",
+        "content": "Identify who your customers are and their buying behaviors.",
+        "image": "person.crop.circle.badge.typemark",
+        "type": "info"
+      },
+      {
+        "title": "Competitor Landscape",
+        "content": "Analyze competitors’ strengths and weaknesses.",
+        "image": "chart.bar.fill",
+        "type": "info"
+      },
+      {
+        "title": "Market Trends",
+        "content": "Spot trends to align your offerings with emerging demands.",
+        "image": "waveform.path.ecg",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "title": "Consultation",
+    "desc": "Understand your audience, competitors, and market trends.",
+    "image": "chatbubbles",
+    "type": "consultation",
     "progress": 0,
     "content": [
       {
@@ -78,6 +136,7 @@
     "title": "Funding Strategies",
     "desc": "Explore funding options to secure financial resources.",
     "image": "planet3",
+    "type": "module",
     "collectable": "collectable3",
     "progress": 0,
     "content": [
@@ -102,10 +161,39 @@
     ]
   },
   {
-    "index": 3,
+    "title": "Pitch Deck",
+    "desc": "Create a Pitch Deck.",
+    "progress": 0,
+    "index": 5,
+    "type": "document",
+    "image": "businessplan",
+    "content": [
+      {
+        "title": "Hiring the Right People",
+        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
+        "image": "person.fill.checkmark",
+        "type": "info"
+      },
+      {
+        "title": "Defining Roles",
+        "content": "Assign clear roles and responsibilities to your team.",
+        "image": "rectangle.stack.person.crop.fill",
+        "type": "info"
+      },
+      {
+        "title": "Building Culture",
+        "content": "Create a positive and productive team culture.",
+        "image": "hands.sparkles.fill",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 6,
     "title": "Product Development",
     "desc": "Build and refine your product to meet customer needs.",
     "image": "planet4",
+    "type": "module",
     "collectable": "collectable1",
     "progress": 0,
     "content": [
@@ -130,10 +218,11 @@
     ]
   },
   {
-    "index": 2,
+    "index": 7,
     "title": "Marketing and Outreach",
     "desc": "Learn to build a brand and engage with your audience.",
     "image": "planet5",
+    "type": "module",
     "collectable": "collectable2",
     "progress": 0,
     "content": [
@@ -161,7 +250,8 @@
     "title": "Team Building",
     "desc": "Create a strong team with clear roles and a shared culture.",
     "progress": 0,
-    "index": 1,
+    "index": 8,
+    "type": "module",
     "collectable": "collectable3",
     "image": "planet6",
     "content": [
@@ -186,10 +276,39 @@
     ]
   },
   {
-    "index": 0,
+    "index": 9,
+    "title": "Consultation",
+    "desc": "Understand your audience, competitors, and market trends.",
+    "image": "chatbubbles",
+    "type": "consultation",
+    "progress": 0,
+    "content": [
+      {
+        "title": "Target Audience",
+        "content": "Identify who your customers are and their buying behaviors.",
+        "image": "person.crop.circle.badge.typemark",
+        "type": "info"
+      },
+      {
+        "title": "Competitor Landscape",
+        "content": "Analyze competitors’ strengths and weaknesses.",
+        "image": "chart.bar.fill",
+        "type": "info"
+      },
+      {
+        "title": "Market Trends",
+        "content": "Spot trends to align your offerings with emerging demands.",
+        "image": "waveform.path.ecg",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 10,
     "title": "Scaling Your Business",
     "desc": "Plan and execute strategies for business growth.",
     "image": "planet7",
+    "type": "module",
     "collectable": "collectable1",
     "progress": 0,
     "content": [
@@ -209,6 +328,34 @@
         "title": "Entering New Markets",
         "content": "Identify opportunities to expand into new regions.",
         "image": "globe",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "title": "Business Plan",
+    "desc": "Create a Business Plan.",
+    "progress": 0,
+    "index": 11,
+    "type": "document",
+    "image": "businessplan",
+    "content": [
+      {
+        "title": "Hiring the Right People",
+        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
+        "image": "person.fill.checkmark",
+        "type": "info"
+      },
+      {
+        "title": "Defining Roles",
+        "content": "Assign clear roles and responsibilities to your team.",
+        "image": "rectangle.stack.person.crop.fill",
+        "type": "info"
+      },
+      {
+        "title": "Building Culture",
+        "content": "Create a positive and productive team culture.",
+        "image": "hands.sparkles.fill",
         "type": "info"
       }
     ]

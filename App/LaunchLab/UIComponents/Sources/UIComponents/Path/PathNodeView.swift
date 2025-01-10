@@ -6,21 +6,25 @@ import SwiftUI
 
 public struct PathNodeView: View {
   let gradient: LinearGradient
-  let planetImageString: String
+  let imageString: String
+  let isRocketImage: Bool
   let onClick: () -> Void
 
-  public init(gradient: LinearGradient, planetImageString: String, onClick: @escaping () -> Void) {
+  public init(gradient: LinearGradient, isRocketImage: Bool, imageString: String, onClick: @escaping () -> Void) {
     self.gradient = gradient
-    self.planetImageString = planetImageString
+    self.isRocketImage = isRocketImage
+    self.imageString = imageString
     self.onClick = onClick
   }
 
   public var body: some View {
     Button(action: onClick) {
-      Image(planetImageString)
+      Image(imageString)
         .resizable()
         .scaledToFit()
-        .frame(maxHeight: 120)
+        .frame(maxHeight: isRocketImage ? 120 : 80)
+        .scaleEffect(isRocketImage ? 1 : 0.8)
+        .ifModifier(!isRocketImage) { $0.padding(-5) }
     }
   }
 }

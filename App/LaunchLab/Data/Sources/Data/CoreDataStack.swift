@@ -3,7 +3,11 @@
 //
 // swiftlint:disable force_unwrapping
 
+import Combine
 import CoreData
+import OSLog
+import Styleguide
+import UserNotifications
 
 /*
  This is the CoreDataManager used by the app. It saves changes to disk.
@@ -15,39 +19,35 @@ import CoreData
 public class CoreDataStack: @unchecked Sendable {
   public static let shared = CoreDataStack()
 
-  public let persistentContainer: NSPersistentContainer
+  public let persistentContainer: NSPersistentCloudKitContainer
   public let backgroundContext: NSManagedObjectContext
   public let mainContext: NSManagedObjectContext
+  private var cancellables = Set<AnyCancellable>()
 
   private init() {
-    let modelURL = Bundle.module.url(forResource: "Launchlab", withExtension: ".momd")!
+    let modelURL = Bundle.module.url(forResource: "Launchlab", withExtension: "momd")!
     let model = NSManagedObjectModel(contentsOf: modelURL)!
+    persistentContainer = NSPersistentCloudKitContainer(name: "Launchlab", managedObjectModel: model)
 
-    persistentContainer = NSPersistentContainer(name: "Launchlab", managedObjectModel: model)
-
-    let description = persistentContainer.persistentStoreDescriptions.first
-    description?.type = NSSQLiteStoreType
-
-    persistentContainer.loadPersistentStores { _, error in
-      guard error == nil else {
-        fatalError("was unable to load store \(error!)")
-      }
-    }
+    let storeDescription = persistentContainer.persistentStoreDescriptions.first
+    storeDescription?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+    storeDescription?.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
+    storeDescription?.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
+    storeDescription?.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.mlab.LaunchLab")
 
     mainContext = persistentContainer.viewContext
+    mainContext.automaticallyMergesChangesFromParent = true
 
     backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     backgroundContext.parent = mainContext
-  }
 
-  public func save() {
-    mainContext.performAndWait {
-      do {
-        try mainContext.save()
-      } catch {
-        print("ERROR SAVING: \(error.localizedDescription)")
+    persistentContainer.loadPersistentStores { _, error in
+      guard error == nil else {
+        fatalError("Failed to load store: \(error?.localizedDescription ?? "")")
       }
     }
+
+    subscribeToCloudKitEvents()
   }
 
   public func destroyPersistentStore() {
@@ -59,10 +59,52 @@ public class CoreDataStack: @unchecked Sendable {
       }
     }
   }
+
+  public func save() {
+    guard mainContext.hasChanges else { return }
+
+    mainContext.performAndWait {
+      do {
+        try mainContext.save()
+        try persistentContainer.viewContext.setQueryGenerationFrom(.current)
+
+        print("Successfully saved changes to Core Data and triggered iCloud sync.")
+      } catch {
+        print("Error saving context: \(error.localizedDescription)")
+      }
+    }
+  }
+
+  public func deleteAllObjects<T: NSManagedObject>(ofType entityType: T.Type, in context: NSManagedObjectContext) {
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: entityType))
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    do {
+      try context.execute(deleteRequest)
+    } catch {
+      print("Failed to delete all objects of type \(entityType): \(error.localizedDescription)")
+    }
+  }
+
+  @objc
+  private func storeRemoteChange(_ notification: Notification) {
+    mainContext.perform {
+      print("Merging changes from iCloud...")
+      self.mainContext.mergeChanges(fromContextDidSave: notification)
+    }
+  }
+
+  private func subscribeToCloudKitEvents() {
+    UserNotifications.NotificationCenter.default
+      .publisher(for: .NSPersistentStoreRemoteChange)
+      .sink { notification in
+        self.storeRemoteChange(notification)
+      }
+      .store(in: &cancellables)
+  }
 }
 
-extension CoreDataStack {
-  public func populateModulesIfNeeded() {
+public extension CoreDataStack {
+  func populateModulesIfNeeded() {
     let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
     do {
       let existingModules = try mainContext.fetch(fetchRequest)
@@ -79,7 +121,7 @@ extension CoreDataStack {
       forResource: "Modules-\(Bundle.main.preferredLocalizations.first ?? "en")",
       withExtension: "json"
     ),
-          let data = try? Data(contentsOf: url)
+      let data = try? Data(contentsOf: url)
     else {
       print("Failed to load Modules.json")
       return

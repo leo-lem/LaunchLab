@@ -8,7 +8,15 @@ import SwiftUI
 import UIComponents
 
 struct LearningView: View {
+  @Environment(\.dismiss) private var dismiss
+  @State private var progress: Int
+  @State private var answer = ""
   let module: Module
+
+  init(_ module: Module) {
+    self.module = module
+    self.progress = Int(module.progress)
+  }
 
   var body: some View {
     ScrollViewReader { proxy in
@@ -24,18 +32,9 @@ struct LearningView: View {
     }
   }
 
-  @State private var progress: Int
-  @State private var answer = ""
-  @Environment(\.dismiss) private var dismiss
-
-  init(_ module: Module) {
-    self.module = module
-    self.progress = Int(module.progress)
-  }
-
   private func content() -> some View {
     VStack(spacing: 46) {
-      ForEach(Array(zip(module.content.indices, module.content)), id: \.0) { id, item in
+      ForEach(Array(module.content.enumerated()), id: \.offset) { id, item in
         if id <= progress {
           withAnimation {
             ModuleContentView(content: item)
@@ -53,7 +52,7 @@ struct LearningView: View {
   private func button() -> some View {
     ActionPrimaryButton(
       isClickable: true,
-      title: progress >= module.length-1 ? L10n.commonComplete : L10n.commonContinue
+      title: progress >= module.length - 1 ? L10n.commonComplete : L10n.commonContinue
     ) {
       if !module.isCompleted {
         progress += 1
