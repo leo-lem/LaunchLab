@@ -7,15 +7,16 @@ import SwiftUI
 
 struct PathConnector: View {
   @ObservedObject var module: Module
+  let nextModulePosition: String
   let total: Int
 
   var body: some View {
     Canvas { context, _ in
       var path = Path()
-      let current = PathNode.PositionHelper.position(for: Int(module.index), moduleCount: total)
+      let current = PathNode.PositionHelper.position(for: module.pathPosition, index: module.index, moduleCount: total)
 
       if module.index < total {
-        let next = PathNode.PositionHelper.position(for: Int(module.index) + 1, moduleCount: total)
+        let next = PathNode.PositionHelper.position(for: nextModulePosition, index: module.index + 1, moduleCount: total)
 
         let controlPoint1 = CGPoint(
           x: (current.x + next.x) / 2 + 100,

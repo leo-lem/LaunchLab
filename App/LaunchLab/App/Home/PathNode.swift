@@ -25,11 +25,29 @@ struct PathNode: View {
 
   private var nodeAndPath: some View {
     PathNodeView(gradient: module.gradient, isRocketImage: module.type == "module", imageString: module.image) {
-      router.showScreen(.sheet) { _ in
-        ModuleInfo(module: module)
+      switch module.type {
+        case "consultation":
+          router.showScreen(.sheet) { subrouter in
+            ConsultingView {
+              module.progress = 10
+              subrouter.dismissScreen()
+
+              CoreDataStack.shared.save()
+            } bookConsultationAction: {
+              if let url = URL(string: "https://www.uni-hamburg.de/transfer/kontakt.html") {
+                UIApplication.shared.open(url)
+              } else {
+                subrouter.showAlert(.alert, title: L10n.errorOccured, alert: {})
+              }
+            }
+          }
+        default:
+          router.showScreen(.sheet) { _ in
+            ModuleInfo(module: module)
+          }
       }
     }
-    .position(PositionHelper.position(for: Int(module.index), moduleCount: modules.count))
+    .position(PositionHelper.position(for: module.pathPosition, index: module.index, moduleCount: modules.count))
   }
 
   private var trailingRocketCollectable: some View {
@@ -49,7 +67,7 @@ struct PathNode: View {
         }
       }
     }
-    .position(PositionHelper.position(for: Int(module.index), reverseX: true, moduleCount: modules.count))
+    .position(PositionHelper.position(for: module.pathPosition, reverseX: true, index: module.index, moduleCount: modules.count))
   }
 
   private func isButtonEnabled() -> Bool {
@@ -58,15 +76,19 @@ struct PathNode: View {
   }
 
   enum PositionHelper {
-    static func position(for index: Int, reverseX: Bool = false, moduleCount: Int) -> CGPoint {
+    static func position(for modulePosition: String, reverseX: Bool = false, index: Int16, moduleCount: Int) -> CGPoint {
       let xOffset: CGFloat
-      if reverseX {
-        xOffset = index.isMultiple(of: 2) ? UIScreen.main.bounds.width - 100.0 : 100.0
-      } else {
-        xOffset = index.isMultiple(of: 2) ? 100.0 : UIScreen.main.bounds.width - 100.0
+
+      switch modulePosition {
+        case "left":
+          xOffset = reverseX ? 100.0 : UIScreen.main.bounds.width - 100.0
+        case "right":
+          xOffset = reverseX ? UIScreen.main.bounds.width - 100.0 : 100.0
+        default:
+          xOffset = UIScreen.main.bounds.width / 2
       }
 
-      let yOffset = CGFloat(index * -150 + moduleCount * 150)
+      let yOffset = CGFloat(Int(index) * -150 + moduleCount * 150)
       return CGPoint(x: xOffset, y: yOffset)
     }
   }

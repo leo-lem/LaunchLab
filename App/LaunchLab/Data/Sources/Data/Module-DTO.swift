@@ -12,6 +12,7 @@ public extension Module {
     public let type: String
     public let image: String
     public let collectable: String?
+    public let pathPosition: String
     public let progress: Int
     public let content: [ModuleContent.DTO]
 
@@ -22,6 +23,7 @@ public extension Module {
       type: String,
       image: String,
       collectable: String?,
+      pathPosition: String,
       progress: Int,
       content: [ModuleContent.DTO]
     ) {
@@ -31,6 +33,7 @@ public extension Module {
       self.type = type
       self.image = image
       self.collectable = collectable
+      self.pathPosition = pathPosition
       self.progress = progress
       self.content = content
     }
@@ -45,6 +48,7 @@ public extension Module {
     type = dto.type
     image = dto.image
     collectable = dto.collectable
+    pathPosition = dto.pathPosition
     progress = Int16(dto.progress)
     _ = dto.content.map { ModuleContent($0, module: self) }
   }

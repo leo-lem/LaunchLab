@@ -6,6 +6,7 @@
     "index": 0,
     "type": "document",
     "image": "businessplan",
+    "pathPosition": "center",
     "content": [
       {
         "title": "Hiring the Right People",
@@ -35,6 +36,7 @@
     "type": "module",
     "collectable": "collectable1",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Brainstorming Techniques",
@@ -82,6 +84,7 @@
     "type": "module",
     "collectable": "collectable2",
     "progress": 0,
+    "pathPosition": "left",
     "content": [
       {
         "title": "Target Audience",
@@ -106,30 +109,12 @@
   {
     "index": 3,
     "title": "Consultation",
-    "desc": "Understand your audience, competitors, and market trends.",
+    "desc": "",
     "image": "chatbubbles",
     "type": "consultation",
     "progress": 0,
-    "content": [
-      {
-        "title": "Target Audience",
-        "content": "Identify who your customers are and their buying behaviors.",
-        "image": "person.crop.circle.badge.typemark",
-        "type": "info"
-      },
-      {
-        "title": "Competitor Landscape",
-        "content": "Analyze competitors’ strengths and weaknesses.",
-        "image": "chart.bar.fill",
-        "type": "info"
-      },
-      {
-        "title": "Market Trends",
-        "content": "Spot trends to align your offerings with emerging demands.",
-        "image": "waveform.path.ecg",
-        "type": "info"
-      }
-    ]
+    "pathPosition": "center",
+    "content": []
   },
   {
     "index": 4,
@@ -139,6 +124,7 @@
     "type": "module",
     "collectable": "collectable3",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Investor Pitching",
@@ -167,6 +153,7 @@
     "index": 5,
     "type": "document",
     "image": "businessplan",
+    "pathPosition": "center",
     "content": [
       {
         "title": "Hiring the Right People",
@@ -196,6 +183,7 @@
     "type": "module",
     "collectable": "collectable1",
     "progress": 0,
+    "pathPosition": "left",
     "content": [
       {
         "title": "Prototype Design",
@@ -225,6 +213,7 @@
     "type": "module",
     "collectable": "collectable2",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Building a Brand",
@@ -254,6 +243,7 @@
     "type": "module",
     "collectable": "collectable3",
     "image": "planet6",
+    "pathPosition": "left",
     "content": [
       {
         "title": "Hiring the Right People",
@@ -278,30 +268,12 @@
   {
     "index": 9,
     "title": "Consultation",
-    "desc": "Understand your audience, competitors, and market trends.",
+    "desc": "",
     "image": "chatbubbles",
     "type": "consultation",
     "progress": 0,
-    "content": [
-      {
-        "title": "Target Audience",
-        "content": "Identify who your customers are and their buying behaviors.",
-        "image": "person.crop.circle.badge.typemark",
-        "type": "info"
-      },
-      {
-        "title": "Competitor Landscape",
-        "content": "Analyze competitors’ strengths and weaknesses.",
-        "image": "chart.bar.fill",
-        "type": "info"
-      },
-      {
-        "title": "Market Trends",
-        "content": "Spot trends to align your offerings with emerging demands.",
-        "image": "waveform.path.ecg",
-        "type": "info"
-      }
-    ]
+    "pathPosition": "center",
+    "content": []
   },
   {
     "index": 10,
@@ -311,6 +283,7 @@
     "type": "module",
     "collectable": "collectable1",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Expanding Operations",
@@ -339,6 +312,7 @@
     "index": 11,
     "type": "document",
     "image": "businessplan",
+    "pathPosition": "center",
     "content": [
       {
         "title": "Hiring the Right People",
