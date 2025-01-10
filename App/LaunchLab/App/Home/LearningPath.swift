@@ -42,7 +42,8 @@ struct LearningPath: View {
         Image("earth")
           .resizable()
           .scaledToFit()
-          .padding(.vertical, -50)
+          .padding(.top, -50)
+          .padding(.bottom, -250)
       }
     }
     .background(content: self.backgroundGradient)
