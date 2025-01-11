@@ -52,8 +52,12 @@ struct MailView: UIViewControllerRepresentable {
     let mvc = MFMailComposeViewController()
     mvc.mailComposeDelegate = context.coordinator
     mvc.setSubject(supportEmail.subject)
-    mvc.setToRecipients([supportEmail.toAdress])
+    mvc.setToRecipients([supportEmail.toAddress])
     mvc.setMessageBody(supportEmail.body, isHTML: false)
+    if let data = supportEmail.attachmentData, let filename = supportEmail.attachmentFilename {
+      mvc.addAttachmentData(data, mimeType: "application/pdf", fileName: filename)
+    }
+    
     mvc.accessibilityElementDidLoseFocus()
     return mvc
   }

@@ -34,11 +34,13 @@ struct PathNode: View {
 
               CoreDataStack.shared.save()
             } bookConsultationAction: {
-              router.showScreen(.sheet) { _ in
+              router.showScreen(.sheet) { subrouter in
                 MailView(supportEmail: .createConsultationMail()) { result in
                   switch result {
                     case .success:
-                      print("Email sent")
+                      module.progress = 10
+                      subrouter.dismissScreen()
+                      CoreDataStack.shared.save()
                     case .failure(let error):
                       print(error.localizedDescription)
                   }

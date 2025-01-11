@@ -32,6 +32,11 @@ struct ModuleContentView: View {
         .font(.title3)
     case .textfield:
       AnswerTextField(text: $answer, placeholder: markdown)
+        .onSubmit {
+          content.module.questionAndAnswer[content.title] = answer
+
+          CoreDataStack.shared.save()
+        }
     }
   }
 }
