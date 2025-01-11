@@ -50,6 +50,7 @@ public extension Module {
     collectable = dto.collectable
     pathPosition = dto.pathPosition
     progress = Int16(dto.progress)
+    questionAndAnswer = [:]
     _ = dto.content.map { ModuleContent($0, module: self) }
   }
 }

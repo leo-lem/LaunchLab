@@ -19,8 +19,49 @@ public class Module: NSManagedObject {
   @NSManaged public var collectable: String?
   @NSManaged public var pathPosition: String
   @NSManaged public var progress: Int16
+  @NSManaged public var questionAndAnswer: [String: String]
   @NSManaged public var content: Set<ModuleContent>
 
   public var length: Int { content.count }
   public var isCompleted: Bool { progress >= length }
+}
+
+@objc(QuestionAnswerTransformer)
+class QuestionAnswerTransformer: ValueTransformer {
+  override class func transformedValueClass() -> AnyClass {
+    NSData.self
+  }
+
+  override class func allowsReverseTransformation() -> Bool {
+    true
+  }
+
+  override func transformedValue(_ value: Any?) -> Any? {
+    guard let itemTime = value as? [String: String] else {
+      return nil
+    }
+
+    do {
+      let data = try JSONEncoder().encode(itemTime)
+      return data
+    } catch {
+      print("Failed to encode ItemTime: \(error)")
+
+      return nil
+    }
+  }
+
+  override func reverseTransformedValue(_ value: Any?) -> Any? {
+    guard let data = value as? Data else {
+      return nil
+    }
+
+    do {
+      let itemTime = try JSONDecoder().decode([String: String].self, from: data)
+      return itemTime
+    } catch {
+      print("Failed to encode ItemTime: \(error)")
+      return nil
+    }
+  }
 }

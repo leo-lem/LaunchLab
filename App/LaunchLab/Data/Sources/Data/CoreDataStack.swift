@@ -25,6 +25,8 @@ public class CoreDataStack: @unchecked Sendable {
   private var cancellables = Set<AnyCancellable>()
 
   private init() {
+    ValueTransformer.setValueTransformer(QuestionAnswerTransformer(), forName: NSValueTransformerName("QuestionAnswerTransformer"))
+
     let modelURL = Bundle.module.url(forResource: "Launchlab", withExtension: "momd")!
     let model = NSManagedObjectModel(contentsOf: modelURL)!
     persistentContainer = NSPersistentCloudKitContainer(name: "Launchlab", managedObjectModel: model)
