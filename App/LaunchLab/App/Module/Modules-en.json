@@ -2,31 +2,12 @@
   {
     "title": "Elevator Pitch",
     "desc": "Create an Elevator Pitch.",
-    "progress": 0,
+    "progress": -1,
     "index": 0,
     "type": "document",
     "image": "businessplan",
     "pathPosition": "center",
-    "content": [
-      {
-        "title": "Hiring the Right People",
-        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
-        "image": "person.fill.checkmark",
-        "type": "info"
-      },
-      {
-        "title": "Defining Roles",
-        "content": "Assign clear roles and responsibilities to your team.",
-        "image": "rectangle.stack.person.crop.fill",
-        "type": "info"
-      },
-      {
-        "title": "Building Culture",
-        "content": "Create a positive and productive team culture.",
-        "image": "hands.sparkles.fill",
-        "type": "info"
-      }
-    ]
+    "content": []
   },
   {
     "index": 1,
@@ -149,31 +130,12 @@
   {
     "title": "Pitch Deck",
     "desc": "Create a Pitch Deck.",
-    "progress": 0,
+    "progress": -1,
     "index": 5,
     "type": "document",
     "image": "businessplan",
     "pathPosition": "center",
-    "content": [
-      {
-        "title": "Hiring the Right People",
-        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
-        "image": "person.fill.checkmark",
-        "type": "info"
-      },
-      {
-        "title": "Defining Roles",
-        "content": "Assign clear roles and responsibilities to your team.",
-        "image": "rectangle.stack.person.crop.fill",
-        "type": "info"
-      },
-      {
-        "title": "Building Culture",
-        "content": "Create a positive and productive team culture.",
-        "image": "hands.sparkles.fill",
-        "type": "info"
-      }
-    ]
+    "content": []
   },
   {
     "index": 6,
@@ -308,30 +270,11 @@
   {
     "title": "Business Plan",
     "desc": "Create a Business Plan.",
-    "progress": 0,
+    "progress": -1,
     "index": 11,
     "type": "document",
     "image": "businessplan",
     "pathPosition": "center",
-    "content": [
-      {
-        "title": "Hiring the Right People",
-        "content": "Identify the skills and expertise your startup needs.\nWhat qualities do you look for in a teammate?",
-        "image": "person.fill.checkmark",
-        "type": "info"
-      },
-      {
-        "title": "Defining Roles",
-        "content": "Assign clear roles and responsibilities to your team.",
-        "image": "rectangle.stack.person.crop.fill",
-        "type": "info"
-      },
-      {
-        "title": "Building Culture",
-        "content": "Create a positive and productive team culture.",
-        "image": "hands.sparkles.fill",
-        "type": "info"
-      }
-    ]
+    "content": []
   }
 ]
