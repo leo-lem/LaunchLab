@@ -57,7 +57,7 @@ struct MailView: UIViewControllerRepresentable {
     if let data = supportEmail.attachmentData, let filename = supportEmail.attachmentFilename {
       mvc.addAttachmentData(data, mimeType: "application/pdf", fileName: filename)
     }
-    
+
     mvc.accessibilityElementDidLoseFocus()
     return mvc
   }

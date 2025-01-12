@@ -48,7 +48,7 @@ struct ModuleInfo: View {
           : "Locked 🔒"
       ) {
         router.showScreen(.fullScreenCover) { _ in
-          LearningView(module)
+          LearningView(module, router: router)
         }
       }
       .disabled(!isAvailable)

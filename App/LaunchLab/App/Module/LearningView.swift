@@ -4,17 +4,19 @@
 
 import Data
 import Styleguide
+import SwiftfulRouting
 import SwiftUI
 import UIComponents
 
 struct LearningView: View {
-  @Environment(\.dismiss) private var dismiss
   @State private var progress: Int
   @State private var answer = ""
   let module: Module
+  let router: AnyRouter
 
-  init(_ module: Module) {
+  init(_ module: Module, router: AnyRouter) {
     self.module = module
+    self.router = router
     self.progress = Int(module.progress)
   }
 
@@ -61,12 +63,13 @@ struct LearningView: View {
       }
 
       if module.isCompleted {
-        dismiss()
+        router.dismissScreen()
       }
     }
   }
 
-  @ToolbarContentBuilder private func toolbar() -> some ToolbarContent {
+  @ToolbarContentBuilder
+  private func toolbar() -> some ToolbarContent {
     ToolbarItem(placement: .topBarLeading) {
       Text("\(progress)/\(module.length)")
         .bold()
@@ -80,7 +83,7 @@ struct LearningView: View {
     }
 
     ToolbarItem(placement: .topBarTrailing) {
-      Button(action: dismiss.callAsFunction) {
+      Button(action: router.dismissScreen) {
         Image(systemName: "xmark.circle")
       }
       .tint(module.gradient)
@@ -89,7 +92,7 @@ struct LearningView: View {
 }
 
 #Preview {
-  NavigationView {
-    LearningView(.example(0))
+  RouterView {
+    LearningView(.example(0), router: $0)
   }
 }
