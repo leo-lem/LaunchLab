@@ -25,13 +25,13 @@ struct LearningPath: View {
           .scaledToFit()
           .frame(width: 150)
           .padding(.top, 150)
-          .padding(.bottom, -200)
+          .padding(.bottom, -150)
 
         ZStack {
           ForEach(Array(self.modules.enumerated()), id: \.offset) { index, module in
             PathNode(infoModalIndex: self.$infoModalIndex, module: module)
 
-            PathConnector(module: module, nextModulePosition: modules[safe: index - 1]?.pathPosition ?? "left", total: self.modules.count)
+            PathConnector(module: module, nextModulePosition: modules[safe: index - 1]?.pathPosition ?? "center", total: self.modules.count)
               .onTapGesture { self.infoModalIndex = -1 }
               .zIndex(-1)
           }
