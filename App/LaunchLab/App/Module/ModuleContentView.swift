@@ -32,10 +32,15 @@ struct ModuleContentView: View {
         .font(.title3)
     case .textfield:
       AnswerTextField(text: $answer, placeholder: markdown)
-        .onSubmit {
+        .onChange(of: answer) {
           content.module.questionAndAnswer[content.title] = answer
 
           CoreDataStack.shared.save()
+        }
+        .onAppear {
+          if let module = try? CoreDataStack.shared.mainContext.fetch(Module.fetchRequest()).first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
+            answer = module.questionAndAnswer[content.title] ?? ""
+          }
         }
     }
   }
