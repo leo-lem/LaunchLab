@@ -2,17 +2,20 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import Styleguide
 import SwiftfulRouting
 import SwiftUI
 
 public struct ConsultingView: View {
   @Environment(\.router) var router
   private let isAvailable: Bool
+  private let isCompleted: Bool
   private let dismissAction: () -> Void
   private let bookConsultationAction: () -> Void
 
-  public init(isAvailable: Bool, dismissAction: @escaping () -> Void, bookConsultationAction: @escaping () -> Void) {
+  public init(isAvailable: Bool, isCompleted: Bool, dismissAction: @escaping () -> Void, bookConsultationAction: @escaping () -> Void) {
     self.isAvailable = isAvailable
+    self.isCompleted = isCompleted
     self.dismissAction = dismissAction
     self.bookConsultationAction = bookConsultationAction
   }
@@ -23,23 +26,23 @@ public struct ConsultingView: View {
         .resizable()
         .scaledToFit()
 
-      Text("You can now book a free consultation with Transferagentur!")
+      Text(L10n.consultingTitle)
         .font(.title2)
         .bold()
         .multilineTextAlignment(.center)
 
-      Text("Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.")
+      Text(L10n.consultingSubtitle)
         .font(.subheadline)
         .foregroundStyle(.secondary)
         .multilineTextAlignment(.center)
 
       Spacer()
 
-      ActionPrimaryButton(isClickable: true, title: isAvailable ? "Start Consultation" : "Locked 🔒", action: bookConsultationAction)
+      ActionPrimaryButton(isClickable: true, title: isAvailable ? L10n.startConsulting : L10n.locked, action: bookConsultationAction)
         .disabled(!isAvailable)
 
-      if isAvailable {
-        Button("Mark as completed") { dismissAction() }
+      if isAvailable && !isCompleted {
+        Button(L10n.markCompleted) { dismissAction() }
           .padding(.top, -10)
       }
     }

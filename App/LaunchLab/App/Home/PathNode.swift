@@ -76,7 +76,10 @@ struct PathNode: View {
 
   private func showConsultationScreen() {
     router.showScreen(.sheet) { subrouter in
-      ConsultingView(isAvailable: isPreviousModuleCompleted) {
+      ConsultingView(
+        isAvailable: isPreviousModuleCompleted,
+        isCompleted: module.isCompleted
+      ) {
         module.progress = 10
         subrouter.dismissScreen()
         CoreDataStack.shared.save()
@@ -90,6 +93,7 @@ struct PathNode: View {
     router.showScreen(.sheet) { subrouter in
       DocumentView(
         isAvailable: isPreviousModuleCompleted || module.index == 0,
+        isCompleted: module.isCompleted,
         documentTitle: module.title
       ) {
         module.progress = 10
@@ -126,7 +130,7 @@ struct PathNode: View {
     subrouter.showAlert(
       .alert,
       title: L10n.errorOccured,
-      subtitle: "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.",
+      subtitle: L10n.mailAlertSubtitle,
       alert: {}
     )
   }

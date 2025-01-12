@@ -21,11 +21,11 @@ struct HomeScreen: View {
 
   private var topButton: some View {
     VStack(alignment: .leading) {
-      Text("\(modules.filter(\.isCompleted).count)/\(modules.count) completed")
+      Text(L10n.completed(modules.filter(\.isCompleted).count, modules.count))
         .foregroundStyle(.gray)
         .font(.subheadline)
 
-      Text("Modules")
+      Text(L10n.modules)
         .foregroundStyle(.black)
         .font(.headline)
         .bold()

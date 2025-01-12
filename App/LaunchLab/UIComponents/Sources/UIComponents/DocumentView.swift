@@ -2,6 +2,7 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import Styleguide
 import SwiftfulRouting
 import SwiftUI
 
@@ -10,11 +11,13 @@ public struct DocumentView: View {
   @Environment(\.colorScheme) var colorScheme
   @State private var pdfURL: URL?
   private let isAvailable: Bool
+  private let isCompleted: Bool
   private let documentTitle: String
   private let dismissAction: () -> Void
 
-  public init(isAvailable: Bool, documentTitle: String, dismissAction: @escaping () -> Void) {
+  public init(isAvailable: Bool, isCompleted: Bool, documentTitle: String, dismissAction: @escaping () -> Void) {
     self.isAvailable = isAvailable
+    self.isCompleted = isCompleted
     self.documentTitle = documentTitle
     self.dismissAction = dismissAction
   }
@@ -25,12 +28,12 @@ public struct DocumentView: View {
         .resizable()
         .frame(width: 250, height: 250)
 
-      Text("Generate your personalized \(documentTitle)")
+      Text(L10n.generate(documentTitle))
         .font(.title2)
         .bold()
         .multilineTextAlignment(.center)
 
-      Text("This will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.")
+      Text(L10n.generateGptInfo)
         .font(.subheadline)
         .foregroundStyle(.secondary)
         .multilineTextAlignment(.center)
@@ -40,9 +43,9 @@ public struct DocumentView: View {
       if let pdfFileURL = pdfURL {
         ShareLink(
           item: pdfFileURL,
-          preview: SharePreview("PDF Document", image: Image(systemName: "doc.richtext"))
+          preview: SharePreview(documentTitle, image: Image(systemName: "doc.richtext"))
         ) {
-          Text("Export PDF")
+          Text(L10n.exportPdf)
             .padding(.vertical)
             .foregroundStyle(Color.white)
             .frame(width: UIScreen.main.bounds.width - 80)
@@ -52,15 +55,15 @@ public struct DocumentView: View {
             )
         }
       } else {
-        ActionPrimaryButton(isClickable: true, title: isAvailable ? "Generate" : "Locked 🔒") {
+        ActionPrimaryButton(isClickable: true, title: isAvailable ? L10n.generate : L10n.locked) {
           try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
           generatePDF()
         }
         .disabled(!isAvailable)
       }
 
-      if isAvailable {
-        Button("Mark as completed") { dismissAction() }
+      if isAvailable && !isCompleted {
+        Button(L10n.markCompleted) { dismissAction() }
           .padding(.top, -10)
       }
     }
@@ -96,8 +99,8 @@ public struct DocumentView: View {
   /// Create PDF data from content
   private func createPDF(content: String) throws -> Data {
     let pdfMetaData = [
-      kCGPDFContextCreator: "Screenless",
-      kCGPDFContextAuthor: "Screenless User"
+      kCGPDFContextCreator: "LaunchLab",
+      kCGPDFContextAuthor: "LaunchLab Group"
     ]
     let format = UIGraphicsPDFRendererFormat()
     format.documentInfo = pdfMetaData as [String: Any]
