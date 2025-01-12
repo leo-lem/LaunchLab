@@ -13,6 +13,7 @@ struct PathNode: View {
   @Environment(\.router) private var router
   @FetchRequest(entity: Module.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: true)])
   private var modules: FetchedResults<Module>
+
   @Binding var infoModalIndex: Int
   let module: Module
 
@@ -66,6 +67,8 @@ struct PathNode: View {
     switch module.type {
     case "consultation":
       showConsultationScreen()
+    case "document":
+      showDocumentScreen()
     default:
       showModuleInfoScreen()
     }
@@ -79,6 +82,19 @@ struct PathNode: View {
         CoreDataStack.shared.save()
       } bookConsultationAction: {
         handleBookConsultationAction(subrouter: subrouter)
+      }
+    }
+  }
+
+  private func showDocumentScreen() {
+    router.showScreen(.sheet) { subrouter in
+      DocumentView(
+        isAvailable: isPreviousModuleCompleted || module.index == 0,
+        documentTitle: module.title
+      ) {
+        module.progress = 10
+        subrouter.dismissScreen()
+        CoreDataStack.shared.save()
       }
     }
   }
