@@ -8,7 +8,6 @@ import SwiftUI
 
 struct HomeScreen: View {
   @Environment(\.router) private var router
-
   @FetchRequest(entity: Module.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: false)])
   private var modules: FetchedResults<Module>
 
@@ -61,7 +60,7 @@ struct HomeScreen: View {
           endPoint: .bottom
         )
       )
-      .frame(width: 400, height: 75)
+      .frame(width: UIScreen.main.bounds.width - 20, height: 75)
       .shadow(radius: 3, x: 3, y: 5)
   }
 }
