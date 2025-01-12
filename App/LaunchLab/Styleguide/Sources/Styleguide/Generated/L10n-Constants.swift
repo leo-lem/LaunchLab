@@ -10,6 +10,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
+  /// %@/%@ completed
+  public static func completed(_ p1: Any, _ p2: Any) -> String {
+    return L10n.tr("Localizable", "%@ %@ completed", String(describing: p1), String(describing: p2), fallback: "%@/%@ completed")
+  }
   /// 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
   public static let apiKey = L10n.tr("Localizable", "api_key", fallback: "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")
   /// Complete
@@ -22,6 +26,10 @@ public enum L10n {
   public static let commonStart = L10n.tr("Localizable", "common_start", fallback: "Begin")
   /// Bitte richte die Mail-App auf deinem Gerät ein.
   public static let configureMailApp = L10n.tr("Localizable", "configure_mail_app", fallback: "Bitte richte die Mail-App auf deinem Gerät ein.")
+  /// Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.
+  public static let consultingSubtitle = L10n.tr("Localizable", "consulting_subtitle", fallback: "Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.")
+  /// You can now book a free consultation with Transferagentur!
+  public static let consultingTitle = L10n.tr("Localizable", "consulting_title", fallback: "You can now book a free consultation with Transferagentur!")
   /// Ich habe eine Idee und möchte sie umsetzen
   public static let currentStateAnswerIdea = L10n.tr("Localizable", "currentState_answer_idea", fallback: "Ich habe eine Idee und möchte sie umsetzen")
   /// Ich habe noch keine Idee
@@ -38,12 +46,20 @@ public enum L10n {
   public static let editYourAnswers = L10n.tr("Localizable", "edit_your_answers", fallback: "Bearbeite deine Antworten")
   /// Es ist ein Fehler aufgetreten
   public static let errorOccured = L10n.tr("Localizable", "error_occured", fallback: "Es ist ein Fehler aufgetreten")
+  /// Export PDF
+  public static let exportPdf = L10n.tr("Localizable", "export_pdf", fallback: "Export PDF")
   /// Feedback
   public static let feedback = L10n.tr("Localizable", "Feedback", fallback: "Feedback")
   /// Allgemein
   public static let general = L10n.tr("Localizable", "general", fallback: "Allgemein")
-  /// Generieren
-  public static let generate = L10n.tr("Localizable", "generate", fallback: "Generieren")
+  /// Generate
+  public static let generate = L10n.tr("Localizable", "generate", fallback: "Generate")
+  /// Generate your personalized %@
+  public static func generate(_ p1: Any) -> String {
+    return L10n.tr("Localizable", "generate %@", String(describing: p1), fallback: "Generate your personalized %@")
+  }
+  /// This will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.
+  public static let generateGptInfo = L10n.tr("Localizable", "generate_gpt_info", fallback: "This will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.")
   /// Generiere dein Pitch Deck, wenn du alle Module abgeschlossen hast.
   public static let generatePitchDeck = L10n.tr("Localizable", "generate_pitch_deck", fallback: "Generiere dein Pitch Deck, wenn du alle Module abgeschlossen hast.")
   /// Was sind deine Ziele mit dem Startup?
@@ -60,6 +76,14 @@ public enum L10n {
   public static let launchScreenTitle = L10n.tr("Localizable", "launch_screen_title", fallback: "Willkommen bei Launchlab 🚀")
   /// Du bist auf einem guten Weg, dein Startup zu starten!
   public static let launchingGoodWay = L10n.tr("Localizable", "launching_good_way", fallback: "Du bist auf einem guten Weg, dein Startup zu starten!")
+  /// Locked 🔒
+  public static let locked = L10n.tr("Localizable", "locked", fallback: "Locked 🔒")
+  /// It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.
+  public static let mailAlertSubtitle = L10n.tr("Localizable", "mail_alert_subtitle", fallback: "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.")
+  /// Mark as completed
+  public static let markCompleted = L10n.tr("Localizable", "mark_completed", fallback: "Mark as completed")
+  /// Modules
+  public static let modules = L10n.tr("Localizable", "modules", fallback: "Modules")
   /// %@/%@ abgeschlossen
   public static func modulesCompleted(_ p1: Any, _ p2: Any) -> String {
     return L10n.tr("Localizable", "modules_completed %@ %@", String(describing: p1), String(describing: p2), fallback: "%@/%@ abgeschlossen")
@@ -86,6 +110,10 @@ public enum L10n {
   public static func questionValueOf(_ p1: Any, _ p2: Any) -> String {
     return L10n.tr("Localizable", "question_value_of %@ %@", String(describing: p1), String(describing: p2), fallback: "Frage %@ von %@")
   }
+  /// Review
+  public static let review = L10n.tr("Localizable", "review", fallback: "Review")
+  /// Start Consultation
+  public static let startConsulting = L10n.tr("Localizable", "start_consulting", fallback: "Start Consultation")
   /// Support
   public static let support = L10n.tr("Localizable", "support", fallback: "Support")
   /// Support & Feedback

@@ -43,9 +43,9 @@ struct ModuleInfo: View {
 
       ActionPrimaryButton(
         isClickable: true,
-        title: isAvailable ? module.isCompleted ? "Review" :
+        title: isAvailable ? module.isCompleted ? L10n.review :
           module.progress == 0 ? L10n.commonStart : L10n.commonContinue
-          : "Locked 🔒"
+        : L10n.locked
       ) {
         router.showScreen(.fullScreenCover) { _ in
           LearningView(module, router: router)

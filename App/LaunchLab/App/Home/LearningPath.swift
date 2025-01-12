@@ -39,7 +39,7 @@ struct LearningPath: View {
         .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150))
         .padding(.top, 50)
 
-        Image("earth")
+        Image(.earth)
           .resizable()
           .scaledToFit()
           .padding(.top, -50)

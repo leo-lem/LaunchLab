@@ -34,7 +34,6 @@ struct MenuScreen: View {
     }
   }
 
-
   private var userTopText: some View {
     VStack {
       Text(L10n.hello("User"))
