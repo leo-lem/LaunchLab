@@ -19,7 +19,7 @@ struct LaunchLabApp: App {
         HomeScreen()
           .overlay(alignment: .bottomTrailing) { FloatingChatButton { chatting = true } }
           .fullScreenCover(isPresented: $onboarding) { OnboardingWelcomeView(showOnboarding: $onboarding) }
-          .sheet(isPresented: $chatting) { ChatView(send: requester.sendMessage) }
+          // .sheet(isPresented: $chatting) { ChatView(send: requester.sendMessage) }
           .environment(\.router, router)
           .environment(\.managedObjectContext, CoreDataStack.shared.mainContext)
           .preferredColorScheme(.dark)
