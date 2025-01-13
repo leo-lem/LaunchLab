@@ -54,8 +54,64 @@
     "image": "product",
     "collectable": "collectable1",
     "pathPosition": "left",
-    "content": []
-  },
+    "content": [
+      {
+        "title": "Understanding Prototypes",
+        "content": "Create your product by developing a prototype. A prototype is a preliminary version of your product that demonstrates its core features and furthermore enables to test its functionality, design, or usability with test users. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product (MVP).\n- Gather early feedback by friends, family members or others to improve your design.",
+        "image": "cube.fill",
+        "type": "info"
+      },
+      {
+        "title": "Key functionalities",
+        "content": "Describe the key features of your product. Outline what your first prototype will include.",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Prototype Version",
+        "content": "Do you want to offer a physical or software-based product, or a service? Describe your product or service accurately.",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Iterative Design",
+        "content": "Product development is an iterative process. Test your prototype, gather feedback, and refine. Use the **Build-Measure-Learn** loop:\n\n1. Build: Develop your MVP.\n2. Measure: Test it with real users.\n3. Learn: Improve based on feedback.",
+        "image": "arrow.triangle.2.circlepath",
+        "type": "info"
+      },
+      {
+        "title": "Prototype-Fidality",
+        "content": "Are you planning a simple (low-fidelity) or detailed (high-fidelity) prototype? What form (e.g. sketch, mockup, simulation) would be useful?",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Resources",
+        "content": "What resources (time, budget, tools) do you have available to develop a prototype?",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Prototype Testing",
+        "content": "Who will test your prototype and how are you planning to reach out to these people? List your test groups in descending importancy.",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Prototype Testing II",
+        "content": "How will you ensure that your prototype enables real/accurate/reliable user feedback? e.g. time-tracking, location-setup etc.",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Iterative Design Practice",
+        "content": "List three ways you can test your prototype and gather meaningful feedback.",
+        "image": "doc.text.magnifyingglass",
+        "type": "textfield"
+      }
+    ]
+  }
+,
   {
     "index": 2,
     "type": "document",
@@ -73,8 +129,52 @@
     "image": "customer",
     "collectable": "collectable2",
     "pathPosition": "right",
-    "content": []
-  },
+    "content": [
+      {
+        "title": "Customer Personas",
+        "content": "Understand your costumer needs and create a costumer persona. A customer persona is a fictional representation of your ideal customer. Define your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
+        "image": "person.crop.circle",
+        "type": "info"
+      },
+      {
+        "title": "Costumer Problems",
+        "content": "In one sentence, what problems or needs does the target audience have?",
+        "image": "person.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Customer Persona Upload",
+        "content": "Have you already created personas or another form of user perspective? If so, please upload your file here.",
+        "image": "person.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Customer Persona",
+        "content": "Describe your ideal customer as detailed as possible and well-structured. Include their demographics, psychographics, and main challenges.",
+        "image": "person.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Customer Journey Mapping",
+        "content": "Understand your customer's product experience by mapping their journey. Identify:\n\n1. How they discover your product.\n2. What steps they take to purchase or use it.\n3. Pain points along the way.",
+        "image": "map",
+        "type": "info"
+      },
+      {
+        "title": "Costumer Journey Mapping Upload",
+        "content": "Have you already created a customer journey map? If so, please upload your file here.",
+        "image": "person.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Customer Journey Creation",
+        "content": "Create a short customer journey for your product. Highlight one potential obstacle and how you’ll address it.",
+        "image": "map.fill",
+        "type": "textfield"
+      }
+    ]
+  }
+,
   {
     "index": 4,
     "type": "consultation",
@@ -88,12 +188,44 @@
     "index": 5,
     "type": "module",
     "title": "Competitive Analysis",
-    "desc": "",
+    "desc": "Identify your competitors and define your unique advantage.",
     "image": "competitors",
     "collectable": "collectable3",
     "pathPosition": "left",
-    "content": []
-  },
+    "content": [
+      {
+        "title": "Identifying Competitors",
+        "content": "Competitive analysis is the process of identifying and evaluating your competitors. It helps you uncover gaps in the market, refine your value proposition, and develop strategies to differentiate your business. By analyzing the competition, you gain insights into industry trends, customer expectations, and potential opportunities, enabling you to make informed decisions and position your company for success. Competitive analysis is a foundational step for anyone entering the market. Competitors can be direct (same product) or indirect (solving the same problem differently). Analyze their:\n\n- Products or services.\n- Strengths and weaknesses.\n- Pricing and market positioning.",
+        "image": "chart.bar",
+        "type": "info"
+      },
+      {
+        "title": "Competitor Analysis Practice",
+        "content": "List at least three competitors and one strength and weakness for each.",
+        "image": "chart.pie",
+        "type": "textfield"
+      },
+      {
+        "title": "Unique Selling Proposition (USP)",
+        "content": "Your USP is what sets you apart. It answers the question: Why should customers choose you over others?",
+        "image": "star.fill",
+        "type": "info"
+      },
+      {
+        "title": "USP Practice",
+        "content": "Write one sentence describing your USP. What makes your product unique? Why should customers choose your offering? (e.g., price, quality, innovation)",
+        "image": "star.circle",
+        "type": "textfield"
+      },
+      {
+        "title": "Solution Combination",
+        "content": "Could you combine your idea with existing approaches or technologies to improve it?",
+        "image": "star.circle",
+        "type": "textfield"
+      }
+    ]
+  }
+,
   {
     "index": 6,
     "type": "module",
@@ -121,8 +253,47 @@
     "image": "marketing",
     "collectable": "collectable2",
     "pathPosition": "left",
-    "content": []
-  },
+    "content": [
+      {
+        "title": "Building Your Brand",
+        "content": "A strong marketing strategy is essential for anyone entering the founding market because it bridges the gap between your product and your customers. It ensures that your message reaches the right people, through the right channels, at the right time. Without a clear plan, you risk wasting resources on efforts that don't connect with your target audience or drive results. A well-crafted strategy helps you prioritize the channels your customers use most, engage them effectively, and build trust. It also allows you to measure success and adjust your approach as needed.",
+        "image": "paintbrush.fill",
+        "type": "info"
+      },
+      {
+        "title": "Brand Practice",
+        "content": "Write a tagline for your brand that captures its essence in one sentence.",
+        "image": "paintbrush",
+        "type": "textfield"
+      },
+      {
+        "title": "Engaging Your Audience",
+        "content": "Effective customer relationships are built on trust and communication. Use:\n\n- Social Media: Connect where your audience spends time.\n- Email Campaigns or Communities: Keep them informed and engaged.\n- Personalization: Make your communication relevant. - Offline marketing: Visit entrepreneur fairs, distribute flyers at optimal locations etc.",
+        "image": "envelope.fill",
+        "type": "info"
+      },
+      {
+        "title": "Audience Engagement",
+        "content": "List at least three ways you will interact with your audience. Be specific about the channels and message types. Will the interactions be personal or automated?",
+        "image": "envelope.open",
+        "type": "textfield"
+      },
+      {
+        "title": "Audience Engagement Priority",
+        "content": "Which channels will you prioritize, and why? You can focus on which channels are used most frequently by your target group. ",
+        "image": "envelope.open",
+        "type": "textfield"
+      },
+      {
+        "title": "?",
+        "content": "What steps will you take to acquire and retain customers long-term? ",
+        "image": "envelope.open",
+        "type": "textfield"
+      },
+      
+    ]
+  }
+,
   {
     "index": 9,
     "type": "module",
