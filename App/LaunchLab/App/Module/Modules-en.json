@@ -56,8 +56,8 @@
     "pathPosition": "left",
     "content": [
       {
-        "title": "Understanding Prototypes",
-        "content": "Create your product by developing a prototype. A prototype is a preliminary version of your product that demonstrates its core features and furthermore enables to test its functionality, design, or usability with test users. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product (MVP).\n- Gather early feedback by friends, family members or others to improve your design.",
+        "title": "Understand Prototyping",
+        "content": "Create your product by developing a prototype. A prototype is a preliminary version of your product that demonstrates its core features and furthermore enables to test its functionality, design, or usability with test users. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product (MVP).\n- Gather early feedback to improve your design.",
         "image": "cube.fill",
         "type": "info"
       },
@@ -75,7 +75,7 @@
       },
       {
         "title": "Iterative Design",
-        "content": "Product development is an iterative process. Test your prototype, gather feedback, and refine. Use the **Build-Measure-Learn** loop:\n\n1. Build: Develop your MVP.\n2. Measure: Test it with real users.\n3. Learn: Improve based on feedback.",
+        "content": "Product development is an iterative process. Test your prototype, gather feedback, and refine. Use the **Build-Measure-Learn** loop:\n\n1. Build: Develop your MVP.\n2. Measure: Test it with real users such as friends, family members etc. .\n3. Learn: Improve based on feedback.",
         "image": "arrow.triangle.2.circlepath",
         "type": "info"
       },
@@ -132,7 +132,7 @@
     "content": [
       {
         "title": "Customer Personas",
-        "content": "Understand your costumer needs and create a costumer persona. A customer persona is a fictional representation of your ideal customer. Define your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
+        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. Create a customer persona, a fictional representation of your ideal customer, by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
         "image": "person.crop.circle",
         "type": "info"
       },
@@ -149,7 +149,7 @@
         "type": "textfield"
       },
       {
-        "title": "Customer Persona",
+        "title": "Customer Persona Creation",
         "content": "Describe your ideal customer as detailed as possible and well-structured. Include their demographics, psychographics, and main challenges.",
         "image": "person.circle",
         "type": "textfield"
@@ -195,7 +195,7 @@
     "content": [
       {
         "title": "Identifying Competitors",
-        "content": "Competitive analysis is the process of identifying and evaluating your competitors. It helps you uncover gaps in the market, refine your value proposition, and develop strategies to differentiate your business. By analyzing the competition, you gain insights into industry trends, customer expectations, and potential opportunities, enabling you to make informed decisions and position your company for success. Competitive analysis is a foundational step for anyone entering the market. Competitors can be direct (same product) or indirect (solving the same problem differently). Analyze their:\n\n- Products or services.\n- Strengths and weaknesses.\n- Pricing and market positioning.",
+        "content": "Competitive analysis is the process of identifying and evaluating your competitors. It helps you uncover gaps in the market, refine your value proposition, and develop strategies to differentiate your business. By analyzing the competition, you gain insights into industry trends, customer expectations, and potential opportunities enabling you to make informed decisions and position your company for success. Competitive analysis is a foundational step for anyone entering the market. Competitors can be direct (same product) or indirect (solving the same problem differently). Analyze their:\n\n- Products or services.\n- Strengths and weaknesses.\n- Pricing and market positioning.",
         "image": "chart.bar",
         "type": "info"
       },
@@ -226,16 +226,54 @@
     ]
   }
 ,
-  {
-    "index": 6,
-    "type": "module",
-    "title": "Networking",
-    "desc": "",
-    "image": "networking",
-    "collectable": "collectable3",
-    "pathPosition": "right",
-    "content": []
-  },
+{
+  "index": 6,
+  "type": "module",
+  "title": "Networking",
+  "desc": "Build meaningful connections with experts and partners to bring your business idea to life.",
+  "image": "networking",
+  "collectable": "collectable3",
+  "pathPosition": "right",
+  "content": [
+    {
+      "title": "The Importance of Strategic Networking",
+      "content": "Networking is more than meeting people—it’s about building relationships that help your business grow. External experts, mentors, and strategic partners can provide:\n\n- **Expertise**: Legal, marketing, or technical advice.\n- **Resources**: Access to tools, suppliers, or funding.\n- **Opportunities**: Collaborations or introductions to key contacts.",
+      "image": "person.3.fill",
+      "type": "info"
+    },
+    {
+      "title": "Networking Practice",
+      "content": "List three types of experts or partners you need to support your business idea. What role will each play?",
+      "image": "person.crop.circle.badge.plus",
+      "type": "textfield"
+    },
+    {
+      "title": "Building Your Support Network",
+      "content": "A strong network can guide you through challenges and open doors. To build your network:\n\n- **Attend Events**: Join industry meetups, conferences, and startup hubs.\n- **Seek Mentors**: Look for experienced entrepreneurs who can guide you.\n- **Engage Online**: Use platforms like LinkedIn to connect with professionals.",
+      "image": "network",
+      "type": "info"
+    },
+    {
+      "title": "Support Network Practice",
+      "content": "Identify one event or platform where you can meet potential mentors or partners. What is your goal for this interaction?",
+      "image": "figure.stand.line.dotted.figure.stand",
+      "type": "textfield"
+    },
+    {
+      "title": "Leveraging Strategic Partnerships",
+      "content": "Strategic partnerships can give you a competitive edge. Partners can:\n\n- **Provide Resources**: Share tools, services, or knowledge.\n- **Expand Reach**: Help you access new customers or markets.\n- **Collaborate on Projects**: Combine expertise to develop products or campaigns.",
+      "image": "hand.raised.fill",
+      "type": "info"
+    },
+    {
+      "title": "Partnership Practice",
+      "content": "Think of one potential strategic partner. What value would this partnership bring to your business, and how could you approach them?",
+      "image": "hand.raised",
+      "type": "textfield"
+    }
+  ]
+}
+,
   {
     "index": 7,
     "type": "document",
@@ -294,16 +332,42 @@
     ]
   }
 ,
-  {
-    "index": 9,
-    "type": "module",
-    "title": "Financing and Resources",
-    "desc": "",
-    "image": "financing",
-    "collectable": "collectable3",
-    "pathPosition": "right",
-    "content": []
-  },
+{
+  "index": 9,
+  "type": "module",
+  "title": "Financing and Resources",
+  "desc": "Secure funding and manage resources effectively.",
+  "image": "financing",
+  "collectable": "collectable3",
+  "pathPosition": "right",
+  "content": [
+    {
+      "title": "Funding Options",
+      "content": "Financing and resources are the lifeblood of any startup. Without a clear plan for funding and resource management, even the best ideas can fail to materialize. Securing the right financial backing ensures you can build, sustain, and grow your business, while efficient resource allocation helps you maximize output and minimize waste. Proper financial planning also allows you to weather unexpected challenges and invest in critical areas like marketing, product development, and talent. There are various ways to fund your startup:\n\n- **Bootstrapping**: Use personal savings.\n- **Investors**: Seek venture capital or angel investors.\n- **Crowdfunding**: Raise funds from the public.",
+      "image": "banknote.fill",
+      "type": "info"
+    },
+    {
+      "title": "Funding Practice",
+      "content": "Choose one funding option and explain why it suits your startup.",
+      "image": "banknote",
+      "type": "textfield"
+    },
+    {
+      "title": "Managing Resources",
+      "content": "Efficiently allocate your time, money, and people and keep track of all of these components by using tools like:\n\n- Budgeting software.\n- Project management tools.\n- Regular performance reviews.",
+      "image": "calendar",
+      "type": "info"
+    },
+    {
+      "title": "Resource Management Practice",
+      "content": "List three priorities for your resource allocation in the next quarter.",
+      "image": "calendar.badge.clock",
+      "type": "textfield"
+    }
+  ]
+}
+,
   {
     "index": 10,
     "type": "consultation",
@@ -318,22 +382,74 @@
     "index": 11,
     "type": "module",
     "title": "Timeline and Milestones",
-    "desc": "",
-    "image": "timelijne",
+    "desc": "Plan and track your startup's progress.",
+    "image": "timeline",
     "collectable": "collectable1",
     "pathPosition": "left",
-    "content": []
-  },
-  {
-    "index": 12,
-    "type": "module",
-    "title": "Team Building",
-    "desc": "",
-    "image": "team",
-    "collectable": "collectable3",
-    "pathPosition": "right",
-    "content": []
-  },
+    "content": [
+      {
+        "title": "Setting Milestones",
+        "content": "Milestones are key achievements that mark your progress. Examples include:\n\n- Launching your product.\n- Reaching your first 100 customers.\n- Securing funding.",
+        "image": "flag.fill",
+        "type": "info"
+      },
+      {
+        "title": "Milestone Practice",
+        "content": "Set three milestones for your startup for the next 12 months. Be specific and include deadlines.",
+        "image": "flag",
+        "type": "textfield"
+      },
+      {
+        "title": "Creating a Timeline",
+        "content": "A timeline helps you visualize progress. Include:\n\n- Key activities.\n- Deadlines for each milestone.\n- Dependencies between tasks.",
+        "image": "clock.arrow.circlepath",
+        "type": "info"
+      },
+      {
+        "title": "Timeline Practice",
+        "content": "Outline a timeline for the next six months. Include at least three key activities.",
+        "image": "clock",
+        "type": "textfield"
+      }
+    ]
+  }
+,
+{
+  "index": 12,
+  "type": "module",
+  "title": "Team Building",
+  "desc": "Assemble and manage a strong team.",
+  "image": "team",
+  "collectable": "collectable3",
+  "pathPosition": "right",
+  "content": [
+    {
+      "title": "Roles and Responsibilities",
+      "content": "While Networking is building an external network of experts, partners, and supporters who can indirectly strengthen your business, Team Building focuses on your internal team that directly works on executing your business idea. Define roles to ensure everyone knows their responsibilities. Common startup roles include:\n\n- CEO: Vision and strategy.\n- CTO: Technology and product.\n- CMO: Marketing and sales.",
+      "image": "person.2.fill",
+      "type": "info"
+    },
+    {
+      "title": "Roles Practice",
+      "content": "List the key roles in your team. For each, write one main responsibility.",
+      "image": "person.2",
+      "type": "textfield"
+    },
+    {
+      "title": "Team Culture",
+      "content": "Build a positive team culture with:\n\n- Clear communication.\n- Mutual respect.\n- Shared values and goals.",
+      "image": "heart.fill",
+      "type": "info"
+    },
+    {
+      "title": "Team Culture Practice",
+      "content": "Write down three values/principles that define your team culture.",
+      "image": "heart",
+      "type": "textfield"
+    }
+  ]
+}
+,
   {
     "index": 13,
     "type": "document",
