@@ -57,15 +57,27 @@
     "content": [
       {
         "title": "Understand Prototyping",
-        "content": "Create your product by developing a prototype. A prototype is a preliminary version of your product that demonstrates its core features and furthermore enables to test its functionality, design, or usability with test users. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product (MVP).\n- Gather early feedback to improve your design.",
+        "content": "Create your product by developing first prototypes, preliminary versions of your product that demonstrate its core features and furthermore enable to test its functionality, design, or usability with test users. Commonly, the aim is to build a so called Mininal Viable Products (MVP) in order to convince investors and thus secure fundings. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product.\n- Gather early feedback to improve your design.",
         "image": "cube.fill",
         "type": "info"
       },
       {
-        "title": "Key functionalities",
-        "content": "Describe the key features of your product. Outline what your first prototype will include.",
+        "title": "Product or Service",
+        "content": "Do you want to offer a physical or software-based product, or a service? Describe your product or service accurately.",
         "image": "cube",
         "type": "textfield"
+      },
+      {
+        "title": "Key functionalities",
+        "content": "List the key features of your product and describe them. Outline what your first prototype will include.",
+        "image": "cube",
+        "type": "textfield"
+      },
+      {
+        "title": "Types of prototypes I",
+        "content": "There are various types of prototypes, each suited for different stages of product development:\n\n- **Evolutionary Prototyping:** Build a prototype that evolves over time with user feedback, gradually becoming the final product. Useful tools: Figma or Axure RP.\n\n- **Throwaway (Rapid) Prototyping:** Quickly create a prototype to gather early feedback, then discard it. Ideal for exploring ideas. Use tools like paper sketches, Adobe XD, or Marvel App.\n\n- **Low-Fidelity Prototyping:** Focus on the basic structure and functionality of the product without detailed visuals. Great for early-stage brainstorming. Tools: Balsamiq, Lucidchart, or whiteboards.\n\n- **High-Fidelity Prototyping:** Create detailed, interactive prototypes that closely resemble the final product. Ideal for testing design and functionality. Tools: Figma, InVision, or React.,,
+        "image": "cube.fill",
+        "type": "info"
       },
       {
         "title": "Prototype Version",
@@ -132,7 +144,7 @@
     "content": [
       {
         "title": "Customer Personas",
-        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. Create a customer persona, a fictional representation of your ideal customer, by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
+        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. By identifying what your customers want and need, you can develop solutions that truly solve their problems, increase customer satisfaction and loyalty, and stay competitive in your market by addressing unmet demands. \n\n### Here is how you can detect Customer Needs:\n- **Surveys and Questionnaires:** Collect direct feedback on preferences and pain points.\n- **Interviews:** Conduct in-depth conversations with potential users to gain qualitative insights.\n- **Focus Groups:** Gather a group of individuals representing your target audience to discuss their needs and expectations.\n- **Market Research:** Analyze industry trends and competitor offerings.\n- **User Behavior Analysis:** Study analytics from websites or apps to identify user patterns and preferences.\n\n### Sources for Creating Customer Personas:\n- **Social Media Insights:** Platforms like Facebook and Instagram provide demographic and interest data.\n- **Customer Feedback:** Use reviews, support tickets, and testimonials to identify recurring themes.\n- **Competitor Analysis:** Examine how competitors engage with their audience and what solutions they offer.\n- **Industry Reports:** Leverage professional market research reports for broader trends and data.\n\nCombining these methods ensures your customer personas are accurate, actionable, and grounded in real user behavior, giving you a solid foundation for decision-making and product development. .Create a customer persona, a fictional representation of your ideal customer, by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
         "image": "person.crop.circle",
         "type": "info"
       },
@@ -200,8 +212,20 @@
         "type": "info"
       },
       {
-        "title": "Competitor Analysis Practice",
-        "content": "List at least three competitors and one strength and weakness for each.",
+        "title": "Competitors",
+        "content": "List at least three competitors!",
+        "image": "chart.pie",
+        "type": "textfield"
+      },
+      {
+        "title": "Competitor products",
+        "content": "How do your competitors solve your target group’s problems? Please sort the already existing products, services or makeshift solutions.",
+        "image": "chart.pie",
+        "type": "textfield"
+      },
+      {
+        "title": "Pros and Cons",
+        "content": "What are they doing well, and what are the challenges or weaknesses of their existing solutions?",
         "image": "chart.pie",
         "type": "textfield"
       },
@@ -213,13 +237,13 @@
       },
       {
         "title": "USP Practice",
-        "content": "Write one sentence describing your USP. What makes your product unique? Why should customers choose your offering? (e.g., price, quality, innovation)",
+        "content": "Write one sentence describing your USP. What makes your product unique or special compared to existing solutions? Why should customers choose your offering? (e.g., price, quality, innovation etc.)",
         "image": "star.circle",
         "type": "textfield"
       },
       {
         "title": "Solution Combination",
-        "content": "Could you combine your idea with existing approaches or technologies to improve it?",
+        "content": "Could you combine your idea with existing approaches or technologies to improve it? If so, describe how.",
         "image": "star.circle",
         "type": "textfield"
       }
