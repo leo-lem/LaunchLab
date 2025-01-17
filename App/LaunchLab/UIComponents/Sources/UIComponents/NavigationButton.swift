@@ -32,11 +32,11 @@ public struct NavigationButton: View {
 
   public var body: some View {
     Button {
-      backgroundColor = .init(uiColor: UIColor.tertiarySystemGroupedBackground)
+      backgroundColor = .init(uiColor: UIColor.tertiaryLabel)
       action()
 
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        backgroundColor = .init(uiColor: UIColor.secondarySystemGroupedBackground)
+        backgroundColor = .init(uiColor: UIColor.secondaryLabel)
       }
     } label: {
       HStack {
@@ -53,13 +53,11 @@ public struct NavigationButton: View {
         }
 
         Text(text)
-          .foregroundStyle(.white)
 
         Spacer()
 
         if let trailingText = trailingText {
           Text(trailingText)
-            .foregroundStyle(.white)
         }
 
         Image(systemName: isLinkoutButton ? "arrow.up.right" : "chevron.right")

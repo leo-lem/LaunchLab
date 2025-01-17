@@ -13,7 +13,7 @@ import XCTest
 final class HomeScreenSnapshotTest: XCTestCase {
   func testHomeScreenSnapshot() {
     assertSnapshot(
-      of: HomeScreen(),
+      of: Journey(),
       as: .image(layout: .device(config: .iPhone13)),
       named: "HomeScreen"
     )

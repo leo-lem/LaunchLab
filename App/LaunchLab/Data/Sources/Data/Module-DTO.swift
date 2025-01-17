@@ -13,7 +13,7 @@ public extension Module {
     public let image: String
     public let collectable: String?
     public let pathPosition: String
-    public let progress: Int
+    public let progress: Int?
     public let content: [ModuleContent.DTO]
 
     public init(
@@ -24,7 +24,7 @@ public extension Module {
       image: String,
       collectable: String?,
       pathPosition: String,
-      progress: Int,
+      progress: Int?,
       content: [ModuleContent.DTO]
     ) {
       self.index = index
@@ -49,7 +49,7 @@ public extension Module {
     image = dto.image
     collectable = dto.collectable
     pathPosition = dto.pathPosition
-    progress = Int16(dto.progress)
+    progress = dto.progress.flatMap(Int16.init) ?? 0
     questionAndAnswer = [:]
     _ = dto.content.map { ModuleContent($0, module: self) }
   }

@@ -92,9 +92,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6E0715532D09E64A0054DECF /* Home */ = {
+		6E0715532D09E64A0054DECF /* Journey */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Home;
+			path = Journey;
 			sourceTree = "<group>";
 		};
 		6E07155D2D09E6680054DECF /* Menu */ = {
@@ -102,14 +102,9 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		6E0715652D09E66C0054DECF /* Chat */ = {
+		6E0715652D09E66C0054DECF /* AI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		6E07156C2D09E6960054DECF /* Onboarding */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Onboarding;
+			path = AI;
 			sourceTree = "<group>";
 		};
 		6E0715752D09E6980054DECF /* Module */ = {
@@ -120,6 +115,11 @@
 		6E07157E2D09EA010054DECF /* __Snapshots__ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		6E26C47E2D3A98EC0022294D /* Stats */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -220,11 +220,11 @@
 		7AC514192CD3F6E800F4E6AA /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6E0715532D09E64A0054DECF /* Home */,
+				6E26C47E2D3A98EC0022294D /* Stats */,
+				6E0715532D09E64A0054DECF /* Journey */,
 				6E07155D2D09E6680054DECF /* Menu */,
 				6E0715752D09E6980054DECF /* Module */,
-				6E0715652D09E66C0054DECF /* Chat */,
-				6E07156C2D09E6960054DECF /* Onboarding */,
+				6E0715652D09E66C0054DECF /* AI */,
 				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
 			);
 			path = App;
@@ -318,11 +318,11 @@
 				7A184FD52D02E0A100F87E97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				6E0715532D09E64A0054DECF /* Home */,
+				6E0715532D09E64A0054DECF /* Journey */,
 				6E07155D2D09E6680054DECF /* Menu */,
-				6E0715652D09E66C0054DECF /* Chat */,
-				6E07156C2D09E6960054DECF /* Onboarding */,
+				6E0715652D09E66C0054DECF /* AI */,
 				6E0715752D09E6980054DECF /* Module */,
+				6E26C47E2D3A98EC0022294D /* Stats */,
 			);
 			name = LaunchLab;
 			packageProductDependencies = (
@@ -344,7 +344,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					7A184FC22D02E09F00F87E97 = {
 						CreatedOnToolsVersion = 16.1;
@@ -650,6 +650,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -711,6 +712,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -739,6 +741,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
 				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -785,6 +788,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
 				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				ENABLE_HARDENED_RUNTIME = YES;

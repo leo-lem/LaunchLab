@@ -6,7 +6,7 @@
 import Foundation
 import Styleguide
 
-class ChatGPTRequester {
+class AICoFounder {
   private let key = L10n.apiKey
   private let url = URL(string: "https://api.openai.com/v1/chat/completions")!
 

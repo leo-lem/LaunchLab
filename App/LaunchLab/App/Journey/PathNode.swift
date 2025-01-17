@@ -104,9 +104,9 @@ struct PathNode: View {
   }
 
   private func handleBookConsultationAction(subrouter: AnyRouter) {
-    if MailView.canSendMail {
+    if MailView.canSend {
       subrouter.showScreen(.sheet) { subrouter in
-        MailView(supportEmail: .createConsultationMail()) { result in
+        MailView(email: .consultation) { result in
           handleMailResult(result, subrouter: subrouter)
         }
       }

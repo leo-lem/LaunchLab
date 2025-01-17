@@ -1,22 +1,11 @@
 [
   {
-    "title": "Elevator Pitch",
-    "desc": "Create an Elevator Pitch.",
-    "progress": -1,
     "index": 0,
-    "type": "document",
-    "image": "businessplan",
-    "pathPosition": "center",
-    "content": []
-  },
-  {
-    "index": 1,
     "title": "Idea Development",
     "desc": "Learn to transform raw ideas into actionable business concepts.",
     "image": "planet1",
     "type": "module",
     "collectable": "collectable1",
-    "progress": 0,
     "pathPosition": "right",
     "content": [
       {
@@ -58,13 +47,12 @@
     ]
   },
   {
-    "index": 2,
+    "index": 1,
     "title": "Market Analysis",
     "desc": "Understand your audience, competitors, and market trends.",
     "image": "planet2",
     "type": "module",
     "collectable": "collectable2",
-    "progress": 0,
     "pathPosition": "left",
     "content": [
       {
@@ -88,23 +76,21 @@
     ]
   },
   {
-    "index": 3,
+    "index": 2,
     "title": "Consultation",
     "desc": "",
     "image": "chatbubbles",
     "type": "consultation",
-    "progress": -1,
     "pathPosition": "center",
     "content": []
   },
   {
-    "index": 4,
+    "index": 3,
     "title": "Funding Strategies",
     "desc": "Explore funding options to secure financial resources.",
     "image": "planet3",
     "type": "module",
     "collectable": "collectable3",
-    "progress": 0,
     "pathPosition": "right",
     "content": [
       {
@@ -130,8 +116,16 @@
   {
     "title": "Pitch Deck",
     "desc": "Create a Pitch Deck.",
-    "progress": -1,
+    "index": 4,
+    "type": "document",
+    "image": "businessplan",
+    "pathPosition": "center",
+    "content": []
+  },
+  {
     "index": 5,
+    "title": "Elevator Pitch",
+    "desc": "Create an Elevator Pitch.",
     "type": "document",
     "image": "businessplan",
     "pathPosition": "center",

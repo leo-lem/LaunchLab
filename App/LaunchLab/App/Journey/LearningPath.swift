@@ -7,12 +7,6 @@ import LLExtensions
 import SwiftfulRouting
 import SwiftUI
 
-public extension Collection {
-  subscript(safe index: Index) -> Element? {
-    indices.contains(index) ? self[index] : nil
-  }
-}
-
 struct LearningPath: View {
   @State private var infoModalIndex = -1
   let modules: [Module]
@@ -39,14 +33,14 @@ struct LearningPath: View {
         .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150))
         .padding(.top, 50)
 
-        Image(.earth)
+        Image(.start)
           .resizable()
           .scaledToFit()
           .padding(.top, -50)
           .padding(.bottom, -250)
       }
     }
-    .background(content: self.backgroundGradient)
+    .background(content: backgroundGradient)
     .defaultScrollAnchor(.bottom)
   }
 
@@ -61,6 +55,12 @@ struct LearningPath: View {
     )
     .ignoresSafeArea(.all)
     .padding(.vertical, -300)
+  }
+}
+
+public extension Collection {
+  subscript(safe index: Index) -> Element? {
+    indices.contains(index) ? self[index] : nil
   }
 }
 
