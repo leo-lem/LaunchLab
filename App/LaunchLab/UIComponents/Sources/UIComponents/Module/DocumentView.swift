@@ -7,9 +7,6 @@ import SwiftfulRouting
 import SwiftUI
 
 public struct DocumentView: View {
-  @Environment(\.router) var router
-  @Environment(\.colorScheme) var colorScheme
-  @State private var pdfURL: URL?
   private let isAvailable: Bool
   private let isCompleted: Bool
   private let documentTitle: String
@@ -71,13 +68,17 @@ public struct DocumentView: View {
     .padding(.horizontal, 30)
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
-        Button(action: router.dismissScreen) {
+        Button(action: dismiss.callAsFunction) {
           Image(systemName: "xmark.circle")
             .frame(width: 20, height: 20)
         }
       }
     }
   }
+
+  @State private var pdfURL: URL?
+  @Environment(\.colorScheme) private var colorScheme
+  @Environment(\.dismiss) private var dismiss
 
   private func generatePDF() {
     let pdfContent = """

@@ -7,7 +7,6 @@ import SwiftfulRouting
 import SwiftUI
 
 public struct ConsultingView: View {
-  @Environment(\.router) var router
   private let isAvailable: Bool
   private let isCompleted: Bool
   private let dismissAction: () -> Void
@@ -50,11 +49,45 @@ public struct ConsultingView: View {
     .padding(.horizontal, 30)
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
-        Button(action: router.dismissScreen) {
+        Button(action: dismiss.callAsFunction) {
           Image(systemName: "xmark.circle")
             .frame(width: 20, height: 20)
         }
       }
     }
   }
+
+  @Environment(\.dismiss) private var dismiss
 }
+
+//private func handleBookConsultationAction(subrouter: AnyRouter) {
+//  if MailView.canSend {
+//    subrouter.showScreen(.sheet) { subrouter in
+//      MailView(email: .consultation) { result in
+//        handleMailResult(result, subrouter: subrouter)
+//      }
+//    }
+//  } else {
+//    showMailUnavailableAlert(subrouter: subrouter)
+//  }
+//}
+//
+//private func handleMailResult(_ result: Result<MFMailComposeResult, Error>, subrouter: AnyRouter) {
+//  switch result {
+//  case .success:
+//    module.progress = 10
+//    subrouter.dismissScreen()
+//    CoreDataStack.shared.save()
+//  case .failure(let error):
+//    print(error.localizedDescription)
+//  }
+//}
+//
+//private func showMailUnavailableAlert(subrouter: AnyRouter) {
+//  subrouter.showAlert(
+//    .alert,
+//    title: L10n.errorOccured,
+//    subtitle: L10n.mailAlertSubtitle,
+//    alert: {}
+//  )
+//}

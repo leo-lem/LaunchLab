@@ -97,11 +97,6 @@
 			path = Journey;
 			sourceTree = "<group>";
 		};
-		6E07155D2D09E6680054DECF /* Menu */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Menu;
-			sourceTree = "<group>";
-		};
 		6E0715652D09E66C0054DECF /* AI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AI;
@@ -222,7 +217,6 @@
 			children = (
 				6E26C47E2D3A98EC0022294D /* Stats */,
 				6E0715532D09E64A0054DECF /* Journey */,
-				6E07155D2D09E6680054DECF /* Menu */,
 				6E0715752D09E6980054DECF /* Module */,
 				6E0715652D09E66C0054DECF /* AI */,
 				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
@@ -319,7 +313,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				6E0715532D09E64A0054DECF /* Journey */,
-				6E07155D2D09E6680054DECF /* Menu */,
 				6E0715652D09E66C0054DECF /* AI */,
 				6E0715752D09E6980054DECF /* Module */,
 				6E26C47E2D3A98EC0022294D /* Stats */,
