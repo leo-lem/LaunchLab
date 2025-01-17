@@ -2,6 +2,7 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import CoreData
 import Data
 import MessageUI
 import Styleguide
@@ -22,6 +23,11 @@ struct Stats: View {
       }
       .listRowBackground(Color.clear)
       .listRowSeparator(.hidden)
+
+      Section("Cheats") {
+        Button("Unlock Half", action: unlockHalf)
+        Button("Unlock All", action: unlockAll)
+      }
 
       Section(L10n.general) {
         NavigationButton.privacy
@@ -67,6 +73,29 @@ struct Stats: View {
 
   @State private var email: Email?
   @State private var error = false
+
+  private func unlockHalf() {
+    CoreDataStack.shared.mainContext.performAndWait {
+      let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
+      if let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) {
+        for index in 0..<modules.count/2 {
+          if modules.first(where: { $0.index == index })?.isCompleted ?? true { continue }
+          modules.first { $0.index == index }?.progress = 100
+        }
+      }
+    }
+  }
+
+  private func unlockAll() {
+    CoreDataStack.shared.mainContext.performAndWait {
+      let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
+      if let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) {
+        for module in modules {
+          module.progress = 100
+        }
+      }
+    }
+  }
 }
 
 #Preview {

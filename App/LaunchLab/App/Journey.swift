@@ -18,12 +18,11 @@ struct Journey: View {
         )
         .frame(maxWidth: .infinity, minHeight: 500)
         .overlay(alignment: .bottom) {
-          Image(.rocket)
-            .resizable()
-            .scaledToFit()
+          Rocket(isUnlocked: modules.allSatisfy(\.isCompleted))
             .padding()
             .padding(.bottom, -100)
         }
+        .zIndex(2)
 
         Path(modules: modules.sorted { $0.index > $1.index })
           .zIndex(1)
