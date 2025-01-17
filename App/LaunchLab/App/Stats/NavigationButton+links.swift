@@ -37,7 +37,9 @@ extension NavigationButton {
       imageColor: .orange,
       text: L10n.support
     ) {
-      email.wrappedValue = .support
+      if MailView.canSend {
+        email.wrappedValue = .support
+      }
     }
   }
 
@@ -47,7 +49,9 @@ extension NavigationButton {
       imageColor: .blue,
       text: L10n.feedback
     ) {
-      email.wrappedValue = .feedback
+      if MailView.canSend {
+        email.wrappedValue = .feedback
+      }
     }
   }
 }

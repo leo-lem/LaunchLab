@@ -7,6 +7,7 @@ import SwiftUI
 import UIComponents
 
 extension Module.Lecture {
+  /// The actual content is displayed in these blocks.
   struct Block: View {
     let content: ModuleContent
 

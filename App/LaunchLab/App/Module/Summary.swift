@@ -9,6 +9,7 @@ import SwiftUI
 import UIComponents
 
 extension Module {
+  /// A quick summary of what the module is about.
   struct Summary: View {
     let module: Module, isUnlocked: Bool
 

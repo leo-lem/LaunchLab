@@ -9,6 +9,7 @@ import SwiftUI
 import UIComponents
 
 extension Module {
+  /// Lectures include the blocks of learning material.
   struct Lecture: View {
     let module: Module
 
