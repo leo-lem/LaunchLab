@@ -6,8 +6,8 @@ import SwiftUI
 
 extension Path {
   struct Connector: View {
-    let current: Path.Position,
-        next: Path.Position,
+    let current: Path.Position?,
+        next: Path.Position?,
         isComplete: Bool,
         total: Int
 
@@ -36,7 +36,7 @@ extension Path {
       }
     }
 
-    var start: CGPoint { current.point(total: total) }
-    var end: CGPoint { next.point(total: total) }
+    var start: CGPoint { (current ?? .center(index: -1)).point(total: total) }
+    var end: CGPoint { (next ?? .center(index: total)).point(total: total) }
   }
 }

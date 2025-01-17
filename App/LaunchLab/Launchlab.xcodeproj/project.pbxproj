@@ -12,6 +12,8 @@
 		6E07153D2D097FFC0054DECF /* LLWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E07153A2D097FFC0054DECF /* LLWidgetBundle.swift */; };
 		6E07153E2D097FFC0054DECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E0715362D097FFC0054DECF /* Assets.xcassets */; };
 		6E0715452D09B11F0054DECF /* Module-example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0715442D09B11F0054DECF /* Module-example.swift */; };
+		6EE440662D3AB0D500160B7E /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE440602D3AB0D500160B7E /* Journey.swift */; };
+		6EE4407E2D3AC84A00160B7E /* Modules.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EE4407D2D3AC84A00160B7E /* Modules.json */; };
 		7A184FC52D02E09F00F87E97 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A184FC42D02E09F00F87E97 /* WidgetKit.framework */; };
 		7A184FC72D02E09F00F87E97 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A184FC62D02E09F00F87E97 /* SwiftUI.framework */; };
 		7A184FD62D02E0A100F87E97 /* LLWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7A184FC32D02E09F00F87E97 /* LLWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -71,6 +73,8 @@
 		6E0715392D097FFC0054DECF /* LLWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLWidget.swift; sourceTree = "<group>"; };
 		6E07153A2D097FFC0054DECF /* LLWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLWidgetBundle.swift; sourceTree = "<group>"; };
 		6E0715442D09B11F0054DECF /* Module-example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Module-example.swift"; sourceTree = "<group>"; };
+		6EE440602D3AB0D500160B7E /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		6EE4407F2D3AC85000160B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/Modules.json; sourceTree = "<group>"; };
 		7A184FC32D02E09F00F87E97 /* LLWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LLWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A184FC42D02E09F00F87E97 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7A184FC62D02E09F00F87E97 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -92,9 +96,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6E0715532D09E64A0054DECF /* Journey */ = {
+		6E0715532D09E64A0054DECF /* Path */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Journey;
+			path = Path;
 			sourceTree = "<group>";
 		};
 		6E0715652D09E66C0054DECF /* AI */ = {
@@ -216,10 +220,12 @@
 			isa = PBXGroup;
 			children = (
 				6E26C47E2D3A98EC0022294D /* Stats */,
-				6E0715532D09E64A0054DECF /* Journey */,
+				6E0715532D09E64A0054DECF /* Path */,
 				6E0715752D09E6980054DECF /* Module */,
 				6E0715652D09E66C0054DECF /* AI */,
 				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
+				6EE4407D2D3AC84A00160B7E /* Modules.json */,
+				6EE440602D3AB0D500160B7E /* Journey.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -312,7 +318,7 @@
 				7A184FD52D02E0A100F87E97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				6E0715532D09E64A0054DECF /* Journey */,
+				6E0715532D09E64A0054DECF /* Path */,
 				6E0715652D09E66C0054DECF /* AI */,
 				6E0715752D09E6980054DECF /* Module */,
 				6E26C47E2D3A98EC0022294D /* Stats */,
@@ -399,6 +405,7 @@
 				7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */,
 				7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */,
 				7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */,
+				6EE4407E2D3AC84A00160B7E /* Modules.json in Resources */,
 				7AC514262CD3F6E800F4E6AA /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE440662D3AB0D500160B7E /* Journey.swift in Sources */,
 				7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */,
 				6E0715452D09B11F0054DECF /* Module-example.swift in Sources */,
 			);
@@ -489,6 +497,17 @@
 			targetProxy = 7A5C19F52D00A2CA000D3AD7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6EE4407D2D3AC84A00160B7E /* Modules.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EE4407F2D3AC85000160B7E /* Base */,
+			);
+			name = Modules.json;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7A184FD92D02E0A100F87E97 /* Debug */ = {

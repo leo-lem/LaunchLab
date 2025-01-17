@@ -53,7 +53,7 @@ struct Stat: View {
         }
         .chartLegend(.hidden)
         .chartBackground { _ in
-          Text(progress, format: .percent)
+          Text(round(progress * 100) / 100, format: .percent)
             .font(.headline)
             .bold()
         }

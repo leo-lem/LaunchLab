@@ -7,7 +7,7 @@ import SwiftUI
 
 extension Stats {
   /// Short summary of module progress, which can be expanded in sheet view.
-  struct Button: View {
+  struct Overview: View {
     let complete: Int, total: Int
 
     var body: some View {
@@ -54,5 +54,5 @@ extension Stats {
 }
 
 #Preview {
-  Stats.Button(complete: 2, total: 10)
+  Stats.Overview(complete: 2, total: 10)
 }

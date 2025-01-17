@@ -124,7 +124,7 @@ public extension CoreDataStack {
     }
 
     guard let url = Bundle.main.url(
-      forResource: "Modules-\(Bundle.main.preferredLocalizations.first ?? "en")",
+      forResource: "Modules",
       withExtension: "json"
     ),
       let data = try? Data(contentsOf: url)

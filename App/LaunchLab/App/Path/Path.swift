@@ -14,22 +14,42 @@ struct Path: View {
 
   var body: some View {
     ZStack {
+      Connector(
+        current: nil,
+        next: modules.first { $0.index == 0 }.flatMap(Path.Position.init),
+        isComplete: true,
+        total: modules.count
+      )
+
       ForEach(modules, id: \.index) { module in
-        Node(selection: $selection, module: module, total: modules.count)
-          .sheet(item: $selection, content: detail)
+        Node(module: module, total: modules.count)
+          .onTapGesture { selection = module }
+          .zIndex(1)
 
         Connector(
           current: Path.Position(module),
-          next: next(after: module).flatMap(Path.Position.init) ?? .center(index: modules.count),
+          next: next(after: module).flatMap(Path.Position.init),
           isComplete: module.isCompleted,
           total: modules.count
         )
-        .onTapGesture { selection = nil }
-        .zIndex(-1)
       }
     }
-    .frame(maxWidth: .infinity, minHeight: CGFloat(modules.count * 150))
+    .onTapGesture { selection = nil }
+    .frame(maxWidth: .infinity, minHeight: CGFloat((modules.count + 1) * 150))
     .padding(.top, 50)
+    .onChange(of: selection) {
+      if let selection {
+        router.showResizableSheet(
+          sheetDetents: [.large],
+          selection: .constant(.large),
+          showDragIndicator: false
+        ) {
+          self.selection = nil
+        } destination: { _ in
+          detail(selection)
+        }
+      }
+    }
   }
 
   @State private var selection: Module?
@@ -41,7 +61,7 @@ struct Path: View {
 
   private func isUnlocked(_ module: Module) -> Bool {
     module.index == 0 ||
-    next(after: module)?.isCompleted ?? false
+      modules.first { $0.index == module.index - 1 }?.isCompleted ?? false
   }
 
   @ViewBuilder private func detail(_ selected: Module) -> some View {
@@ -64,10 +84,7 @@ struct Path: View {
         CoreDataStack.shared.save()
       }
     default:
-      ModuleInfo(
-        module: selected,
-        isAvailable: isUnlocked(selected)
-      )
+      Module.Summary(module: selected, isUnlocked: isUnlocked(selected))
     }
   }
 }
