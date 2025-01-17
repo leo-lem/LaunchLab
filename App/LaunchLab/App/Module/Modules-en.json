@@ -57,7 +57,7 @@
     "content": [
       {
         "title": "Understand Prototyping",
-        "content": "Create your product by developing first prototypes, preliminary versions of your product that demonstrate its core features and furthermore enable to test its functionality, design, or usability with test users. Commonly, the aim is to build a so called Mininal Viable Products (MVP) in order to convince investors and thus secure fundings. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product.\n- Gather early feedback to improve your design.",
+        "content": "Create your product by developing first prototypes, preliminary versions of your product that demonstrate its core features and furthermore enable to test its functionality, design, or usability with test users. Commonly, the aim is to build a Mininal Viable Products (MVP) in order to convince investors and thus secure fundings. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product.\n- Gather early feedback to improve your design.",
         "image": "cube.fill",
         "type": "info"
       },
@@ -81,19 +81,13 @@
       },
       {
         "title": "Prototype Version",
-        "content": "Do you want to offer a physical or software-based product, or a service? Describe your product or service accurately.",
+        "content": "Are you planning an evolutionary or throwaway prototype, or maybe a mix along the way? Describe briefly.",
         "image": "cube",
         "type": "textfield"
       },
       {
-        "title": "Iterative Design",
-        "content": "Product development is an iterative process. Test your prototype, gather feedback, and refine. Use the **Build-Measure-Learn** loop:\n\n1. Build: Develop your MVP.\n2. Measure: Test it with real users such as friends, family members etc. .\n3. Learn: Improve based on feedback.",
-        "image": "arrow.triangle.2.circlepath",
-        "type": "info"
-      },
-      {
         "title": "Prototype-Fidality",
-        "content": "Are you planning a simple (low-fidelity) or detailed (high-fidelity) prototype? What form (e.g. sketch, mockup, simulation) would be useful?",
+        "content": "Are you planning a simple (low-fidelity) or detailed (high-fidelity) prototype? What form would be useful?",
         "image": "cube",
         "type": "textfield"
       },
@@ -104,14 +98,14 @@
         "type": "textfield"
       },
       {
-        "title": "Prototype Testing",
-        "content": "Who will test your prototype and how are you planning to reach out to these people? List your test groups in descending importancy.",
-        "image": "cube",
-        "type": "textfield"
+        "title": "Iterative Design",
+        "content": "Product development is an iterative process. Test your prototype, gather feedback, and refine. Use the **Build-Measure-Learn** loop:\n\n1. Build: Develop your MVP.\n2. Measure: Test it with real users such as friends, family members etc. .\n3. Learn: Improve based on feedback.",
+        "image": "arrow.triangle.2.circlepath",
+        "type": "info"
       },
       {
-        "title": "Prototype Testing II",
-        "content": "How will you ensure that your prototype enables real/accurate/reliable user feedback? e.g. time-tracking, location-setup etc.",
+        "title": "Prototype Testing",
+        "content": "Who will test your prototype and how are you planning to reach out to these people? List your test groups in descending importancy.",
         "image": "cube",
         "type": "textfield"
       },
@@ -119,6 +113,12 @@
         "title": "Iterative Design Practice",
         "content": "List three ways you can test your prototype and gather meaningful feedback.",
         "image": "doc.text.magnifyingglass",
+        "type": "textfield"
+      },
+      {
+        "title": "Prototype Testing II",
+        "content": "How will you ensure that your prototype enables accurate and reliable user feedback? e.g. time-tracking, location-setup etc.",
+        "image": "cube",
         "type": "textfield"
       }
     ]
@@ -144,7 +144,7 @@
     "content": [
       {
         "title": "Customer Personas",
-        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. By identifying what your customers want and need, you can develop solutions that truly solve their problems, increase customer satisfaction and loyalty, and stay competitive in your market by addressing unmet demands. \n\n### Here is how you can detect Customer Needs:\n- **Surveys and Questionnaires:** Collect direct feedback on preferences and pain points.\n- **Interviews:** Conduct in-depth conversations with potential users to gain qualitative insights.\n- **Focus Groups:** Gather a group of individuals representing your target audience to discuss their needs and expectations.\n- **Market Research:** Analyze industry trends and competitor offerings.\n- **User Behavior Analysis:** Study analytics from websites or apps to identify user patterns and preferences.\n\n### Sources for Creating Customer Personas:\n- **Social Media Insights:** Platforms like Facebook and Instagram provide demographic and interest data.\n- **Customer Feedback:** Use reviews, support tickets, and testimonials to identify recurring themes.\n- **Competitor Analysis:** Examine how competitors engage with their audience and what solutions they offer.\n- **Industry Reports:** Leverage professional market research reports for broader trends and data.\n\nCombining these methods ensures your customer personas are accurate, actionable, and grounded in real user behavior, giving you a solid foundation for decision-making and product development. .Create a customer persona, a fictional representation of your ideal customer, by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
+        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. By identifying what your customers want and need, you can develop solutions that truly solve their problems, increase customer satisfaction and loyalty, and stay competitive in your market by addressing unmet demands. \n\n### Here is how you can detect Customer Needs:\n- **Surveys and Questionnaires:** Collect direct feedback on preferences and pain points.\n- **Interviews:** Conduct in-depth conversations with potential users to gain qualitative insights.\n- **Focus Groups:** Gather a group of individuals representing your target audience to discuss their needs and expectations.\n- **Market Research:** Analyze industry trends and competitor offerings.\n- **User Behavior Analysis:** Study analytics from websites or apps to identify user patterns and preferences.\n\n### Sources for Creating Customer Personas:\n- **Social Media Insights:** Platforms like Facebook and Instagram provide demographic and interest data.\n- **Customer Feedback:** Use reviews, support tickets, and testimonials to identify recurring themes.\n- **Competitor Analysis:** Examine how competitors engage with their audience and what solutions they offer.\n- **Industry Reports:** Leverage professional market research reports for broader trends and data.\n\nCombining these methods ensures your customer personas are accurate, actionable, and grounded in real user behavior, giving you a solid foundation for decision-making and product development. Finally, create a Customer Persona, a fictional representation of your ideal customer by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
         "image": "person.crop.circle",
         "type": "info"
       },
@@ -213,7 +213,7 @@
       },
       {
         "title": "Competitors",
-        "content": "List at least three competitors!",
+        "content": "List at least three direct or indirect competitors!",
         "image": "chart.pie",
         "type": "textfield"
       },
