@@ -35,15 +35,13 @@ extension Path {
 
     init(_ module: Module) {
       if module.index == 0 {
-        self = .center(index: 0)
+        self = .center(index: Int(module.index))
       } else {
         self = switch module.pathPosition {
         case "left":
             .leading(index: Int(module.index))
         case "right":
             .trailing(index: Int(module.index))
-        case "center":
-            .center(index: Int(module.index))
         default:
             .center(index: Int(module.index))
         }

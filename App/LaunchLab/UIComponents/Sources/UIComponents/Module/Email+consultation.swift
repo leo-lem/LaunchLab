@@ -5,10 +5,10 @@
 import CoreData
 import Data
 import Foundation
-import UIComponents
 import UIKit
 
 extension Email {
+  @MainActor
   static let consultation = Email(
     address: "test@screenlessapp.com",
     subject: "Consultation LaunchLab",

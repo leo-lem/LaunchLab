@@ -14,7 +14,7 @@ extension Module {
         title: "Example Module \(index)",
         desc: "This is an example module for previewing purposes.",
         type: index.isMultiple(of: 4) ? "consultation" : index.isMultiple(of: 2) ? "document" : "module",
-        image: "module\(index)",
+        image: "ideas",
         collectable: "collectable\(index)",
         pathPosition: index.isMultiple(of: 2) ? "left" : index.isMultiple(of: 3) ? "center" : "right",
         progress: 0,

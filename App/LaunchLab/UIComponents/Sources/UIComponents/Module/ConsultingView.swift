@@ -10,13 +10,11 @@ public struct ConsultingView: View {
   private let isAvailable: Bool
   private let isCompleted: Bool
   private let dismissAction: () -> Void
-  private let bookConsultationAction: () -> Void
 
-  public init(isAvailable: Bool, isCompleted: Bool, dismissAction: @escaping () -> Void, bookConsultationAction: @escaping () -> Void) {
+  public init(isAvailable: Bool, isCompleted: Bool, dismissAction: @escaping () -> Void) {
     self.isAvailable = isAvailable
     self.isCompleted = isCompleted
     self.dismissAction = dismissAction
-    self.bookConsultationAction = bookConsultationAction
   }
 
   public var body: some View {
@@ -37,7 +35,11 @@ public struct ConsultingView: View {
 
       Spacer()
 
-      ActionPrimaryButton(isClickable: true, title: isAvailable ? L10n.startConsulting : L10n.locked, action: bookConsultationAction)
+      ActionPrimaryButton(
+        isClickable: true,
+        title: isAvailable ? L10n.startConsulting : L10n.locked,
+        action: book
+      )
         .disabled(!isAvailable)
 
       if isAvailable && !isCompleted {
@@ -58,36 +60,28 @@ public struct ConsultingView: View {
   }
 
   @Environment(\.dismiss) private var dismiss
-}
+  @Environment(\.router) private var router
 
-//private func handleBookConsultationAction(subrouter: AnyRouter) {
-//  if MailView.canSend {
-//    subrouter.showScreen(.sheet) { subrouter in
-//      MailView(email: .consultation) { result in
-//        handleMailResult(result, subrouter: subrouter)
-//      }
-//    }
-//  } else {
-//    showMailUnavailableAlert(subrouter: subrouter)
-//  }
-//}
-//
-//private func handleMailResult(_ result: Result<MFMailComposeResult, Error>, subrouter: AnyRouter) {
-//  switch result {
-//  case .success:
-//    module.progress = 10
-//    subrouter.dismissScreen()
-//    CoreDataStack.shared.save()
-//  case .failure(let error):
-//    print(error.localizedDescription)
-//  }
-//}
-//
-//private func showMailUnavailableAlert(subrouter: AnyRouter) {
-//  subrouter.showAlert(
-//    .alert,
-//    title: L10n.errorOccured,
-//    subtitle: L10n.mailAlertSubtitle,
-//    alert: {}
-//  )
-//}
+  private func book() {
+    if MailView.canSend {
+      router.showScreen(.sheet) { subrouter in
+        MailView(email: .consultation) { result in
+          switch result {
+          case .success:
+            dismissAction()
+            subrouter.dismissScreen()
+          case .failure(let error):
+            print(error.localizedDescription)
+          }
+        }
+      }
+    } else {
+      router.showAlert(
+        .alert,
+        title: L10n.errorOccured,
+        subtitle: L10n.mailAlertSubtitle,
+        alert: {}
+      )
+    }
+  }
+}

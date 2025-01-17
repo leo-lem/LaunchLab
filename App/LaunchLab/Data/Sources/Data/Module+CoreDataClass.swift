@@ -23,7 +23,7 @@ public class Module: NSManagedObject {
   @NSManaged public var content: Set<ModuleContent>
 
   public var length: Int { content.count }
-  public var isCompleted: Bool { progress >= length }
+  public var isCompleted: Bool { type == "module" ? progress >= length : progress > 0 }
 }
 
 @objc(QuestionAnswerTransformer)
