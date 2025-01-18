@@ -2,6 +2,22 @@
   {
     "index": 0,
     "type": "module",
+    "title": "Welcome",
+    "desc": "to LaunchLab!",
+    "image": "onboarding",
+    "pathPosition": "center",
+    "content": [
+      {
+        "title": "Hello!",
+        "content": "What's your name?",
+        "image": "person.fill",
+        "type": "textfield"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "type": "module",
     "title": "Idea Development",
     "desc": "Learn to transform raw ideas into actionable business concepts.",
     "image": "ideas",
@@ -47,7 +63,7 @@
     ]
   },
   {
-    "index": 1,
+    "index": 2,
     "type": "module",
     "title": "Product Development",
     "desc": "Build and refine your product to meet customer needs. Create an initial prototype.",
@@ -124,7 +140,7 @@
     ]
   },
   {
-    "index": 2,
+    "index": 3,
     "type": "document",
     "title": "Elevator Pitch",
     "desc": "Create an Elevator Pitch.",
@@ -133,7 +149,7 @@
     "content": []
   },
   {
-    "index": 3,
+    "index": 4,
     "type": "module",
     "title": "Customer Analysis",
     "desc": "Understand your customer.",
@@ -186,7 +202,7 @@
     ]
   },
   {
-    "index": 4,
+    "index": 5,
     "type": "consultation",
     "title": "Consultation",
     "desc": "",
@@ -195,7 +211,7 @@
     "content": []
   },
   {
-    "index": 5,
+    "index": 6,
     "type": "module",
     "title": "Competitive Analysis",
     "desc": "Identify your competitors and define your unique advantage.",
@@ -248,7 +264,7 @@
     ]
   },
   {
-    "index": 6,
+    "index": 7,
     "type": "module",
     "title": "Networking",
     "desc": "Build meaningful connections with experts and partners to bring your business idea to life.",
@@ -295,7 +311,7 @@
     ]
   },
   {
-    "index": 7,
+    "index": 8,
     "type": "document",
     "title": "Pitch Deck",
     "desc": "Create a Pitch Deck.",
@@ -304,7 +320,7 @@
     "content": []
   },
   {
-    "index": 8,
+    "index": 9,
     "type": "module",
     "title": "Marketing & Customer Relationships",
     "desc": "Learn to build a brand and engage with your audience.",
@@ -351,7 +367,7 @@
     ]
   },
   {
-    "index": 9,
+    "index": 10,
     "type": "module",
     "title": "Financing and Resources",
     "desc": "Secure funding and manage resources effectively.",
@@ -386,7 +402,7 @@
     ]
   },
   {
-    "index": 10,
+    "index": 11,
     "type": "consultation",
     "title": "Consultation",
     "desc": "",
@@ -396,7 +412,7 @@
     "content": []
   },
   {
-    "index": 11,
+    "index": 12,
     "type": "module",
     "title": "Timeline and Milestones",
     "desc": "Plan and track your startup's progress.",
@@ -431,7 +447,7 @@
     ]
   },
   {
-    "index": 12,
+    "index": 13,
     "type": "module",
     "title": "Team Building",
     "desc": "Assemble and manage a strong team.",
@@ -466,7 +482,7 @@
     ]
   },
   {
-    "index": 13,
+    "index": 14,
     "type": "document",
     "title": "Business Plan",
     "desc": "Create a Business Plan.",
@@ -475,7 +491,7 @@
     "content": []
   },
   {
-    "index": 14,
+    "index": 15,
     "type": "module",
     "title": "Found your Company",
     "desc": "",

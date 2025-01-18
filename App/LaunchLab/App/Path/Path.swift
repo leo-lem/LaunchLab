@@ -14,13 +14,6 @@ struct Path: View {
 
   var body: some View {
     ZStack {
-      Connector(
-        current: nil,
-        next: modules.first { $0.index == 0 }.flatMap(Path.Position.init),
-        isComplete: true,
-        total: modules.count
-      )
-
       ForEach(modules, id: \.index) { module in
         Node(module: module, total: modules.count)
           .onTapGesture { selection = module }

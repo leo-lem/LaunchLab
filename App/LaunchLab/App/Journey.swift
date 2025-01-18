@@ -26,12 +26,6 @@ struct Journey: View {
 
         Path(modules: modules.sorted { $0.index > $1.index })
           .zIndex(1)
-
-        Image(.start)
-          .resizable()
-          .scaledToFit()
-          .frame(width: 300)
-          .padding(.bottom, -100)
       }
       .background(
         LinearGradient(
