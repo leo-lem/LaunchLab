@@ -12,6 +12,7 @@
 		6E07153D2D097FFC0054DECF /* LLWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E07153A2D097FFC0054DECF /* LLWidgetBundle.swift */; };
 		6E07153E2D097FFC0054DECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E0715362D097FFC0054DECF /* Assets.xcassets */; };
 		6E0715452D09B11F0054DECF /* Module-example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0715442D09B11F0054DECF /* Module-example.swift */; };
+		6E1416F92D3BA5130099C582 /* LLExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1416F82D3BA5130099C582 /* LLExtensions */; };
 		6EE440662D3AB0D500160B7E /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE440602D3AB0D500160B7E /* Journey.swift */; };
 		6EE4407E2D3AC84A00160B7E /* Modules.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EE4407D2D3AC84A00160B7E /* Modules.json */; };
 		6EE440842D3AE6F500160B7E /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE440832D3AE6F500160B7E /* Rocket.swift */; };
@@ -27,7 +28,6 @@
 		7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E62CD4E2B400DBABD9 /* Styleguide */; };
 		7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E82CD4E2B400DBABD9 /* UIComponents */; };
 		7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A750C942CE93DF3005EA71B /* SwiftfulRouting */; };
-		7AA1C6AD2CF8B77B00949B69 /* LLExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 7AA1C6AC2CF8B77B00949B69 /* LLExtensions */; };
 		7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */; };
 		7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */; };
 		7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */; };
@@ -74,6 +74,7 @@
 		6E0715392D097FFC0054DECF /* LLWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLWidget.swift; sourceTree = "<group>"; };
 		6E07153A2D097FFC0054DECF /* LLWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLWidgetBundle.swift; sourceTree = "<group>"; };
 		6E0715442D09B11F0054DECF /* Module-example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Module-example.swift"; sourceTree = "<group>"; };
+		6E1416F72D3BA50B0099C582 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
 		6EE440602D3AB0D500160B7E /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		6EE4407F2D3AC85000160B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/Modules.json; sourceTree = "<group>"; };
 		6EE440832D3AE6F500160B7E /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		7A5C1A0A2D00A4FA000D3AD7 /* ModuleUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleUnitTest.swift; sourceTree = "<group>"; };
 		7A6ADE3F2D3100B700BCA47C /* LaunchLab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaunchLab-Info.plist"; sourceTree = "<group>"; };
 		7A7306E52CD4E25100DBABD9 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
-		7AA1C6AB2CF8B6EE00949B69 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
 		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLabApp.swift; sourceTree = "<group>"; };
 		7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -150,10 +150,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA1C6AD2CF8B77B00949B69 /* LLExtensions in Frameworks */,
 				7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */,
 				7AD9EFAB2CF999A600FF0BDD /* Data in Frameworks */,
 				7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */,
+				6E1416F92D3BA5130099C582 /* LLExtensions in Frameworks */,
 				7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,8 +186,8 @@
 		7AAC1F642CD28E84002C6042 = {
 			isa = PBXGroup;
 			children = (
+				6E1416F72D3BA50B0099C582 /* LLExtensions */,
 				7AD9EFA92CF9999A00FF0BDD /* Data */,
-				7AA1C6AB2CF8B6EE00949B69 /* LLExtensions */,
 				7A7306E52CD4E25100DBABD9 /* UIComponents */,
 				7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */,
 				7AC514192CD3F6E800F4E6AA /* App */,
@@ -331,8 +331,8 @@
 				7A7306E62CD4E2B400DBABD9 /* Styleguide */,
 				7A7306E82CD4E2B400DBABD9 /* UIComponents */,
 				7A750C942CE93DF3005EA71B /* SwiftfulRouting */,
-				7AA1C6AC2CF8B77B00949B69 /* LLExtensions */,
 				7AD9EFAA2CF999A600FF0BDD /* Data */,
+				6E1416F82D3BA5130099C582 /* LLExtensions */,
 			);
 			productName = LaunchLab;
 			productReference = 7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */;
@@ -903,6 +903,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6E1416F82D3BA5130099C582 /* LLExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LLExtensions;
+		};
 		7A184FDC2D02E4D400F87E97 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
@@ -933,10 +937,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
 			productName = SwiftfulRouting;
-		};
-		7AA1C6AC2CF8B77B00949B69 /* LLExtensions */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LLExtensions;
 		};
 		7AD9EFAA2CF999A600FF0BDD /* Data */ = {
 			isa = XCSwiftPackageProductDependency;

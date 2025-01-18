@@ -6,8 +6,9 @@ import Foundation
 import MessageUI
 import SwiftUI
 
-// Credit for this struct goes to https://swiftuirecipes.com/blog/send-mail-in-swiftui
-
+/// An Email composition view
+/// 
+/// Credit for this struct goes to https://swiftuirecipes.com/blog/send-mail-in-swiftui
 public typealias MailViewCallback = ((Result<MFMailComposeResult, Error>) -> Void)?
 public struct MailView: UIViewControllerRepresentable {
   public let email: Email,

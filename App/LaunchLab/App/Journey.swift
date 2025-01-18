@@ -24,7 +24,7 @@ struct Journey: View {
         }
         .zIndex(2)
 
-        Path(modules: modules.sorted { $0.index > $1.index })
+        Path(modules: Array(modules))
           .zIndex(1)
       }
       .background(
@@ -48,8 +48,7 @@ struct Journey: View {
     }
   }
 
-  @FetchRequest(entity: Module.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Module.index, ascending: false)])
-  private var modules: FetchedResults<Module>
+  @FetchRequest(entity: Module.entity(), sortDescriptors: []) private var modules: FetchedResults<Module>
 }
 
 #Preview {

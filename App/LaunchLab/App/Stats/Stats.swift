@@ -24,10 +24,12 @@ struct Stats: View {
       .listRowBackground(Color.clear)
       .listRowSeparator(.hidden)
 
+      #if DEBUG
       Section("Cheats") {
         Button("Unlock Half", action: unlockHalf)
         Button("Unlock All", action: unlockAll)
       }
+      #endif
 
       Section(L10n.general) {
         NavigationButton.privacy
@@ -74,13 +76,15 @@ struct Stats: View {
   @State private var email: Email?
   @State private var error = false
 
+  #if DEBUG
   private func unlockHalf() {
     CoreDataStack.shared.mainContext.performAndWait {
       let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
       if let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) {
         for index in 0..<modules.count/2 {
-          if modules.first(where: { $0.index == index })?.isCompleted ?? true { continue }
-          modules.first { $0.index == index }?.progress = 100
+          let module = modules.first { $0.index == index }
+          if module?.isCompleted ?? true { continue }
+          module?.progress = Int16(module?.length ?? 100)
         }
       }
     }
@@ -91,11 +95,12 @@ struct Stats: View {
       let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
       if let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) {
         for module in modules {
-          module.progress = 100
+          module.progress = Int16(module.length)
         }
       }
     }
   }
+  #endif
 }
 
 #Preview {

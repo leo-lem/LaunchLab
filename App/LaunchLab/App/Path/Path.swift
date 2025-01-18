@@ -3,7 +3,6 @@
 //
 
 import Data
-import LLExtensions
 import SwiftfulRouting
 import SwiftUI
 import UIComponents
@@ -39,7 +38,7 @@ struct Path: View {
         ) {
           self.selection = nil
         } destination: { _ in
-          detail(selection)
+          Module.Summary(module: selection, isUnlocked: isUnlocked(selection))
         }
       }
     }
@@ -48,41 +47,20 @@ struct Path: View {
   @State private var selection: Module?
   @Environment(\.router) private var router
 
+  /// Fetch the next module by index.
   private func next(after module: Module) -> Module? {
     modules.first { $0.index == module.index + 1 }
   }
 
+  /// Checks whether a given module is unlocked by being first or the previous one having been completed.
   private func isUnlocked(_ module: Module) -> Bool {
     module.index == 0 ||
       modules.first { $0.index == module.index - 1 }?.isCompleted ?? false
   }
-
-  @ViewBuilder private func detail(_ selected: Module) -> some View {
-    switch selected.type {
-    case "consultation":
-      ConsultingView(
-        isAvailable: isUnlocked(selected),
-        isCompleted: selected.isCompleted
-      ) {
-        selected.progress = 1
-        CoreDataStack.shared.save()
-      }
-    case "document":
-      DocumentView(
-        isAvailable: isUnlocked(selected),
-        isCompleted: selected.isCompleted,
-        documentTitle: selected.title
-      ) {
-        selected.progress = 1
-        CoreDataStack.shared.save()
-      }
-    default:
-      Module.Summary(module: selected, isUnlocked: isUnlocked(selected))
-    }
-  }
 }
 
 extension Module: @retroactive Identifiable {
+  /// Identifiable is required for using the modules array in the `ForEach` directly.
   public var id: Int { Int(self.index) }
 }
 

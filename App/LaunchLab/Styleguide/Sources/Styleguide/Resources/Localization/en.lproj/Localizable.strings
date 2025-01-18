@@ -2,14 +2,13 @@
 "common_placeholder" = "Enter text here…";
 "common_start" = "Begin";
 "common_complete" = "Complete";
+"common_dismiss" = "Dismiss";
 
 "api_key" = "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";
 
-"error_occured" = "Something went wrong, please try again…";
-"configure_mail_app" = "Please configure the Mail app on your phone.";
-
-"your_state" = "Your progress";
-"modules_status" = "Module progress";
+"your_state" = "Your Progress";
+"modules_status" = "Progress";
+"modules_chart" = "Chart";
 "modules_completed %@ %@" = "%@/%@ completed";
 
 "general" = "General";
@@ -20,20 +19,14 @@
 "Feedback" = "Feedback";
 
 
-"generate %@" = "Generate your personalized %@";
-"generate_gpt_info" = "This will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.";
 "export_pdf" = "Export PDF";
 "generate" = "Generate";
 "locked" = "Locked 🔒";
 "mark_completed" = "Mark as completed";
-
-
-"consulting_title" = "You can now book a free consultation with Transferagentur!";
-"consulting_subtitle" = "Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.";
 "start_consulting" = "Start Consultation";
-"mail_alert_subtitle" = "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.";
-
-
 "review" = "Review";
 "modules" = "Modules";
-"%@ %@ completed" = "%@/%@ completed";
+
+"error_occured" = "Something went wrong…";
+"configure_mail_app" = "Please configure the Mail app on your phone.";
+"mail_alert_subtitle" = "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.";

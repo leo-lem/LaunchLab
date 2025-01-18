@@ -15,23 +15,8 @@ extension Module {
   }
 
   private var colors: (start: Color, end: Color) {
-    switch index {
-    case 0:
-      (.blue, .purple)
-    case 1:
-      (.orange, .pink)
-    case 2:
-      (.red, .pink)
-    case 3:
-      (.green, .yellow)
-    case 4:
-      (.teal, .cyan)
-    case 5:
-      (.red, .orange)
-    case 6:
-      (.indigo, .mint)
-    default:
-      (.pink, .purple)
-    }
+    let allColors = [Color.blue, .green, .yellow, .orange, .red, .purple, .pink, .teal, .brown, .cyan, .indigo, .mint]
+
+    return (allColors[Int(index) % allColors.count], allColors[Int(index + 1) % allColors.count])
   }
 }

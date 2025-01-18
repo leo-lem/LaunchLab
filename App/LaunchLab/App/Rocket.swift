@@ -16,7 +16,7 @@ struct Rocket: View {
             .rotationEffect(.degrees(angle), anchor: .bottomLeading)
             .padding(.leading, -115)
 
-          Image(.rocket2)
+          Image(.rocketLaunched)
             .resizable()
             .scaledToFit()
             .offset(x: 0, y: -position)

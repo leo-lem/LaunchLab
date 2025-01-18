@@ -28,13 +28,13 @@ struct Stat: View {
 
         Spacer()
 
-        Image(.launchingRocket)
+        Image(.founding)
           .resizable()
           .scaledToFit()
           .frame(height: 100)
 
       case .chart:
-        Text("Module Chart")
+        Text(L10n.modulesChart)
           .font(.headline)
           .bold()
           .padding(.bottom, 4)

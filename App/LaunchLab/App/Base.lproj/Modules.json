@@ -143,8 +143,8 @@
     "index": 3,
     "type": "document",
     "title": "Elevator Pitch",
-    "desc": "Create an Elevator Pitch.",
-    "image": "businessplan",
+    "desc": "Create your own Elevator Pitch!\nThis will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.",
+    "image": "document",
     "pathPosition": "center",
     "content": []
   },
@@ -204,8 +204,8 @@
   {
     "index": 5,
     "type": "consultation",
-    "title": "Consultation",
-    "desc": "",
+    "title": "You can now book a free consultation with Transferagentur!",
+    "desc": "Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.",
     "image": "consultation",
     "pathPosition": "center",
     "content": []
@@ -314,8 +314,8 @@
     "index": 8,
     "type": "document",
     "title": "Pitch Deck",
-    "desc": "Create a Pitch Deck.",
-    "image": "businessplan",
+    "desc": "Create your personalized Pitch Deck!\nThis will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.",
+    "image": "document",
     "pathPosition": "center",
     "content": []
   },
@@ -404,8 +404,8 @@
   {
     "index": 11,
     "type": "consultation",
-    "title": "Consultation",
-    "desc": "",
+    "title": "You can now book a free consultation with Transferagentur!",
+    "desc": "Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.",
     "image": "consultation",
     "progress": 0,
     "pathPosition": "center",
@@ -485,8 +485,8 @@
     "index": 14,
     "type": "document",
     "title": "Business Plan",
-    "desc": "Create a Business Plan.",
-    "image": "businessplan",
+    "desc": "Create your personalized Business Plan!\nThis will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.",
+    "image": "document",
     "pathPosition": "center",
     "content": []
   },
@@ -494,7 +494,7 @@
     "index": 15,
     "type": "module",
     "title": "Found your Company",
-    "desc": "",
+    "desc": "…",
     "image": "founding",
     "collectable": "collectable9",
     "pathPosition": "left",

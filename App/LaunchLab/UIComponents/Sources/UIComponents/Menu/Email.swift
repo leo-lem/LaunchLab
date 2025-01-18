@@ -6,6 +6,7 @@ import Foundation
 import MessageUI
 import UIKit
 
+/// An email wrapper to open a Mail view with.
 public struct Email: Identifiable {
   public var id: String { address + subject + body }
 

@@ -22,8 +22,15 @@ public class Module: NSManagedObject {
   @NSManaged public var questionAndAnswer: [String: String]
   @NSManaged public var content: Set<ModuleContent>
 
-  public var length: Int { content.count }
-  public var isCompleted: Bool { type == "module" ? progress >= length : progress > 0 }
+  public var length: Int { moduleType == .module ? content.count : 1 }
+  public var isCompleted: Bool { progress >= length }
+  public var isStarted: Bool { progress > 0 }
+
+  public var moduleType: ModuleType { ModuleType(rawValue: type) ?? .module }
+
+  public enum ModuleType: String, Codable {
+    case module, document, consultation
+  }
 }
 
 @objc(QuestionAnswerTransformer)

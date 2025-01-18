@@ -1,14 +1,14 @@
 //
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
-// swiftlint:disable force_unwrapping opening_brace
 
 import Foundation
 import Styleguide
 
 /// AI Co-Founder communicating with OpenAI  backend.
-class AICoFounder {
+class CoFounder {
   private let key = L10n.apiKey
+  // swiftlint:disable:next force_unwrapping
   private let url = URL(string: "https://api.openai.com/v1/chat/completions")!
 
   func sendMessage(_ prompt: String) async -> String? {
@@ -34,8 +34,7 @@ class AICoFounder {
       if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
          let choices = json["choices"] as? [[String: Any]],
          let message = choices.first?["message"] as? [String: Any],
-         let content = message["content"] as? String
-      {
+         let content = message["content"] as? String {
         return content
       }
     } catch {

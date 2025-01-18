@@ -12,7 +12,7 @@ extension Stats {
 
     var body: some View {
       VStack(alignment: .leading) {
-        Text(L10n.completed(complete, total))
+        Text(L10n.modulesCompleted(complete, total))
           .foregroundStyle(.gray)
           .font(.subheadline)
 

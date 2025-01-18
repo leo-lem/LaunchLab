@@ -31,7 +31,19 @@ extension Module {
           .padding(.horizontal, 24)
           .padding(.bottom, 100)
         }
-        .overlay(alignment: .bottom, content: button)
+        .overlay(alignment: .bottom) {
+          AsyncButton(title: progress >= module.length - 1 ? L10n.commonComplete : L10n.commonContinue) {
+            if !module.isCompleted {
+              progress += 1
+              module.progress = Int16(self.progress)
+              CoreDataStack.shared.save()
+            }
+
+            if module.isCompleted {
+              router.dismissScreen()
+            }
+          }
+        }
         .navigationBarBackButtonHidden()
         .onChange(of: progress) { _, newValue in
           withAnimation(.easeInOut(duration: 0.5)) {
@@ -47,24 +59,7 @@ extension Module {
 
     @State private var progress = 0
     @State private var answer = ""
-    @Environment(\.dismiss) private var dismiss
-
-    private func button() -> some View {
-      ActionPrimaryButton(
-        isClickable: true,
-        title: progress >= module.length - 1 ? L10n.commonComplete : L10n.commonContinue
-      ) {
-        if !module.isCompleted {
-          progress += 1
-          module.progress = Int16(self.progress)
-          CoreDataStack.shared.save()
-        }
-
-        if module.isCompleted {
-          dismiss()
-        }
-      }
-    }
+    @Environment(\.router) private var router
 
     @ToolbarContentBuilder
     private func toolbar() -> some ToolbarContent {
@@ -80,12 +75,7 @@ extension Module {
           .tint(module.gradient)
       }
 
-      ToolbarItem(placement: .topBarTrailing) {
-        Button(action: dismiss.callAsFunction) {
-          Image(systemName: "xmark.circle")
-        }
-        .tint(module.gradient)
-      }
+      DismissButton(tint: module.gradient)
     }
   }
 }
