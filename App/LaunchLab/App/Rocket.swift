@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+/// The rocket with launch animation.
 struct Rocket: View {
   let isUnlocked: Bool
 

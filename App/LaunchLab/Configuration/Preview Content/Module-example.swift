@@ -19,7 +19,6 @@ extension Module {
         pathPosition: index.isMultiple(of: 2) ? "left" : index.isMultiple(of: 3) ? "center" : "right",
         progress: 0,
         content: [
-          ModuleContent.DTO(title: "Hello!", image: "lightbulb.circle.fill", content: "Explore methods to generate and refine innovative ideas.\nThe best ideas emerge when you think freely and creatively. Use brainstorming techniques such as:\n\n- **Mind Mapping**: Write your central theme in the middle and expand it with associations.\n- **Thinking Hats**: View your problem from different perspectives (e.g., positive, critical, emotional).\n- **Reverse Thinking**: Consider how you would worsen the problem, then find solutions to achieve the opposite.", type: .info),
           ModuleContent.DTO(title: "What do you think?", image: "wand.and.rays", content: "Create a mind map for a problem you observe. Write down at least five possible ideas to solve it.", type: .textfield)
         ]
     ))

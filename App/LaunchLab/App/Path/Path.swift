@@ -38,7 +38,7 @@ struct Path: View {
         ) {
           self.selection = nil
         } destination: { _ in
-          Module.Summary(module: selection, isUnlocked: isUnlocked(selection))
+          Summary(module: selection, isUnlocked: isUnlocked(selection))
         }
       }
     }
