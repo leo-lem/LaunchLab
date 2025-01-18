@@ -226,14 +226,14 @@
 		7AC514192CD3F6E800F4E6AA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
+				6EE440602D3AB0D500160B7E /* Journey.swift */,
+				6EE440832D3AE6F500160B7E /* Rocket.swift */,
 				6E26C47E2D3A98EC0022294D /* Stats */,
 				6E0715532D09E64A0054DECF /* Path */,
 				6E0715752D09E6980054DECF /* Module */,
 				6E0715652D09E66C0054DECF /* AI */,
-				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
 				6EE4407D2D3AC84A00160B7E /* Modules.json */,
-				6EE440602D3AB0D500160B7E /* Journey.swift */,
-				6EE440832D3AE6F500160B7E /* Rocket.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
