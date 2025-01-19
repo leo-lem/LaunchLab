@@ -2,6 +2,74 @@
   {
     "index": 0,
     "type": "module",
+    "title": "Getting to Know You",
+    "desc": "Introduce yourself and your vision. Let's tailor your journey!",
+    "image": "person.crop.circle",
+    "collectable": "none",
+    "pathPosition": "start",
+    "content": [
+      {
+        "title": "Welcome to Your Founder Journey",
+        "content": "Before we begin, we'd like to know more about you and your business idea. This will help us tailor the experience to your unique needs. Don’t worry if you don’t have all the answers yet!",
+        "image": "sparkles",
+        "type": "info"
+      },
+      {
+        "title": "Your Motivation",
+        "content": "What inspired you to consider starting a business? Share your motivation in one or two sentences.",
+        "image": "lightbulb.circle.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Your Business Idea",
+        "content": "Do you already have a business idea? If yes, briefly describe it. If not, write about what excites you about becoming a founder.",
+        "image": "brain.head.profile",
+        "type": "textfield"
+      },
+      {
+        "title": "Your Stage",
+        "content": "Which stage of the startup journey are you currently in?\n\n- **Idea Phase:** Exploring possibilities.\n- **Planning Phase:** Developing your concept.\n- **Startup Phase:** Ready to launch.\n- **Growth Phase:** Scaling your business.",
+        "image": "flag.checkered",
+        "type": "multiple_choice",
+        "options": ["Idea Phase", "Planning Phase", "Startup Phase", "Growth Phase"]
+      },
+      {
+        "title": "Your Goals",
+        "content": "What are your primary goals for using this app? (Select all that apply.)\n\n- Developing a business idea.\n- Understanding customers and the market.\n- Building a network and finding partners.\n- Learning about legal and financial aspects.\n- Other (please specify).",
+        "image": "target",
+        "type": "multiple_choice",
+        "options": [
+          "Developing a business idea",
+          "Understanding customers and the market",
+          "Building a network and finding partners",
+          "Learning about legal and financial aspects",
+          "Other"
+        ]
+      },
+      {
+        "title": "Your Background",
+        "content": "Tell us a little about your background. What is your professional experience or expertise? This will help us provide tailored tips and examples.",
+        "image": "person.crop.rectangle.stack",
+        "type": "textfield"
+      },
+      {
+        "title": "Your Time Commitment",
+        "content": "How much time per week can you dedicate to your startup journey? This will help us suggest a realistic pace for you.",
+        "image": "clock.fill",
+        "type": "multiple_choice",
+        "options": ["Less than 5 hours", "5–10 hours", "10–20 hours", "More than 20 hours"]
+      },
+      {
+        "title": "Congratulations on Starting!",
+        "content": "Thank you for sharing your story and goals. Let’s get started with your first module and begin turning your vision into reality!",
+        "image": "hand.thumbsup.circle.fill",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "type": "module",
     "title": "Idea Development",
     "desc": "Learn to transform raw ideas into actionable business concepts.",
     "image": "ideas",
@@ -47,7 +115,7 @@
     ]
   },
   {
-    "index": 1,
+    "index": 2,
     "type": "module",
     "title": "Product Development",
     "desc": "Build and refine your product to meet customer needs. Create an initial prototype.",
@@ -125,7 +193,7 @@
   }
 ,
   {
-    "index": 2,
+    "index": 3,
     "type": "document",
     "title": "Elevator Pitch",
     "desc": "Create an Elevator Pitch.",
@@ -134,7 +202,7 @@
     "content": []
   },
   {
-    "index": 3,
+    "index": 4,
     "type": "module",
     "title": "Customer Analysis",
     "desc": "Understand your customer.",
@@ -188,7 +256,7 @@
   }
 ,
   {
-    "index": 4,
+    "index": 5,
     "type": "consultation",
     "title": "Consultation",
     "desc": "",
@@ -197,7 +265,7 @@
     "content": []
   },
   {
-    "index": 5,
+    "index": 6,
     "type": "module",
     "title": "Competitive Analysis",
     "desc": "Identify your competitors and define your unique advantage.",
@@ -251,7 +319,7 @@
   }
 ,
 {
-  "index": 6,
+  "index": 7,
   "type": "module",
   "title": "Networking",
   "desc": "Build meaningful connections with experts and partners to bring your business idea to life.",
@@ -299,7 +367,7 @@
 }
 ,
   {
-    "index": 7,
+    "index": 8,
     "type": "document",
     "title": "Pitch Deck",
     "desc": "Create a Pitch Deck.",
@@ -308,7 +376,7 @@
     "content": []
   },
   {
-    "index": 8,
+    "index": 9,
     "type": "module",
     "title": "Marketing & Customer Relationships",
     "desc": "Learn to build a brand and engage with your audience.",
@@ -357,7 +425,7 @@
   }
 ,
 {
-  "index": 9,
+  "index": 10,
   "type": "module",
   "title": "Financing and Resources",
   "desc": "Secure funding and manage resources effectively.",
@@ -393,7 +461,7 @@
 }
 ,
   {
-    "index": 10,
+    "index": 11,
     "type": "consultation",
     "title": "Consultation",
     "desc": "",
@@ -403,7 +471,7 @@
     "content": []
   },
   {
-    "index": 11,
+    "index": 12,
     "type": "module",
     "title": "Timeline and Milestones",
     "desc": "Plan and track your startup's progress.",
@@ -439,7 +507,7 @@
   }
 ,
 {
-  "index": 12,
+  "index": 13,
   "type": "module",
   "title": "Team Building",
   "desc": "Assemble and manage a strong team.",
@@ -475,7 +543,7 @@
 }
 ,
   {
-    "index": 13,
+    "index": 14,
     "type": "document",
     "title": "Business Plan",
     "desc": "Create a Business Plan.",
@@ -484,7 +552,7 @@
     "content": []
   },
   {
-    "index": 14,
+    "index": 15,
     "type": "module",
     "title": "Legal Rights and Company Formation",
     "desc": "Build a legally sound foundation for your business.",
