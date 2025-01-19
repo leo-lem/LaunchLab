@@ -2,12 +2,9 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-extension ModuleContent {
-  public struct DTO: Codable {
-    public let title: String,
-               image: String,
-               content: String
-
+public extension ModuleContent {
+  struct DTO: Codable {
+    public let title, image, content: String
     public let type: ContentType
 
     public init(title: String, image: String, content: String, type: ContentType) {
@@ -18,7 +15,7 @@ extension ModuleContent {
     }
   }
 
-  public convenience init(_ dto: DTO, module: Module) {
+  convenience init(_ dto: DTO, module: Module) {
     self.init(context: CoreDataStack.shared.mainContext)
 
     self.module = module

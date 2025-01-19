@@ -8,6 +8,7 @@ import SwiftUI
 import UIComponents
 
 struct MenuScreen: View {
+  @StateObject private var viewModel = MenuScreenViewModel()
   let modules: [Module]
 
   var body: some View {
@@ -32,8 +33,6 @@ struct MenuScreen: View {
       )
     }
   }
-
-  @StateObject private var viewModel = MenuScreenViewModel()
 
   private var userTopText: some View {
     VStack {
@@ -64,8 +63,6 @@ struct MenuScreen: View {
       ) {
         modulesCompletedGridItem
         chartGridItem
-        userAnswersGridItem
-        pitchDeckGridItem
       }
       .padding(.horizontal, -16)
     }
@@ -97,65 +94,6 @@ struct MenuScreen: View {
   private var chartGridItem: some View {
     gridItemBackground {} content: {
       ModuleChartView(modules: Array(modules))
-    }
-  }
-
-  private var userAnswersGridItem: some View {
-    gridItemBackground {} content: {
-      HStack {
-        VStack {
-          Text(L10n.yourAnswers)
-            .font(.headline)
-            .bold()
-            .multilineTextAlignment(.center)
-
-          Text(L10n.editYourAnswers)
-            .foregroundStyle(.secondary)
-            .font(.subheadline)
-            .fontWeight(.semibold)
-            .multilineTextAlignment(.center)
-
-          Spacer()
-
-          Image(.penAndRuler)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 100)
-        }
-
-        Spacer()
-
-        Image(systemName: "chevron.right")
-          .foregroundStyle(.secondary)
-      }
-      .padding()
-    }
-  }
-
-  private var pitchDeckGridItem: some View {
-    gridItemBackground {} content: {
-      VStack {
-        Text(L10n.pitchDeck)
-          .font(.headline)
-          .bold()
-
-        Text(L10n.generatePitchDeck)
-          .foregroundStyle(.secondary)
-          .font(.subheadline)
-          .fontWeight(.semibold)
-          .multilineTextAlignment(.center)
-
-        Spacer()
-
-        Button {} label: {
-          Text(L10n.generate)
-            .foregroundStyle(.white)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
-            .background(RoundedRectangle(cornerRadius: 12).fill(Color.gray))
-        }
-      }
-      .padding()
     }
   }
 

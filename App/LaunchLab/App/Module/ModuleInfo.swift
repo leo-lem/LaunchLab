@@ -10,6 +10,7 @@ import UIComponents
 
 struct ModuleInfo: View {
   let module: Module
+  let isAvailable: Bool
 
   public var body: some View {
     VStack {
@@ -27,7 +28,7 @@ struct ModuleInfo: View {
         .padding(.bottom, 50)
 
       VStack(spacing: 20) {
-        ForEach(module.content.prefix(5), id: \.self) { content in
+        ForEach(Array(module.content).prefix(5), id: \.title) { content in
           ModuleInfoRow(
             title: content.title,
             content: content.content,
@@ -42,13 +43,15 @@ struct ModuleInfo: View {
 
       ActionPrimaryButton(
         isClickable: true,
-        title: module.isCompleted ? "Review" :
+        title: isAvailable ? module.isCompleted ? L10n.review :
           module.progress == 0 ? L10n.commonStart : L10n.commonContinue
+        : L10n.locked
       ) {
         router.showScreen(.fullScreenCover) { _ in
-          LearningView(module)
+          LearningView(module, router: router)
         }
       }
+      .disabled(!isAvailable)
     }
     .padding(30)
     .toolbar {
@@ -66,5 +69,5 @@ struct ModuleInfo: View {
 }
 
 #Preview {
-  ModuleInfo(module: .example(1))
+  ModuleInfo(module: .example(1), isAvailable: true)
 }

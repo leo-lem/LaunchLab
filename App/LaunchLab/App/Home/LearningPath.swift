@@ -7,35 +7,49 @@ import LLExtensions
 import SwiftfulRouting
 import SwiftUI
 
+public extension Collection {
+  subscript(safe index: Index) -> Element? {
+    indices.contains(index) ? self[index] : nil
+  }
+}
+
 struct LearningPath: View {
+  @State private var infoModalIndex = -1
   let modules: [Module]
 
   var body: some View {
     ScrollView(showsIndicators: false) {
-      ZStack {
-        ForEach(modules, id: \.index) { module in
-          PathNode(infoModalIndex: $infoModalIndex, module: module)
-
-          if module.index < modules.count-1 {
-            PathConnector(module: module, total: modules.count)
-              .onTapGesture { infoModalIndex = -1 }
-              .zIndex(-1)
-          }
-        }
-
+      VStack(spacing: 100) {
         Image(.finalRocket)
           .resizable()
           .scaledToFit()
           .frame(width: 150)
-          .padding(.top, CGFloat(modules.count * 150 + 50))
-      }
-      .frame(maxWidth: .infinity, minHeight: CGFloat(modules.count * 150 + 400))
-      .padding(.top, 50)
-    }
-    .background(content: backgroundGradient)
-  }
+          .padding(.top, 150)
+          .padding(.bottom, -150)
 
-  @State private var infoModalIndex = -1
+        ZStack {
+          ForEach(Array(self.modules.enumerated()), id: \.offset) { index, module in
+            PathNode(infoModalIndex: self.$infoModalIndex, module: module)
+
+            PathConnector(module: module, nextModulePosition: modules[safe: index - 1]?.pathPosition ?? "center", total: self.modules.count)
+              .onTapGesture { self.infoModalIndex = -1 }
+              .zIndex(-1)
+          }
+        }
+        .frame(maxWidth: .infinity, minHeight: CGFloat(self.modules.count * 150))
+        .padding(.top, 50)
+
+        Image(.earth)
+          .resizable()
+          .scaledToFit()
+          .padding(.top, -50)
+          .padding(.bottom, -250)
+          .saturation(0.3)
+      }
+    }
+    .background(content: self.backgroundGradient)
+    .defaultScrollAnchor(.bottom)
+  }
 
   private func backgroundGradient() -> some View {
     LinearGradient(
