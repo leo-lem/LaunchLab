@@ -486,12 +486,86 @@
   {
     "index": 14,
     "type": "module",
-    "title": "Found your Company",
-    "desc": "",
-    "image": "founding",
+    "title": "Legal Rights and Company Formation",
+    "desc": "Build a legally sound foundation for your business.",
+    "image": "gavel",
     "collectable": "collectable3",
     "pathPosition": "left",
-    "content": []
+    "content": [
+      {
+        "title": "Why Legal Rights Matter",
+        "content": "Understanding your legal rights and obligations is vital when starting a business. It ensures you:\n\n- Operate within the law.\n- Protect your intellectual property.\n- Avoid costly disputes.\n\nKnowing the legal framework builds trust with stakeholders and empowers you to make informed decisions, allowing you to focus on growing your business confidently.",
+        "image": "scales.3d",
+        "type": "info"
+      },
+      {
+        "title": "Legal Forms in Germany",
+        "content": "Choosing the correct legal form for your business in Germany is critical, as it determines taxes, liability, and operational flexibility. Here are the most common options:\n\n1. **Einzelunternehmen (Sole Proprietorship):** Simple and cost-effective; suited for small businesses but with unlimited personal liability.\n2. **GbR (Gesellschaft bürgerlichen Rechts):** Ideal for two or more partners, easy to establish, but partners have unlimited liability.\n3. **UG (Unternehmergesellschaft):** A 'mini GmbH,' requiring only €1 in share capital, offering limited liability.\n4. **GmbH (Gesellschaft mit beschränkter Haftung):** Popular for SMEs, requires €25,000 share capital and offers limited liability.\n5. **AG (Aktiengesellschaft):** Suitable for large companies; requires €50,000 in share capital and allows for publicly traded shares.\n6. **Freiberufler (Freelancer):** For professionals like architects, consultants, or artists; less bureaucratic but limited to specific professions.\n\nEach form has unique requirements. Research thoroughly to select the one that aligns with your business goals.",
+        "image": "globe.europe.africa",
+        "type": "info"
+      },
+      {
+        "title": "Legal Structure Practice",
+        "content": "What legal form do you think suits your business in Germany? Explain your choice in a few sentences.",
+        "image": "building.columns.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Intellectual Property (IP) Protection",
+        "content": "Your ideas are your assets. Protecting intellectual property ensures that others cannot misuse or replicate your innovations. Key types of IP include:\n\n- Trademarks: Protect your brand.\n- Patents: Safeguard your inventions.\n- Copyrights: Secure rights over creative works.\n\nEnsure you understand which protections apply to your business.",
+        "image": "key.fill",
+        "type": "info"
+      },
+      {
+        "title": "Intellectual Property Practice",
+        "content": "Does your business rely on a unique brand, product, or idea? Identify which type of intellectual property protection you might need and why.",
+        "image": "lightbulb.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Legal Compliance Checklist",
+        "content": "Compliance ensures your business operates lawfully. Areas to focus on include:\n\n- Business Registration: Are you officially registered?\n- Tax Obligations: Do you know your tax requirements?\n- Employment Laws: Are you aware of employee rights and contracts?\n\nStaying compliant avoids fines, lawsuits, and reputational damage.",
+        "image": "checkmark.square.fill",
+        "type": "info"
+      },
+      {
+        "title": "Compliance Practice",
+        "content": "List three legal or regulatory requirements your business must meet. How will you ensure compliance in each area?",
+        "image": "doc.plaintext.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Contracts and Agreements",
+        "content": "Contracts form the backbone of trust and accountability in business relationships. Common agreements include:\n\n- Employment contracts.\n- Supplier agreements.\n- Partnership agreements.\n\nDraft clear contracts to define roles, responsibilities, and expectations while minimizing misunderstandings.",
+        "image": "doc.text",
+        "type": "info"
+      },
+      {
+        "title": "Contract Drafting Practice",
+        "content": "Think about an essential business relationship (e.g., with a supplier or partner). What key terms would you include in a contract with them?",
+        "image": "doc.richtext.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Seeking Legal Support",
+        "content": "Navigating legal complexities can be overwhelming. Consider seeking help from:\n\n- Business lawyers.\n- Legal consultants.\n- Mentorship programs specializing in legal advice.\n\nExternal expertise helps you focus on your strengths while staying protected.",
+        "image": "person.2.wave.2.fill",
+        "type": "info"
+      },
+      {
+        "title": "Legal Support Practice",
+        "content": "Do you plan to work with legal experts or mentors? If yes, identify the type of support you need and how you’ll find it.",
+        "image": "person.badge.plus.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Summary and Reflection",
+        "content": "Congratulations! You’ve gained an understanding of legal rights and their importance in building a strong foundation for your business. Stay proactive in addressing legal matters, and don’t hesitate to seek professional advice to stay protected.",
+        "image": "checkmark.seal.fill",
+        "type": "info"
+      }
+    ]
   }
+
 ]
 
