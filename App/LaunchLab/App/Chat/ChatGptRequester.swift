@@ -21,15 +21,15 @@ class ChatGPTRequester {
 
     do {
       modules = try context.fetch(fetchRequest)
-      } catch {
-        print("Cannot read Modules: \(error.localizedDescription)")
-      }
-    return modules
+    } catch {
+      print("Cannot read Modules: \(error.localizedDescription)")
     }
+    return modules
+  }
 
   /// Generates `contentPrompt` based on User Data
   private func generateContentPrompt(from modules: [Module]) -> (String) {
-    var contentPrompt: String = """
+    var contentPrompt = """
     You are a digital co-founder. Always act professionally.
     Your job is to help the user to progress. I give you module titles and always questions and answers
     for the modules that the user has answered. A module has several questions with answers. Consider them when answering the questions.
@@ -48,43 +48,44 @@ class ChatGPTRequester {
     return contentPrompt
   }
 
-  func getHelpFromCoFounder() async -> String? {
-    return await sendMessage(userPrompt: "", contentPrompt: generateContentPrompt(from: fetchModules()))
+  func getHelpFromCoFounder(module: Module) async -> String? {
+    return await sendMessage(userPrompt: "\(module.title) \(module.desc)", contentPrompt: generateContentPrompt(from: fetchModules()))
   }
 
   private func sendMessage(userPrompt: String, contentPrompt: String) async -> String? {
-          do {
-              let headers = [
-                  "Authorization": "Bearer \(key)",
-                  "Content-Type": "application/json"
-              ]
+    do {
+      let headers = [
+        "Authorization": "Bearer \(key)",
+        "Content-Type": "application/json"
+      ]
 
-              let body: [String: Any] = [
-                  "model": "gpt-4",
-                  "messages": [
-                      ["role": "system", "content": contentPrompt],
-                      ["role": "user", "content": userPrompt]
-                  ],
-                  "temperature": 0.7
-              ]
+      let body: [String: Any] = [
+        "model": "gpt-4",
+        "messages": [
+          ["role": "system", "content": contentPrompt],
+          ["role": "user", "content": userPrompt]
+        ],
+        "temperature": 0.7
+      ]
 
-              var request = URLRequest(url: url)
-              request.httpMethod = "POST"
-              request.allHTTPHeaderFields = headers
-              request.httpBody = try JSONSerialization.data(withJSONObject: body)
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.allHTTPHeaderFields = headers
+      request.httpBody = try JSONSerialization.data(withJSONObject: body)
 
-              let (data, _) = try await URLSession.shared.data(for: request)
+      let (data, _) = try await URLSession.shared.data(for: request)
 
-              if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                 let choices = json["choices"] as? [[String: Any]],
-                 let message = choices.first?["message"] as? [String: Any],
-                 let content = message["content"] as? String {
-                  return content
-              }
-          } catch {
-              print("Error during gpt-request: \(error.localizedDescription)")
-          }
-
-          return nil
+      if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+         let choices = json["choices"] as? [[String: Any]],
+         let message = choices.first?["message"] as? [String: Any],
+         let content = message["content"] as? String
+      {
+        return content
       }
+    } catch {
+      print("Error during gpt-request: \(error.localizedDescription)")
+    }
+
+    return nil
   }
+}
