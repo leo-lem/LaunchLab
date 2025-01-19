@@ -33,6 +33,7 @@ class ChatGPTRequester {
     You are a digital co-founder. Always act professionally.
     Your job is to help the user to progress. I give you module titles and always questions and answers
     for the modules that the user has answered. A module has several questions with answers. Consider them when answering the questions.
+    Answer in bullet points.
     """
     for module in modules {
       let title = module.title
@@ -49,7 +50,7 @@ class ChatGPTRequester {
   }
 
   func getHelpFromCoFounder(moduleTitle: String, moduleContentTitle: String) async -> String? {
-    return await sendMessage(userPrompt: "\(moduleTitle) \(moduleContentTitle)", contentPrompt: generateContentPrompt(from: fetchModules()))
+    await sendMessage(userPrompt: "The name of the module is: \(moduleTitle). The question is: \(moduleContentTitle)", contentPrompt: generateContentPrompt(from: fetchModules()))
   }
 
   private func sendMessage(userPrompt: String, contentPrompt: String) async -> String? {
