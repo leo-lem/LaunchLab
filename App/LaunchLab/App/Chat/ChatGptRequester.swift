@@ -28,29 +28,36 @@ class ChatGPTRequester {
   }
 
   /// Generates `contentPrompt` based on User Data
-  private func generateContentPrompt(from modules: [Module]) -> (String) {
-    var contentPrompt = """
+  private func generateContentPrompt(from modules: [Module], contentPromptRaw: String) -> (String) {
+    var contentPromptVar = contentPromptRaw
+    for module in modules {
+      let title = module.title
+      let dict = module.questionAndAnswer
+      contentPromptVar += "\nModule: \(title)"
+
+      for (key, value) in dict {
+        let question = key
+        let answer = value
+        contentPromptVar += "\nQuestion: \(question). Answer: \(answer)."
+      }
+    }
+    return contentPromptVar
+  }
+
+  func getHelpFromCoFounder(moduleTitle: String, moduleContentTitle: String) async -> String? {
+    let contentPromptRaw = """
     You are a digital co-founder. Always act professionally.
     Your job is to help the user to progress. I give you module titles and always questions and answers
     for the modules that the user has answered. A module has several questions with answers. Consider them when answering the questions.
     Answer in bullet points.
     """
-    for module in modules {
-      let title = module.title
-      let dict = module.questionAndAnswer
-      contentPrompt += "\nModule: \(title)"
-
-      for (key, value) in dict {
-        let question = key
-        let answer = value
-        contentPrompt += "\nQuestion: \(question). Answer: \(answer)."
-      }
-    }
-    return contentPrompt
-  }
-
-  func getHelpFromCoFounder(moduleTitle: String, moduleContentTitle: String) async -> String? {
-    await sendMessage(userPrompt: "The name of the module is: \(moduleTitle). The question is: \(moduleContentTitle)", contentPrompt: generateContentPrompt(from: fetchModules()))
+    return await sendMessage(
+      userPrompt: "The name of the module is: \(moduleTitle). The question is: \(moduleContentTitle)",
+      contentPrompt: generateContentPrompt(
+        from: fetchModules(),
+        contentPromptRaw: contentPromptRaw
+      )
+    )
   }
 
   private func sendMessage(userPrompt: String, contentPrompt: String) async -> String? {
