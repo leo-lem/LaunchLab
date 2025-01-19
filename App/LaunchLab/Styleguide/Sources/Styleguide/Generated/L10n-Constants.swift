@@ -44,6 +44,8 @@ public enum L10n {
   public static let currentStateSubtitle = L10n.tr("Localizable", "currentState_subtitle", fallback: "Markiere den Punkt, an dem du dich gerade befindest.")
   /// Bearbeite deine Antworten
   public static let editYourAnswers = L10n.tr("Localizable", "edit_your_answers", fallback: "Bearbeite deine Antworten")
+  /// Enter your text here
+  public static let enterTextHere = L10n.tr("Localizable", "enter_text_here", fallback: "Enter your text here")
   /// Es ist ein Fehler aufgetreten
   public static let errorOccured = L10n.tr("Localizable", "error_occured", fallback: "Es ist ein Fehler aufgetreten")
   /// Export PDF
