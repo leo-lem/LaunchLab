@@ -44,6 +44,7 @@ struct LearningPath: View {
           .scaledToFit()
           .padding(.top, -50)
           .padding(.bottom, -250)
+          .saturation(0.3)
       }
     }
     .background(content: self.backgroundGradient)

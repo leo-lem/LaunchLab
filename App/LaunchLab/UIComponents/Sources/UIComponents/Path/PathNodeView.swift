@@ -24,6 +24,7 @@ public struct PathNodeView: View {
         .scaledToFit()
         .frame(maxHeight: isRocketImage ? 120 : 80)
         .scaleEffect(isRocketImage ? 1 : 0.8)
+        .saturation(0.7)
         .ifModifier(!isRocketImage) { $0.padding(-5) }
     }
   }
