@@ -48,8 +48,8 @@ class ChatGPTRequester {
     return contentPrompt
   }
 
-  func getHelpFromCoFounder(module: Module) async -> String? {
-    return await sendMessage(userPrompt: "\(module.title) \(module.desc)", contentPrompt: generateContentPrompt(from: fetchModules()))
+  func getHelpFromCoFounder(moduleTitle: String, moduleContentTitle: String) async -> String? {
+    return await sendMessage(userPrompt: "\(moduleTitle) \(moduleContentTitle)", contentPrompt: generateContentPrompt(from: fetchModules()))
   }
 
   private func sendMessage(userPrompt: String, contentPrompt: String) async -> String? {
