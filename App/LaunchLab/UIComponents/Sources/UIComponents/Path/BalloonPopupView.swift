@@ -38,12 +38,12 @@ public struct BalloonPopupView: View {
     .padding()
     .background(
       BalloonBackground(isTriangleOnTop: isTriangleOnTop)
-        .fill(gradient)
+        .fill(Color(uiColor: .secondarySystemBackground))
         .padding(.horizontal, 5)
         .shadow(radius: 4)
+        .zIndex(10)
     )
     .frame(maxWidth: 200)
-    .zIndex(10)
   }
 
   private var moduleTitle: some View {

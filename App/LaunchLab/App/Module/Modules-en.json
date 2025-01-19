@@ -1,11 +1,23 @@
 [
   {
+    "title": "Elevator Pitch",
+    "desc": "Create an Elevator Pitch.",
+    "progress": -1,
     "index": 0,
+    "type": "document",
+    "image": "businessplan",
+    "pathPosition": "center",
+    "content": []
+  },
+  {
+    "index": 1,
     "title": "Idea Development",
     "desc": "Learn to transform raw ideas into actionable business concepts.",
     "image": "planet1",
+    "type": "module",
     "collectable": "collectable1",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Brainstorming Techniques",
@@ -46,17 +58,19 @@
     ]
   },
   {
-    "index": 1,
+    "index": 2,
     "title": "Market Analysis",
     "desc": "Understand your audience, competitors, and market trends.",
     "image": "planet2",
+    "type": "module",
     "collectable": "collectable2",
     "progress": 0,
+    "pathPosition": "left",
     "content": [
       {
         "title": "Target Audience",
         "content": "Identify who your customers are and their buying behaviors.",
-        "image": "person.crop.circle.badge.typemark",
+        "image": "person.crop.circle.badge",
         "type": "info"
       },
       {
@@ -74,12 +88,24 @@
     ]
   },
   {
-    "index": 2,
+    "index": 3,
+    "title": "Consultation",
+    "desc": "",
+    "image": "chatbubbles",
+    "type": "consultation",
+    "progress": -1,
+    "pathPosition": "center",
+    "content": []
+  },
+  {
+    "index": 4,
     "title": "Funding Strategies",
     "desc": "Explore funding options to secure financial resources.",
     "image": "planet3",
+    "type": "module",
     "collectable": "collectable3",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Investor Pitching",
@@ -102,12 +128,24 @@
     ]
   },
   {
-    "index": 3,
+    "title": "Pitch Deck",
+    "desc": "Create a Pitch Deck.",
+    "progress": -1,
+    "index": 5,
+    "type": "document",
+    "image": "businessplan",
+    "pathPosition": "center",
+    "content": []
+  },
+  {
+    "index": 6,
     "title": "Product Development",
     "desc": "Build and refine your product to meet customer needs.",
     "image": "planet4",
+    "type": "module",
     "collectable": "collectable1",
     "progress": 0,
+    "pathPosition": "left",
     "content": [
       {
         "title": "Prototype Design",
@@ -130,12 +168,14 @@
     ]
   },
   {
-    "index": 4,
+    "index": 7,
     "title": "Marketing and Outreach",
     "desc": "Learn to build a brand and engage with your audience.",
     "image": "planet5",
+    "type": "module",
     "collectable": "collectable2",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Building a Brand",
@@ -161,9 +201,11 @@
     "title": "Team Building",
     "desc": "Create a strong team with clear roles and a shared culture.",
     "progress": 0,
-    "index": 5,
+    "index": 8,
+    "type": "module",
     "collectable": "collectable3",
     "image": "planet6",
+    "pathPosition": "left",
     "content": [
       {
         "title": "Hiring the Right People",
@@ -186,12 +228,24 @@
     ]
   },
   {
-    "index": 6,
+    "index": 9,
+    "title": "Consultation",
+    "desc": "",
+    "image": "chatbubbles",
+    "type": "consultation",
+    "progress": -1,
+    "pathPosition": "center",
+    "content": []
+  },
+  {
+    "index": 10,
     "title": "Scaling Your Business",
     "desc": "Plan and execute strategies for business growth.",
     "image": "planet7",
+    "type": "module",
     "collectable": "collectable1",
     "progress": 0,
+    "pathPosition": "right",
     "content": [
       {
         "title": "Expanding Operations",
@@ -212,5 +266,15 @@
         "type": "info"
       }
     ]
+  },
+  {
+    "title": "Business Plan",
+    "desc": "Create a Business Plan.",
+    "progress": -1,
+    "index": 11,
+    "type": "document",
+    "image": "businessplan",
+    "pathPosition": "center",
+    "content": []
   }
 ]

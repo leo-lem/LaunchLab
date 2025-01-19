@@ -4,11 +4,21 @@
 
 import Data
 import Styleguide
+import SwiftfulRouting
 import SwiftUI
 import UIComponents
 
 struct LearningView: View {
+  @State private var progress: Int
+  @State private var answer = ""
   let module: Module
+  let router: AnyRouter
+
+  init(_ module: Module, router: AnyRouter) {
+    self.module = module
+    self.router = router
+    self.progress = Int(module.progress)
+  }
 
   var body: some View {
     ScrollViewReader { proxy in
@@ -24,18 +34,9 @@ struct LearningView: View {
     }
   }
 
-  @State private var progress: Int
-  @State private var answer = ""
-  @Environment(\.dismiss) private var dismiss
-
-  init(_ module: Module) {
-    self.module = module
-    self.progress = Int(module.progress)
-  }
-
   private func content() -> some View {
     VStack(spacing: 46) {
-      ForEach(Array(zip(module.content.indices, module.content)), id: \.0) { id, item in
+      ForEach(Array(module.content.enumerated()), id: \.offset) { id, item in
         if id <= progress {
           withAnimation {
             ModuleContentView(content: item)
@@ -53,7 +54,7 @@ struct LearningView: View {
   private func button() -> some View {
     ActionPrimaryButton(
       isClickable: true,
-      title: progress >= module.length-1 ? L10n.commonComplete : L10n.commonContinue
+      title: progress >= module.length - 1 ? L10n.commonComplete : L10n.commonContinue
     ) {
       if !module.isCompleted {
         progress += 1
@@ -62,12 +63,13 @@ struct LearningView: View {
       }
 
       if module.isCompleted {
-        dismiss()
+        router.dismissScreen()
       }
     }
   }
 
-  @ToolbarContentBuilder private func toolbar() -> some ToolbarContent {
+  @ToolbarContentBuilder
+  private func toolbar() -> some ToolbarContent {
     ToolbarItem(placement: .topBarLeading) {
       Text("\(progress)/\(module.length)")
         .bold()
@@ -81,7 +83,7 @@ struct LearningView: View {
     }
 
     ToolbarItem(placement: .topBarTrailing) {
-      Button(action: dismiss.callAsFunction) {
+      Button(action: router.dismissScreen) {
         Image(systemName: "xmark.circle")
       }
       .tint(module.gradient)
@@ -90,7 +92,7 @@ struct LearningView: View {
 }
 
 #Preview {
-  NavigationView {
-    LearningView(.example(0))
+  RouterView {
+    LearningView(.example(0), router: $0)
   }
 }
