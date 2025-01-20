@@ -6,7 +6,7 @@
         "title": "Getting to Know You",
         "desc": "Introduce yourself and your vision. Let's tailor your journey!",
         "image": "planet1",
-        "pathPosition": "left",
+        "pathPosition": "center",
         "content": [
             {
                 "title": "Welcome to Your Founder Journey",
@@ -35,17 +35,7 @@
         ]
     },
     {
-        "title": "Elevator Pitch",
-        "desc": "Create an Elevator Pitch.",
-        "progress": -1,
         "index": 1,
-        "type": "document",
-        "image": "businessplan",
-        "pathPosition": "center",
-        "content": []
-    },
-    {
-        "index": 2,
         "progress": 0,
         "type": "module",
         "title": "Idea Development",
@@ -92,7 +82,7 @@
         ]
     },
     {
-        "index": 3,
+        "index": 2,
         "progress": 0,
         "type": "module",
         "title": "Product Development",
@@ -169,7 +159,7 @@
         ]
     },
     {
-        "index": 4,
+        "index": 3,
         "progress": 0,
         "type": "document",
         "title": "Elevator Pitch",
@@ -179,7 +169,7 @@
         "content": []
     },
     {
-        "index": 5,
+        "index": 4,
         "progress": 0,
         "type": "module",
         "title": "Customer Analysis",
@@ -232,7 +222,7 @@
         ]
     },
     {
-        "index": 6,
+        "index": 5,
         "progress": 0,
         "type": "consultation",
         "title": "Consultation",
@@ -242,7 +232,7 @@
         "content": []
     },
     {
-        "index": 7,
+        "index": 6,
         "progress": 0,
         "type": "module",
         "title": "Competitive Analysis",
@@ -295,7 +285,7 @@
         ]
     },
     {
-        "index": 8,
+        "index": 7,
         "progress": 0,
         "type": "module",
         "title": "Networking",
@@ -342,7 +332,7 @@
         ]
     },
     {
-        "index": 9,
+        "index": 8,
         "progress": 0,
         "type": "document",
         "title": "Pitch Deck",
@@ -352,7 +342,7 @@
         "content": []
     },
     {
-        "index": 10,
+        "index": 9,
         "progress": 0,
         "type": "module",
         "title": "Marketing & Customer Relationships",
@@ -399,7 +389,7 @@
         ]
     },
     {
-        "index": 11,
+        "index": 10,
         "progress": 0,
         "type": "module",
         "title": "Financing and Resources",
@@ -434,7 +424,7 @@
         ]
     },
     {
-        "index": 12,
+        "index": 11,
         "progress": 0,
         "type": "consultation",
         "title": "Consultation",
@@ -444,7 +434,7 @@
         "content": []
     },
     {
-        "index": 13,
+        "index": 12,
         "progress": 0,
         "type": "module",
         "title": "Timeline and Milestones",
@@ -479,7 +469,7 @@
         ]
     },
     {
-        "index": 14,
+        "index": 13,
         "progress": 0,
         "type": "module",
         "title": "Team Building",
@@ -514,7 +504,7 @@
         ]
     },
     {
-        "index": 15,
+        "index": 14,
         "progress": 0,
         "type": "document",
         "title": "Business Plan",
@@ -524,7 +514,7 @@
         "content": []
     },
     {
-        "index": 16,
+        "index": 15,
         "progress": 0,
         "type": "module",
         "title": "Legal Rights and Company Formation",
