@@ -17,22 +17,10 @@ class ChatGPTRequester {
         for the modules that the user has answered. A module has several questions with answers. Consider them when answering the questions.
   """
 
-  /// fetiching `modules`
   private func fetchModules() -> [Module] {
-    let context = CoreDataStack.shared.mainContext
-    let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
-    fetchRequest.predicate = NSPredicate(format: "isCompleted == true")
-    var modules: [Module] = []
-
-    do {
-      modules = try context.fetch(fetchRequest)
-    } catch {
-      print("Cannot read Modules: \(error.localizedDescription)")
-    }
-    return modules
+    (try? CoreDataStack.shared.mainContext.fetch(Module.fetchRequest()).filter { $0.isCompleted }) ?? []
   }
 
-  /// Generates `contentPrompt` based on User Data
   private func generateContentPrompt(from modules: [Module], contentPromptRaw: String) -> (String) {
     var contentPromptVar = contentPromptRaw
     for module in modules {
@@ -56,7 +44,7 @@ class ChatGPTRequester {
       contentPrompt: generateContentPrompt(
         from: fetchModules(),
         contentPromptRaw: contentPromptRaw
-      )
+      )//ggf mehrfach button drücken und es sollen unterschiedliche ergebnisse kommen falls nicht automatisch
     )
   }
 
@@ -75,7 +63,6 @@ class ChatGPTRequester {
 
   func generateDocumentString(documentType: String) async -> String? {
     let contentPromptRaw: String = contentPromptRel + "\nAnswer in clear paragraphs for a PDF."
-
     return await sendMessage(
       userPrompt: getUserPromptForDocumentType(documentType: documentType),
       contentPrompt: generateContentPrompt(
