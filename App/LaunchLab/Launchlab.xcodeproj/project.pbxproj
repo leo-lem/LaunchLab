@@ -77,6 +77,7 @@
 		7A5C19F12D00A2CA000D3AD7 /* LaunchLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaunchLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5C19FA2D00A32A000D3AD7 /* HomeScreenSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenSnapshotTest.swift; sourceTree = "<group>"; };
 		7A5C1A0A2D00A4FA000D3AD7 /* ModuleUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleUnitTest.swift; sourceTree = "<group>"; };
+		7A6ADE3F2D3100B700BCA47C /* LaunchLab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaunchLab-Info.plist"; sourceTree = "<group>"; };
 		7A7306E52CD4E25100DBABD9 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
 		7AA1C6AB2CF8B6EE00949B69 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
 		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +247,7 @@
 				7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */,
 				7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */,
 				7AC5141F2CD3F6E800F4E6AA /* LaunchLab.entitlements */,
+				7A6ADE3F2D3100B700BCA47C /* LaunchLab-Info.plist */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -504,7 +506,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9RY44N87S7;
+				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LLWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LLWidget;
@@ -516,7 +518,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLab.LLWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLab.LLWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -538,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9RY44N87S7;
+				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LLWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LLWidget;
@@ -550,7 +552,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLab.LLWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLab.LLWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -571,11 +573,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9RY44N87S7;
+				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLabTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLabTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -595,11 +597,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9RY44N87S7;
+				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLabTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLabTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -738,11 +740,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
-				DEVELOPMENT_TEAM = 9RY44N87S7;
+				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Configuration/LaunchLab-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = LaunchLab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -760,7 +763,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -783,11 +786,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
-				DEVELOPMENT_TEAM = 9RY44N87S7;
+				DEVELOPMENT_TEAM = D6BN8JUT3H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Configuration/LaunchLab-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = LaunchLab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -805,7 +809,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.mlab.LaunchLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;

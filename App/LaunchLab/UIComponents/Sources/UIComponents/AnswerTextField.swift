@@ -30,7 +30,7 @@ public struct AnswerTextField: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading, 12)
 
-      TextField(L10n.commonPlaceholder, text: $text, axis: .vertical)
+      TextField(L10n.enterTextHere, text: $text, axis: .vertical)
         .lineLimit(3 ... 6)
         .padding(10)
         .background(

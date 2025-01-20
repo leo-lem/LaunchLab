@@ -50,3 +50,21 @@
 "support" = "Support";
 "Feedback" = "Feedback";
 "modules_completed %@ %@" = "%@/%@ abgeschlossen";
+
+"generate %@" = "Generate your personalized %@";
+"generate_gpt_info" = "This will prompt ChatGPT with your entered data. If you don't want to share your data with ChatGPT, you can skip this step.";
+"export_pdf" = "Export PDF";
+"generate" = "Generate";
+"locked" = "Locked 🔒";
+"mark_completed" = "Mark as completed";
+"export_pdf" = "Export PDF";
+
+"consulting_title" = "You can now book a free consultation with Transferagentur!";
+"consulting_subtitle" = "Take this chance to refine your ideas and get expert advice. Not interested? Feel free to skip this module and continue.";
+"start_consulting" = "Start Consultation";
+"mail_alert_subtitle" = "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.";
+
+"review" = "Review";
+"modules" = "Modules";
+"%@ %@ completed" = "%@/%@ completed";
+"enter_text_here" = "Enter your text here";
