@@ -10,15 +10,16 @@
     "content": [
       {
         "title": "Welcome to Your Founder Journey",
-        "content": "Before we begin, we'd like to know more about you and your business idea. This will help us tailor the experience to your unique needs. Don’t worry if you don’t have all the answers yet!",
+        "content": "Welcome to LaunchLab! Before we begin, we'd like to know more about you and your business idea. This will help us tailor the experience to your needs. Don’t worry if you don’t have all the answers yet!",
         "image": "sparkles",
         "type": "info"
       },
       {
         "title": "Your Motivation",
-        "content": "What inspired you to consider starting a business? Share your motivation in one or two sentences.",
+        "content": "What inspired you to consider starting a business? Share your motivation!",
         "image": "lightbulb.circle.fill",
-        "type": "textfield"
+        "type": "multiple_choice"
+        "options": ["To be my own Boss", "Bringing innovative ideas to the world", "Solving a problem that is important to me", "Achieving financial success"]
       },
       {
         "title": "Your Business Idea",
@@ -27,11 +28,18 @@
         "type": "textfield"
       },
       {
+        "title": "Your Target Group",
+        "content": "Who is your startup for? Who is your target group?",
+        "image": "lightbulb.circle.fill",
+        "type": "multiple_choice"
+        "options": [" Pupils and students", "Professionals or companies", "Tech enthusiasts", "I don’t know yet"]
+      },
+      {
         "title": "Your Stage",
-        "content": "Which stage of the startup journey are you currently in?\n\n- **Idea Phase:** Exploring possibilities.\n- **Planning Phase:** Developing your concept.\n- **Startup Phase:** Ready to launch.\n- **Growth Phase:** Scaling your business.",
+        "content": "Where are you currently with your startup?",
         "image": "flag.checkered",
         "type": "multiple_choice",
-        "options": ["Idea Phase", "Planning Phase", "Startup Phase", "Growth Phase"]
+        "options": ["I don't have an idea yet.", "I have an idea and want to implement it", "I am already working on my startup", "I already have a running startup"]
       },
       {
         "title": "Your Goals",
