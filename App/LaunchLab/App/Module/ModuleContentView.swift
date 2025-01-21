@@ -8,6 +8,7 @@ import UIComponents
 
 struct ModuleContentView: View {
   @State private var answer = ""
+  let moduleTitle: String
   let content: ModuleContent
   private var markdown: AttributedString {
     (try? AttributedString(
@@ -23,7 +24,6 @@ struct ModuleContentView: View {
       .font(.title)
       .fontWeight(.bold)
       .multilineTextAlignment(.center)
-      .padding(.bottom, 12)
       .foregroundStyle(content.module.gradient)
 
     switch content.contentType {
@@ -31,17 +31,19 @@ struct ModuleContentView: View {
       Text(markdown)
         .font(.title3)
     case .textfield:
-      AnswerTextField(text: $answer, placeholder: markdown)
-        .onChange(of: answer) {
-          content.module.questionAndAnswer[content.title] = answer
+      AnswerTextField(text: $answer, placeholder: markdown) {
+        await ChatGPTRequester().getHelpFromCoFounder(moduleTitle: moduleTitle, moduleContentTitle: content.title)
+      }
+      .onChange(of: answer) {
+        content.module.questionAndAnswer[content.title] = answer
 
-          CoreDataStack.shared.save()
+        CoreDataStack.shared.save()
+      }
+      .onAppear {
+        if let module = try? CoreDataStack.shared.mainContext.fetch(Module.fetchRequest()).first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
+          answer = module.questionAndAnswer[content.title] ?? ""
         }
-        .onAppear {
-          if let module = try? CoreDataStack.shared.mainContext.fetch(Module.fetchRequest()).first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
-            answer = module.questionAndAnswer[content.title] ?? ""
-          }
-        }
+      }
     }
   }
 }

@@ -99,6 +99,8 @@ struct PathNode: View {
         module.progress = 10
         subrouter.dismissScreen()
         CoreDataStack.shared.save()
+      } generateAction: {
+        await ChatGPTRequester().generateDocumentString(documentType: module.title) ?? ""
       }
     }
   }
