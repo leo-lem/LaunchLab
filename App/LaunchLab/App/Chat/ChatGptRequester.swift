@@ -44,7 +44,7 @@ class ChatGPTRequester {
       contentPrompt: generateContentPrompt(
         from: fetchModules(),
         contentPromptRaw: contentPromptRaw
-      ) // ggf mehrfach button drücken und es sollen unterschiedliche ergebnisse kommen falls nicht automatisch
+      )
     )
   }
 
