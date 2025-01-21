@@ -14,19 +14,19 @@ extension Email {
     address: "test@screenlessapp.com",
     subject: "Consultation LaunchLab",
     body: """
-  Liebe Transferagentur,
+      Liebe Transferagentur,
 
-  ich habe soeben das Modul „xy“ in LaunchLab erfolgreich abgeschlossen und möchte nun gerne das kostenlose Beratungsangebot in Anspruch nehmen.
+      ich habe soeben das Modul „xy“ in LaunchLab erfolgreich abgeschlossen und möchte nun gerne das kostenlose Beratungsangebot in Anspruch nehmen.
 
-  Ich bitte Sie daher, mir mögliche Termine für ein Gespräch vorzuschlagen.
+      Ich bitte Sie daher, mir mögliche Termine für ein Gespräch vorzuschlagen.
 
-  Anbei ist der aktuelle Stand meines Startups.
+      Anbei ist der aktuelle Stand meines Startups.
 
-  Vielen Dank im Voraus für Ihre Rückmeldung!
+      Vielen Dank im Voraus für Ihre Rückmeldung!
 
-  Mit freundlichen Grüßen
-  [DEIN NAME]
-  """,
+      Mit freundlichen Grüßen
+      [DEIN NAME]
+      """,
     attachmentData: pdf(),
     attachmentFilename: "StartupOverview.pdf"
   )

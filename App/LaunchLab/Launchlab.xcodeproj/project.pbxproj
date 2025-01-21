@@ -14,6 +14,7 @@
 		6E0715452D09B11F0054DECF /* Module-example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0715442D09B11F0054DECF /* Module-example.swift */; };
 		6E1416F92D3BA5130099C582 /* LLExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1416F82D3BA5130099C582 /* LLExtensions */; };
 		6E1416FD2D3BA8760099C582 /* ModuleContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */; };
+		6EEEA99B2D40097C009FF3BD /* CoFounderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEA99A2D40097C009FF3BD /* CoFounderTests.swift */; };
 		7A184FC52D02E09F00F87E97 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A184FC42D02E09F00F87E97 /* WidgetKit.framework */; };
 		7A184FC72D02E09F00F87E97 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A184FC62D02E09F00F87E97 /* SwiftUI.framework */; };
 		7A184FD62D02E0A100F87E97 /* LLWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7A184FC32D02E09F00F87E97 /* LLWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -74,6 +75,7 @@
 		6E1416F72D3BA50B0099C582 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
 		6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleContentTests.swift; sourceTree = "<group>"; };
 		6E1417022D3BAACD0099C582 /* LaunchLab.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchLab.xctestplan; sourceTree = "<group>"; };
+		6EEEA99A2D40097C009FF3BD /* CoFounderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoFounderTests.swift; sourceTree = "<group>"; };
 		7A184FC32D02E09F00F87E97 /* LLWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LLWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A184FC42D02E09F00F87E97 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7A184FC62D02E09F00F87E97 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,7 @@
 				7A5C1A0A2D00A4FA000D3AD7 /* ModuleTests.swift */,
 				7A5C19FA2D00A32A000D3AD7 /* SnapshotTests.swift */,
 				6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */,
+				6EEEA99A2D40097C009FF3BD /* CoFounderTests.swift */,
 			);
 			path = LaunchLabTests;
 			sourceTree = "<group>";
@@ -329,7 +332,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				de,
 			);
 			mainGroup = 7AAC1F642CD28E84002C6042;
 			minimizedProjectReferenceProxies = 1;
@@ -437,6 +440,7 @@
 				7A5C19FC2D00A32A000D3AD7 /* SnapshotTests.swift in Sources */,
 				7A5C1A0B2D00A4FA000D3AD7 /* ModuleTests.swift in Sources */,
 				6E1416FD2D3BA8760099C582 /* ModuleContentTests.swift in Sources */,
+				6EEEA99B2D40097C009FF3BD /* CoFounderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +591,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -649,6 +654,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
