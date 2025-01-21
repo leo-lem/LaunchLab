@@ -10,6 +10,7 @@ import SwiftUI
 public struct DocumentView: View {
   @Environment(\.router) var router
   @Environment(\.colorScheme) var colorScheme
+  @State private var isLoading = false
   @State private var pdfURL: URL?
   private let isAvailable: Bool
   private let isCompleted: Bool
@@ -58,9 +59,11 @@ public struct DocumentView: View {
             )
         }
       } else {
-        ActionPrimaryButton(isClickable: true, title: isAvailable ? L10n.generate : L10n.locked) {
+        ActionPrimaryButton(isLoading: $isLoading, isClickable: true, title: isAvailable ? L10n.generate : L10n.locked) {
           Task {
+            isLoading = true
             await generatePDF()
+            isLoading = false
           }
         }
         .disabled(!isAvailable || isCompleted)
