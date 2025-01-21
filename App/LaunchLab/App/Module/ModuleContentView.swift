@@ -32,13 +32,7 @@ struct ModuleContentView: View {
       Text(markdown)
         .font(.title3)
     case .textfield:
-      VStack {
-        Button("Test") {
-          Task {
-            await ChatGPTRequester().getHelpFromCoFounder(moduleTitle: moduleTitle, moduleContentTitle: content.title)
-          }
-        }
-
+      HStack {
         AnswerTextField(text: $answer, placeholder: markdown)
           .onChange(of: answer) {
             content.module.questionAndAnswer[content.title] = answer
@@ -50,6 +44,12 @@ struct ModuleContentView: View {
               answer = module.questionAndAnswer[content.title] ?? ""
             }
           }
+
+        Button("Test") {
+          Task {
+            answer = await ChatGPTRequester().getHelpFromCoFounder(moduleTitle: moduleTitle, moduleContentTitle: content.title) ?? ""
+          }
+        }
       }
     }
   }
