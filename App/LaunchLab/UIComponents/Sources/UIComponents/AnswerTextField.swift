@@ -8,18 +8,23 @@ import SwiftUI
 public struct AnswerTextField: View {
   @Binding var text: String
   @State private var textFieldHeight: CGFloat = 40
-  private var placeholder: AttributedString
+  @State private var isLoading = false
 
-  public init(text: Binding<String>, textFieldHeight: CGFloat = 40, placeholder: String) {
+  private var placeholder: AttributedString
+  private var generateAction: () async -> String?
+
+  public init(text: Binding<String>, textFieldHeight: CGFloat = 40, placeholder: String, generateAction: @escaping () async -> String?) {
     self._text = text
     self.textFieldHeight = textFieldHeight
     self.placeholder = AttributedString(stringLiteral: placeholder)
+    self.generateAction = generateAction
   }
 
-  public init(text: Binding<String>, textFieldHeight: CGFloat = 40, placeholder: AttributedString) {
+  public init(text: Binding<String>, textFieldHeight: CGFloat = 40, placeholder: AttributedString, generateAction: @escaping () async -> String?) {
     self._text = text
     self.textFieldHeight = textFieldHeight
     self.placeholder = placeholder
+    self.generateAction = generateAction
   }
 
   public var body: some View {
@@ -30,8 +35,18 @@ public struct AnswerTextField: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading, 12)
 
+      ActionPrimaryButton(isLoading: $isLoading, isClickable: true, title: "Ideate with Your Co-Founder 🤖") {
+        Task {
+          isLoading = true
+          text = await generateAction() ?? ""
+          isLoading = false
+        }
+      }
+      .padding(.top, 12)
+      .padding(.bottom, 50)
+
       TextField(L10n.enterTextHere, text: $text, axis: .vertical)
-        .lineLimit(3 ... 6)
+        .lineLimit(3 ... 30)
         .padding(10)
         .background(
           RoundedRectangle(cornerRadius: 12)

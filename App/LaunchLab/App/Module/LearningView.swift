@@ -39,7 +39,7 @@ struct LearningView: View {
       ForEach(Array(module.content.enumerated()), id: \.offset) { id, item in
         if id <= progress {
           withAnimation {
-            ModuleContentView(content: item)
+            ModuleContentView(moduleTitle: module.title, content: item)
               .transition(.move(edge: .bottom).combined(with: .opacity))
               .id(id)
               .animation(module.isCompleted ? nil : .default, value: id)
