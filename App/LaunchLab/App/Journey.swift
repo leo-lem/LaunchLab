@@ -10,30 +10,23 @@ import SwiftUI
 struct Journey: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
-      VStack {
-        LinearGradient(colors: [Color(.background3), Color(.background4)], startPoint: .top, endPoint: .bottom)
-          .frame(maxWidth: .infinity, minHeight: 500)
-          .overlay(alignment: .bottom) {
-            Rocket(isUnlocked: modules.allSatisfy(\.isCompleted))
-              .padding()
-              .padding(.bottom, -100)
-          }
-          .zIndex(2)
+      Rocket(isUnlocked: modules.allSatisfy(\.isCompleted))
+        .padding()
+        .padding(.top, 100)
 
-        Path(modules: Array(modules))
-          .zIndex(1)
-      }
-      .background(
-        LinearGradient(colors: [Color(.background2), Color(.background1)], startPoint: .top, endPoint: .bottom)
-      )
+      Path(modules: Array(modules))
+
+      Image(.earth)
+        .resizable()
+        .scaledToFit()
+        .saturation(0.3)
+        .padding(.top, -50)
+        .padding(.bottom, -250)
     }
     .defaultScrollAnchor(.bottom)
     .background(
-      VStack {
-        Color(.background3)
-        Color(.background1)
-      }
-      .ignoresSafeArea()
+      LinearGradient(colors: [Color(.background3), Color(.background4)], startPoint: .top, endPoint: .bottom)
+        .ignoresSafeArea()
     )
     .overlay {
       Stats.Overview(complete: modules.filter(\.isCompleted).count, total: modules.count)

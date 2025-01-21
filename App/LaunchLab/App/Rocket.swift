@@ -11,32 +11,36 @@ struct Rocket: View {
   var body: some View {
     ZStack {
       if isStarting {
-          Image(.scaffold)
-            .resizable()
-            .scaledToFit()
-            .rotationEffect(.degrees(angle), anchor: .bottomLeading)
-            .padding(.leading, -115)
+        Image(.scaffold)
+          .resizable()
+          .scaledToFit()
+          .rotationEffect(.degrees(angle), anchor: .bottomLeading)
 
-          Image(.rocketLaunched)
-            .resizable()
-            .scaledToFit()
-            .offset(x: 0, y: -position)
+        Image(.rocketLaunched)
+          .resizable()
+          .scaledToFit()
+          .offset(x: 0, y: -position)
+
+        Image(.planet)
+          .resizable()
+          .scaledToFit()
+          .zIndex(-1)
       } else {
         Image(.rocket)
           .resizable()
           .scaledToFit()
-          .overlay(alignment: .bottomTrailing) {
+          .overlay {
             Button(action: launch) {
               Image(.launch)
                 .resizable()
                 .scaledToFit()
-                .frame(maxWidth: 200)
+                .frame(maxWidth: 150)
             }
-            .padding(.bottom, -100)
-            .opacity(isUnlocked ? 1 : 0.2)
+            .opacity(isUnlocked ? 1 : 0.4)
           }
       }
     }
+    .padding(.bottom, -300)
   }
 
   @State private var position: CGFloat = 0
@@ -50,13 +54,13 @@ struct Rocket: View {
       position = 5_000
     }
 
-    withAnimation(.easeIn(duration: 2)) {
+    withAnimation(.easeIn(duration: 1)) {
       angle = -90
     }
   }
 }
 
 #Preview {
-  Rocket(isUnlocked: true)
+//  Rocket(isUnlocked: true)
   Rocket(isUnlocked: false)
 }

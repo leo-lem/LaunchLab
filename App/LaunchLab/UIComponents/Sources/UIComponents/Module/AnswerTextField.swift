@@ -65,13 +65,13 @@ public struct AnswerTextField: View {
   AnswerTextField(text: .constant(""), question: "Hello, there!") {
     """
     This is a comprehensive help answer:
-    
+
     * Keep it in line afsoihoppbpawgbpqebpgjbqejgbqjiebgijqbgbjeb qpwjgbqwpgjb qpjbgqwbgpqg.
-    
+
     * aowegpqjbgpqglkjbgojbgijobg qojkgbqokjw bqokjwgbqokgbw bqko jbqkogjbqksogjbq.
-    
+
     * dgiqwbgobqgbqgoboiwgiowqiog qowigb oiqwbdgioqg qobg oqiwb oiqwb o
-    
+
     I hope this helps!
     """
   }
