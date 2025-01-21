@@ -14,9 +14,6 @@
 		6E0715452D09B11F0054DECF /* Module-example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0715442D09B11F0054DECF /* Module-example.swift */; };
 		6E1416F92D3BA5130099C582 /* LLExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1416F82D3BA5130099C582 /* LLExtensions */; };
 		6E1416FD2D3BA8760099C582 /* ModuleContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */; };
-		6EE440662D3AB0D500160B7E /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE440602D3AB0D500160B7E /* Journey.swift */; };
-		6EE4407E2D3AC84A00160B7E /* Modules.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EE4407D2D3AC84A00160B7E /* Modules.json */; };
-		6EE440842D3AE6F500160B7E /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE440832D3AE6F500160B7E /* Rocket.swift */; };
 		7A184FC52D02E09F00F87E97 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A184FC42D02E09F00F87E97 /* WidgetKit.framework */; };
 		7A184FC72D02E09F00F87E97 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A184FC62D02E09F00F87E97 /* SwiftUI.framework */; };
 		7A184FD62D02E0A100F87E97 /* LLWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7A184FC32D02E09F00F87E97 /* LLWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -29,7 +26,6 @@
 		7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E62CD4E2B400DBABD9 /* Styleguide */; };
 		7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E82CD4E2B400DBABD9 /* UIComponents */; };
 		7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A750C942CE93DF3005EA71B /* SwiftfulRouting */; };
-		7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */; };
 		7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */; };
 		7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */; };
 		7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141C2CD3F6E800F4E6AA /* .swiftformat */; };
@@ -78,9 +74,6 @@
 		6E1416F72D3BA50B0099C582 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
 		6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleContentTests.swift; sourceTree = "<group>"; };
 		6E1417022D3BAACD0099C582 /* LaunchLab.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchLab.xctestplan; sourceTree = "<group>"; };
-		6EE440602D3AB0D500160B7E /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
-		6EE4407F2D3AC85000160B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/Modules.json; sourceTree = "<group>"; };
-		6EE440832D3AE6F500160B7E /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		7A184FC32D02E09F00F87E97 /* LLWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LLWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A184FC42D02E09F00F87E97 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7A184FC62D02E09F00F87E97 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -90,7 +83,6 @@
 		7A6ADE3F2D3100B700BCA47C /* LaunchLab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaunchLab-Info.plist"; sourceTree = "<group>"; };
 		7A7306E52CD4E25100DBABD9 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
 		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLabApp.swift; sourceTree = "<group>"; };
 		7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AC5141C2CD3F6E800F4E6AA /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -101,29 +93,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6E0715532D09E64A0054DECF /* Path */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Path;
-			sourceTree = "<group>";
-		};
-		6E0715652D09E66C0054DECF /* AI */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AI;
-			sourceTree = "<group>";
-		};
-		6E0715752D09E6980054DECF /* Module */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Module;
-			sourceTree = "<group>";
-		};
 		6E14171B2D3BB4D10099C582 /* __Snapshots__ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = __Snapshots__;
 			sourceTree = "<group>";
 		};
-		6E26C47E2D3A98EC0022294D /* Stats */ = {
+		6EAAD2562D3FCF0B0096BB9D /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Stats;
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -195,7 +172,7 @@
 				7AD9EFA92CF9999A00FF0BDD /* Data */,
 				7A7306E52CD4E25100DBABD9 /* UIComponents */,
 				7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */,
-				7AC514192CD3F6E800F4E6AA /* App */,
+				6EAAD2562D3FCF0B0096BB9D /* App */,
 				7AC514202CD3F6E800F4E6AA /* Configuration */,
 				6E07154A2D09CD430054DECF /* LLWidget */,
 				7A5C19FB2D00A32A000D3AD7 /* LaunchLabTests */,
@@ -221,21 +198,6 @@
 				7A184FC62D02E09F00F87E97 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7AC514192CD3F6E800F4E6AA /* App */ = {
-			isa = PBXGroup;
-			children = (
-				7AC514182CD3F6E800F4E6AA /* LaunchLabApp.swift */,
-				6EE440602D3AB0D500160B7E /* Journey.swift */,
-				6EE440832D3AE6F500160B7E /* Rocket.swift */,
-				6E26C47E2D3A98EC0022294D /* Stats */,
-				6E0715532D09E64A0054DECF /* Path */,
-				6E0715752D09E6980054DECF /* Module */,
-				6E0715652D09E66C0054DECF /* AI */,
-				6EE4407D2D3AC84A00160B7E /* Modules.json */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		7AC5141B2CD3F6E800F4E6AA /* Preview Content */ = {
@@ -326,10 +288,7 @@
 				7A184FD52D02E0A100F87E97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				6E0715532D09E64A0054DECF /* Path */,
-				6E0715652D09E66C0054DECF /* AI */,
-				6E0715752D09E6980054DECF /* Module */,
-				6E26C47E2D3A98EC0022294D /* Stats */,
+				6EAAD2562D3FCF0B0096BB9D /* App */,
 			);
 			name = LaunchLab;
 			packageProductDependencies = (
@@ -413,7 +372,6 @@
 				7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */,
 				7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */,
 				7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */,
-				6EE4407E2D3AC84A00160B7E /* Modules.json in Resources */,
 				7AC514262CD3F6E800F4E6AA /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,9 +444,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE440662D3AB0D500160B7E /* Journey.swift in Sources */,
-				6EE440842D3AE6F500160B7E /* Rocket.swift in Sources */,
-				7AC514212CD3F6E800F4E6AA /* LaunchLabApp.swift in Sources */,
 				6E0715452D09B11F0054DECF /* Module-example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,17 +462,6 @@
 			targetProxy = 7A5C19F52D00A2CA000D3AD7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6EE4407D2D3AC84A00160B7E /* Modules.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6EE4407F2D3AC85000160B7E /* Base */,
-			);
-			name = Modules.json;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7A184FD92D02E0A100F87E97 /* Debug */ = {

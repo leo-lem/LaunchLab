@@ -2,16 +2,34 @@
   {
     "index": 0,
     "type": "module",
-    "title": "Welcome",
-    "desc": "to LaunchLab!",
+    "title": "Getting to Know You",
+    "desc": "Introduce yourself and your vision. Let's tailor your journey!",
     "image": "onboarding",
     "pathPosition": "center",
     "content": [
       {
-        "title": "Hello!",
-        "content": "What's your name?",
-        "image": "person.fill",
+        "title": "Welcome to Your Founder Journey",
+        "content": "Welcome to LaunchLab! Before we begin, we'd like to know more about you and your business idea. This will help us tailor the experience to your needs. Don’t worry if you don’t have all the answers yet!",
+        "image": "sparkles",
+        "type": "info"
+      },
+      {
+        "title": "Your Business Idea",
+        "content": "Do you already have a business idea? If yes, briefly describe it. If not, write about what excites you about becoming a founder.",
+        "image": "brain.head.profile",
         "type": "textfield"
+      },
+      {
+        "title": "Your Background",
+        "content": "Tell us a little about your background. What is your professional experience or expertise? This will help us provide tailored tips and examples.",
+        "image": "person.crop.rectangle.stack",
+        "type": "textfield"
+      },
+      {
+        "title": "Congratulations on Starting!",
+        "content": "Thank you for sharing your story and goals. Let’s get started with your first module and begin turning your vision into reality!",
+        "image": "hand.thumbsup.circle.fill",
+        "type": "info"
       }
     ]
   },
@@ -25,39 +43,69 @@
     "pathPosition": "right",
     "content": [
       {
-        "title": "Brainstorming Techniques",
-        "content": "Explore methods to generate and refine innovative ideas.\nThe best ideas emerge when you think freely and creatively. Use brainstorming techniques such as:\n\n- **Mind Mapping**: Write your central theme in the middle and expand it with associations.\n- **Thinking Hats**: View your problem from different perspectives (e.g., positive, critical, emotional).\n- **Reverse Thinking**: Consider how you would worsen the problem, then find solutions to achieve the opposite. ",
-        "image": "lightbulb.circle.fill",
+        "content": "Create your product by developing first prototypes, preliminary versions of your product that demonstrate its core features and furthermore enable to test its functionality, design, or usability with test users. Commonly, the aim is to build a Mininal Viable Products (MVP) in order to convince investors and thus secure fundings. Learn how to:\n\n- Identify essential features.\n- Build a Minimum Viable Product.\n- Gather early feedback to improve your design.",
+        "image": "cube.fill",
+        "title": "Understand Prototyping",
         "type": "info"
       },
       {
-        "title": "Brainstorming Practice",
-        "content": "Create a mind map for a problem you observe. Write down at least five possible ideas to solve it.",
-        "image": "lightbulb.circle",
+        "content": "Do you want to offer a physical or software-based product, or a service? Describe your product or service accurately.",
+        "image": "cube",
+        "title": "Product or Service",
         "type": "textfield"
       },
       {
-        "title": "Problem Solving",
-        "content": "Identify real-world problems and develop solutions that add value. A problem is the starting point for every great business idea. Use the 5-Why method to find the root cause:\n\n1. Why does the problem occur?\n2. Why is it relevant?\n3. Find the core cause and consider: How could your solution look?",
-        "image": "wand.and.rays",
-        "type": "info"
-      },
-      {
-        "title": "Problem Solving Practice",
-        "content": "Formulate the problem you want to solve in one sentence. Describe your solution idea in two sentences.",
-        "image": "questionmark.circle",
+        "content": "List the key features of your product and describe them. Outline what your first prototype will include.",
+        "image": "cube",
+        "title": "Key functionalities",
         "type": "textfield"
       },
       {
-        "title": "Vision and Goals",
-        "content": "Define a clear vision and achievable goals for your startup. Your vision gives your startup direction, and your goals make it actionable. Consider:\n\n- **Vision**: What do you want to achieve with your startup?\n- **Goals**: What concrete steps will lead you there?",
-        "image": "target",
+        "content": "There are various types of prototypes, each suited for different stages of product development:\n\n- **Evolutionary Prototyping:** Build a prototype that evolves over time with user feedback, gradually becoming the final product. Useful tools: Figma or Axure RP.\n\n- **Throwaway (Rapid) Prototyping:** Quickly create a prototype to gather early feedback, then discard it. Ideal for exploring ideas. Use tools like paper sketches, Adobe XD, or Marvel App.\n\n- **Low-Fidelity Prototyping:** Focus on the basic structure and functionality of the product without detailed visuals. Great for early-stage brainstorming. Tools: Balsamiq, Lucidchart, or whiteboards.\n\n- **High-Fidelity Prototyping:** Create detailed, interactive prototypes that closely resemble the final product. Ideal for testing design and functionality. Tools: Figma, InVision, or React.",
+        "image": "cube.fill",
+        "title": "Types of prototypes I",
         "type": "info"
       },
       {
-        "title": "Vision and Goals Practice",
-        "content": "Formulate your startup's vision in one sentence. Write down three specific goals you aim to achieve within the next six months.",
-        "image": "target",
+        "content": "Are you planning an evolutionary or throwaway prototype, or maybe a mix along the way? Describe briefly.",
+        "image": "cube",
+        "title": "Prototype Version",
+        "type": "textfield"
+      },
+      {
+        "content": "Are you planning a simple (low-fidelity) or detailed (high-fidelity) prototype? What form would be useful?",
+        "image": "cube",
+        "title": "Prototype-Fidality",
+        "type": "textfield"
+      },
+      {
+        "content": "What resources (time, budget, tools) do you have available to develop a prototype?",
+        "image": "cube",
+        "title": "Resources",
+        "type": "textfield"
+      },
+      {
+        "content": "Product development is an iterative process. Test your prototype, gather feedback, and refine. Use the **Build-Measure-Learn** loop:\n\n1. Build: Develop your MVP.\n2. Measure: Test it with real users such as friends, family members etc. .\n3. Learn: Improve based on feedback.",
+        "image": "arrow.triangle.2.circlepath",
+        "title": "Iterative Design",
+        "type": "info"
+      },
+      {
+        "content": "Who will test your prototype and how are you planning to reach out to these people? List your test groups in descending importancy.",
+        "image": "cube",
+        "title": "Prototype Testing",
+        "type": "textfield"
+      },
+      {
+        "content": "List three ways you can test your prototype and gather meaningful feedback.",
+        "image": "doc.text.magnifyingglass",
+        "title": "Iterative Design Practice",
+        "type": "textfield"
+      },
+      {
+        "content": "How will you ensure that your prototype enables accurate and reliable user feedback? e.g. time-tracking, location-setup etc.",
+        "image": "cube",
+        "title": "Prototype Testing II",
         "type": "textfield"
       }
     ]
@@ -159,7 +207,7 @@
     "content": [
       {
         "title": "Customer Personas",
-        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. By identifying what your customers want and need, you can develop solutions that truly solve their problems, increase customer satisfaction and loyalty, and stay competitive in your market by addressing unmet demands. \n\n### Here is how you can detect Customer Needs:\n- **Surveys and Questionnaires:** Collect direct feedback on preferences and pain points.\n- **Interviews:** Conduct in-depth conversations with potential users to gain qualitative insights.\n- **Focus Groups:** Gather a group of individuals representing your target audience to discuss their needs and expectations.\n- **Market Research:** Analyze industry trends and competitor offerings.\n- **User Behavior Analysis:** Study analytics from websites or apps to identify user patterns and preferences.\n\n### Sources for Creating Customer Personas:\n- **Social Media Insights:** Platforms like Facebook and Instagram provide demographic and interest data.\n- **Customer Feedback:** Use reviews, support tickets, and testimonials to identify recurring themes.\n- **Competitor Analysis:** Examine how competitors engage with their audience and what solutions they offer.\n- **Industry Reports:** Leverage professional market research reports for broader trends and data.\n\nCombining these methods ensures your customer personas are accurate, actionable, and grounded in real user behavior, giving you a solid foundation for decision-making and product development. .Create a customer persona, a fictional representation of your ideal customer, by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
+        "content": "Understand your costumer needs to ensure that every decision you make aligns with their needs, increasing your chances of success in a competitive market. By identifying what your customers want and need, you can develop solutions that truly solve their problems, increase customer satisfaction and loyalty, and stay competitive in your market by addressing unmet demands. \n\n### Here is how you can detect Customer Needs:\n- **Surveys and Questionnaires:** Collect direct feedback on preferences and pain points.\n- **Interviews:** Conduct in-depth conversations with potential users to gain qualitative insights.\n- **Focus Groups:** Gather a group of individuals representing your target audience to discuss their needs and expectations.\n- **Market Research:** Analyze industry trends and competitor offerings.\n- **User Behavior Analysis:** Study analytics from websites or apps to identify user patterns and preferences.\n\n### Sources for Creating Customer Personas:\n- **Social Media Insights:** Platforms like Facebook and Instagram provide demographic and interest data.\n- **Customer Feedback:** Use reviews, support tickets, and testimonials to identify recurring themes.\n- **Competitor Analysis:** Examine how competitors engage with their audience and what solutions they offer.\n- **Industry Reports:** Leverage professional market research reports for broader trends and data.\n\nCombining these methods ensures your customer personas are accurate, actionable, and grounded in real user behavior, giving you a solid foundation for decision-making and product development. Finally, create a Customer Persona, a fictional representation of your ideal customer by defining your target audience by:\n\n- Demographics: Age, location, income.\n- Psychographics: Interests, values, lifestyle.\n- Pain Points: What problems do they face?",
         "image": "person.crop.circle",
         "type": "info"
       },
@@ -227,7 +275,7 @@
       },
       {
         "title": "Competitors",
-        "content": "List at least three competitors!",
+        "content": "List at least three direct or indirect competitors!",
         "image": "chart.pie",
         "type": "textfield"
       },
@@ -363,7 +411,7 @@
         "content": "What steps will you take to acquire and retain customers long-term? ",
         "image": "envelope.open",
         "type": "textfield"
-      },
+      }
     ]
   },
   {
@@ -493,17 +541,83 @@
   {
     "index": 15,
     "type": "module",
-    "title": "Found your Company",
-    "desc": "…",
+    "title": "Legal Rights and Company Formation",
+    "desc": "Build a legally sound foundation for your business.",
     "image": "founding",
     "collectable": "collectable9",
     "pathPosition": "left",
     "content": [
       {
-        "title": "Founding 101",
-        "content": "What?",
-        "image": "heart",
+        "title": "Why Legal Rights Matter",
+        "content": "Understanding your legal rights and obligations is vital when starting a business. It ensures you:\n\n- Operate within the law.\n- Protect your intellectual property.\n- Avoid costly disputes.\n\nKnowing the legal framework builds trust with stakeholders and empowers you to make informed decisions, allowing you to focus on growing your business confidently.",
+        "image": "scales.3d",
+        "type": "info"
+      },
+      {
+        "title": "Legal Forms in Germany",
+        "content": "Choosing the correct legal form for your business in Germany is critical, as it determines taxes, liability, and operational flexibility. Here are the most common options:\n\n1. **Einzelunternehmen (Sole Proprietorship):** Simple and cost-effective; suited for small businesses but with unlimited personal liability.\n2. **GbR (Gesellschaft bürgerlichen Rechts):** Ideal for two or more partners, easy to establish, but partners have unlimited liability.\n3. **UG (Unternehmergesellschaft):** A 'mini GmbH,' requiring only €1 in share capital, offering limited liability.\n4. **GmbH (Gesellschaft mit beschränkter Haftung):** Popular for SMEs, requires €25,000 share capital and offers limited liability.\n5. **AG (Aktiengesellschaft):** Suitable for large companies; requires €50,000 in share capital and allows for publicly traded shares.\n6. **Freiberufler (Freelancer):** For professionals like architects, consultants, or artists; less bureaucratic but limited to specific professions.\n\nEach form has unique requirements. Research thoroughly to select the one that aligns with your business goals.",
+        "image": "globe.europe.africa",
+        "type": "info"
+      },
+      {
+        "title": "Legal Structure Practice",
+        "content": "What legal form do you think suits your business in Germany? Explain your choice in a few sentences.",
+        "image": "building.columns.fill",
         "type": "textfield"
+      },
+      {
+        "title": "Intellectual Property (IP) Protection",
+        "content": "Your ideas are your assets. Protecting intellectual property ensures that others cannot misuse or replicate your innovations. Key types of IP include:\n\n- Trademarks: Protect your brand.\n- Patents: Safeguard your inventions.\n- Copyrights: Secure rights over creative works.\n\nEnsure you understand which protections apply to your business.",
+        "image": "key.fill",
+        "type": "info"
+      },
+      {
+        "title": "Intellectual Property Practice",
+        "content": "Does your business rely on a unique brand, product, or idea? Identify which type of intellectual property protection you might need and why.",
+        "image": "lightbulb.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Legal Compliance Checklist",
+        "content": "Compliance ensures your business operates lawfully. Areas to focus on include:\n\n- Business Registration: Are you officially registered?\n- Tax Obligations: Do you know your tax requirements?\n- Employment Laws: Are you aware of employee rights and contracts?\n\nStaying compliant avoids fines, lawsuits, and reputational damage.",
+        "image": "checkmark.square.fill",
+        "type": "info"
+      },
+      {
+        "title": "Compliance Practice",
+        "content": "List three legal or regulatory requirements your business must meet. How will you ensure compliance in each area?",
+        "image": "doc.plaintext.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Contracts and Agreements",
+        "content": "Contracts form the backbone of trust and accountability in business relationships. Common agreements include:\n\n- Employment contracts.\n- Supplier agreements.\n- Partnership agreements.\n\nDraft clear contracts to define roles, responsibilities, and expectations while minimizing misunderstandings.",
+        "image": "doc.text",
+        "type": "info"
+      },
+      {
+        "title": "Contract Drafting Practice",
+        "content": "Think about an essential business relationship (e.g., with a supplier or partner). What key terms would you include in a contract with them?",
+        "image": "doc.richtext.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Seeking Legal Support",
+        "content": "Navigating legal complexities can be overwhelming. Consider seeking help from:\n\n- Business lawyers.\n- Legal consultants.\n- Mentorship programs specializing in legal advice.\n\nExternal expertise helps you focus on your strengths while staying protected.",
+        "image": "person.2.wave.2.fill",
+        "type": "info"
+      },
+      {
+        "title": "Legal Support Practice",
+        "content": "Do you plan to work with legal experts or mentors? If yes, identify the type of support you need and how you’ll find it.",
+        "image": "person.badge.plus.fill",
+        "type": "textfield"
+      },
+      {
+        "title": "Summary and Reflection",
+        "content": "Congratulations! You’ve gained an understanding of legal rights and their importance in building a strong foundation for your business. Stay proactive in addressing legal matters, and don’t hesitate to seek professional advice to stay protected.",
+        "image": "checkmark.seal.fill",
+        "type": "info"
       }
     ]
   }
