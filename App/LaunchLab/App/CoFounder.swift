@@ -7,7 +7,7 @@ import Data
 import Foundation
 import Styleguide
 
-/// AI Co-Founder communicating with OpenAI  backend.
+/// AI Co-Founder communicating with OpenAI backend.
 class CoFounder: ObservableObject {
   static let shared = CoFounder()
 
