@@ -32,9 +32,7 @@ struct ModuleContentView: View {
         .font(.title3)
     case .textfield:
       AnswerTextField(text: $answer, placeholder: markdown) {
-        Task {
-          answer = await ChatGPTRequester().getHelpFromCoFounder(moduleTitle: moduleTitle, moduleContentTitle: content.title) ?? ""
-        }
+        await ChatGPTRequester().getHelpFromCoFounder(moduleTitle: moduleTitle, moduleContentTitle: content.title)
       }
       .onChange(of: answer) {
         content.module.questionAndAnswer[content.title] = answer

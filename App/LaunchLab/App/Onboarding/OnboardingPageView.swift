@@ -92,7 +92,9 @@ struct OnboardingPageView: View {
             AnswerBoxView(emoji: answer.emoji, title: answer.title, subtitle: answer.subtitle)
           }
         case .textfield:
-          AnswerTextField(text: $text, placeholder: L10n.enterTextHere) {}
+          AnswerTextField(text: $text, placeholder: L10n.enterTextHere) {
+            ""
+          }
       }
     }
     .padding(.horizontal, 20)
