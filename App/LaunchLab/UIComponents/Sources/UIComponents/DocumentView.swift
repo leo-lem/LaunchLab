@@ -59,10 +59,11 @@ public struct DocumentView: View {
         }
       } else {
         ActionPrimaryButton(isClickable: true, title: isAvailable ? L10n.generate : L10n.locked) {
-          try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
-          generatePDF()
+          Task {
+            await generatePDF()
+          }
         }
-        .disabled(!isAvailable)
+        .disabled(!isAvailable || isCompleted)
       }
 
       if isAvailable && !isCompleted {
@@ -82,11 +83,8 @@ public struct DocumentView: View {
     }
   }
 
-  private func generatePDF() {
-    var pdfContent = "TEST PDF Content"
-    Task {
-      pdfContent = await generateAction()
-    }
+  private func generatePDF() async {
+    var pdfContent = await generateAction()
     let tempDirectory = FileManager.default.temporaryDirectory
     let fileURL = tempDirectory.appendingPathComponent(documentTitle + ".pdf")
 

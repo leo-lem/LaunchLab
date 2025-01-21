@@ -44,20 +44,20 @@ class ChatGPTRequester {
       contentPrompt: generateContentPrompt(
         from: fetchModules(),
         contentPromptRaw: contentPromptRaw
-      )//ggf mehrfach button drücken und es sollen unterschiedliche ergebnisse kommen falls nicht automatisch
+      ) // ggf mehrfach button drücken und es sollen unterschiedliche ergebnisse kommen falls nicht automatisch
     )
   }
 
   private func getUserPromptForDocumentType(documentType: String) -> String {
-      """
-      Create a document of type "\(documentType)". Take the information you got from the systemPrompt.
+    """
+    Create a document of type "\(documentType)". Take the information you got from the systemPrompt.
 
-      Formatting guidelines:
-      - Elevator Pitch: Short introduction, problem definition, solution, call to action. Only one sentence per category.
-      - Pitch Deck: Overview of problem, solution, target market, business model, team and call to action.
-      - Business Plan: Detailed description of problem, solution, target market, business model, marketing strategy, financial plan and risk analysis.
-      Return the result in clear paragraphs that can be easily inserted into a PDF.
-      """
+    Formatting guidelines:
+    - Elevator Pitch: Short introduction, problem definition, solution, call to action. Only one sentence per category.
+    - Pitch Deck: Overview of problem, solution, target market, business model, team and call to action.
+    - Business Plan: Detailed description of problem, solution, target market, business model, marketing strategy, financial plan and risk analysis.
+    Return the result in clear paragraphs that can be easily inserted into a PDF.
+    """
   }
 
   func generateDocumentString(documentType: String) async -> String? {
