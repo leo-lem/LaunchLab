@@ -1,6 +1,7 @@
 //
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
+// swiftlint:disable discouraged_direct_init
 
 import Styleguide
 import SwiftfulRouting
@@ -9,17 +10,20 @@ import SwiftUI
 public struct DocumentView: View {
   @Environment(\.router) var router
   @Environment(\.colorScheme) var colorScheme
+  @State private var isLoading = false
   @State private var pdfURL: URL?
   private let isAvailable: Bool
   private let isCompleted: Bool
   private let documentTitle: String
   private let dismissAction: () -> Void
+  private let generateAction: () async -> String
 
-  public init(isAvailable: Bool, isCompleted: Bool, documentTitle: String, dismissAction: @escaping () -> Void) {
+  public init(isAvailable: Bool, isCompleted: Bool, documentTitle: String, dismissAction: @escaping () -> Void, generateAction: @escaping () async -> String) {
     self.isAvailable = isAvailable
     self.isCompleted = isCompleted
     self.documentTitle = documentTitle
     self.dismissAction = dismissAction
+    self.generateAction = generateAction
   }
 
   public var body: some View {
@@ -55,11 +59,14 @@ public struct DocumentView: View {
             )
         }
       } else {
-        ActionPrimaryButton(isClickable: true, title: isAvailable ? L10n.generate : L10n.locked) {
-          try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
-          generatePDF()
+        ActionPrimaryButton(isLoading: $isLoading, isClickable: true, title: isAvailable ? L10n.generate : L10n.locked) {
+          Task {
+            isLoading = true
+            await generatePDF()
+            isLoading = false
+          }
         }
-        .disabled(!isAvailable)
+        .disabled(!isAvailable || isCompleted)
       }
 
       if isAvailable && !isCompleted {
@@ -79,15 +86,15 @@ public struct DocumentView: View {
     }
   }
 
-  private func generatePDF() {
-    let pdfContent = """
-    This is a generated PDF for the document titled "Elevator Pitch".
-    Use this space to add your custom PDF content.
-    """
+  private func generatePDF() async {
+    var pdfContent = await generateAction()
     let tempDirectory = FileManager.default.temporaryDirectory
-    let fileURL = tempDirectory.appendingPathComponent("ElevatorPitch.pdf")
+    let fileURL = tempDirectory.appendingPathComponent(documentTitle + ".pdf")
 
     do {
+      if pdfContent.isEmpty {
+        throw NSError()
+      }
       let pdfData = try createPDF(content: pdfContent)
       try pdfData.write(to: fileURL)
       pdfURL = fileURL

@@ -18,7 +18,7 @@ struct ChatView: View {
   @State private var message = ""
   @State private var messages = [Message]()
 
-  let send: (String) async -> String?
+  let send: (String, String) async -> String?
 
   var body: some View {
     VStack {
@@ -65,14 +65,10 @@ struct ChatView: View {
       message = ""
 
       messages.append(Message(content: "", fromUser: false))
-      if let response = await send(prompt) {
+      if let response = await send(prompt, "") {
         messages.removeAll { $0.content.isEmpty }
         messages.append(Message(content: response, fromUser: false))
       } else {}
     }
   }
-}
-
-#Preview {
-  ChatView { $0 }
 }

@@ -7,28 +7,35 @@ import SwiftUI
 public struct ActionPrimaryButton: View {
   @Environment(\.colorScheme) var colorScheme
 
-  @State private var isLoading = false
+  @Binding var isLoading: Bool?
   private let isClickable: Bool
   private let title: String
   private let action: () async -> Void
 
-  public init(isClickable: Bool, title: String, action: @escaping () async -> Void) {
+  public init(isLoading: Binding<Bool>? = nil, isClickable: Bool, title: String, action: @escaping () async -> Void) {
     self.isClickable = isClickable
     self.title = title
     self.action = action
+
+    if let isLoading = isLoading {
+      self._isLoading = Binding<Bool?>(
+        get: { isLoading.wrappedValue },
+        set: { isLoading.wrappedValue = $0 ?? false }
+      )
+    } else {
+      self._isLoading = Binding<Bool?>(get: { nil }, set: { _ in })
+    }
   }
 
   public var body: some View {
     GeometryReader { geometry in
       Button {
         Task {
-          isLoading = true
           await action()
-          isLoading = false
         }
       } label: {
         Group {
-          if isLoading {
+          if isLoading ?? false {
             ProgressView()
           } else {
             Text(title)
