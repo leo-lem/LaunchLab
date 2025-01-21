@@ -18,7 +18,7 @@ struct LaunchLabApp: App {
       RouterView { router in
         HomeScreen()
           .overlay(alignment: .bottomTrailing) { FloatingChatButton { chatting = true } }
-          .fullScreenCover(isPresented: $onboarding) { OnboardingWelcomeView(showOnboarding: $onboarding) }
+//          .fullScreenCover(isPresented: $onboarding) { OnboardingWelcomeView(showOnboarding: $onboarding) }
           // .sheet(isPresented: $chatting) { ChatView(send: requester.sendMessage) }
           .environment(\.router, router)
           .environment(\.managedObjectContext, CoreDataStack.shared.mainContext)
