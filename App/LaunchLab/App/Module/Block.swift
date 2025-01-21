@@ -33,21 +33,28 @@ extension Lecture {
         Text(markdown)
           .font(.title3)
       case .textfield:
-        AnswerTextField(text: $answer, placeholder: markdown)
-          .onChange(of: answer) {
-            content.module.questionAndAnswer[content.title] = answer
-            CoreDataStack.shared.save()
+        AnswerTextField(text: $answer, question: markdown) {
+          await CoFounder.shared.getHelp(content.module.title, question: content.content)
+        }
+        .onChange(of: answer) {
+          content.module.questionAndAnswer[content.title] = answer
+          CoreDataStack.shared.save()
+        }
+        .onAppear {
+          if let module = try? CoreDataStack.shared.mainContext
+            .fetch(Module.fetchRequest())
+            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
+            answer = module.questionAndAnswer[content.title] ?? ""
           }
-          .onAppear {
-            if let module = try? CoreDataStack.shared.mainContext
-              .fetch(Module.fetchRequest())
-              .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
-              answer = module.questionAndAnswer[content.title] ?? ""
-            }
-          }
+        }
       }
     }
 
     @State private var answer = ""
   }
+}
+
+#Preview {
+  // swiftlint:disable:next force_unwrapping
+  Lecture.Block(content: Module.example(0).content.first!)
 }

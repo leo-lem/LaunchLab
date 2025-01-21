@@ -93,14 +93,13 @@ struct Summary: View {
         Lecture(module: module)
       }
     case .document:
-      pdf = await PDF(
-        """
-        This is a generated PDF for the document titled "\(module.title)".
-        Use this space to add your custom PDF content.
-        """,
-        title: module.title,
-        delay: .seconds(2)
-      )
+      if let content = await CoFounder.shared.createDocument(.init(module.title)) {
+        pdf = await PDF(
+          content,
+          title: module.title,
+          delay: .seconds(2)
+        )
+      }
     case .consultation:
       guard MailView.canSend else {
         return router.showAlert(.alert, title: L10n.errorOccured, subtitle: L10n.mailAlertSubtitle) {}

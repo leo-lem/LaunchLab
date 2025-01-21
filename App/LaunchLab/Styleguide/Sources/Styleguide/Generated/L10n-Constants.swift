@@ -12,6 +12,8 @@ import Foundation
 public enum L10n {
   /// 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
   public static let apiKey = L10n.tr("Localizable", "api_key", fallback: "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")
+  /// Ideate with Your Co-Founder 🤖
+  public static let cofounderLabel = L10n.tr("Localizable", "cofounder_label", fallback: "Ideate with Your Co-Founder 🤖")
   /// Complete
   public static let commonComplete = L10n.tr("Localizable", "common_complete", fallback: "Complete")
   /// Continue
