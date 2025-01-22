@@ -20,7 +20,7 @@ public class Module: NSManagedObject {
   @NSManaged public var pathPosition: String
   @NSManaged public var progress: Int16
   @NSManaged public var questionAndAnswer: [String: String]
-  @NSManaged public var content: Set<ModuleContent>
+  @NSManaged public var content: [ModuleContent]
 
   public var length: Int { moduleType == .module ? content.count : 1 }
   public var isCompleted: Bool { progress >= length }

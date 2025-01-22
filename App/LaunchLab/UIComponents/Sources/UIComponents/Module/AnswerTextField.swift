@@ -7,12 +7,12 @@ import SwiftUI
 
 /// An answer field for submitting text.
 public struct AnswerTextField: View {
-  @Binding var text: String
+  @Binding var answer: String
   let question: AttributedString,
       getHelp: () async -> String?
 
-  public init(text: Binding<String>, question: AttributedString, getHelp: @escaping () async -> String?) {
-    self._text = text
+  public init(_ answer: Binding<String>, question: AttributedString, getHelp: @escaping () async -> String?) {
+    self._answer = answer
     self.question = question
     self.getHelp = getHelp
   }
@@ -26,21 +26,21 @@ public struct AnswerTextField: View {
         .padding(.leading, 12)
 
       if let help {
-          ScrollView {
-            Text(help)
-              .font(.callout)
-              .foregroundStyle(.secondary)
-              .padding()
-          }
-          .background(RoundedRectangle(cornerRadius: 12).opacity(0.1))
-          .overlay(alignment: .bottomTrailing) { Text("🤖").padding() }
-          .padding()
-          .frame(maxHeight: 200)
-      } else {
-        AsyncButton(title: L10n.cofounderLabel) { help = await getHelp() }
+        ScrollView {
+          Text(help)
+            .font(.callout)
+            .foregroundStyle(.secondary)
+            .padding()
+        }
+        .background(RoundedRectangle(cornerRadius: 12).opacity(0.1))
+        .overlay(alignment: .bottomTrailing) { Text("🤖").padding() }
+        .padding()
+        .frame(maxHeight: 200)
       }
 
-      TextField(L10n.commonPlaceholder, text: $text, axis: .vertical)
+      AsyncButton(title: L10n.cofounderLabel) { help = await getHelp() }
+
+      TextField(L10n.commonPlaceholder, text: $answer, axis: .vertical)
         .lineLimit(3 ... 30)
         .padding(10)
         .background(
@@ -53,7 +53,7 @@ public struct AnswerTextField: View {
         )
     }
     .onAppear {
-      textFieldHeight = text.isEmpty ? 40 : min(CGFloat(text.count / 40 + 1) * 40, 200)
+      textFieldHeight = answer.isEmpty ? 40 : min(CGFloat(answer.count / 40 + 1) * 40, 200)
     }
   }
 
@@ -62,7 +62,7 @@ public struct AnswerTextField: View {
 }
 
 #Preview {
-  AnswerTextField(text: .constant(""), question: "Hello, there!") {
+  AnswerTextField(.constant(""), question: "Hello, there!") {
     """
     This is a comprehensive help answer:
 

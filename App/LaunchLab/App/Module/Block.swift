@@ -33,12 +33,8 @@ extension Lecture {
         Text(markdown)
           .font(.title3)
       case .textfield:
-        AnswerTextField(text: $answer, question: markdown) {
+        AnswerTextField($answer, question: markdown) {
           await CoFounder.shared.getHelp(content.module.title, question: content.content)
-        }
-        .onChange(of: answer) {
-          content.module.questionAndAnswer[content.title] = answer
-          CoreDataStack.shared.save()
         }
         .onAppear {
           if let module = try? CoreDataStack.shared.mainContext
@@ -46,6 +42,10 @@ extension Lecture {
             .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
             answer = module.questionAndAnswer[content.title] ?? ""
           }
+        }
+        .onChange(of: answer) {
+          content.module.questionAndAnswer[content.title] = answer
+          CoreDataStack.shared.save()
         }
       }
     }

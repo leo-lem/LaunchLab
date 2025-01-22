@@ -26,10 +26,12 @@ class CoFounder: ObservableObject {
   private var systemPrompt: String {
     var base = """
       You are a digital co-founder. Always act professionally.
+      Answer directly to the user, never speak about the user!
       This is one-shot prompting, so no further inquiry.
       Your job is to guide the user, make recommedations based on their previously entered information, and provide them with documents and summaries where requested.
       You are provided module titles, questions in the module, and answers given by the user.
       Base all your responses on this information that's found below, especially considering the answers of the user.
+      Never refer to any modules which are not below or to questions which have not been answered by the user.
       """
     let modules = (try? CoreDataStack.shared.mainContext
       .fetch(Module.fetchRequest())
