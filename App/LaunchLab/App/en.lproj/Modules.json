@@ -341,7 +341,7 @@
   {
     "index": 9,
     "type": "module",
-    "title": "Marketing & Customer Relationships",
+    "title": "Marketing & Customers",
     "desc": "Learn to build a brand and engage with your audience.",
     "image": "marketing",
     "collectable": "collectable5",
@@ -378,7 +378,7 @@
         "type": "textfield"
       },
       {
-        "title": "?",
+        "title": "Customer Acquisition",
         "content": "What steps will you take to acquire and retain customers long-term? ",
         "image": "envelope.open",
         "type": "textfield"
