@@ -19,7 +19,11 @@ struct Lecture: View {
           ForEach(Array(module.content.enumerated()), id: \.offset) { id, item in
             if id <= progress {
               withAnimation {
-                Block(content: item)
+                Block(isAnswered: Binding { true } set: {
+                  if id == progress {
+                    canContinue = $0
+                  }
+                }, content: item)
                   .transition(.move(edge: .bottom).combined(with: .opacity))
                   .id(id)
                   .animation(module.isCompleted ? nil : .default, value: id)
@@ -42,6 +46,7 @@ struct Lecture: View {
             router.dismissScreen()
           }
         }
+        .disabled(!canContinue)
       }
       .navigationBarBackButtonHidden()
       .onChange(of: progress) { _, newValue in
@@ -57,7 +62,7 @@ struct Lecture: View {
   }
 
   @State private var progress = 0
-  @State private var answer = ""
+  @State private var canContinue = false
   @Environment(\.router) private var router
 
   @ToolbarContentBuilder

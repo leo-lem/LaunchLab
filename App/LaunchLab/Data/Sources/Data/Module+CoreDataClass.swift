@@ -20,6 +20,7 @@ public class Module: NSManagedObject {
   @NSManaged public var pathPosition: String
   @NSManaged public var progress: Int16
   @NSManaged public var questionAndAnswer: [String: String]
+  // !!!: Using an ordered relationship will generate a SwiftData warning, which we can ignore safely as we are using CoreData.
   @NSManaged public var content: [ModuleContent]
 
   public var length: Int { moduleType == .module ? content.count : 1 }
