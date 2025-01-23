@@ -61,7 +61,7 @@ struct Path: View {
 
 extension Module: @retroactive Identifiable {
   /// Identifiable is required for using the modules array in the `ForEach` directly.
-  public var id: Int { Int(self.index) }
+  public var id: Int { Int(index) }
 }
 
 #Preview {

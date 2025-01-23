@@ -103,6 +103,7 @@ struct Summary: View {
   private func complete() {
     module.progress = 1
     CoreDataStack.shared.save()
+    router.dismissScreen()
   }
 
   private func action() async {
