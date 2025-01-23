@@ -70,10 +70,6 @@ struct Summary: View {
               image: Image(systemName: content.image)
             )
           }
-
-          if module.content.count > 5 {
-            Text("…")
-          }
         }
       }
 
