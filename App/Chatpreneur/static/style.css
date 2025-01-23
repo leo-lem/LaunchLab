@@ -1,0 +1,116 @@
+.phone-wrapper {
+    z-index: 0;
+}
+
+.phone1, .phone2 {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    border-radius: 40px;
+    position: absolute;
+    width: 254px;
+    display: none;
+}
+
+.phone1 {
+    left: 95px;
+    top: 35px;
+    z-index: 1;
+}
+
+.phone2 {
+    left: 220px;
+    top: 70px;
+    z-index: 2;
+    transition: transform 1s ease;
+}
+
+@media (min-width: 1024px) {
+    .phone1, .phone2 {
+        display: block;
+    }
+
+    .phone-wrapper:hover .phone2 {
+        transform: translateX(140px);
+    }
+
+    .phone1:hover {
+        transform: scale(1.06);
+    }
+
+    .phone2:hover {
+        transform: scale(1.06) translateX(140px) !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .phone1, .phone2 {
+        transition: none;
+        transform: none;
+        border-radius: 17px;
+        width: 500px;
+        height: auto;
+    }
+
+    .phone1 {
+        left: 20px;
+        top: 20px;
+    }
+
+    .phone2 {
+        left: 250px;
+        top: 30px;
+    }
+}
+
+.member-wrapper {
+    position: relative;
+}
+
+.member-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(110%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.member-wrapper:hover .member-content {
+    transform: translateY(0);
+}
+
+@keyframes fadeInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutToBottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    
+}
+
+input:checked + .feature-label {
+    border-bottom: 2px solid black;
+}
+
+#feature1-content, #feature2-content, #feature3-content {
+    opacity: 0;
+}
+
+#feature1-content {
+    animation: fadeInFromBottom 0.5s ease-out;
+    animation-fill-mode: forwards;
+    opacity: 1 !important;
+}

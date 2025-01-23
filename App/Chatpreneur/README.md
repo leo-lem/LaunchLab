@@ -20,6 +20,18 @@ docker-compose -p chatpreneur up
 3. Navigate in your browser to `/chat-widget`
 4. **Have fun using our chat widget!!!**
 
+### Step 3: Start Tailwind watcher (When developing)
+
+```sh
+.\tailwindcss-windows-x64.exe -i static/input.css -o static/output.css --watch
+```
+
+### Step 4: Minify Tailwind (When starting in production)
+
+```sh
+./tailwindcss -i input.css -o output.css --minify
+```
+
 ## Usage as REST API
 
 ### Step 1: Follow steps of [Usage](#usage)

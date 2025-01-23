@@ -1,63 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xml:lang="en">
 
 <head>
     <title>LaunchLab</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../static/output.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/output.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/fonts.css') }}" rel="stylesheet">
 
     <style>
         * {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, sans-serif;
+            font-weight: 300;
             margin: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Rubik, sans-serif !important;
         }
     </style>
 </head>
 
 <body>
-
-    <nav class="w-full px-10 py-6 flex justify-between bg-blue-600 text-white fixed top-0 left-0 right-0 shadow-md">
-        <a href="/" class="text-3xl font-bold">LaunchLab</a>
-        <ul class="flex gap-4 items-center">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#trailer">Trailer</a></li>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#team">Our Team</a></li>
-        </ul>
-    </nav>
-
-    <section class="w-full px-10 py-6 h-screen grid grid-cols-2 items-center justify-center">
-        <div class="text-black">
-            <h1>Welcome to LaunchLab</h1>
-            <p>Your one-stop solution for all your space travel needs</p>
-        </div>
-
-        <div class="flex justify-center gap-4 mt-8">
-            <img src="../static/images/rocket.png" alt="Rocket" class="w-1/4">
-        </div>
-    </section>
-
-    <footer class="w-full px-10 py-6 grid grid-cols-3 justify-center bg-slate-800 text-white gap-16">
-        <div class="flex flex-col">
-            <div class="text-lg font-bold pb-2">About this Project</div>
-            <div class="text-md">This is a university project for a FAKE application. We make no claims of copyright on
-                the names or images.</div>
-        </div>
-        <div class="flex flex-col">
-            <div class="text-lg font-bold pb-2">Important Links</div>
-            <ul>
-                <li><a href="https://mast.informatik.uni-hamburg.de/mlab/">M-Lab Home Page</a></li>
-                <li><a
-                        href="https://www.uni-hamburg.de/exzellenz/fuenf-zentrale-themen/transfer/transferagentur.html">Transferagentur</a>
+    <nav class="w-full py-6 bg-blue-600 text-white top-0 left-0 right-0 shadow-md">
+        <div class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl flex justify-between">
+            <a href="#home" class="text-3xl font-bold">LaunchLab</a>
+            <ul class="flex gap-4 items-center">
+                <li><a href="#features" class="font-medium">Keyfeatures</a></li>
+                <li><a href="#trailer" class="font-medium">Trailer</a></li>
+                <li><a href="#team" class="font-medium">Team</a></li>
+                <li><a href="#download"
+                        class="flex w-fit bg-orange-600 font-medium px-4 py-2 rounded-lg ml-2 hover:scale-105 transition-transform duration-200 ease-in-out">Download</a>
                 </li>
             </ul>
         </div>
+    </nav>
 
-        <div class="flex items-center h-full">
-            <img src="../static/images/transferagentur.png" alt="LaunchLab Logo" class="w-72">
+    <section class="w-full" id="home">
+        <div
+            class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 md:justify-center items-center py-16">
+            <div class="text-black">
+                <span class="text-2xl font-normal uppercase pb-4">Your Startup Companion</span>
+                <h1 class="text-[3.4rem] md:max-w-[530px] leading-none font-bold pb-4">
+                    Transform Ideas Into Successful Businesses
+                </h1>
+                <p class="pb-4">
+                    Our app simplifies your startup journey by providing step-by-step guidance, powerful tools, and
+                    tailored insights – everything you need to build and grow your business effortlessly.
+                </p>
+                <a href="#download"
+                    class="flex w-fit items-center gap-4 uppercase text-base font-medium bg-blue-600 text-white px-5 py-3 rounded hover:scale-105 transition-transform duration-200 ease-in-out">
+                    Get started now
+                    <img class="w-6 h-6" src="{{ url_for('static', path='/images/rocket.svg') }}" alt="Rocket">
+                </a>
+            </div>
+
+            <div class="phone-wrapper flex justify-center relative min-h-[625px]">
+                <img class="phone1 shadow-sm" src="{{ url_for('static', path='/images/gute-google-rezension-1.png') }}"
+                    alt="">
+                <img class="phone2 shadow-sm"
+                    src="{{ url_for('static', path='/images/schlechte-google-rezension1.png') }}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full" id="features">
+        <div
+            class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl flex flex-col justify-center items-center py-16">
+            <div class="text-black">
+                <h2 class="text-4xl font-semibold pb-4 text-center">Discover the Key Features That Drive Your Success
+                </h2>
+                <p class="text-center">
+                    Our app is packed with powerful features to make your startup journey seamless and efficient. From
+                    guidance and progress tracking to business plan generation, every feature is
+                    designed to help you stay on track and achieve your goals. Explore the tools that turn your vision
+                    into reality!
+                </p>
+            </div>
+
+            <div class="w-full h-[440px] flex flex-col mt-6">
+                <div class="w-full h-[440px] flex flex-row py-5 px-6">
+                    <img class="h-[400px] ml-12 shadow-sm hover:scale-105 transition-transform duration-200 ease-in-out float-left"
+                        src="{{ url_for('static', path='/images/gute-google-rezension-1.png') }}" alt="">
+
+                    <div class="w-full h-full flex flex-col justify-center gap-6 px-6 py-2">
+                        <div class="flex flex-col gap-2">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti ipsam placeat inventore qui ea modi
+                                architecto!</span>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti ipsam placeat inventore qui ea modi
+                                architecto!</span>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti ipsam placeat inventore qui ea modi
+                                architecto!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full" id="trailer">
+        <div
+            class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl grid grid-cols-1 grid-rows-2 md:gap-8 md:grid-cols-2 md:grid-rows-1 md:justify-center items-center py-16">
+            <div class="w-[calc(100%-16px)]">
+                <iframe class="aspect-video w-full shadow-sm" src="https://www.youtube.com/embed/z-wdhQGTW-8"
+                    title="LaunchLab Trailer"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="flex flex-col w-3/4 text-black">
+                <h2 class="text-4xl font-semibold pb-4">See Your Startup Dream in Action</h2>
+                <p class="max-w-lg pb-6">
+                    Get a sneak peek into the app that’s revolutionizing startup journeys! Watch the trailer and
+                    discover
+                    how we simplify every step – from brainstorming ideas to building a business. Let your
+                    entrepreneurial adventure begin with a single play.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full" id="team">
+        <div
+            class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl grid grid-cols-1 grid-rows-2 md:gap-8 md:grid-cols-2 md:grid-rows-1 md:justify-center items-center py-16">
+            <div class="flex flex-col w-3/4 text-black">
+                <h2 class="text-4xl font-semibold pb-4">Meet the Minds Behind LaunchLab</h2>
+                <p class="pb-4">
+                    We’re a group of dedicated students from the University of Hamburg, brought together by a shared
+                    passion for innovation. As part of a university project, we developed this app in collaboration with
+                    our client to simplify the startup journey. Combining creativity, research, and teamwork, we turned
+                    an idea into a powerful tool for aspiring entrepreneurs. Get to know the team behind the project!
+                </p>
+            </div>
+
+            <div class="w-full">
+                <div class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div
+                        class="member-wrapper overflow-hidden w-44 h-56 rounded-2xl md:mt-20 mx-auto min-[450px]:mr-0 shadow-sm">
+                        <img src="{{ url_for('static', path='/images/hanna.jpg') }}" alt=""
+                            class="w-44 h-56 object-cover" />
+                        <div class="member-content rounded-2xl bg-black bg-opacity-75 text-white flex items-end">
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold">Hanna</h3>
+                                <p class="text-sm">Design Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="member-wrapper overflow-hidden w-44 h-56 rounded-2xl mx-auto min-[450px]:ml-0 md:mx-auto shadow-sm">
+                        <img src="{{ url_for('static', path='/images/eric.jpg') }}" alt=""
+                            class="w-44 h-56 object-cover" />
+                        <div class="member-content rounded-2xl bg-black bg-opacity-75 text-white flex items-end">
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold">Eric</h3>
+                                <p class="text-sm">Communications Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="member-wrapper overflow-hidden w-44 h-56 rounded-2xl md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0 shadow-sm">
+                        <img src="{{ url_for('static', path='/images/henrik.jpg') }}" alt=""
+                            class="w-44 h-56 object-cover" />
+                        <div class="member-content rounded-2xl bg-black bg-opacity-75 text-white flex items-end">
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold">Henrik</h3>
+                                <p class="text-sm">AI Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="member-wrapper overflow-hidden w-44 h-56 rounded-2xl mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto shadow-sm">
+                        <img src="{{ url_for('static', path='/images/leopold.jpg') }}" alt=""
+                            class="w-44 h-56 object-cover" />
+                        <div class="member-content rounded-2xl bg-black bg-opacity-75 text-white flex items-end">
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold">Leopold</h3>
+                                <p class="text-sm">Team Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="member-wrapper overflow-hidden w-44 h-56 rounded-2xl md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto shadow-sm">
+                        <img src="{{ url_for('static', path='/images/maximillian.jpg') }}" alt=""
+                            class="w-44 h-56 object-cover" />
+                        <div
+                            class="member-content rounded-2xl md:-mt-20 bg-black bg-opacity-75 text-white flex items-end">
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold">Maximillian</h3>
+                                <p class="text-sm">IOS Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="member-wrapper overflow-hidden w-44 h-56 rounded-2xl mx-auto min-[450px]:ml-0 md:mr-0 shadow-sm">
+                        <img src="{{ url_for('static', path='/images/jai.jpg') }}" alt=""
+                            class="w-44 h-56 object-cover" />
+                        <div class="member-content rounded-2xl bg-black bg-opacity-75 text-white flex items-end">
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold">Jai</h3>
+                                <p class="text-sm">Content Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full" id="download">
+        <div
+            class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 md:justify-center items-center py-16">
+            <div class="flex justify-center gap-4 mt-8">
+                <img class="w-[170px] shadow-sm hover:scale-105 transition-transform duration-200 ease-in-out"
+                    src="{{ url_for('static', path='/images/gute-google-rezension-1.png') }}" alt="">
+            </div>
+
+            <div class="text-black">
+                <h2 class="text-4xl font-semibold pb-4">Your Startup Journey<br> Is Just a Tap Away</h2>
+                <p class="pb-4">
+                    Ready to kickstart your entrepreneurial adventure? Download our app now and access all
+                    the tools, insights, and guidance you need to build your dream startup. Available for iOS – get
+                    started today and bring your ideas to life!
+                </p>
+
+                <a href="#"
+                    class="flex w-[120px] h-auto mt-4 hover:scale-105 transition-transform duration-200 ease-in-out">
+                    <img class="w-[120px] h-[40px]"
+                        src="{{ url_for('static', path='/images/download-on-app-store.svg') }}" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full py-6 mt-16 bg-slate-800 text-white gap-16">
+        <div
+            class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl grid grid-cols-7 col-span-8 justify-center">
+            <div class="flex flex-col col-span-3">
+                <h3 class="text-lg font-semibold pb-2">About this Project</h3>
+                <div class="text-sm font-light">This is a university project for a FAKE application. We make no claims
+                    of
+                    copyright
+                    on
+                    the names or images.</div>
+            </div>
+
+            <div class="flex col-span-4 items-center justify-end h-full gap-3">
+                <a href="https://mast.informatik.uni-hamburg.de/mlab/">
+                    <img src="{{ url_for('static', path='/images/uhh-logo.svg') }}" alt="Universität Hamburg Logo"
+                        class="h-14">
+                </a>
+
+                <img class="w-8" src="{{ url_for('static', path='/images/cross.svg') }}" alt="Cross">
+
+                <a href="https://www.uni-hamburg.de/exzellenz/fuenf-zentrale-themen/transfer/transferagentur.html">
+                    <img src="{{ url_for('static', path='/images/transferagentur-logo.png') }}"
+                        alt="Transferagentur Logo" class="w-72">
+                </a>
+            </div>
         </div>
     </footer>
 
