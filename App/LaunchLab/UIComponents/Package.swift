@@ -15,14 +15,16 @@ let package = Package(
   ],
   dependencies: [
     .package(path: "Styleguide"),
-    .package(path: "LLExtensions")
+    .package(path: "LLExtensions"),
+    .package(url: "https://github.com/SwiftfulThinking/SwiftfulRouting.git", branch: "main")
   ],
   targets: [
     .target(
       name: "UIComponents",
       dependencies: [
         "Styleguide",
-        "LLExtensions"
+        "LLExtensions",
+        "SwiftfulRouting"
       ]
     )
   ]

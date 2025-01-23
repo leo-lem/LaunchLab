@@ -20,10 +20,18 @@ public class Module: NSManagedObject {
   @NSManaged public var pathPosition: String
   @NSManaged public var progress: Int16
   @NSManaged public var questionAndAnswer: [String: String]
-  @NSManaged public var content: Set<ModuleContent>
+  // !!!: Using an ordered relationship will generate a SwiftData warning, which we can ignore safely as we are using CoreData.
+  @NSManaged public var content: [ModuleContent]
 
-  public var length: Int { content.count }
+  public var length: Int { moduleType == .module ? content.count : 1 }
   public var isCompleted: Bool { progress >= length }
+  public var isStarted: Bool { progress > 0 }
+
+  public var moduleType: ModuleType { ModuleType(rawValue: type) ?? .module }
+
+  public enum ModuleType: String, Codable {
+    case module, document, consultation
+  }
 }
 
 @objc(QuestionAnswerTransformer)
