@@ -10,7 +10,11 @@ import UIComponents
 
 /// Lectures include the blocks of learning material.
 struct Lecture: View {
+  @Environment(\.router) private var router
+  @State private var progress = 0
+  @State private var canContinue = false
   let module: Module
+  let lectureRouter: AnyRouter
 
   var body: some View {
     ScrollViewReader { proxy in
@@ -44,6 +48,7 @@ struct Lecture: View {
 
           if module.isCompleted {
             router.dismissScreen()
+            lectureRouter.dismissScreen()
           }
         }
         .disabled(!canContinue)
@@ -60,10 +65,6 @@ struct Lecture: View {
       .toolbar(content: toolbar)
     }
   }
-
-  @State private var progress = 0
-  @State private var canContinue = false
-  @Environment(\.router) private var router
 
   @ToolbarContentBuilder
   private func toolbar() -> some ToolbarContent {
@@ -84,5 +85,7 @@ struct Lecture: View {
 }
 
 #Preview {
-  Lecture(module: .example(0))
+  RouterView { router in
+    Lecture(module: .example(0), lectureRouter: router)
+  }
 }

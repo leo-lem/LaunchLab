@@ -10,8 +10,35 @@ import UIComponents
 
 /// A summary of what the module is about.
 struct Summary: View {
-  let module: Module,
-      isUnlocked: Bool
+  @Environment(\.router) private var router
+  @Environment(\.colorScheme) private var colorScheme
+  @State private var pdf: PDF?
+
+  let module: Module
+  let isUnlocked: Bool
+
+  private var canBeCompleted: Bool {
+    module.moduleType != .module && isUnlocked && !module.isCompleted
+  }
+
+  private var label: String {
+    guard isUnlocked else { return L10n.locked }
+
+    return switch module.moduleType {
+    case .document:
+      pdf == nil ? L10n.generate : L10n.exportPdf
+    case .consultation:
+      L10n.startConsulting
+    case .module:
+      if module.isCompleted {
+        L10n.review
+      } else if module.isStarted {
+        L10n.commonContinue
+      } else {
+        L10n.commonStart
+      }
+    }
+  }
 
   public var body: some View {
     VStack {
@@ -77,10 +104,6 @@ struct Summary: View {
     .toolbar { DismissButton(tint: module.gradient) }
   }
 
-  @State private var pdf: PDF?
-  @Environment(\.router) private var router
-  @Environment(\.colorScheme) private var colorScheme
-
   private func complete() {
     module.progress = 1
     CoreDataStack.shared.save()
@@ -90,7 +113,7 @@ struct Summary: View {
     switch module.moduleType {
     case .module:
       router.showScreen(.fullScreenCover) { _ in
-        Lecture(module: module)
+        Lecture(module: module, lectureRouter: router)
       }
     case .document:
       if let content = await CoFounder.shared.createDocument(.init(module.title)) {
@@ -115,29 +138,6 @@ struct Summary: View {
             print(error.localizedDescription)
           }
         }
-      }
-    }
-  }
-
-  private var canBeCompleted: Bool {
-    module.moduleType != .module && isUnlocked && !module.isCompleted
-  }
-
-  private var label: String {
-    guard isUnlocked else { return L10n.locked }
-
-    return switch module.moduleType {
-    case .document:
-      pdf == nil ? L10n.generate : L10n.exportPdf
-    case .consultation:
-      L10n.startConsulting
-    case .module:
-      if module.isCompleted {
-        L10n.review
-      } else if module.isStarted {
-        L10n.commonContinue
-      } else {
-        L10n.commonStart
       }
     }
   }
