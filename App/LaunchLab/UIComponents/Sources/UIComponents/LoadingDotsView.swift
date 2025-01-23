@@ -4,9 +4,8 @@
 
 import SwiftUI
 
+/// An animated loading indicator.
 public struct LoadingDotsView: View {
-  @State private var shouldAnimate = false
-
   public init() {}
 
   public var body: some View {
@@ -14,21 +13,23 @@ public struct LoadingDotsView: View {
       Circle()
         .fill(Color.blue)
         .frame(width: 10, height: 10)
-        .scaleEffect(shouldAnimate ? 1.0 : 0.5)
-        .animation(Animation.easeInOut(duration: 0.5).repeatForever(), value: shouldAnimate)
+        .scaleEffect(animate ? 1.0 : 0.5)
+        .animation(.easeInOut(duration: 0.5).repeatForever(), value: animate)
       Circle()
         .fill(Color.blue)
         .frame(width: 10, height: 10)
-        .scaleEffect(shouldAnimate ? 1.0 : 0.5)
-        .animation(Animation.easeInOut(duration: 0.5).repeatForever().delay(0.3), value: shouldAnimate)
+        .scaleEffect(animate ? 1.0 : 0.5)
+        .animation(.easeInOut(duration: 0.5).repeatForever().delay(0.3), value: animate)
       Circle()
         .fill(Color.blue)
         .frame(width: 10, height: 10)
-        .scaleEffect(shouldAnimate ? 1.0 : 0.5)
-        .animation(Animation.easeInOut(duration: 0.5).repeatForever().delay(0.6), value: shouldAnimate)
+        .scaleEffect(animate ? 1.0 : 0.5)
+        .animation(.easeInOut(duration: 0.5).repeatForever().delay(0.6), value: animate)
     }
     .onAppear {
-      self.shouldAnimate = true
+      self.animate = true
     }
   }
+
+  @State private var animate = false
 }

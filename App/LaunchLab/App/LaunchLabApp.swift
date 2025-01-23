@@ -7,22 +7,14 @@ import SwiftfulRouting
 import SwiftUI
 import UIComponents
 
-@main
-struct LaunchLabApp: App {
-  private let requester = ChatGPTRequester()
-  @AppStorage("showOnboarding") private var onboarding = true
-  @State private var chatting = false
-
+/// The entrypoint of the app, with the CoreData context and a router in the environment.
+@main struct LaunchLabApp: App {
   var body: some Scene {
     WindowGroup {
       RouterView { router in
-        HomeScreen()
-          .overlay(alignment: .bottomTrailing) { FloatingChatButton { chatting = true } }
-//          .fullScreenCover(isPresented: $onboarding) { OnboardingWelcomeView(showOnboarding: $onboarding) }
-          // .sheet(isPresented: $chatting) { ChatView(send: requester.sendMessage) }
+        Journey()
           .environment(\.router, router)
           .environment(\.managedObjectContext, CoreDataStack.shared.mainContext)
-          .preferredColorScheme(.dark)
       }
     }
   }
