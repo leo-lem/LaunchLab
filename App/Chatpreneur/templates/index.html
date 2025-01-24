@@ -87,13 +87,29 @@
                 </p>
             </div>
 
-            <div class="w-full h-[440px] flex flex-col mt-6">
-                <div class="w-full h-[440px] flex flex-row py-5 px-6">
-                    <img class="h-[400px] ml-12 shadow-sm hover:scale-105 transition-transform duration-200 ease-in-out float-left"
+            <div class="w-full min-h-[440px] flex flex-row mt-6 relative justify-around">
+                <input type="radio" id="feature1" name="feature-group" class="hidden" checked>
+                <label for="feature1"
+                    class="w-72 h-fit text-center px-8 py-4 text-lg font-medium hover:cursor-pointer">Guided
+                    Experience</label>
+
+                <input type="radio" id="feature2" name="feature-group" class="hidden">
+                <label for="feature2"
+                    class="w-72 h-fit text-center px-8 py-4 text-lg font-medium hover:cursor-pointer">Module
+                    Types</label>
+
+                <input type="radio" id="feature3" name="feature-group" class="hidden">
+                <label for="feature3"
+                    class="w-72 h-fit text-center px-8 py-4 text-lg font-medium hover:cursor-pointer">AI Co -
+                    Founder</label>
+
+                <div class="w-full h-[440px] flex flex-row py-5 px-6 absolute left-0 right-0 top-14 z-0"
+                    id="feature1-content">
+                    <img class="h-[400px] ml-[5rem] shadow-sm hover:scale-105 transition-transform duration-200 ease-in-out"
                         src="{{ url_for('static', path='/images/gute-google-rezension-1.png') }}" alt="">
 
-                    <div class="w-full h-full flex flex-col justify-center gap-6 px-6 py-2">
-                        <div class="flex flex-col gap-2">
+                    <div class="w-3/5 h-full flex flex-col justify-center gap-6 px-6 py-2">
+                        <div class="flex flex-col gap-2 fade-in-left">
                             <span class="text-xl font-bold">guidance</span>
                             <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
                                 adipisicing
@@ -101,7 +117,7 @@
                                 architecto!</span>
                         </div>
 
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 fade-in-left animation-delay-1">
                             <span class="text-xl font-bold">guidance</span>
                             <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
                                 adipisicing
@@ -109,7 +125,7 @@
                                 architecto!</span>
                         </div>
 
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 fade-in-left animation-delay-2">
                             <span class="text-xl font-bold">guidance</span>
                             <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
                                 adipisicing
@@ -117,6 +133,69 @@
                                 architecto!</span>
                         </div>
                     </div>
+                </div>
+
+                <div class="w-full h-[440px] flex flex-row py-5 px-6 absolute left-0 right-0 top-14 justify-center z-0"
+                    id="feature2-content">
+                    <div class="w-1/3 h-full flex flex-col justify-center gap-6 px-6 py-2">
+                        <div class="flex flex-col gap-2 fade-in-right">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti.</span>
+                        </div>
+
+                        <div class="flex flex-col gap-2 fade-in-right animation-delay-1">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti.</span>
+                        </div>
+                    </div>
+
+                    <img class="h-[400px] shadow-sm hover:scale-105 transition-transform duration-200 ease-in-out"
+                        src="{{ url_for('static', path='/images/gute-google-rezension-1.png') }}" alt="">
+
+                    <div class="w-1/3 h-full flex flex-col justify-center gap-6 px-6 py-2">
+                        <div class="flex flex-col gap-2 fade-in-left animation-delay-2">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-[440px] flex flex-row py-5 px-6 absolute left-0 right-0 top-14 justify-end z-0"
+                    id="feature3-content">
+                    <div class="w-3/5 h-full flex flex-col justify-center gap-6 px-6 py-2">
+                        <div class="flex flex-col gap-2 fade-in-right">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti ipsam placeat inventore qui ea modi
+                                architecto!</span>
+                        </div>
+
+                        <div class="flex flex-col gap-2 fade-in-right animation-delay-1">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti ipsam placeat inventore qui ea modi
+                                architecto!</span>
+                        </div>
+
+                        <div class="flex flex-col gap-2 fade-in-right animation-delay-2">
+                            <span class="text-xl font-bold">guidance</span>
+                            <span class="text-md font-light max-w-sm">Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tempora laudantium aut corrupti ipsam placeat inventore qui ea modi
+                                architecto!</span>
+                        </div>
+                    </div>
+
+                    <img class="h-[400px] mr-[5rem] shadow-sm hover:scale-105 transition-transform duration-200 ease-in-out"
+                        src="{{ url_for('static', path='/images/gute-google-rezension-1.png') }}" alt="">
                 </div>
             </div>
         </div>
