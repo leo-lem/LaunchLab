@@ -157,6 +157,12 @@
     border-radius: 24px;
 }
 
+#chat-widget .chat-input-wrapper #chat-input:disabled {
+    background-color: rgba(239, 239, 239, 1);
+    color: rgb(84, 84, 84);
+    border-color: rgba(118, 118, 118, 0.3);
+}
+
 #chat-widget .chat-input-wrapper .chat-actions {
     position: absolute;
     display: flex;
