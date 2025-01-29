@@ -36,13 +36,14 @@ extension Lecture {
           .font(.title3)
           .onAppear { isAnswered = true }
       case .textfield:
-        AnswerTextField($answer, question: markdown, hideCoFounder: content.module.index == 0) {
+        AnswerTextField($answer, coFounderTip: CoFounderTip(), question: markdown, hideCoFounder: content.module.index == 0) {
           await CoFounder.shared.getHelp(content.module.title, question: content.content)
         }
         .onAppear {
           if let module = try? CoreDataStack.shared.mainContext
             .fetch(Module.fetchRequest())
-            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
+            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil })
+          {
             answer = module.questionAndAnswer[content.title] ?? ""
           }
           isAnswered = !answer.isEmpty

@@ -4,6 +4,7 @@
 
 import Styleguide
 import SwiftUI
+import TipKit
 
 /// An answer field for submitting text.
 public struct AnswerTextField: View {
@@ -12,11 +13,13 @@ public struct AnswerTextField: View {
 
   @Binding var answer: String
   let question: AttributedString
+  let coFounderTip: any Tip
   let getHelp: () async -> String?
   let hideCoFounder: Bool
 
-  public init(_ answer: Binding<String>, question: AttributedString, hideCoFounder: Bool = false, getHelp: @escaping () async -> String?) {
+  public init(_ answer: Binding<String>, coFounderTip: any Tip, question: AttributedString, hideCoFounder: Bool = false, getHelp: @escaping () async -> String?) {
     self._answer = answer
+    self.coFounderTip = coFounderTip
     self.hideCoFounder = hideCoFounder
     self.question = question
     self.getHelp = getHelp
@@ -44,7 +47,13 @@ public struct AnswerTextField: View {
       }
 
       if !hideCoFounder {
-        AsyncButton(title: L10n.cofounderLabel) { help = await getHelp() }
+        VStack {
+          if #available(iOS 18.0, *) {
+            TipView(coFounderTip)
+          }
+
+          AsyncButton(title: L10n.cofounderLabel) { help = await getHelp() }
+        }
       }
 
       TextField(L10n.commonPlaceholder, text: $answer, axis: .vertical)
@@ -62,21 +71,5 @@ public struct AnswerTextField: View {
     .onAppear {
       textFieldHeight = answer.isEmpty ? 40 : min(CGFloat(answer.count / 40 + 1) * 40, 200)
     }
-  }
-}
-
-#Preview {
-  AnswerTextField(.constant(""), question: "Hello, there!") {
-    """
-    This is a comprehensive help answer:
-
-    * Keep it in line afsoihoppbpawgbpqebpgjbqejgbqjiebgijqbgbjeb qpwjgbqwpgjb qpjbgqwbgpqg.
-
-    * aowegpqjbgpqglkjbgojbgijobg qojkgbqokjw bqokjwgbqokgbw bqko jbqkogjbqksogjbq.
-
-    * dgiqwbgobqgbqgoboiwgiowqiog qowigb oiqwbdgioqg qobg oqiwb oiqwb o
-
-    I hope this helps!
-    """
   }
 }
