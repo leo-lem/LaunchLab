@@ -63,10 +63,3 @@ extension Module: @retroactive Identifiable {
   /// Identifiable is required for using the modules array in the `ForEach` directly.
   public var id: Int { Int(index) }
 }
-
-#Preview {
-  ScrollView {
-    Path(modules: Module.examples)
-  }
-  .defaultScrollAnchor(.bottom)
-}

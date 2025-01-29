@@ -9,6 +9,7 @@ import UIComponents
 extension Lecture {
   /// The actual content is displayed in these blocks.
   struct Block: View {
+    @State private var answer = ""
     @Binding var isAnswered: Bool
     let content: ModuleContent
 
@@ -35,13 +36,14 @@ extension Lecture {
           .font(.title3)
           .onAppear { isAnswered = true }
       case .textfield:
-        AnswerTextField($answer, question: markdown) {
+        AnswerTextField($answer, coFounderTip: CoFounderTip(), question: markdown, hideCoFounder: content.module.index == 0) {
           await CoFounder.shared.getHelp(content.module.title, question: content.content)
         }
         .onAppear {
           if let module = try? CoreDataStack.shared.mainContext
             .fetch(Module.fetchRequest())
-            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
+            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil })
+          {
             answer = module.questionAndAnswer[content.title] ?? ""
           }
           isAnswered = !answer.isEmpty
@@ -53,12 +55,5 @@ extension Lecture {
         }
       }
     }
-
-    @State private var answer = ""
   }
-}
-
-#Preview {
-  // swiftlint:disable:next force_unwrapping
-  Lecture.Block(isAnswered: .constant(false), content: Module.example(0).content.first!)
 }
