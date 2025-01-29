@@ -7,12 +7,17 @@ import SwiftUI
 
 /// An answer field for submitting text.
 public struct AnswerTextField: View {
-  @Binding var answer: String
-  let question: AttributedString,
-      getHelp: () async -> String?
+  @State private var help: String?
+  @State private var textFieldHeight: CGFloat = 40
 
-  public init(_ answer: Binding<String>, question: AttributedString, getHelp: @escaping () async -> String?) {
+  @Binding var answer: String
+  let question: AttributedString
+  let getHelp: () async -> String?
+  let hideCoFounder: Bool
+
+  public init(_ answer: Binding<String>, question: AttributedString, hideCoFounder: Bool = false, getHelp: @escaping () async -> String?) {
     self._answer = answer
+    self.hideCoFounder = hideCoFounder
     self.question = question
     self.getHelp = getHelp
   }
@@ -38,7 +43,9 @@ public struct AnswerTextField: View {
         .frame(maxHeight: 200)
       }
 
-      AsyncButton(title: L10n.cofounderLabel) { help = await getHelp() }
+      if !hideCoFounder {
+        AsyncButton(title: L10n.cofounderLabel) { help = await getHelp() }
+      }
 
       TextField(L10n.commonPlaceholder, text: $answer, axis: .vertical)
         .lineLimit(3 ... 30)
@@ -56,9 +63,6 @@ public struct AnswerTextField: View {
       textFieldHeight = answer.isEmpty ? 40 : min(CGFloat(answer.count / 40 + 1) * 40, 200)
     }
   }
-
-  @State private var help: String?
-  @State private var textFieldHeight: CGFloat = 40
 }
 
 #Preview {
