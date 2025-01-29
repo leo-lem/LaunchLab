@@ -57,8 +57,3 @@ extension Lecture {
     @State private var answer = ""
   }
 }
-
-#Preview {
-  // swiftlint:disable:next force_unwrapping
-  Lecture.Block(isAnswered: .constant(false), content: Module.example(0).content.first!)
-}

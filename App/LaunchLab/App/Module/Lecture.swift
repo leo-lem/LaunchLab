@@ -83,9 +83,3 @@ struct Lecture: View {
     DismissButton(tint: module.gradient)
   }
 }
-
-#Preview {
-  RouterView { router in
-    Lecture(module: .example(0), lectureRouter: router)
-  }
-}

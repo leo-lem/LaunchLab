@@ -139,8 +139,3 @@ struct Summary: View {
     }
   }
 }
-
-#Preview {
-  Summary(module: .example(1), isUnlocked: true)
-  Summary(module: .example(2), isUnlocked: true)
-}

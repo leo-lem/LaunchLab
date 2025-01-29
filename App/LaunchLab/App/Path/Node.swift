@@ -19,25 +19,18 @@ extension Path {
           .scaleEffect(module.type == "module" ? 1 : 0.8)
           .position(position.point(total: total))
 
-//        if let collectable = module.collectable {
-//          Image(collectable)
-//            .resizable()
-//            .scaledToFit()
-//            .frame(maxWidth: 40, maxHeight: 100)
-//            .opacity(module.isCompleted ? 1 : 0.25)
-//            .shadow(color: .black, radius: 10)
-//            .position(position.opposite.point(total: total))
-//        }
+        //        if let collectable = module.collectable {
+        //          Image(collectable)
+        //            .resizable()
+        //            .scaledToFit()
+        //            .frame(maxWidth: 40, maxHeight: 100)
+        //            .opacity(module.isCompleted ? 1 : 0.25)
+        //            .shadow(color: .black, radius: 10)
+        //            .position(position.opposite.point(total: total))
+        //        }
       }
     }
 
     private var position: Path.Position { Path.Position(module) }
-  }
-}
-
-#Preview {
-  ScrollView {
-    Path.Node(module: .example(1), total: 4)
-    Path.Node(module: .example(4), total: 4)
   }
 }
