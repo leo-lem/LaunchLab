@@ -1,5 +1,6 @@
 .phone-wrapper {
     z-index: 0;
+    display: none;
 }
 
 .phone1, .phone2 {
@@ -24,6 +25,10 @@
 }
 
 @media (min-width: 1024px) {
+    .phone-wrapper {
+        display: block;
+    }
+    
     .phone1, .phone2 {
         display: block;
     }
@@ -101,39 +106,42 @@
     
 }
 
-input#feature1:checked + label[for="feature1"],
-input#feature2:checked + label[for="feature2"],
-input#feature3:checked + label[for="feature3"] {
-    border-bottom: 2px solid black;
-}
+@media (min-width: 768px) {
+    input#feature1:checked + label[for="feature1"],
+    input#feature2:checked + label[for="feature2"],
+    input#feature3:checked + label[for="feature3"] {
+        color: #E0386F;
+        border-bottom: 2px solid #E0386F;
+    }
 
-#feature1-content, #feature2-content, #feature3-content {
-    opacity: 0;
-}
+    #feature1-content, #feature2-content, #feature3-content {
+        opacity: 0;
+    }
 
-input#feature1:checked ~ #feature1-content,
-input#feature2:checked ~ #feature2-content,
-input#feature3:checked ~ #feature3-content {
-    opacity: 1 !important;
-    z-index: 1;
-}
+    input#feature1:checked ~ #feature1-content,
+    input#feature2:checked ~ #feature2-content,
+    input#feature3:checked ~ #feature3-content {
+        opacity: 1 !important;
+        z-index: 1;
+    }
 
-input#feature1:checked ~ #feature1-content .fade-in-left,
-input#feature2:checked ~ #feature2-content .fade-in-left,
-input#feature3:checked ~ #feature3-content .fade-in-left {
-    animation: fade-in-left 0.7s ease-in-out forwards;
-    animation-delay: var(--feature-delay);
-}
+    input#feature1:checked ~ #feature1-content .fade-in-left,
+    input#feature2:checked ~ #feature2-content .fade-in-left,
+    input#feature3:checked ~ #feature3-content .fade-in-left {
+        animation: fade-in-left 0.7s ease-in-out forwards;
+        animation-delay: var(--feature-delay);
+    }
 
-input#feature1:checked ~ #feature1-content .fade-in-right,
-input#feature2:checked ~ #feature2-content .fade-in-right,
-input#feature3:checked ~ #feature3-content .fade-in-right {
-    animation: fade-in-right 0.7s ease-in-out forwards;
-    animation-delay: var(--feature-delay);
-}
+    input#feature1:checked ~ #feature1-content .fade-in-right,
+    input#feature2:checked ~ #feature2-content .fade-in-right,
+    input#feature3:checked ~ #feature3-content .fade-in-right {
+        animation: fade-in-right 0.7s ease-in-out forwards;
+        animation-delay: var(--feature-delay);
+    }
 
-.fade-in-left, .fade-in-right {
-    opacity: 0;
+    .fade-in-left, .fade-in-right {
+        opacity: 0;
+    }    
 }
 
 .animation-delay-1 {
