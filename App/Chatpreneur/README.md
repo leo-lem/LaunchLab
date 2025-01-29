@@ -29,7 +29,7 @@ docker-compose -p chatpreneur up
 ### Step 4: Minify Tailwind (When starting in production)
 
 ```sh
-./tailwindcss -i input.css -o output.css --minify
+./tailwindcss-windows-x64.exe -i static/input.css -o static/output.css --minify
 ```
 
 ## Usage as REST API
