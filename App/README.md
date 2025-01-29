@@ -1,4 +1,4 @@
-# Transferagentur: LaunchLab [![](media/logo.svg)](media/logo.svg)
+# Transferagentur: LaunchLab
 
 <details>
 <summary>Important Notes About this README</summary>
@@ -27,6 +27,8 @@
 </details>
 
 ## Introduction
+
+[LaunchLab Webpage](https://eric-liebrecht.github.io/launchlab/).
 
 LaunchLab is your startup companion. From zero to your own startup. We guide you along your journey.
 
