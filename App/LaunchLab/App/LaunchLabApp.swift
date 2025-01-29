@@ -5,10 +5,17 @@
 import Data
 import SwiftfulRouting
 import SwiftUI
+import TipKit
 import UIComponents
 
 /// The entrypoint of the app, with the CoreData context and a router in the environment.
-@main struct LaunchLabApp: App {
+@main
+struct LaunchLabApp: App {
+  init() {
+    try? Tips.configure()
+    CoreDataStack.shared.populateModulesIfNeeded()
+  }
+
   var body: some Scene {
     WindowGroup {
       RouterView { router in
@@ -17,9 +24,5 @@ import UIComponents
           .environment(\.managedObjectContext, CoreDataStack.shared.mainContext)
       }
     }
-  }
-
-  init() {
-    CoreDataStack.shared.populateModulesIfNeeded()
   }
 }

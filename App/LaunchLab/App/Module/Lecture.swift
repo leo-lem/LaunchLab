@@ -23,14 +23,18 @@ struct Lecture: View {
           ForEach(Array(module.content.enumerated()), id: \.offset) { id, item in
             if id <= progress {
               withAnimation {
-                Block(isAnswered: Binding { true } set: {
-                  if id == progress {
-                    canContinue = $0
-                  }
-                }, content: item)
-                  .transition(.move(edge: .bottom).combined(with: .opacity))
-                  .id(id)
-                  .animation(module.isCompleted ? nil : .default, value: id)
+                Block(
+                  isAnswered: Binding { true }
+                    set: {
+                      if id == progress {
+                        canContinue = $0
+                      }
+                    },
+                  content: item
+                )
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .id(id)
+                .animation(module.isCompleted ? nil : .default, value: id)
               }
             }
           }
@@ -81,11 +85,5 @@ struct Lecture: View {
     }
 
     DismissButton(tint: module.gradient)
-  }
-}
-
-#Preview {
-  RouterView { router in
-    Lecture(module: .example(0), lectureRouter: router)
   }
 }
