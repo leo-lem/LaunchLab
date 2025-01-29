@@ -1,4 +1,4 @@
-# Transferagentur: EntrepreneurChat
+# Transferagentur: LaunchLab
 
 <details>
 <summary>Important Notes About this README</summary>
@@ -28,34 +28,48 @@
 
 ## Introduction
 
-AI consultant for aspiring entrepreneurs. [...]
+[LaunchLab Webpage](https://eric-liebrecht.github.io/launchlab/).
 
-This application was created during the M-Lab course 2024 at the University of Hamburg for the client Transferagentur. [...]
+LaunchLab is your startup companion. From zero to your own startup. We guide you along your journey.
+
+This application was created during the M-Lab course 2024 at the University of Hamburg for the client Transferagentur. Our client wanted to facilitate the startup founding consultation process. So we built LaunchLab. The sky is the limit!
+
+![](media/trailer.mp4)
+
+### Key features
+- Your learning path journey to guide you through all the steps from refining your idea to founding your company.
+- Create your indiviual pitch deck, business plan at the press of a button.
+- Direct link to real consultants to profit from valuable expertise.
+- Integrated AI Co-Founder to help you out when you don't know the next steps.
+
+### Deep Dive
+
+If you're interested in deeper insights, have a look at our [Requirements Analysis](media/RAD.pdf) and [System Design Document](media/SDD.pdf).
 
 <details>
 <summary>To-Dos</summary>
 
-- [ ] Describe __what__ application you created and explain its main features (= implemented functional requirements) and qualities (= implemented non-functional requirements).
+- [x] Describe __what__ application you created and explain its main features (= implemented functional requirements) and qualities (= implemented non-functional requirements).
   Example:
   We present a communication app for iOS that enables visitors of a fair to network and exchange contact information with each other.
   The app's main features are: [...] The app's main qualities are: [...]
-- [ ] Describe __why__ you created this application.
+- [x] Describe __why__ you created this application.
   Example: This application was created during the M-Lab course 2020 at Universität Hamburg for the client Hamburg Messe.
   The client required an initial prototype to facilitate the communication and exchange of fair visitors. [...]
-- [ ] Include (a link to) your trailer here.
-- [ ] Optionally, you can place copies of your RAD and SDD artifacts in the __media__ folder and add links to them in your description.
+- [x] Include (a link to) your trailer here.
+- [x] Optionally, you can place copies of your RAD and SDD artifacts in the __media__ folder and add links to them in your description.
 
 </details>
 
 ## Getting Started
 
-The steps marked [Real Device] will be required if you want to run the app on a real device. A simulator should work without them.
+__IMPORTANT__: _The steps marked [Real Device] will be required if you want to run the app on a real device. A simulator should work without them._
 
 ### Prerequisites
 
 1. A [Mac](https://www.apple.com/mac/).
 2. [Xcode](https://developer.apple.com/xcode/) installed.
-3. [Real Device] An [AppleID](https://account.apple.com).
+3. [Real Device] An [AppleID](https://account.apple.com) with an associated Apple Developer License.
 
 <details>
 <summary>To-Dos</summary>
@@ -68,7 +82,7 @@ The steps marked [Real Device] will be required if you want to run the app on a 
 
 1. Clone this repository.
 2. Open Xcode and select `Open Existing Project`.
-3. Select this project's [EntrepreneurChat.xcodeproj](App/EntrepreneurChat.xcodeproj).
+3. Select this project's [LaunchLab.xcodeproj](LaunchLab/Launchlab.xcodeproj).
 
 <details>
 <summary>To-Dos</summary>
@@ -86,9 +100,9 @@ The steps marked [Real Device] will be required if you want to run the app on a 
 
 ### How To Run
 
-1. [Real Device] In `EntrepreneurChat > Signing & Capabilities`
+1. [Real Device] In `LaunchLab > Signing & Capabilities`
   - change the `Team` to AppleID-linked personal team.
-  - change the `Bundle Identifier` to something unique (`de.<your-name>.entrepreneurchat` should work).
+  - change the `Bundle Identifier` to something unique (`de.<your-name>.launchlab` should work).
 2. Select an appropriate simulator or physical device to run the app on.
 3. Select `Product > Run` in the menu bar.
 
@@ -101,10 +115,9 @@ The steps marked [Real Device] will be required if you want to run the app on a 
 
 ### Demo
 
-Our dynamic prototype is available in [Figma](https://www.figma.com/proto/bFe6jqSDZ2OXyaKYpr3xej/Prototyping?node-id=206-4249&t=OR6ztRCPCX8z2gOR-1&starting-point-node-id=206%3A4249). You can also find a copy [here](https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202425/transferagentur/-/blob/7-complete-requirements-analysis-document/Deliverables/M1%20-%20Requirements%20Engineering/ClickDummy.fig?ref_type=heads).
+__IMPORTANT__: _The demo is intended as a proof of concept, not a complete working app. While the transitions and flow of the app are there, not all features reflect the app's final level of detail._
 
-The demo is used intended as a proof of concept, not a complete working app. While the transitions and flow of the app are there, not all features reflect the app's final level of detail.
-
+Our dynamic prototype is available in [Figma](https://www.figma.com/proto/MECpKOYJoJrZaTg00w5DQ9/Hanna?page-id=0%3A1&node-id=105-1623&p=f&viewport=547%2C592%2C0.04&t=uieIVfoOzrLT9jbn-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=105%3A1623).
 <details>
 <summary>To-Dos</summary>
 
@@ -117,12 +130,10 @@ This section is optional. You can remove it if you cannot provide a demo of your
 
 ## Project Team
 
-- Hanna Lagerbauer
-- Henrik Marcussen
-- Jai Kamboj
-- Eric Liebrecht
-- Maximilian Stabe
-- Leopold Lemmermann
+| <img src="media/team/hanna.jpg" width=50 /> | <img src="media/team/henrik.jpg" width=50 /> | <img src="media/team/jai.jpg" width=50 /> | <img src="media/team/eric.jpg" width=50 /> | <img src="media/team/maxi.jpg" width=50 /> | <img src="media/team/leo.jpg" width=50 /> |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| Hanna Lagerbauer | Henrik Marcussen | Jai Kamboj | Eric Liebrecht | Maximilian Stabe | Leopold Lemmermann |
+| __Design__ | __AI__ | __Content__ | __Comms.__ | __iOS__ | __Lead__ |
 
 <details>
 <summary>To-Dos</summary>

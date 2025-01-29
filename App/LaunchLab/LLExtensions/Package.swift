@@ -13,9 +13,11 @@ let package = Package(
       targets: ["LLExtensions"]
     )
   ],
+  dependencies: [],
   targets: [
     .target(
-      name: "LLExtensions"
+      name: "LLExtensions",
+      dependencies: []
     )
   ]
 )

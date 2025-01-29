@@ -12,60 +12,58 @@ import Foundation
 public enum L10n {
   /// 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
   public static let apiKey = L10n.tr("Localizable", "api_key", fallback: "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")
-  /// Weiter
-  public static let commonContinue = L10n.tr("Localizable", "common_continue", fallback: "Weiter")
-  /// Platzhalter
-  public static let commonPlaceholder = L10n.tr("Localizable", "common_placeholder", fallback: "Platzhalter")
-  /// Starten
-  public static let commonStart = L10n.tr("Localizable", "common_start", fallback: "Starten")
-  /// Ich habe eine Idee und möchte sie umsetzen
-  public static let currentStateAnswerIdea = L10n.tr("Localizable", "currentState_answer_idea", fallback: "Ich habe eine Idee und möchte sie umsetzen")
-  /// Ich habe noch keine Idee
-  public static let currentStateAnswerNoIdea = L10n.tr("Localizable", "currentState_answer_noIdea", fallback: "Ich habe noch keine Idee")
-  /// Ich habe schon ein laufendes Startup
-  public static let currentStateAnswerRunning = L10n.tr("Localizable", "currentState_answer_running", fallback: "Ich habe schon ein laufendes Startup")
-  /// Ich arbeite bereits an meinem Startup
-  public static let currentStateAnswerWorking = L10n.tr("Localizable", "currentState_answer_working", fallback: "Ich arbeite bereits an meinem Startup")
-  /// Wo stehst du gerade bei deinem Startup?
-  public static let currentStateQuestion = L10n.tr("Localizable", "currentState_question", fallback: "Wo stehst du gerade bei deinem Startup?")
-  /// Markiere den Punkt, an dem du dich gerade befindest.
-  public static let currentStateSubtitle = L10n.tr("Localizable", "currentState_subtitle", fallback: "Markiere den Punkt, an dem du dich gerade befindest.")
-  /// Was sind deine Ziele mit dem Startup?
-  public static let goalsQuestion = L10n.tr("Localizable", "goals_question", fallback: "Was sind deine Ziele mit dem Startup?")
-  /// Wähle, was dir am wichtigsten ist.
-  public static let goalsSubtitle = L10n.tr("Localizable", "goals_subtitle", fallback: "Wähle, was dir am wichtigsten ist.")
-  /// Bevor du deine Idee in die Tat umsetzen kannst, möchten wir dich kurz kennenlernen.
-  public static let launchScreenSubtitle = L10n.tr("Localizable", "launch_screen_subtitle", fallback: "Bevor du deine Idee in die Tat umsetzen kannst, möchten wir dich kurz kennenlernen.")
-  /// Willkommen bei Launchlab 🚀
-  public static let launchScreenTitle = L10n.tr("Localizable", "launch_screen_title", fallback: "Willkommen bei Launchlab 🚀")
-  /// Finanziellen Erfolg erzielen
-  public static let motivationAnswerFinancial = L10n.tr("Localizable", "motivation_answer_financial", fallback: "Finanziellen Erfolg erzielen")
-  /// Die Freiheit, mein eigener Chef zu sein
-  public static let motivationAnswerFreedom = L10n.tr("Localizable", "motivation_answer_freedom", fallback: "Die Freiheit, mein eigener Chef zu sein")
-  /// Innovative Ideen in die Welt bringen
-  public static let motivationAnswerInnovation = L10n.tr("Localizable", "motivation_answer_innovation", fallback: "Innovative Ideen in die Welt bringen")
-  /// Ein Problem lösen, das mir wichtig ist
-  public static let motivationAnswerProblem = L10n.tr("Localizable", "motivation_answer_problem", fallback: "Ein Problem lösen, das mir wichtig ist")
-  /// Was motiviert dich, ein Startup zu gründen?
-  public static let motivationQuestion = L10n.tr("Localizable", "motivation_question", fallback: "Was motiviert dich, ein Startup zu gründen?")
-  /// Wähle aus, was dich am meisten antreibt.
-  public static let motivationSubtitle = L10n.tr("Localizable", "motivation_subtitle", fallback: "Wähle aus, was dich am meisten antreibt.")
-  /// Frage %@ von %@
-  public static func questionValueOf(_ p1: Any, _ p2: Any) -> String {
-    return L10n.tr("Localizable", "question_value_of %@ %@", String(describing: p1), String(describing: p2), fallback: "Frage %@ von %@")
+  /// Ideate with Your Co-Founder 🤖
+  public static let cofounderLabel = L10n.tr("Localizable", "cofounder_label", fallback: "Ideate with Your Co-Founder 🤖")
+  /// Complete
+  public static let commonComplete = L10n.tr("Localizable", "common_complete", fallback: "Complete")
+  /// Continue
+  public static let commonContinue = L10n.tr("Localizable", "common_continue", fallback: "Continue")
+  /// Dismiss
+  public static let commonDismiss = L10n.tr("Localizable", "common_dismiss", fallback: "Dismiss")
+  /// Enter text here…
+  public static let commonPlaceholder = L10n.tr("Localizable", "common_placeholder", fallback: "Enter text here…")
+  /// Begin
+  public static let commonStart = L10n.tr("Localizable", "common_start", fallback: "Begin")
+  /// Please configure the Mail app on your phone.
+  public static let configureMailApp = L10n.tr("Localizable", "configure_mail_app", fallback: "Please configure the Mail app on your phone.")
+  /// Something went wrong…
+  public static let errorOccured = L10n.tr("Localizable", "error_occured", fallback: "Something went wrong…")
+  /// Export PDF
+  public static let exportPdf = L10n.tr("Localizable", "export_pdf", fallback: "Export PDF")
+  /// Feedback
+  public static let feedback = L10n.tr("Localizable", "Feedback", fallback: "Feedback")
+  /// General
+  public static let general = L10n.tr("Localizable", "general", fallback: "General")
+  /// Generate
+  public static let generate = L10n.tr("Localizable", "generate", fallback: "Generate")
+  /// Locked 🔒
+  public static let locked = L10n.tr("Localizable", "locked", fallback: "Locked 🔒")
+  /// It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.
+  public static let mailAlertSubtitle = L10n.tr("Localizable", "mail_alert_subtitle", fallback: "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.")
+  /// Mark as completed
+  public static let markCompleted = L10n.tr("Localizable", "mark_completed", fallback: "Mark as completed")
+  /// Modules
+  public static let modules = L10n.tr("Localizable", "modules", fallback: "Modules")
+  /// Chart
+  public static let modulesChart = L10n.tr("Localizable", "modules_chart", fallback: "Chart")
+  /// %@/%@ completed
+  public static func modulesCompleted(_ p1: Any, _ p2: Any) -> String {
+    return L10n.tr("Localizable", "modules_completed %@ %@", String(describing: p1), String(describing: p2), fallback: "%@/%@ completed")
   }
-  /// Berufstätige oder Unternehmen
-  public static let targetGroupAnswerProfessionals = L10n.tr("Localizable", "targetGroup_answer_professionals", fallback: "Berufstätige oder Unternehmen")
-  /// Schüler und Studenten
-  public static let targetGroupAnswerStudents = L10n.tr("Localizable", "targetGroup_answer_students", fallback: "Schüler und Studenten")
-  /// Technikbegeisterte
-  public static let targetGroupAnswerTechies = L10n.tr("Localizable", "targetGroup_answer_techies", fallback: "Technikbegeisterte")
-  /// Weiß ich noch nicht
-  public static let targetGroupAnswerUnknown = L10n.tr("Localizable", "targetGroup_answer_unknown", fallback: "Weiß ich noch nicht")
-  /// Für wen ist dein Startup gedacht? Wer ist deine Zielgruppe?
-  public static let targetGroupQuestion = L10n.tr("Localizable", "targetGroup_question", fallback: "Für wen ist dein Startup gedacht? Wer ist deine Zielgruppe?")
-  /// Überlege dir, wen du erreichen möchtest.
-  public static let targetGroupSubtitle = L10n.tr("Localizable", "targetGroup_subtitle", fallback: "Überlege dir, wen du erreichen möchtest.")
+  /// Progress
+  public static let modulesStatus = L10n.tr("Localizable", "modules_status", fallback: "Progress")
+  /// Privacy policy
+  public static let privacyPolicy = L10n.tr("Localizable", "privacy_policy", fallback: "Privacy policy")
+  /// Review
+  public static let review = L10n.tr("Localizable", "review", fallback: "Review")
+  /// Start Consultation
+  public static let startConsulting = L10n.tr("Localizable", "start_consulting", fallback: "Start Consultation")
+  /// Support
+  public static let support = L10n.tr("Localizable", "support", fallback: "Support")
+  /// Support & Feedback
+  public static let supportAndFeedback = L10n.tr("Localizable", "support_and_feedback", fallback: "Support & Feedback")
+  /// Your Progress
+  public static let yourState = L10n.tr("Localizable", "your_state", fallback: "Your Progress")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
