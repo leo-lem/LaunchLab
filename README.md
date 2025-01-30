@@ -1,6 +1,6 @@
 <!-- TODO: host own webpage version -->
 
-# Transferagentur: [LaunchLab](https://eric-liebrecht.github.io/launchlab/)
+# Transferagentur: LaunchLab [<img src="media/link.png" width=25 />](https://eric-liebrecht.github.io/launchlab/)
 
 LaunchLab is your startup companion. From zero to your own startup. We guide you along your journey.
 
