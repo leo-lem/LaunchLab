@@ -42,8 +42,7 @@ extension Lecture {
         .onAppear {
           if let module = try? CoreDataStack.shared.mainContext
             .fetch(Module.fetchRequest())
-            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil })
-          {
+            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
             answer = module.questionAndAnswer[content.title] ?? ""
           }
           isAnswered = !answer.isEmpty

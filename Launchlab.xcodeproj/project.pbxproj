@@ -20,7 +20,6 @@
 		7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E82CD4E2B400DBABD9 /* UIComponents */; };
 		7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A750C942CE93DF3005EA71B /* SwiftfulRouting */; };
 		7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */; };
-		7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */; };
 		7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141C2CD3F6E800F4E6AA /* .swiftformat */; };
 		7AC514262CD3F6E800F4E6AA /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */; };
 		7AD9EFAB2CF999A600FF0BDD /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 7AD9EFAA2CF999A600FF0BDD /* Data */; };
@@ -54,20 +53,17 @@
 		6E1416F72D3BA50B0099C582 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
 		6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleContentTests.swift; sourceTree = "<group>"; };
 		6E1417022D3BAACD0099C582 /* LaunchLab.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchLab.xctestplan; sourceTree = "<group>"; };
+		6EACC20C2D4BA62900EE0AEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6EEEA99A2D40097C009FF3BD /* CoFounderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoFounderTests.swift; sourceTree = "<group>"; };
-		7A184FC42D02E09F00F87E97 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		7A184FC62D02E09F00F87E97 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		7A5C19F12D00A2CA000D3AD7 /* LaunchLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaunchLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5C19FA2D00A32A000D3AD7 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
 		7A5C1A0A2D00A4FA000D3AD7 /* ModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTests.swift; sourceTree = "<group>"; };
-		7A6ADE3F2D3100B700BCA47C /* LaunchLab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaunchLab-Info.plist"; sourceTree = "<group>"; };
+		7A6ADE3F2D3100B700BCA47C /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		7A7306E52CD4E25100DBABD9 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
 		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AC5141C2CD3F6E800F4E6AA /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7AC5141F2CD3F6E800F4E6AA /* LaunchLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchLab.entitlements; sourceTree = "<group>"; };
 		7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Styleguide; sourceTree = "<group>"; };
 		7AD9EFA92CF9999A00FF0BDD /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,9 +74,9 @@
 			path = __Snapshots__;
 			sourceTree = "<group>";
 		};
-		6EAAD2562D3FCF0B0096BB9D /* App */ = {
+		6EAAD2562D3FCF0B0096BB9D /* app */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = App;
+			path = app;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -111,7 +107,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A5C19FB2D00A32A000D3AD7 /* LaunchLabTests */ = {
+		7A5C19FB2D00A32A000D3AD7 /* tests */ = {
 			isa = PBXGroup;
 			children = (
 				6E14171B2D3BB4D10099C582 /* __Snapshots__ */,
@@ -121,20 +117,20 @@
 				6E1416FC2D3BA8760099C582 /* ModuleContentTests.swift */,
 				6EEEA99A2D40097C009FF3BD /* CoFounderTests.swift */,
 			);
-			path = LaunchLabTests;
+			path = tests;
 			sourceTree = "<group>";
 		};
 		7AAC1F642CD28E84002C6042 = {
 			isa = PBXGroup;
 			children = (
-				6E1416F72D3BA50B0099C582 /* LLExtensions */,
+				6EACC20C2D4BA62900EE0AEA /* README.md */,
+				6EAAD2562D3FCF0B0096BB9D /* app */,
+				7A5C19FB2D00A32A000D3AD7 /* tests */,
+				7AC514202CD3F6E800F4E6AA /* config */,
 				7AD9EFA92CF9999A00FF0BDD /* Data */,
 				7A7306E52CD4E25100DBABD9 /* UIComponents */,
 				7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */,
-				6EAAD2562D3FCF0B0096BB9D /* App */,
-				7AC514202CD3F6E800F4E6AA /* Configuration */,
-				7A5C19FB2D00A32A000D3AD7 /* LaunchLabTests */,
-				7AAC1FA52CD29531002C6042 /* Frameworks */,
+				6E1416F72D3BA50B0099C582 /* LLExtensions */,
 				7AAC1F6E2CD28E84002C6042 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,35 +144,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7AAC1FA52CD29531002C6042 /* Frameworks */ = {
+		7AC5141B2CD3F6E800F4E6AA /* previews */ = {
 			isa = PBXGroup;
 			children = (
-				7A184FC42D02E09F00F87E97 /* WidgetKit.framework */,
-				7A184FC62D02E09F00F87E97 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7AC5141B2CD3F6E800F4E6AA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				7AC5141A2CD3F6E800F4E6AA /* Preview Assets.xcassets */,
 				6E0715442D09B11F0054DECF /* Module-example.swift */,
 			);
-			path = "Preview Content";
+			path = previews;
 			sourceTree = "<group>";
 		};
-		7AC514202CD3F6E800F4E6AA /* Configuration */ = {
+		7AC514202CD3F6E800F4E6AA /* config */ = {
 			isa = PBXGroup;
 			children = (
-				7AC5141B2CD3F6E800F4E6AA /* Preview Content */,
+				7AC5141B2CD3F6E800F4E6AA /* previews */,
 				7AC5141C2CD3F6E800F4E6AA /* .swiftformat */,
 				7AC5141D2CD3F6E800F4E6AA /* .swiftlint.yml */,
 				7AC5141E2CD3F6E800F4E6AA /* Assets.xcassets */,
-				7AC5141F2CD3F6E800F4E6AA /* LaunchLab.entitlements */,
-				7A6ADE3F2D3100B700BCA47C /* LaunchLab-Info.plist */,
+				7A6ADE3F2D3100B700BCA47C /* info.plist */,
 			);
-			path = Configuration;
+			path = config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +209,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6EAAD2562D3FCF0B0096BB9D /* App */,
+				6EAAD2562D3FCF0B0096BB9D /* app */,
 			);
 			name = LaunchLab;
 			packageProductDependencies = (
@@ -294,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC514232CD3F6E800F4E6AA /* Assets.xcassets in Resources */,
-				7AC514242CD3F6E800F4E6AA /* Preview Assets.xcassets in Resources */,
 				7AC514252CD3F6E800F4E6AA /* .swiftformat in Resources */,
 				7AC514262CD3F6E800F4E6AA /* .swiftlint.yml in Resources */,
 			);
@@ -339,7 +323,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n  CONFIG_PATH=\"${PROJECT_DIR}/Configuration/.swiftlint.yml\"\n  swiftlint --config \"$CONFIG_PATH\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n  CONFIG_PATH=\"${PROJECT_DIR}/config/.swiftlint.yml\"\n  swiftlint --config \"$CONFIG_PATH\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -546,18 +530,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Configuration/LaunchLab.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
-				DEVELOPMENT_TEAM = D6BN8JUT3H;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Configuration/LaunchLab-Info.plist";
+				INFOPLIST_FILE = config/info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LaunchLab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -575,7 +557,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLab;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.LaunchLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -593,18 +575,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Configuration/LaunchLab.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Configuration/Preview Content\"";
-				DEVELOPMENT_TEAM = D6BN8JUT3H;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Configuration/LaunchLab-Info.plist";
+				INFOPLIST_FILE = config/info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LaunchLab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -622,7 +602,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mlab.LaunchLab;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.LaunchLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
