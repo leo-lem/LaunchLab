@@ -1,9 +1,0 @@
-services:
-  api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
-    ports:
-      - "8080:80"
