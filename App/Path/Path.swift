@@ -3,9 +3,7 @@
 //
 
 import Data
-import SwiftfulRouting
-import SwiftUI
-import UIComponents
+import SwiftUIComponents
 
 /// The central path element structuring the modules.
 struct Path: View {
@@ -29,23 +27,10 @@ struct Path: View {
     .onTapGesture { selection = nil }
     .frame(maxWidth: .infinity, minHeight: CGFloat((modules.count + 1) * 150))
     .padding(.top, 50)
-    .onChange(of: selection) {
-      if let selection {
-        router.showResizableSheet(
-          sheetDetents: [.large],
-          selection: .constant(.large),
-          showDragIndicator: false
-        ) {
-          self.selection = nil
-        } destination: { _ in
-          Summary(module: selection, isUnlocked: isUnlocked(selection))
-        }
-      }
-    }
+    .sheet(item: $selection) { Summary(module: $0, isUnlocked: isUnlocked($0)) }
   }
 
   @State private var selection: Module?
-  @Environment(\.router) private var router
 
   /// Fetch the next module by index.
   private func next(after module: Module) -> Module? {
@@ -57,9 +42,4 @@ struct Path: View {
     module.index == 0 ||
       modules.first { $0.index == module.index - 1 }?.isCompleted ?? false
   }
-}
-
-extension Module: @retroactive Identifiable {
-  /// Identifiable is required for using the modules array in the `ForEach` directly.
-  public var id: Int { Int(index) }
 }

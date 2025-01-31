@@ -2,16 +2,48 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import CoFounder
 import Data
-import SwiftUI
-import UIComponents
+import SwiftUIComponents
 
 extension Lecture {
   /// The actual content is displayed in these blocks.
   struct Block: View {
-    @State private var answer = ""
+    let content: Content
     @Binding var isAnswered: Bool
-    let content: ModuleContent
+
+    var body: some View {
+      Text(content.title)
+        .font(.title)
+        .fontWeight(.bold)
+        .multilineTextAlignment(.center)
+        .padding(.bottom, 12)
+        .foregroundStyle(
+          content.module?.gradient ?? LinearGradient(colors: [.secondary], startPoint: .bottom, endPoint: .top)
+        )
+
+      switch content.type {
+      case .info:
+        Text(markdown)
+          .font(.title3)
+          .onAppear { isAnswered = true }
+      case .textfield:
+        AnswerTextField(
+          Binding { content.answer ?? "" } set: {
+            content.answer = $0
+            isAnswered = !(content.answer?.isEmpty ?? true)
+          },
+          coFounderTip: CoFounderTip(),
+          question: markdown,
+          hideCoFounder: content.module?.index ?? -1 == 0
+        ) {
+          await coFounder.getHelp(content.module?.title ?? "", question: content.content)
+        }
+        .onAppear { isAnswered = !(content.answer?.isEmpty ?? true) }
+      }
+    }
+
+    @EnvironmentObject private var coFounder: CoFounder
 
     private var markdown: AttributedString {
       (try? AttributedString(
@@ -20,39 +52,6 @@ extension Lecture {
       )) ?? AttributedString(
         stringLiteral: content.content
       )
-    }
-
-    var body: some View {
-      Text(content.title)
-        .font(.title)
-        .fontWeight(.bold)
-        .multilineTextAlignment(.center)
-        .padding(.bottom, 12)
-        .foregroundStyle(content.module.gradient)
-
-      switch content.contentType {
-      case .info:
-        Text(markdown)
-          .font(.title3)
-          .onAppear { isAnswered = true }
-      case .textfield:
-        AnswerTextField($answer, coFounderTip: CoFounderTip(), question: markdown, hideCoFounder: content.module.index == 0) {
-          await CoFounder.shared.getHelp(content.module.title, question: content.content)
-        }
-        .onAppear {
-          if let module = try? CoreDataStack.shared.mainContext
-            .fetch(Module.fetchRequest())
-            .first(where: { ($0.questionAndAnswer[content.title]?.isEmpty) != nil }) {
-            answer = module.questionAndAnswer[content.title] ?? ""
-          }
-          isAnswered = !answer.isEmpty
-        }
-        .onChange(of: answer) {
-          isAnswered = !answer.isEmpty
-          content.module.questionAndAnswer[content.title] = answer
-          CoreDataStack.shared.save()
-        }
-      }
     }
   }
 }

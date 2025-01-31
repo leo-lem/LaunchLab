@@ -61,6 +61,6 @@ struct Rocket: View {
 }
 
 #Preview {
-//  Rocket(isUnlocked: true)
+  Rocket(isUnlocked: true)
   Rocket(isUnlocked: false)
 }

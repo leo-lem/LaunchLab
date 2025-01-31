@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E7A5C572D4D564900DD2CA4 /* CoFounder in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7A5C562D4D564900DD2CA4 /* CoFounder */; };
+		6E7A5C592D4D564C00DD2CA4 /* SwiftUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7A5C582D4D564C00DD2CA4 /* SwiftUIComponents */; };
 		7A5C19FE2D00A362000D3AD7 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 7A5C19FD2D00A362000D3AD7 /* Data */; };
 		7A5C1A002D00A36C000D3AD7 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A5C19FF2D00A36C000D3AD7 /* InlineSnapshotTesting */; };
 		7A5C1A022D00A36C000D3AD7 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A5C1A012D00A36C000D3AD7 /* SnapshotTesting */; };
-		7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E62CD4E2B400DBABD9 /* Styleguide */; };
-		7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7306E82CD4E2B400DBABD9 /* UIComponents */; };
-		7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 7A750C942CE93DF3005EA71B /* SwiftfulRouting */; };
 		7AD9EFAB2CF999A600FF0BDD /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 7AD9EFAA2CF999A600FF0BDD /* Data */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +39,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6E1416F72D3BA50B0099C582 /* LLExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLExtensions; sourceTree = "<group>"; };
+		6E04E8D32D4D55BC007B7E61 /* cofounder */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = cofounder; sourceTree = "<group>"; };
+		6E04E8D42D4D55E4007B7E61 /* data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = data; sourceTree = "<group>"; };
+		6E04E8D52D4D55F1007B7E61 /* ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ui; sourceTree = "<group>"; };
 		6EACC20C2D4BA62900EE0AEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7A5C19F12D00A2CA000D3AD7 /* LaunchLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaunchLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A7306E52CD4E25100DBABD9 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
 		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Styleguide; sourceTree = "<group>"; };
-		7AD9EFA92CF9999A00FF0BDD /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -106,10 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A7306E92CD4E2B400DBABD9 /* UIComponents in Frameworks */,
+				6E7A5C572D4D564900DD2CA4 /* CoFounder in Frameworks */,
 				7AD9EFAB2CF999A600FF0BDD /* Data in Frameworks */,
-				7A750C952CE93DF3005EA71B /* SwiftfulRouting in Frameworks */,
-				7A7306E72CD4E2B400DBABD9 /* Styleguide in Frameworks */,
+				6E7A5C592D4D564C00DD2CA4 /* SwiftUIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,10 +120,9 @@
 				6EAAD2562D3FCF0B0096BB9D /* app */,
 				6EC7A98C2D4D29BD00A21180 /* tests */,
 				6EC7A9762D4D29AA00A21180 /* config */,
-				7AD9EFA92CF9999A00FF0BDD /* Data */,
-				7A7306E52CD4E25100DBABD9 /* UIComponents */,
-				7ACAB62A2CD4E1D5000D2BE1 /* Styleguide */,
-				6E1416F72D3BA50B0099C582 /* LLExtensions */,
+				6E04E8D32D4D55BC007B7E61 /* cofounder */,
+				6E04E8D52D4D55F1007B7E61 /* ui */,
+				6E04E8D42D4D55E4007B7E61 /* data */,
 				7AAC1F6E2CD28E84002C6042 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -190,10 +186,9 @@
 			);
 			name = LaunchLab;
 			packageProductDependencies = (
-				7A7306E62CD4E2B400DBABD9 /* Styleguide */,
-				7A7306E82CD4E2B400DBABD9 /* UIComponents */,
-				7A750C942CE93DF3005EA71B /* SwiftfulRouting */,
 				7AD9EFAA2CF999A600FF0BDD /* Data */,
+				6E7A5C562D4D564900DD2CA4 /* CoFounder */,
+				6E7A5C582D4D564C00DD2CA4 /* SwiftUIComponents */,
 			);
 			productName = LaunchLab;
 			productReference = 7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */;
@@ -224,12 +219,13 @@
 			knownRegions = (
 				en,
 				de,
+				"en 2",
 			);
 			mainGroup = 7AAC1F642CD28E84002C6042;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
 				7A5C19E82D00A26E000D3AD7 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				6E537DF72D4D514F00C931F0 /* XCLocalSwiftPackageReference "CoFounder" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7AAC1F6E2CD28E84002C6042 /* Products */;
@@ -277,7 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nif which swiftgen >/dev/null; then \n  swiftgen --config \"${PROJECT_DIR}/Styleguide/swiftgen.yml\"\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nif which swiftgen >/dev/null; then \n  swiftgen --config \"${PROJECT_DIR}/config/.swiftgen.yml\"\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
 		};
 		7AAC1FB12CD296E6002C6042 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -617,6 +613,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		6E537DF72D4D514F00C931F0 /* XCLocalSwiftPackageReference "CoFounder" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CoFounder;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		7A5C19E82D00A26E000D3AD7 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -626,17 +629,17 @@
 				minimumVersion = 1.17.6;
 			};
 		};
-		7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.3.6;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6E7A5C562D4D564900DD2CA4 /* CoFounder */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoFounder;
+		};
+		6E7A5C582D4D564C00DD2CA4 /* SwiftUIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUIComponents;
+		};
 		7A5C19FD2D00A362000D3AD7 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
@@ -650,19 +653,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A5C19E82D00A26E000D3AD7 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
-		};
-		7A7306E62CD4E2B400DBABD9 /* Styleguide */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Styleguide;
-		};
-		7A7306E82CD4E2B400DBABD9 /* UIComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIComponents;
-		};
-		7A750C942CE93DF3005EA71B /* SwiftfulRouting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A750C932CE93DF3005EA71B /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
-			productName = SwiftfulRouting;
 		};
 		7AD9EFAA2CF999A600FF0BDD /* Data */ = {
 			isa = XCSwiftPackageProductDependency;

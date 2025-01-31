@@ -2,12 +2,9 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import CoreData
 import Data
 import MessageUI
-import Styleguide
-import SwiftUI
-import UIComponents
+import SwiftUIComponents
 
 /// Stats and other relevant app information.
 struct Stats: View {
@@ -26,8 +23,8 @@ struct Stats: View {
 
       #if DEBUG
       Section("Cheats") {
-        Button("Unlock Half", action: unlockHalf)
-        Button("Unlock All", action: unlockAll)
+        Button("Unlock Half") { unlock(half: true) }
+        Button("Unlock All") { unlock(half: false) }
       }
       #endif
 
@@ -36,13 +33,7 @@ struct Stats: View {
         NavigationButton.eula
       }
 
-      Section(L10n.supportAndFeedback) {
-        NavigationButton.support(email: $email)
-        NavigationButton.feedback(email: $email)
-      }
-
       VStack {
-        Text("LaunchLab - \(Bundle.main.appVersion) build \(Bundle.main.appBuild)")
         Text("© 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur.")
       }
       .frame(maxWidth: .infinity, alignment: .center)
@@ -76,27 +67,13 @@ struct Stats: View {
   @State private var email: Email?
   @State private var error = false
 
-  #if DEBUG
-  private func unlockHalf() {
-    CoreDataStack.shared.mainContext.performAndWait {
-      let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
-      if let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) {
-        for index in 0..<modules.count/2 {
-          let module = modules.first { $0.index == index }
-          if module?.isCompleted ?? true { continue }
-          module?.progress = Int16(module?.length ?? 100)
-        }
-      }
-    }
-  }
+  @Query private var modules: [Module]
 
-  private func unlockAll() {
-    CoreDataStack.shared.mainContext.performAndWait {
-      let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
-      if let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) {
-        for module in modules {
-          module.progress = Int16(module.length)
-        }
+  #if DEBUG
+  private func unlock(half: Bool) {
+    modules.forEach {
+      if !half || $0.index < modules.count/2 {
+        $0.progress = $0.length
       }
     }
   }

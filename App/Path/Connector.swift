@@ -30,7 +30,7 @@ extension Path {
 
         context.stroke(
           path,
-          with: .color(Color(hex: "#A0E2EA").opacity(isComplete ? 1 : 0.2)),
+          with: .color(Color.pathConnector.opacity(isComplete ? 1 : 0.2)),
           style: StrokeStyle(lineWidth: 10, lineCap: .round, dash: [15, 40])
         )
       }

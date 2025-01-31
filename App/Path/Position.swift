@@ -34,10 +34,10 @@ extension Path {
     }
 
     init(_ module: Module) {
-      self = switch module.pathPosition {
-      case "left":
+      self = switch module.position {
+      case .leading:
           .leading(index: Int(module.index))
-      case "right":
+      case .trailing:
           .trailing(index: Int(module.index))
       default:
           .center(index: Int(module.index))

@@ -3,26 +3,28 @@
 //
 
 import Data
-import SwiftfulRouting
-import SwiftUI
+import SwiftUIComponents
 import TipKit
-import UIComponents
 
 /// The entrypoint of the app, with the CoreData context and a router in the environment.
 @main
 struct LaunchLabApp: App {
-  init() {
-    try? Tips.configure()
-    CoreDataStack.shared.populateModulesIfNeeded()
-  }
-
   var body: some Scene {
     WindowGroup {
-      RouterView { router in
-        Journey()
-          .environment(\.router, router)
-          .environment(\.managedObjectContext, CoreDataStack.shared.mainContext)
-      }
+      Journey()
+        .modelContainer(for: Module.self, onSetup: Module.setup)
     }
   }
+
+  init() { try? Tips.configure() }
+}
+
+struct CoFounderTip: Tip {
+  var title = Text(L10n.cofounderTipTitle)
+  var message: Text? = Text(L10n.cofounderTipMessage)
+}
+
+struct ModuleTip: Tip {
+  var title = Text(L10n.moduleTipTitle)
+  var message: Text? = Text(L10n.moduleTipMessage)
 }

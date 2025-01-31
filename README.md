@@ -1,5 +1,3 @@
-<!-- TODO: host own webpage version -->
-
 # Transferagentur: LaunchLab [<img src="media/link.png" width=25 />](https://launchlab.leolem.dev)
 
 LaunchLab is your startup companion. From zero to your own startup. We guide you along your journey.

@@ -1,0 +1,36 @@
+"common_continue" = "Continue";
+"common_placeholder" = "Enter text here…";
+"common_start" = "Begin";
+"common_complete" = "Complete";
+"common_dismiss" = "Dismiss";
+
+"your_state" = "Your Progress";
+"modules_status" = "Progress";
+"modules_chart" = "Chart";
+"modules_completed %@ %@" = "%@/%@ completed";
+
+"general" = "General";
+"privacy_policy" = "Privacy policy";
+
+"support_and_feedback" = "Support & Feedback";
+"support" = "Support";
+"Feedback" = "Feedback";
+
+
+"cofounder_label" = "Ideate with Your Co-Founder 🤖";
+"export_pdf" = "Export PDF";
+"generate" = "Generate";
+"locked" = "Locked 🔒";
+"mark_completed" = "Mark as completed";
+"start_consulting" = "Start Consultation";
+"review" = "Review";
+"modules" = "Modules";
+
+"error_occured" = "Something went wrong…";
+"configure_mail_app" = "Please configure the Mail app on your phone.";
+"mail_alert_subtitle" = "It's cool, you're testing the app thoroughly. Unfortunately this feature doesn't work on a simulator, since it doesn't have access to the mail system.";
+
+"cofounder_tip_title" = "Get Help from Your Co-Founder";
+"cofounder_tip_message" = "Your entered answers will be included in a prompt and sent to ChatGPT for assistance.";
+"module_tip_title" = "Understanding Modules";
+"module_tip_message" = "Modules provide valuable insights into key topics and guide you through the process of building a startup.";

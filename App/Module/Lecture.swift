@@ -3,71 +3,68 @@
 //
 
 import Data
-import Styleguide
-import SwiftfulRouting
-import SwiftUI
-import UIComponents
+import SwiftUIComponents
 
 /// Lectures include the blocks of learning material.
 struct Lecture: View {
-  @Environment(\.router) private var router
-  @State private var progress = 0
-  @State private var canContinue = false
   let module: Module
-  let lectureRouter: AnyRouter
 
   var body: some View {
-    ScrollViewReader { proxy in
-      ScrollView {
-        VStack(spacing: 46) {
-          ForEach(Array(module.content.enumerated()), id: \.offset) { id, item in
-            if id <= progress {
-              withAnimation {
-                Block(
-                  isAnswered: Binding { true } set: {
-                    if id == progress {
-                      canContinue = $0
+    NavigationStack {
+      ScrollViewReader { proxy in
+        ScrollView {
+          VStack(spacing: 46) {
+            ForEach(module.sortedContent) { block in
+              if block.index <= progress {
+                withAnimation {
+                  Block(
+                    content: block,
+                    isAnswered: Binding { true } set: {
+                      if block.index == progress {
+                        canContinue = $0
+                      }
                     }
-                  },
-                  content: item
-                )
-                .transition(.move(edge: .bottom).combined(with: .opacity))
-                .id(id)
-                .animation(module.isCompleted ? nil : .default, value: id)
+                  )
+                  .transition(.move(edge: .bottom).combined(with: .opacity))
+                  .id(block.index)
+                  .animation(module.isCompleted ? nil : .default, value: block.index)
+                }
               }
             }
           }
+          .padding(.horizontal, 24)
+          .padding(.bottom, 100)
         }
-        .padding(.horizontal, 24)
-        .padding(.bottom, 100)
-      }
-      .overlay(alignment: .bottom) {
-        AsyncButton(title: progress >= module.length - 1 ? L10n.commonComplete : L10n.commonContinue) {
-          if !module.isCompleted {
-            progress += 1
-            module.progress = Int16(self.progress)
-            CoreDataStack.shared.save()
-          }
+        .overlay(alignment: .bottom) {
+          AsyncButton(title: progress >= module.length - 1 ? L10n.commonComplete : L10n.commonContinue) {
+            if !module.isCompleted {
+              progress += 1
+              module.progress = self.progress
+            }
 
-          if module.isCompleted {
-            router.dismissScreen()
-            lectureRouter.dismissScreen()
+            if module.isCompleted {
+              dismiss()
+            }
+          }
+          .disabled(!canContinue)
+        }
+        .navigationBarBackButtonHidden()
+        .onChange(of: progress) { _, newValue in
+          withAnimation(.easeInOut(duration: 0.5)) {
+            proxy.scrollTo(newValue, anchor: .top)
           }
         }
-        .disabled(!canContinue)
-      }
-      .navigationBarBackButtonHidden()
-      .onChange(of: progress) { _, newValue in
-        withAnimation(.easeInOut(duration: 0.5)) {
-          proxy.scrollTo(newValue, anchor: .top)
+        .onAppear {
+          progress = Int(module.progress)
         }
+        .toolbar(content: toolbar)
       }
-      .onAppear {
-        progress = Int(module.progress)
-      }
-      .toolbar(content: toolbar)
     }
   }
+
+  @State private var progress = 0
+  @State private var canContinue = false
+  @Environment(\.dismiss) private var dismiss
 
   @ToolbarContentBuilder
   private func toolbar() -> some ToolbarContent {

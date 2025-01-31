@@ -2,21 +2,19 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import CoreData
 import Data
-import Foundation
-import UIComponents
+import SwiftUIComponents
 import UIKit
 
 extension Email {
-  @MainActor
-  static let consultation = Email(
-    address: "test@screenlessapp.com",
-    subject: "Consultation LaunchLab",
-    body: """
+  static func consultation(modules: [Module], lastModuleTitle: String) -> Email {
+    Email(
+      address: "transfer@uni-hamburg.de",
+      subject: "Consultation LaunchLab",
+      body: """
       Liebe Transferagentur,
 
-      ich habe soeben das Modul „xy“ in LaunchLab erfolgreich abgeschlossen und möchte nun gerne das kostenlose Beratungsangebot in Anspruch nehmen.
+      ich habe soeben das Modul "\(lastModuleTitle)" in LaunchLab erfolgreich abgeschlossen und möchte nun gerne das kostenlose Beratungsangebot in Anspruch nehmen.
 
       Ich bitte Sie daher, mir mögliche Termine für ein Gespräch vorzuschlagen.
 
@@ -27,19 +25,12 @@ extension Email {
       Mit freundlichen Grüßen
       [DEIN NAME]
       """,
-    attachmentData: pdf(),
-    attachmentFilename: "StartupOverview.pdf"
-  )
+      attachmentData: pdf(modules: modules),
+      attachmentFilename: "StartupOverview.pdf"
+    )
+  }
 
-  static func pdf() -> Data? {
-    let fetchRequest: NSFetchRequest<Module> = Module.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Module.index, ascending: true)]
-
-    guard let modules = try? CoreDataStack.shared.mainContext.fetch(fetchRequest) else {
-      print("Failed to fetch modules.")
-      return nil
-    }
-
+  static func pdf(modules: [Module]) -> Data? {
     let pdfData = NSMutableData()
     let pdfMetadata = [
       kCGPDFContextCreator: "LaunchLab",
@@ -59,8 +50,10 @@ extension Email {
     var moduleDetailInfoText = ""
     for module in modules where module.isCompleted {
       moduleDetailInfoText.append("\n\nInfo about \(module.title):")
-      for answer in module.questionAndAnswer {
-        moduleDetailInfoText.append("\n\(answer.key): \(answer.value)")
+      for block in module.content {
+        if let answer = block.answer {
+          moduleDetailInfoText.append("\n\(block.content): \(answer)")
+        }
       }
     }
 

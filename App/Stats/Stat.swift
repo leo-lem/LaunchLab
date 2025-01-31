@@ -4,7 +4,6 @@
 
 import Charts
 import Data
-import Styleguide
 import SwiftUI
 
 /// Stat view, displaying either a chart or numeric completion stats.

@@ -2,48 +2,19 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import CoFounder
 import Data
-import Styleguide
-import SwiftfulRouting
-import SwiftUI
-import UIComponents
+import SwiftUIComponents
 
 /// A summary of what the module is about.
 struct Summary: View {
-  @Environment(\.router) private var router
-  @Environment(\.colorScheme) private var colorScheme
-  @State private var pdf: PDF?
-
   let module: Module
   let isUnlocked: Bool
 
-  private var canBeCompleted: Bool {
-    module.moduleType != .module && isUnlocked && !module.isCompleted
-  }
-
-  private var label: String {
-    guard isUnlocked else { return L10n.locked }
-
-    return switch module.moduleType {
-    case .document:
-      pdf == nil ? L10n.generate : L10n.exportPdf
-    case .consultation:
-      L10n.startConsulting
-    case .module:
-      if module.isCompleted {
-        L10n.review
-      } else if module.isStarted {
-        L10n.commonContinue
-      } else {
-        L10n.commonStart
-      }
-    }
-  }
-
-  public var body: some View {
+  var body: some View {
     VStack {
-      if module.moduleType != .module {
-        Image("\(module.moduleType.rawValue)-large")
+      if module.type != .module {
+        Image("\(module.type.rawValue)-large")
           .resizable()
           .scaledToFit()
       }
@@ -61,13 +32,13 @@ struct Summary: View {
         .bold()
         .padding(.bottom, 50)
 
-      if module.moduleType == .module {
+      if module.type == .module {
         VStack(spacing: 20) {
-          ForEach(Array(module.content).prefix(5), id: \.title) { content in
+          ForEach(module.sortedContent.prefix(5)) { block in
             ModuleInfoRow(
-              title: content.title,
-              content: content.content,
-              image: Image(systemName: content.image)
+              title: block.title,
+              content: block.content,
+              image: Image(systemName: block.image)
             )
           }
         }
@@ -98,22 +69,64 @@ struct Summary: View {
     }
     .padding(30)
     .toolbar { DismissButton(tint: module.gradient) }
+    .fullScreenCover(isPresented: $learning) { Lecture(module: module) }
+    .sheet(isPresented: $mailing) {
+      MailView(email: .consultation(modules: modules, lastModuleTitle: modules.last?.title ?? "XY")) { result in
+        switch result {
+        case .success:
+          complete()
+        case .failure(let error):
+          print(error.localizedDescription)
+        }
+        mailing = false
+      }
+    }
+    .alert(L10n.errorOccured, isPresented: $mailAlerting) {} message: { Text(L10n.mailAlertSubtitle) }
+  }
+
+  @State private var learning = false
+  @State private var mailing = false
+  @State private var mailAlerting = false
+  @State private var pdf: PDF?
+  @Query(filter: #Predicate<Module> { $0.isCompleted }) private var modules: [Module]
+  @EnvironmentObject private var coFounder: CoFounder
+  @Environment(\.dismiss) private var dismiss
+  @Environment(\.colorScheme) private var colorScheme
+
+  private var canBeCompleted: Bool {
+    module.type != .module && isUnlocked && !module.isCompleted
+  }
+
+  private var label: String {
+    guard isUnlocked else { return L10n.locked }
+
+    return switch module.type {
+    case .document:
+      pdf == nil ? L10n.generate : L10n.exportPdf
+    case .consultation:
+      L10n.startConsulting
+    case .module:
+      if module.isCompleted {
+        L10n.review
+      } else if module.isStarted {
+        L10n.commonContinue
+      } else {
+        L10n.commonStart
+      }
+    }
   }
 
   private func complete() {
     module.progress = 1
-    CoreDataStack.shared.save()
-    router.dismissScreen()
+    dismiss()
   }
 
   private func action() async {
-    switch module.moduleType {
+    switch module.type {
     case .module:
-      router.showScreen(.fullScreenCover) { _ in
-        Lecture(module: module, lectureRouter: router)
-      }
+      learning = true
     case .document:
-      if let content = await CoFounder.shared.createDocument(.init(module.title)) {
+      if let content = await coFounder.createDocument(.init(module.title)) {
         pdf = await PDF(
           content,
           title: module.title,
@@ -121,21 +134,9 @@ struct Summary: View {
         )
       }
     case .consultation:
-      guard MailView.canSend else {
-        return router.showAlert(.alert, title: L10n.errorOccured, subtitle: L10n.mailAlertSubtitle) {}
-      }
+      guard MailView.canSend else { return mailAlerting = true }
 
-      router.showScreen(.sheet) { subrouter in
-        MailView(email: .consultation) { result in
-          switch result {
-          case .success:
-            complete()
-            subrouter.dismissScreen()
-          case .failure(let error):
-            print(error.localizedDescription)
-          }
-        }
-      }
+      mailing = true
     }
   }
 }

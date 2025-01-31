@@ -2,8 +2,8 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
+import CoFounder
 import Data
-import Styleguide
 import SwiftUI
 
 /// The app's central screen, displaying the startup journey.
@@ -14,7 +14,7 @@ struct Journey: View {
         .padding()
         .padding(.top, 100)
 
-      Path(modules: Array(modules))
+      Path(modules: modules)
 
       Image(.earth)
         .resizable()
@@ -31,9 +31,11 @@ struct Journey: View {
     .overlay {
       Stats.Overview(complete: modules.filter(\.isCompleted).count, total: modules.count)
     }
+    .environmentObject(CoFounder(context))
   }
 
-  @FetchRequest(entity: Module.entity(), sortDescriptors: []) private var modules: FetchedResults<Module>
+  @Query private var modules: [Module]
+  @Environment(\.modelContext) private var context
 }
 
 #Preview {

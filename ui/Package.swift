@@ -4,8 +4,8 @@
 import PackageDescription
 
 let package = Package(
-  name: "Data",
+  name: "SwiftUIComponents",
   platforms: [.iOS(.v17)],
-  products: [.library(name: "Data", targets: ["Data"])],
-  targets: [.target(name: "Data", path: ".")]
+  products: [.library(name: "SwiftUIComponents", targets: ["SwiftUIComponents"])],
+  targets: [.target(name: "SwiftUIComponents", path: "src")]
 )

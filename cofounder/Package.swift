@@ -4,8 +4,9 @@
 import PackageDescription
 
 let package = Package(
-  name: "Data",
+  name: "CoFounder",
   platforms: [.iOS(.v17)],
-  products: [.library(name: "Data", targets: ["Data"])],
-  targets: [.target(name: "Data", path: ".")]
+  products: [.library(name: "CoFounder", targets: ["CoFounder"])],
+  dependencies: [.package(path: "Data")],
+  targets: [.target(name: "CoFounder", dependencies: ["Data"], path: ".")]
 )

@@ -12,24 +12,21 @@ extension Path {
         total: Int
 
     var body: some View {
-      ZStack {
+      if module.index == 0 {
         Image(module.image)
           .resizable()
           .scaledToFit()
-          .frame(maxHeight: module.type == "module" ? 120 : 80)
-          .scaleEffect(module.type == "module" ? 1 : 0.8)
+          .frame(maxHeight: module.type == .module ? 120 : 80)
+          .scaleEffect(module.type == .module ? 1 : 0.8)
           .popoverTip(ModuleTip())
           .position(position.point(total: total))
-
-        //        if let collectable = module.collectable {
-        //          Image(collectable)
-        //            .resizable()
-        //            .scaledToFit()
-        //            .frame(maxWidth: 40, maxHeight: 100)
-        //            .opacity(module.isCompleted ? 1 : 0.25)
-        //            .shadow(color: .black, radius: 10)
-        //            .position(position.opposite.point(total: total))
-        //        }
+      } else {
+        Image(module.image)
+          .resizable()
+          .scaledToFit()
+          .frame(maxHeight: module.type == .module ? 120 : 80)
+          .scaleEffect(module.type == .module ? 1 : 0.8)
+          .position(position.point(total: total))
       }
     }
 
