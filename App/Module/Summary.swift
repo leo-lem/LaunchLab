@@ -71,7 +71,7 @@ struct Summary: View {
     .toolbar { DismissButton(tint: module.gradient) }
     .fullScreenCover(isPresented: $learning) { Lecture(module: module) }
     .sheet(isPresented: $mailing) {
-      MailView(email: .consultation(modules: modules, lastModuleTitle: modules.last?.title ?? "XY")) { result in
+      MailView(email: .consultation(modules: modules.filter(\.isCompleted), lastModuleTitle: modules.last?.title ?? "XY")) { result in
         switch result {
         case .success:
           complete()
@@ -88,7 +88,7 @@ struct Summary: View {
   @State private var mailing = false
   @State private var mailAlerting = false
   @State private var pdf: PDF?
-  @Query(filter: #Predicate<Module> { $0.isCompleted }) private var modules: [Module]
+  @Query private var modules: [Module]
   @EnvironmentObject private var coFounder: CoFounder
   @Environment(\.dismiss) private var dismiss
   @Environment(\.colorScheme) private var colorScheme

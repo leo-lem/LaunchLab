@@ -42,22 +42,21 @@ extension Email {
     UIGraphicsBeginPDFContextToData(pdfData, pageSize, pdfMetadata)
     UIGraphicsBeginPDFPageWithInfo(pageSize, nil)
 
-    var completedModuleText = ""
-    for module in modules where module.isCompleted {
-      completedModuleText.append("\(module.title), ")
-    }
-
-    var moduleDetailInfoText = ""
-    for module in modules where module.isCompleted {
-      moduleDetailInfoText.append("\n\nInfo about \(module.title):")
-      for block in module.content {
-        if let answer = block.answer {
-          moduleDetailInfoText.append("\n\(block.content): \(answer)")
+    let summary = modules.filter(\.isCompleted).map(\.title).joined(separator: ", ")
+    let answers = modules
+      .filter(\.isCompleted)
+      .map {
+        $0.title + ":\n\t" + $0.sortedContent.compactMap {
+          if let answer = $0.answer {
+            return "• \($0.title): \(answer)."
+          } else {
+            return nil
+          }
         }
+        .joined(separator: "\n\t")
       }
-    }
+      .joined(separator: "\n\n")
 
-    let text = "Completed Modules: \(completedModuleText) \n \(moduleDetailInfoText)"
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.alignment = .left
 
@@ -66,10 +65,10 @@ extension Email {
       .paragraphStyle: paragraphStyle
     ]
 
-    text.draw(in: CGRect(x: 50, y: 50, width: pageSize.width - 100, height: pageSize.height - 100), withAttributes: attributes)
+    "Completed: \(summary)\n––––––––––––––––––––––––\n\(answers)"
+      .draw(in: CGRect(x: 50, y: 50, width: pageSize.width - 100, height: pageSize.height - 100), withAttributes: attributes)
 
-    // End the PDF context
-    UIGraphicsEndPDFContext()
+    UIGraphicsEndPDFContext() // End the PDF context
 
     return pdfData as Data
   }

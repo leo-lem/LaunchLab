@@ -18,7 +18,7 @@
                BlueprintIdentifier = "7AAC1F6C2CD28E84002C6042"
                BuildableName = "LaunchLab.app"
                BlueprintName = "LaunchLab"
-               ReferencedContainer = "container:Launchlab.xcodeproj">
+               ReferencedContainer = "container:app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -52,7 +52,7 @@
             BlueprintIdentifier = "7AAC1F6C2CD28E84002C6042"
             BuildableName = "LaunchLab.app"
             BlueprintName = "LaunchLab"
-            ReferencedContainer = "container:Launchlab.xcodeproj">
+            ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -69,7 +69,7 @@
             BlueprintIdentifier = "7AAC1F6C2CD28E84002C6042"
             BuildableName = "LaunchLab.app"
             BlueprintName = "LaunchLab"
-            ReferencedContainer = "container:Launchlab.xcodeproj">
+            ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

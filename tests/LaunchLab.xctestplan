@@ -27,7 +27,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Launchlab.xcodeproj",
+        "containerPath" : "container:app.xcodeproj",
         "identifier" : "7A5C19F02D00A2CA000D3AD7",
         "name" : "LaunchLabTests"
       }

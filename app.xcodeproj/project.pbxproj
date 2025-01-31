@@ -213,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "Launchlab" */;
+			buildConfigurationList = 7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "app" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -593,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "Launchlab" */ = {
+		7AAC1F682CD28E84002C6042 /* Build configuration list for PBXProject "app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AAC1F7A2CD28E86002C6042 /* Debug */,
