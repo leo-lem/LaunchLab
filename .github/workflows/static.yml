@@ -3,6 +3,7 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["cleanup"] # TODO: change to main
+    paths: ["webpage/**"]
   workflow_dispatch:
 permissions:
   contents: read
