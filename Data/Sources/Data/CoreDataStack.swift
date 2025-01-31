@@ -20,7 +20,6 @@ public class CoreDataStack: @unchecked Sendable {
   public static let shared = CoreDataStack()
 
   public let persistentContainer: NSPersistentContainer
-//  public let persistentContainer: NSPersistentCloudKitContainer
   public let backgroundContext: NSManagedObjectContext
   public let mainContext: NSManagedObjectContext
   private var cancellables = Set<AnyCancellable>()
@@ -31,13 +30,11 @@ public class CoreDataStack: @unchecked Sendable {
     let modelURL = Bundle.module.url(forResource: "Launchlab", withExtension: "momd")!
     let model = NSManagedObjectModel(contentsOf: modelURL)!
     persistentContainer = NSPersistentContainer(name: "Launchlab", managedObjectModel: model)
-//  persistentContainer = NSPersistentCloudKitContainer(name: "Launchlab", managedObjectModel: model)
 
     let storeDescription = persistentContainer.persistentStoreDescriptions.first
     storeDescription?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
     storeDescription?.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
     storeDescription?.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
-//    storeDescription?.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.m-lab.LaunchLab")
 
     mainContext = persistentContainer.viewContext
     mainContext.automaticallyMergesChangesFromParent = true

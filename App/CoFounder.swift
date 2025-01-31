@@ -51,7 +51,8 @@ class CoFounder: ObservableObject {
     var request = URLRequest(url: URL(string: "https://api.openai.com/v1/chat/completions")!)
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = [
-      "Authorization": "Bearer \(L10n.apiKey)",
+      // swiftlint:disable:next force_cast
+      "Authorization": "Bearer \(Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String)",
       "Content-Type": "application/json"
     ]
 

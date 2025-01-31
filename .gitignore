@@ -6,3 +6,6 @@
 
 # Xcode
 *.xcuserdatad
+
+# API Key
+.key.xcconfig
