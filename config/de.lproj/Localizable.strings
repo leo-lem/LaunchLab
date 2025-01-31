@@ -1,0 +1,31 @@
+"common_continue" = "Weiter";
+"common_placeholder" = "Deine Antwort…";
+"common_start" = "Starten";
+"common_complete" = "Abschließen";
+"common_dismiss" = "Zurück";
+
+"your_state" = "Dein Fortschritt";
+"modules_status" = "Fortschritt";
+"modules_chart" = "Chart";
+"modules_completed %@ %@" = "%@/%@ abgeschlossen";
+
+"general" = "General";
+"privacy_policy" = "Datenschutzerklärung";
+
+"support_and_feedback" = "Support & Feedback";
+"support" = "Support";
+"Feedback" = "Feedback";
+
+
+"cofounder_label" = "Frage deinen Co-Founder 🤖";
+"export_pdf" = "PDF exportieren";
+"generate" = "Generieren";
+"locked" = "Nicht freigeschaltet 🔒";
+"mark_completed" = "Abschließen";
+"start_consulting" = "Beratung buchen";
+"review" = "Überprüfen";
+"modules" = "Module";
+
+"error_occured" = "Ein Fehler ist aufgetreten…";
+"configure_mail_app" = "Bitte richte die Mail app auf deinem iPhone ein";
+"mail_alert_subtitle" = "Cool, dass du die App ausgiebig testest. Leider funktioniert dieses Feature im Simulator nicht.";

@@ -7,7 +7,5 @@
 # Xcode
 *.xcuserdatad
 
-# python
-.idea/
-.venv/
-__pycache__/
+# API Key
+.key.xcconfig
