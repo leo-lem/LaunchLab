@@ -2,8 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import SwiftUI
-
 /// A special button that executes and visualises asynchronous workloads.
 public struct AsyncButton: View {
   let title: String,

@@ -2,8 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import SwiftUI
-
 public struct RadialAnswerBoxView: View {
   private let isSelected: Bool
   private let emoji: String

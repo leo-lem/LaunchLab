@@ -2,8 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import SwiftUI
-
 /// A button navigating to outside of the app.
 public struct NavigationButton: View {
   @State private var backgroundColor: Color = .init(uiColor: UIColor.secondarySystemGroupedBackground)

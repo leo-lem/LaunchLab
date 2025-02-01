@@ -2,9 +2,7 @@
 // Copyright © 2024 Maximillian Stabe. All rights reserved.
 //
 
-import Foundation
 import MessageUI
-import SwiftUI
 
 /// An Email composition view
 /// 

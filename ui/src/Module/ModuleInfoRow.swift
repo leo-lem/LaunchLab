@@ -2,8 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import SwiftUI
-
 public struct ModuleInfoRow: View {
   private let title: String
   private let content: String

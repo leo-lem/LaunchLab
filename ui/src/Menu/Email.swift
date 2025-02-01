@@ -2,7 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import Foundation
 import MessageUI
 import UIKit
 
@@ -13,15 +12,13 @@ public struct Email: Identifiable {
   public let address: String,
              subject: String,
              body: String,
-             attachmentData: Data?,
-             attachmentFilename: String?
+             attachment: PDF?
 
-  public init(address: String, subject: String, body: String, attachmentData: Data? = nil, attachmentFilename: String? = nil) {
+  public init(address: String, subject: String, body: String, attachment: PDF?) {
     self.address = address
     self.subject = subject
     self.body = body
-    self.attachmentData = attachmentData
-    self.attachmentFilename = attachmentFilename
+    self.attachment = attachment
   }
 
   @MainActor
@@ -36,8 +33,8 @@ public struct Email: Identifiable {
     mailComposeVC.setSubject(subject)
     mailComposeVC.setMessageBody(body, isHTML: false)
 
-    if let data = attachmentData, let filename = attachmentFilename {
-      mailComposeVC.addAttachmentData(data, mimeType: "application/pdf", fileName: filename)
+    if let attachment {
+      mailComposeVC.addAttachmentData(attachment, mimeType: "application/pdf", fileName: attachment)
     }
 
     mailComposeVC.mailComposeDelegate = viewController as? MFMailComposeViewControllerDelegate

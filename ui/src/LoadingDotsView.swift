@@ -2,8 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-import SwiftUI
-
 /// An animated loading indicator.
 public struct LoadingDotsView: View {
   public init() {}

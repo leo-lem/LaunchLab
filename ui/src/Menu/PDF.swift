@@ -2,8 +2,6 @@
 // Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
 //
 
-@_exported import SwiftUI
-
 /// Generates a PDF document, which can be shared with the user.
 public struct PDF: Sendable {
   public var url: URL?
