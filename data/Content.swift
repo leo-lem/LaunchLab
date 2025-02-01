@@ -1,10 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
-@_exported import Foundation
-@_exported import SwiftData
-
 @Model public class Content: Decodable {
   public enum Kind: String, Codable { case info, textfield }
 

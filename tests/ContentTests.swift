@@ -1,13 +1,9 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import Data
 import Testing
 
 @testable import LaunchLab
 
-class ModuleContentTests {
+class ContentTests {
   @Test("correct content type", arguments: [
     "info", "textfield"
   ])

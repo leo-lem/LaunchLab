@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import Data
 import SwiftUI
 

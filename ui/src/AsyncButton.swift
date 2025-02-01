@@ -1,12 +1,6 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
-import SwiftUI
-
 /// A special button that executes and visualises asynchronous workloads.
 public struct AsyncButton: View {
-  let title: String,
+  public let title: String,
       action: () async -> Void
 
   public init(title: String, action: @escaping () async -> Void) {
@@ -32,7 +26,7 @@ public struct AsyncButton: View {
           RoundedRectangle(cornerRadius: 40)
             .fill(
               isEnabled
-                ? Color(uiColor: colorScheme == .dark ? .secondarySystemGroupedBackground : .blue)
+              ? Color.accentColor
                 : .gray
             )
         )
@@ -43,7 +37,6 @@ public struct AsyncButton: View {
 
   @State private var isLoading = false
   @Environment(\.isEnabled) private var isEnabled
-  @Environment(\.colorScheme) private var colorScheme
 }
 
 #Preview {

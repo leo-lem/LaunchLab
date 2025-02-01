@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import Data
 import SwiftUIComponents
 import UIKit
@@ -25,23 +21,11 @@ extension Email {
       Mit freundlichen Grüßen
       [DEIN NAME]
       """,
-      attachmentData: pdf(modules: modules),
-      attachmentFilename: "StartupOverview.pdf"
+      attachment: summaryPDF(modules: modules)
     )
   }
 
-  static func pdf(modules: [Module]) -> Data? {
-    let pdfData = NSMutableData()
-    let pdfMetadata = [
-      kCGPDFContextCreator: "LaunchLab",
-      kCGPDFContextAuthor: "LaunchLab Group"
-    ]
-
-    let pageSize = CGRect(x: 0, y: 0, width: 595.2, height: 841.8) // A4 Size
-
-    UIGraphicsBeginPDFContextToData(pdfData, pageSize, pdfMetadata)
-    UIGraphicsBeginPDFPageWithInfo(pageSize, nil)
-
+  static func summaryPDF(modules: [Module]) -> PDF? {
     let summary = modules.filter(\.isCompleted).map(\.title).joined(separator: ", ")
     let answers = modules
       .filter(\.isCompleted)
@@ -56,20 +40,6 @@ extension Email {
         .joined(separator: "\n\t")
       }
       .joined(separator: "\n\n")
-
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.alignment = .left
-
-    let attributes: [NSAttributedString.Key: Any] = [
-      .font: UIFont.systemFont(ofSize: 14),
-      .paragraphStyle: paragraphStyle
-    ]
-
-    "Completed: \(summary)\n––––––––––––––––––––––––\n\(answers)"
-      .draw(in: CGRect(x: 50, y: 50, width: pageSize.width - 100, height: pageSize.height - 100), withAttributes: attributes)
-
-    UIGraphicsEndPDFContext() // End the PDF context
-
-    return pdfData as Data
+    return PDF("Completed: \(summary)\n––––––––––––––––––––––––\n\(answers)", title: "Summary.pdf")
   }
 }

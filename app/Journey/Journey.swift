@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import CoFounder
 import Data
 import SwiftUI
@@ -25,11 +21,12 @@ struct Journey: View {
     }
     .defaultScrollAnchor(.bottom)
     .background(
-      LinearGradient(colors: [Color(.background3), Color(.background4)], startPoint: .top, endPoint: .bottom)
+      LinearGradient(colors: [Color(.backgroundStart), Color(.backgroundEnd)], startPoint: .top, endPoint: .bottom)
         .ignoresSafeArea()
     )
-    .overlay {
+    .overlay(alignment: .top) {
       Stats.Overview(complete: modules.filter(\.isCompleted).count, total: modules.count)
+        .padding()
     }
     .environmentObject(CoFounder(context))
   }

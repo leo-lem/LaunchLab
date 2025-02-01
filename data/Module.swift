@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 @Model public class Module: @unchecked Sendable, Decodable {
   public enum Kind: String, Codable { case module, document, consultation }
   public enum Position: String, Codable { case leading, center, trailing }
