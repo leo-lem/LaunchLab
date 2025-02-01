@@ -4,24 +4,24 @@
 
 /// Generates a PDF document, which can be shared with the user.
 public struct PDF: Sendable {
-  public var url: URL?
+  public let url: URL
+  public let data: Data
 
-  public init(_ content: String, title: String, delay: Duration = .zero) async {
-    try? await Task.sleep(for: delay)
+  public var filename: String { url.lastPathComponent }
 
-    let tempDirectory = FileManager.default.temporaryDirectory
-    let fileURL = tempDirectory.appendingPathComponent("\(title).pdf")
+  public init?(_ content: String, title: String) {
+    url = FileManager.default.temporaryDirectory.appendingPathComponent("\(title).pdf")
 
     do {
-      let pdfData = try createPDF(content: content)
-      try pdfData.write(to: fileURL)
-      url = fileURL
+      data = try Self.encode(content: content)
+      try data.write(to: url)
     } catch {
-      print("Error generating PDF: \(error.localizedDescription)")
+      assert(false, "PDF could not be created.")
+      return nil
     }
   }
 
-  private func createPDF(content: String) throws -> Data {
+  private static func encode(content: String) throws -> Data {
     let format = UIGraphicsPDFRendererFormat()
     format.documentInfo = [
       kCGPDFContextCreator: "LaunchLab",

@@ -5,6 +5,7 @@
 import Data
 
 /// AI Co-Founder communicating with OpenAI backend.
+@MainActor
 public class CoFounder: ObservableObject, @unchecked Sendable {
   private let context: ModelContext
 

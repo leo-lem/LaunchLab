@@ -20,25 +20,4 @@ public struct Email: Identifiable {
     self.body = body
     self.attachment = attachment
   }
-
-  @MainActor
-  public func sendMail(from viewController: UIViewController) {
-    guard MFMailComposeViewController.canSendMail() else {
-      print("Mail services are not available.")
-      return
-    }
-
-    let mailComposeVC = MFMailComposeViewController()
-    mailComposeVC.setToRecipients([address])
-    mailComposeVC.setSubject(subject)
-    mailComposeVC.setMessageBody(body, isHTML: false)
-
-    if let attachment {
-      mailComposeVC.addAttachmentData(attachment, mimeType: "application/pdf", fileName: attachment)
-    }
-
-    mailComposeVC.mailComposeDelegate = viewController as? MFMailComposeViewControllerDelegate
-
-    viewController.present(mailComposeVC, animated: true)
-  }
 }

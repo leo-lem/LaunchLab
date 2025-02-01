@@ -64,34 +64,36 @@ struct Summary: View {
       }
 
       if canBeCompleted {
-        Button(L10n.markCompleted, action: complete)
+        Button(L10n.markCompleted) {
+          module.progress = 1
+          dismiss()
+        }
       }
     }
     .padding(30)
     .toolbar { DismissButton(tint: module.gradient) }
     .fullScreenCover(isPresented: $learning) { Lecture(module: module) }
-    .sheet(isPresented: $mailing) {
-      MailView(email: .consultation(modules: modules.filter(\.isCompleted), lastModuleTitle: modules.last?.title ?? "XY")) { result in
-        switch result {
-        case .success:
-          complete()
-        case .failure(let error):
-          print(error.localizedDescription)
+    .sheet(item: $email) {
+      MailView($0) { error in
+        if let error {
+          assert(false, "Failed to send email: \(error)")
+          return emailFailed = true
         }
-        mailing = false
+        module.progress = 1
+        dismiss()
       }
     }
-    .alert(L10n.errorOccured, isPresented: $mailAlerting) {} message: { Text(L10n.mailAlertSubtitle) }
+    .alert(L10n.errorOccured, isPresented: $emailFailed) {} message: { Text(L10n.mailAlertSubtitle) }
   }
 
   @State private var learning = false
-  @State private var mailing = false
-  @State private var mailAlerting = false
+  @State private var email: Email?
+  @State private var emailFailed = false
   @State private var pdf: PDF?
   @Query private var modules: [Module]
-  @EnvironmentObject private var coFounder: CoFounder
   @Environment(\.dismiss) private var dismiss
   @Environment(\.colorScheme) private var colorScheme
+  @EnvironmentObject private var coFounder: CoFounder
 
   private var canBeCompleted: Bool {
     module.type != .module && isUnlocked && !module.isCompleted
@@ -116,27 +118,17 @@ struct Summary: View {
     }
   }
 
-  private func complete() {
-    module.progress = 1
-    dismiss()
-  }
-
   private func action() async {
     switch module.type {
     case .module:
       learning = true
     case .document:
       if let content = await coFounder.createDocument(.init(module.title)) {
-        pdf = await PDF(
-          content,
-          title: module.title,
-          delay: .seconds(2)
-        )
+        try? await Task.sleep(for: .seconds(2))
+        pdf = PDF(content, title: module.title)
       }
     case .consultation:
-      guard MailView.canSend else { return mailAlerting = true }
-
-      mailing = true
+      email = .consultation(modules: modules.filter(\.isCompleted), lastModuleTitle: modules.last?.title ?? "XY")
     }
   }
 }

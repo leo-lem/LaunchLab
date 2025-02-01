@@ -13,7 +13,7 @@ extension NavigationButton {
     text: L10n.privacyPolicy,
     isLinkoutButton: true
   ) {
-    if let url = URL(string: "https://www.screenlessapp.com/privacy-policy") {
+    if let url = URL(string: "https://launchlab.leolem.dev/privacy") {
       UIApplication.shared.open(url)
     }
   }

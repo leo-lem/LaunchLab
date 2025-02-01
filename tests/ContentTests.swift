@@ -7,7 +7,7 @@ import Testing
 
 @testable import LaunchLab
 
-class ModuleContentTests {
+class ContentTests {
   @Test("correct content type", arguments: [
     "info", "textfield"
   ])

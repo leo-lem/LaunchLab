@@ -44,28 +44,7 @@ struct Stats: View {
       .multilineTextAlignment(.center)
     }
     .foregroundStyle(.text)
-    .sheet(item: $email) { email in
-      MailView(email: email) { result in
-        switch result {
-        case .success:
-          print("Email sent")
-        case .failure(let error):
-          print(error.localizedDescription)
-          self.error = true
-        }
-      }
-    }
-    .alert(isPresented: $error) {
-      Alert(
-        title: Text(L10n.errorOccured),
-        message: Text(L10n.configureMailApp),
-        dismissButton: .default(Text("OK"))
-      )
-    }
   }
-
-  @State private var email: Email?
-  @State private var error = false
 
   @Query private var modules: [Module]
 
