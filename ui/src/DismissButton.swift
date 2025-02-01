@@ -1,21 +1,10 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 /// The top-trailing x-Button to dismiss modals.
-public struct DismissButton<S: ShapeStyle>: ToolbarContent {
-  let tint: S
+public struct DismissButton: View {
+  public init() {}
 
-  public init(tint: S = Color.primary) {
-    self.tint = tint
-  }
-
-  public var body: some ToolbarContent {
-    ToolbarItem(placement: .topBarTrailing) {
-      Button("Dismiss", systemImage: "xmark.circle", action: dismiss.callAsFunction)
-        .labelStyle(.iconOnly)
-        .tint(tint)
-    }
+  public var body: some View {
+    Button("Dismiss", systemImage: "xmark.circle", action: dismiss.callAsFunction)
+      .labelStyle(.iconOnly)
   }
 
   @Environment(\.dismiss) private var dismiss

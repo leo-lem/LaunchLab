@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import SwiftUI
 
 /// The rocket with launch animation.
@@ -49,14 +45,8 @@ struct Rocket: View {
 
   private func launch() {
     isStarting = isUnlocked
-
-    withAnimation(.easeIn(duration: 4)) {
-      position = 5_000
-    }
-
-    withAnimation(.easeIn(duration: 1)) {
-      angle = -90
-    }
+    withAnimation(.easeIn(duration: 4)) { position = 5_000 }
+    withAnimation(.easeIn(duration: 1)) { angle = -90 }
   }
 }
 

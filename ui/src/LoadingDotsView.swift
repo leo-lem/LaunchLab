@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 /// An animated loading indicator.
 public struct LoadingDotsView: View {
   public init() {}
@@ -11,23 +7,27 @@ public struct LoadingDotsView: View {
       Circle()
         .fill(Color.blue)
         .frame(width: 10, height: 10)
-        .scaleEffect(animate ? 1.0 : 0.5)
-        .animation(.easeInOut(duration: 0.5).repeatForever(), value: animate)
+        .scaleEffect(scale)
+        .animation(.easeInOut(duration: 0.5).repeatForever(), value: scale)
+
       Circle()
         .fill(Color.blue)
         .frame(width: 10, height: 10)
-        .scaleEffect(animate ? 1.0 : 0.5)
-        .animation(.easeInOut(duration: 0.5).repeatForever().delay(0.3), value: animate)
+        .scaleEffect(scale)
+        .animation(.easeInOut(duration: 0.5).repeatForever().delay(0.3), value: scale)
+
       Circle()
         .fill(Color.blue)
         .frame(width: 10, height: 10)
-        .scaleEffect(animate ? 1.0 : 0.5)
-        .animation(.easeInOut(duration: 0.5).repeatForever().delay(0.6), value: animate)
+        .scaleEffect(scale)
+        .animation(.easeInOut(duration: 0.5).repeatForever().delay(0.6), value: scale)
     }
-    .onAppear {
-      self.animate = true
-    }
+    .onAppear { self.scale = 1.0 }
   }
 
-  @State private var animate = false
+  @State private var scale = 0.5
+}
+
+#Preview {
+  LoadingDotsView()
 }

@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import Data
 import MessageUI
 import SwiftUIComponents
@@ -29,8 +25,17 @@ struct Stats: View {
       #endif
 
       Section(L10n.general) {
-        NavigationButton.privacy
-        NavigationButton.eula
+        // swiftlint:disable:next force_unwrapping
+        Link(destination: URL(string: "https://launchlab.leolem.dev/privacy")!) {
+          Label(L10n.privacyPolicy, systemImage: "lock.rectangle.stack.fill")
+            .labelStyle(.external(color: .teal, transfer: true))
+        }
+
+        // swiftlint:disable:next force_unwrapping
+        Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula")!) {
+          Label("EULA", systemImage: "doc.plaintext.fill")
+            .labelStyle(.external(color: .blue, transfer: true))
+        }
       }
 
       VStack {

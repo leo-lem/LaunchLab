@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 /// Generates a PDF document, which can be shared with the user.
 public struct PDF: Sendable {
   public let url: URL

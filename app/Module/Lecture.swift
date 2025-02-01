@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import Data
 import SwiftUIComponents
 
@@ -80,6 +76,9 @@ struct Lecture: View {
         .tint(module.gradient)
     }
 
-    DismissButton(tint: module.gradient)
+    ToolbarItem(placement: .topBarTrailing) {
+      DismissButton()
+        .tint(module.gradient)
+    }
   }
 }

@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import CoFounder
 import Data
 import SwiftUIComponents
@@ -71,7 +67,7 @@ struct Summary: View {
       }
     }
     .padding(30)
-    .toolbar { DismissButton(tint: module.gradient) }
+    .toolbar { DismissButton().tint(module.gradient) }
     .fullScreenCover(isPresented: $learning) { Lecture(module: module) }
     .sheet(item: $email) {
       MailView($0) { error in

@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 Maximillian Stabe. All rights reserved.
-//
-
 import MessageUI
 
 /// An Email composition view.
@@ -11,14 +7,10 @@ public struct MailView: UIViewControllerRepresentable {
 
     public init(_ parent: MailView) { self.parent = parent }
 
-    @MainActor
-    public func mailComposeController(
-      _ controller: MFMailComposeViewController,
-      didFinishWith result: MFMailComposeResult,
-      error: Error?
+    @MainActor public func mailComposeController(
+      _ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?
     ) {
       self.parent.onSend(error)
-
       controller.dismiss(animated: true)
     }
   }

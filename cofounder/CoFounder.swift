@@ -1,7 +1,3 @@
-//
-// Copyright © 2024 M-Lab Group Entrepreneurchat, University of Hamburg, Transferagentur. All rights reserved.
-//
-
 import Data
 
 /// AI Co-Founder communicating with OpenAI backend.
@@ -9,9 +5,7 @@ import Data
 public class CoFounder: ObservableObject, @unchecked Sendable {
   private let context: ModelContext
 
-  public init(_ context: ModelContext) {
-    self.context = context
-  }
+  public init(_ context: ModelContext) { self.context = context }
 
   public func getHelp(_ title: String, question: String) async -> String? {
     await prompt("""
@@ -24,6 +18,9 @@ public class CoFounder: ObservableObject, @unchecked Sendable {
   public func createDocument(_ type: DocumentType) async -> String? {
     await prompt(type.prompt)
   }
+
+  // swiftlint:disable:next force_cast
+  private var key: String { Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String }
 
   private var systemPrompt: String {
     var base = """
@@ -53,8 +50,7 @@ public class CoFounder: ObservableObject, @unchecked Sendable {
     var request = URLRequest(url: URL(string: "https://api.openai.com/v1/chat/completions")!)
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = [
-      // swiftlint:disable:next force_cast
-      "Authorization": "Bearer \(Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String)",
+      "Authorization": "Bearer \(key)",
       "Content-Type": "application/json"
     ]
 
