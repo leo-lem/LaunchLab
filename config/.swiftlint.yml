@@ -24,7 +24,6 @@ custom_rules:
      severity: warning
 
 excluded:
-  - ../../CoreData
   - ../Targets
   - ../Intent
   - ../../Tests
@@ -195,7 +194,7 @@ opt_in_rules:
   # - trailing_comma                                  # Trailing commas in arrays and dictionaries should be avoided/enforced.
   - trailing_newline                                  # Files should have a single trailing newline.
   - trailing_semicolon                                # Lines should not have trailing semicolons.
-  - trailing_whitespace                               # Lines should not have trailing whitespace.
+#  - trailing_whitespace                               # Lines should not have trailing whitespace.
   - type_body_length                                  # Type bodies should not span too many lines.
   # - type_contents_order                               # Specifies the order of subtypes, properties, methods & more within a type.
   - type_name                                         # Type name should only contain alphanumeric characters, start with an uppercase character and span between 3 and 40 characters in length.

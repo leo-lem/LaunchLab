@@ -1,8 +1,10 @@
 public extension Module {
   @MainActor static func setup(_ result: Result<ModelContainer, any Error>) {
-    guard case .success(let container) = result else { assert(false, "Failed to load model container.") }
+    guard case .success(let container) = result else {
+      return assert(false, "Failed to load model container.")
+    }
     guard let url = Bundle.module.url(forResource: "Modules", withExtension: "json") else {
-      assert(false, "Module's file not found.")
+      return assert(false, "Module's file not found.")
     }
 
     do {
