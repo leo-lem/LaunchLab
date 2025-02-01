@@ -19,8 +19,11 @@ public class CoFounder: ObservableObject, @unchecked Sendable {
     await prompt(type.prompt)
   }
 
-  // swiftlint:disable:next force_cast
-  private var key: String { Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String }
+  private var key: String {
+    let key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String // swiftlint:disable:this force_cast
+    assert(key.starts(with: "sk-proj-"), "Invalid API key: \(key). Create 'config/.key.xcconfig' with API_KEY=<your-key>.")
+    return key
+  }
 
   private var systemPrompt: String {
     var base = """

@@ -42,6 +42,9 @@
 		6E04E8D32D4D55BC007B7E61 /* cofounder */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = cofounder; sourceTree = "<group>"; };
 		6E04E8D42D4D55E4007B7E61 /* data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = data; sourceTree = "<group>"; };
 		6E04E8D52D4D55F1007B7E61 /* ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ui; sourceTree = "<group>"; };
+		6E18DCCA2D4E76B00097C60F /* .key.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = .key.xcconfig; sourceTree = "<group>"; };
+		6E18DCCD2D4E76D10097C60F /* .xcconfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = .xcconfig.xcconfig; sourceTree = "<group>"; };
+		6E18DCCE2D4E76F20097C60F /* .xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text; path = .xcconfig; sourceTree = "<group>"; };
 		6EACC20C2D4BA62900EE0AEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7A5C19F12D00A2CA000D3AD7 /* LaunchLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaunchLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAC1F6D2CD28E84002C6042 /* LaunchLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,9 @@
 				6E04E8D52D4D55F1007B7E61 /* ui */,
 				6E04E8D42D4D55E4007B7E61 /* data */,
 				7AAC1F6E2CD28E84002C6042 /* Products */,
+				6E18DCCA2D4E76B00097C60F /* .key.xcconfig */,
+				6E18DCCD2D4E76D10097C60F /* .xcconfig.xcconfig */,
+				6E18DCCE2D4E76F20097C60F /* .xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,7 +225,6 @@
 			knownRegions = (
 				en,
 				de,
-				"en 2",
 			);
 			mainGroup = 7AAC1F642CD28E84002C6042;
 			minimizedProjectReferenceProxies = 1;
