@@ -4,8 +4,6 @@ LaunchLab is your startup companion. From zero to your own startup. We guide you
 
 This application was created during the M-Lab course 2024 at the University of Hamburg for the client Transferagentur. Our client wanted to facilitate the startup founding consultation process. So we built LaunchLab. The sky is the limit!
 
-![[Trailer](media/trailer.mp4)](media/trailer.mp4)
-
 ### Key features
 - Your learning path journey to guide you through all the steps from refining your idea to founding your company.
 - Create your indiviual pitch deck, business plan at the press of a button.
