@@ -42,6 +42,19 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "LaunchLab Trailer",
+        "description": "App trailer for LaunchLab, a guided startup experience with an AI Co-Founder.",
+        "thumbnailUrl": "https://launchlab.leolem.dev/assets/videos/launchlab-trailer-poster.gif",
+        "uploadDate": "2025-01-10",
+        "contentUrl": "https://breakeven.vc/wp-content/uploads/2025/01/launchlab-trailer.mp4",
+        "embedUrl": "https://launchlab.leolem.dev/#trailer"
+    }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
@@ -106,6 +119,16 @@
                 <img class="phone1 shadow-sm" src="./assets/images/iphone-home-begining.png" alt="">
                 <img class="phone2 shadow-sm" src="./assets/images/iphone-home-end.png" alt="">
             </div>
+        </div>
+    </section>
+
+    <section class="w-full bg-white" id="trailer-inline">
+        <div class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl py-16">
+            <h2 class="text-2xl md:text-4xl font-semibold pb-4 text-black text-center">App Trailer</h2>
+            <video preload="metadata" class="aspect-video w-full shadow-sm" title="LaunchLab Trailer"
+                poster="./assets/videos/launchlab-trailer-poster.gif" controls>
+                <source src="https://breakeven.vc/wp-content/uploads/2025/01/launchlab-trailer.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
@@ -389,12 +412,12 @@
             class="mx-auto w-full px-5 md:max-w-md lg:max-w-lg xl:max-w-xl xxl:max-w-xxl grid grid-cols-1 md:grid-cols-7 md:col-span-8 justify-center">
             <div class="flex flex-col col-span-3">
                 <h3 class="text-lg font-semibold pb-2">About this Project</h3>
-                <div class="text-sm font-light">This is a university project for a FAKE application. We
-                    make no claims
-                    of
-                    copyright
-                    on
-                    the names or images.</div>
+                <div class="text-sm font-light">This is a university project for a FAKE application. We make no claims
+                    of copyright on the names or images.</div>
+                <div class="text-sm font-light text-white mt-4 flex flex-col">
+                    <a class="underline hover:text-gray-300" href="https://leolem.dev/impressum">Impressum</a>
+                    <a class="underline hover:text-gray-300" href="https://leolem.dev/datenschutz">Datenschutz</a>
+                </div>
             </div>
 
             <div class="flex flex-col md:flex-row md:col-span-4 items-center justify-end h-full gap-3">
