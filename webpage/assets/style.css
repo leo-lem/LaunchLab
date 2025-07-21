@@ -3,7 +3,8 @@
     display: none;
 }
 
-.phone1, .phone2 {
+.phone1,
+.phone2 {
     transition: transform 0.6s ease, box-shadow 0.6s ease;
     border-radius: 40px;
     position: absolute;
@@ -28,8 +29,9 @@
     .phone-wrapper {
         display: block;
     }
-    
-    .phone1, .phone2 {
+
+    .phone1,
+    .phone2 {
         display: block;
     }
 
@@ -47,7 +49,9 @@
 }
 
 @media (max-width: 1023px) {
-    .phone1, .phone2 {
+
+    .phone1,
+    .phone2 {
         transition: none;
         transform: none;
         border-radius: 17px;
@@ -88,6 +92,7 @@
         opacity: 0;
         transform: translateY(200px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -99,49 +104,54 @@
         opacity: 1;
         transform: translateY(0);
     }
+
     100% {
         opacity: 0;
         transform: translateY(200px);
     }
-    
+
 }
 
 @media (min-width: 768px) {
-    input#feature1:checked + label[for="feature1"],
-    input#feature2:checked + label[for="feature2"],
-    input#feature3:checked + label[for="feature3"] {
+
+    input#feature1:checked+label[for="feature1"],
+    input#feature2:checked+label[for="feature2"],
+    input#feature3:checked+label[for="feature3"] {
         color: #E0386F;
         border-bottom: 2px solid #E0386F;
     }
 
-    #feature1-content, #feature2-content, #feature3-content {
+    #feature1-content,
+    #feature2-content,
+    #feature3-content {
         opacity: 0;
     }
 
-    input#feature1:checked ~ #feature1-content,
-    input#feature2:checked ~ #feature2-content,
-    input#feature3:checked ~ #feature3-content {
+    input#feature1:checked~#feature1-content,
+    input#feature2:checked~#feature2-content,
+    input#feature3:checked~#feature3-content {
         opacity: 1 !important;
         z-index: 1;
     }
 
-    input#feature1:checked ~ #feature1-content .fade-in-left,
-    input#feature2:checked ~ #feature2-content .fade-in-left,
-    input#feature3:checked ~ #feature3-content .fade-in-left {
+    input#feature1:checked~#feature1-content .fade-in-left,
+    input#feature2:checked~#feature2-content .fade-in-left,
+    input#feature3:checked~#feature3-content .fade-in-left {
         animation: fade-in-left 0.7s ease-in-out forwards;
         animation-delay: var(--feature-delay);
     }
 
-    input#feature1:checked ~ #feature1-content .fade-in-right,
-    input#feature2:checked ~ #feature2-content .fade-in-right,
-    input#feature3:checked ~ #feature3-content .fade-in-right {
+    input#feature1:checked~#feature1-content .fade-in-right,
+    input#feature2:checked~#feature2-content .fade-in-right,
+    input#feature3:checked~#feature3-content .fade-in-right {
         animation: fade-in-right 0.7s ease-in-out forwards;
         animation-delay: var(--feature-delay);
     }
 
-    .fade-in-left, .fade-in-right {
+    .fade-in-left,
+    .fade-in-right {
         opacity: 0;
-    }    
+    }
 }
 
 .animation-delay-1 {
@@ -157,7 +167,7 @@
         opacity: 0;
         transform: translate(4rem);
     }
-    
+
     100% {
         opacity: 1;
         transform: translate(0);
@@ -169,9 +179,26 @@
         opacity: 0;
         transform: translate(-4rem);
     }
-    
+
     100% {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+* {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Rubik, sans-serif !important;
 }
