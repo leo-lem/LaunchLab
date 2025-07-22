@@ -4,6 +4,10 @@ on:
   push:
     branches: ["main"]
     paths: ["webpage/**"]
+permissions:
+  pages: write
+  id-token: write
+  contents: read
 jobs:
   deploy:
     uses: leo-lem/leo-lem/.github/workflows/deploy-pages.yml@main
