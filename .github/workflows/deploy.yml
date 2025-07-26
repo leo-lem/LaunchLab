@@ -1,13 +1,15 @@
-name: Deploy static content to Pages
+name: Deploy Marketing Webpage
+
 on:
-  workflow_dispatch:
   push:
     branches: ["main"]
     paths: ["webpage/**"]
+  workflow_dispatch:
 permissions:
   pages: write
   id-token: write
   contents: read
+
 jobs:
   deploy:
     uses: leo-lem/leo-lem/.github/workflows/deploy-pages.yml@main
